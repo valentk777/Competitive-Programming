@@ -1,12 +1,10 @@
 ﻿// #-----------------------------------------------------------
 // # 
-// # https://www.codewars.com/kata/54b72c16cd7f5154e9000457
+// # https://www.codewars.com/kata/54b724efac3d5402db00065e
 // # 
 // #-----------------------------------------------------------
 
-using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Codewars
 {
@@ -65,37 +63,29 @@ namespace Codewars
 
     public class MorseCodeDecoder
     {
-        public static string DecodeBits(string bits)
+        public static string Decode(string morseCode)
         {
-            bits = bits.Trim('0');
-            if (bits.Length == 0)
-                return "";
+            var split = Split(morseCode.Trim());
+            for (int i = 0; i < split.Length; i++)
+                split[i] = MorseCode.Get(split[i]);
 
-            var units = bits.Split(new[] { "0" }, StringSplitOptions.RemoveEmptyEntries).Select(x => x.Length).Distinct().ToList();
-            units.AddRange(bits.Split(new[] { "1" }, StringSplitOptions.RemoveEmptyEntries).Select(x => x.Length).Distinct().ToList());
-
-            var unit = units.Min();
-            var words = bits.Split(new[] { new string('0', unit * 7) }, StringSplitOptions.None);
-
-            return string.Join("   ", words
-                .Select(word => word.Split(new string('0', unit * 3))
-                    .Select(letters => letters.Split(new string('0', unit))
-                        .Select(characters => characters.Length == unit ? "." : "-")
-                        )
-                    .Select(letters => string.Join("", letters)
-                    )
-                ).Select(word => string.Join(" ", word))
-                .ToList());
+            return string.Join("", split);
         }
 
-        public static string DecodeMorse(string morseCode)
+        public static string[] Split(string text)
         {
-            var words = morseCode.Trim().Split(new[] { "   " }, StringSplitOptions.None);
-            var translatedWords = words
-                .Select(word => word.Split(' '))
-                .Select(letters => string.Join("", letters.Select(MorseCode.Get)))
-                .ToList();
-            return string.Join(" ", translatedWords);
+            var words = new List<string>();
+
+            foreach (var word in text.Split("   "))
+            {
+                foreach (var letter in word.Split(' '))
+                    words.Add(letter);
+
+                words.Add(" ");
+            }
+
+            words.RemoveAt(words.Count - 1);
+            return words.ToArray();
         }
     }
 }
