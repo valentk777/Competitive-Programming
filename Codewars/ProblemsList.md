@@ -8,4 +8,5 @@
 * [Replace With Alphabet Position - 6 kyu](https://www.codewars.com/kata/546f922b54af40e1e90001da)
 * [Tribonacci Sequence - 6 kyu](https://www.codewars.com/kata/556deca17c58da83c00002db)
 * [Matrix Addition - 6 kyu](https://www.codewars.com/kata/526233aefd4764272800036f)
+* [Bit Counting - 6 kyu](https://www.codewars.com/kata/526571aae218b8ee490006f4)
 
