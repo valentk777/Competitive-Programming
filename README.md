@@ -9,7 +9,7 @@
 | Platform                                                                      | Solved | 
 |-------------------------------------------------------------------------------|:------:|
 | [Codewars](https://github.com/valentk777/Contests/tree/master/Codewars)       |   1    |
-| [Kattis](https://github.com/valentk777/Contests/tree/master/Kattis)           |   4    | 
+| [Kattis](https://github.com/valentk777/Contests/tree/master/Kattis)           |   5    | 
 | [Codeforces](https://github.com/valentk777/Contests/tree/master/Codeforces)   |   0    | 
 
 
@@ -30,3 +30,4 @@
 * [Avion](https://open.kattis.com/problems/avion)
 * [Digits](https://open.kattis.com/problems/digits)
 * [Buka](https://open.kattis.com/problems/buka)
+* [Electrical Outlets](https://open.kattis.com/problems/electricaloutlets)

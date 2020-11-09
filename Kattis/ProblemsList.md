@@ -4,3 +4,4 @@
 * [Avion](https://open.kattis.com/problems/avion)
 * [Digits](https://open.kattis.com/problems/digits)
 * [Buka](https://open.kattis.com/problems/buka)
+* [Electrical Outlets](https://open.kattis.com/problems/electricaloutlets)
