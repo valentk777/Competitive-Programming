@@ -8,7 +8,7 @@
 
 | Platform                                                                      | Solved | 
 |-------------------------------------------------------------------------------|:------:|
-| [Codewars](https://github.com/valentk777/Contests/tree/master/Codewars)       |   7    |
+| [Codewars](https://github.com/valentk777/Contests/tree/master/Codewars)       |   8    |
 | [Kattis](https://github.com/valentk777/Contests/tree/master/Kattis)           |   8    | 
 | [Codeforces](https://github.com/valentk777/Contests/tree/master/Codeforces)   |   0    | 
 
@@ -40,6 +40,7 @@
 * [Validate my Password - 6 kyu](https://www.codewars.com/kata/59c01248bf10a47bd1000046)
 * [Replace With Alphabet Position - 6 kyu](https://www.codewars.com/kata/546f922b54af40e1e90001da)
 * [Tribonacci Sequence - 6 kyu](https://www.codewars.com/kata/556deca17c58da83c00002db)
+* [Matrix Addition - 6 kyu](https://www.codewars.com/kata/526233aefd4764272800036f)
 
 
 
