@@ -9,7 +9,7 @@
 | Platform                                                                      | Solved | 
 |-------------------------------------------------------------------------------|:------:|
 | [Codewars](https://github.com/valentk777/Contests/tree/master/Codewars)       |   1    |
-| [Kattis](https://github.com/valentk777/Contests/tree/master/Kattis)           |   3    | 
+| [Kattis](https://github.com/valentk777/Contests/tree/master/Kattis)           |   4    | 
 | [Codeforces](https://github.com/valentk777/Contests/tree/master/Codeforces)   |   0    | 
 
 
@@ -29,3 +29,4 @@
 * [Coin Stacks](https://ncpc20.kattis.com/problems/coinstacks)
 * [Avion](https://open.kattis.com/problems/avion)
 * [Digits](https://open.kattis.com/problems/digits)
+* [Buka](https://open.kattis.com/problems/buka)
