@@ -9,7 +9,7 @@
 | Platform                                                                      | Solved | 
 |-------------------------------------------------------------------------------|:------:|
 | [Codewars](https://github.com/valentk777/Contests/tree/master/Codewars)       |   1    |
-| [Kattis](https://github.com/valentk777/Contests/tree/master/Kattis)           |   0    | 
+| [Kattis](https://github.com/valentk777/Contests/tree/master/Kattis)           |   1    | 
 | [Codeforces](https://github.com/valentk777/Contests/tree/master/Codeforces)   |   0    | 
 
 
@@ -26,3 +26,4 @@
 ## Problems list
 
 * [Decode the Morse code, advanced - 4 kyu](https://www.codewars.com/kata/54b72c16cd7f5154e9000457)
+* [Coin Stacks](https://ncpc20.kattis.com/problems/coinstacks)
