@@ -11,5 +11,6 @@
 * [Bit Counting - 6 kyu](https://www.codewars.com/kata/526571aae218b8ee490006f4)
 * [Moving Zeros To The End - 5 kyu](https://www.codewars.com/kata/52597aa56021e91c93000cb0)
 * [Human Readable Time - 5 kyu](https://www.codewars.com/kata/52685f7382004e774f0001f7)
-* [Simple Pig Latin - 5 kyu](https://www.codewars.com/kata/52597aa56021e91c93000cb0)
+* [Simple Pig Latin - 5 kyu](https://www.codewars.com/kata/520b9d2ad5c005041100000f)
+* [Valid Parentheses - 5 kyu](https://www.codewars.com/kata/52774a314c2333f0a7000688)
 
