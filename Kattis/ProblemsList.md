@@ -5,3 +5,4 @@
 * [Digits](https://open.kattis.com/problems/digits)
 * [Buka](https://open.kattis.com/problems/buka)
 * [Electrical Outlets](https://open.kattis.com/problems/electricaloutlets)
+* [Solving for Carrots](https://open.kattis.com/problems/carrots)
