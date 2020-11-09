@@ -4,7 +4,7 @@
 [![Kattis](https://img.shields.io/badge/Kattis-23.9-COLOR.svg)](https://open.kattis.com/users/valentk777)
 [![Codeforces](https://img.shields.io/badge/Codeforces-934-COLOR.svg)](https://codeforces.com/profile/valentk777)
 
-Multiple chanllenges from multiple platforms
+## Multiple chanllenges from multiple platforms
 
 | Platform                                                                      | Solved | 
 |-------------------------------------------------------------------------------|:------:|
@@ -13,12 +13,16 @@ Multiple chanllenges from multiple platforms
 | [Codeforces](https://github.com/valentk777/Contests/tree/master/Codeforces)   |   0    | 
 
 
-Programming Languages used:
+## Programming Languages used:
 * C#
 * Python
 * C++
 
-MyProfiles:
+## MyProfiles:
 * https://www.codewars.com/users/valentk777
 * https://open.kattis.com/users/valentk777
 * https://codeforces.com/profile/valentk777
+
+## Problems list
+
+* Decode the Morse code, advanced - 4 kyu
