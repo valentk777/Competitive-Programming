@@ -9,7 +9,7 @@
 | Platform                                                                      | Solved | 
 |-------------------------------------------------------------------------------|:------:|
 | [Codewars](https://github.com/valentk777/Contests/tree/master/Codewars)       |   1    |
-| [Kattis](https://github.com/valentk777/Contests/tree/master/Kattis)           |   7    | 
+| [Kattis](https://github.com/valentk777/Contests/tree/master/Kattis)           |   8    | 
 | [Codeforces](https://github.com/valentk777/Contests/tree/master/Codeforces)   |   0    | 
 
 
@@ -33,3 +33,4 @@
 * [Electrical Outlets](https://open.kattis.com/problems/electricaloutlets)
 * [Solving for Carrots](https://open.kattis.com/problems/carrots)
 * [Astro](https://open.kattis.com/problems/astro)
+* [A Flea on a Chessboard](https://open.kattis.com/problems/fleaonachessboard)

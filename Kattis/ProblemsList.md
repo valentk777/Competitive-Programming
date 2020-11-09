@@ -7,3 +7,4 @@
 * [Electrical Outlets](https://open.kattis.com/problems/electricaloutlets)
 * [Solving for Carrots](https://open.kattis.com/problems/carrots)
 * [Astro](https://open.kattis.com/problems/astro)
+* [A Flea on a Chessboard](https://open.kattis.com/problems/fleaonachessboard)
