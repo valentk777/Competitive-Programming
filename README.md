@@ -8,7 +8,7 @@
 
 | Platform                                                                      | Solved | 
 |-------------------------------------------------------------------------------|:------:|
-| [Codewars](https://github.com/valentk777/Contests/tree/master/Codewars)       |   5    |
+| [Codewars](https://github.com/valentk777/Contests/tree/master/Codewars)       |   6    |
 | [Kattis](https://github.com/valentk777/Contests/tree/master/Kattis)           |   8    | 
 | [Codeforces](https://github.com/valentk777/Contests/tree/master/Codeforces)   |   0    | 
 
@@ -38,6 +38,7 @@
 * [Find an area - 6 kyu](https://www.codewars.com/kata/59b166f0a35510270800018d)
 * [Matrix Determinant - 4 kyu](https://www.codewars.com/kata/52a382ee44408cea2500074c)
 * [Validate my Password - 6 kyu](https://www.codewars.com/kata/59c01248bf10a47bd1000046)
+* [Replace With Alphabet Position - 6 kyu](https://www.codewars.com/kata/546f922b54af40e1e90001da)
 
 
 
