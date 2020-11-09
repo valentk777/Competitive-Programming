@@ -8,7 +8,7 @@
 
 | Platform                                                                      | Solved | 
 |-------------------------------------------------------------------------------|:------:|
-| [Codewars](https://github.com/valentk777/Contests/tree/master/Codewars)       |   13   |
+| [Codewars](https://github.com/valentk777/Contests/tree/master/Codewars)       |   14   |
 | [Kattis](https://github.com/valentk777/Contests/tree/master/Kattis)           |   8    | 
 | [Codeforces](https://github.com/valentk777/Contests/tree/master/Codeforces)   |   0    | 
 
@@ -46,6 +46,7 @@
 * [Human Readable Time - 5 kyu](https://www.codewars.com/kata/52685f7382004e774f0001f7)
 * [Simple Pig Latin - 5 kyu](https://www.codewars.com/kata/520b9d2ad5c005041100000f)
 * [Valid Parentheses - 5 kyu](https://www.codewars.com/kata/52774a314c2333f0a7000688)
+* [Directions Reduction - 5 kyu](https://www.codewars.com/kata/550f22f4d758534c1100025a)
 
 
 
