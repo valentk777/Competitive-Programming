@@ -8,7 +8,7 @@
 
 | Platform                                                                      | Solved | 
 |-------------------------------------------------------------------------------|:------:|
-| [Codewars](https://github.com/valentk777/Contests/tree/master/Codewars)       |   3    |
+| [Codewars](https://github.com/valentk777/Contests/tree/master/Codewars)       |   4    |
 | [Kattis](https://github.com/valentk777/Contests/tree/master/Kattis)           |   8    | 
 | [Codeforces](https://github.com/valentk777/Contests/tree/master/Codeforces)   |   0    | 
 
@@ -36,6 +36,7 @@
 * [A Flea on a Chessboard](https://open.kattis.com/problems/fleaonachessboard)
 * [Decode the Morse code - 6 kyu](https://www.codewars.com/kata/54b724efac3d5402db00065e)
 * [Find an area - 6 kyu](https://www.codewars.com/kata/59b166f0a35510270800018d)
+* [Matrix Determinant - 4 kyu](https://www.codewars.com/kata/52a382ee44408cea2500074c)
 
 
 
