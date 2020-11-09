@@ -1,8 +1,6 @@
-# Contests
+# Problem List
 
-Multiple chanllenges from multiple platforms
-
-|    Platform  |    Solved  | 
+| Language | Solved | 
 |----------|:-------------:|
 | [Codewars](https://github.com/valentk777/Contests/tree/master/Codewars) | 0 |
 | [Kattis](https://github.com/valentk777/Contests/tree/master/Kattis) | 0 | 
@@ -13,8 +11,3 @@ Programming Languages used:
 * C#
 * Python
 * C++
-
-MyProfiles:
-(https://www.codewars.com/users/valentk777/badges/large)
-(https://open.kattis.com/users/valentk777)
-(https://codeforces.com/profile/valentk777)
