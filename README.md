@@ -1,8 +1,8 @@
 # Contests
 
-![My Codewarrior Profile Badge](https://www.codewars.com/users/valentk777/badges/large)
-![Badge](https://open.kattis.com/users/valentk777)
-![Badge](https://codeforces.com/profile/valentk777)
+![My Codewarrior Profile Badge](https://www.codewars.com/users/valentk777/badges/small)
+[![Kattis](https://img.shields.io/badge/Kattis-STATUS-COLOR.svg)](https://open.kattis.com/users/valentk777)
+[![Codeforces](https://img.shields.io/badge/Codeforces-STATUS-COLOR.svg)](https://codeforces.com/profile/valentk777)
 
 Multiple chanllenges from multiple platforms
 
@@ -19,6 +19,6 @@ Programming Languages used:
 * C++
 
 MyProfiles:
-* https://www.codewars.com/users/valentk777/badges/large
+* https://www.codewars.com/users/valentk777
 * https://open.kattis.com/users/valentk777
 * https://codeforces.com/profile/valentk777
