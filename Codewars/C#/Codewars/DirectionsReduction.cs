@@ -1,7 +1,7 @@
 ﻿// #-----------------------------------------------------------
-// # 
+// #
 // # https://www.codewars.com/kata/550f22f4d758534c1100025a
-// # 
+// #
 // #-----------------------------------------------------------
 
 using System.Collections.Generic;
@@ -12,7 +12,6 @@ namespace Codewars
     {
         public static List<string> clean(List<string> arr)
         {
-
             List<string> arr2 = new List<string>() { };
             for (var i = 1; i < arr.Count; i++)
             {
