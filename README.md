@@ -4,7 +4,7 @@
 [![Kattis](https://img.shields.io/badge/Kattis-23.9-COLOR.svg)](https://open.kattis.com/users/valentk777)
 [![Codeforces](https://img.shields.io/badge/Codeforces-934-COLOR.svg)](https://codeforces.com/profile/valentk777)
 
-## Multiple chanllenges from multiple platforms
+## Multiple challenges from multiple platforms
 
 | Platform                                                                      | Solved | 
 |-------------------------------------------------------------------------------|:------:|
