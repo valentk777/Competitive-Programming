@@ -8,7 +8,7 @@
 
 | Platform                                                                      | Solved | 
 |-------------------------------------------------------------------------------|:------:|
-| [Codewars](https://github.com/valentk777/Contests/tree/master/Codewars)       |   14   |
+| [Codewars](https://github.com/valentk777/Contests/tree/master/Codewars)       |   29   |
 | [Kattis](https://github.com/valentk777/Contests/tree/master/Kattis)           |   8    | 
 | [Codeforces](https://github.com/valentk777/Contests/tree/master/Codeforces)   |   0    | 
 
@@ -46,6 +46,21 @@
 * [Human Readable Time - 5 kyu](https://www.codewars.com/kata/52685f7382004e774f0001f7)
 * [Simple Pig Latin - 5 kyu](https://www.codewars.com/kata/520b9d2ad5c005041100000f)
 * [Valid Parentheses - 5 kyu](https://www.codewars.com/kata/52774a314c2333f0a7000688)
+* [Directions Reduction - 5 kyu](https://www.codewars.com/kata/550f22f4d758534c1100025a)
+* [Encrypt this! - 6 kyu](https://www.codewars.com/kata/5848565e273af816fb000449)
+* [Closest to Zero - 7 kyu](https://www.codewars.com/kata/59887207635904314100007b)
+* [Product of consecutive Fib numbers - 5 kyu](https://www.codewars.com/kata/5541f58a944b85ce6d00006a)
+* [Unpack - 6 kyu](https://www.codewars.com/kata/56ee74e7fd6a2c3c7800037e)
+* [Sudoku Solver - 3 kyu](https://www.codewars.com/kata/5296bc77afba8baa690002d7)
+* [Run-length encoding - 6 kyu](https://www.codewars.com/kata/546dba39fa8da224e8000467)
+* [Find a Bunch of Common Elements of Two Lists in a Certain Range - 6 kyu](https://www.codewars.com/kata/58161c5ac7e37d17fc00002f)
+* [IP Validation - 6 kyu](https://www.codewars.com/kata/515decfd9dcfc23bb6000006)
+* [Pyramid Array - 6 kyu](https://www.codewars.com/kata/515f51d438015969f7000013)
+* [Roman Numerals Encoder - 6 kyu](https://www.codewars.com/kata/51b62bf6a9c58071c600001b)
+* [Sudoku Solution Validator - 4 kyu](https://www.codewars.com/kata/529bf0e9bdf7657179000008)
+* [Human readable duration format - 4 kyu](https://www.codewars.com/kata/52742f58faf5485cae000b9a)
+* [Calculating with Functions - 5 kyu](https://www.codewars.com/kata/525f3eda17c7cd9f9e000b39)
+* [Duplicate Encoder - 6 kyu](https://www.codewars.com/kata/54b42f9314d9229fd6000d9c)
 * [Directions Reduction - 5 kyu](https://www.codewars.com/kata/550f22f4d758534c1100025a)
 
 
