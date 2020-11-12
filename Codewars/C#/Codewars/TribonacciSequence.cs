@@ -1,7 +1,6 @@
 ﻿// #-----------------------------------------------------------
-// #
-// # https://www.codewars.com/kata/556deca17c58da83c00002db
-// #
+// # URL    : https://www.codewars.com/kata/556deca17c58da83c00002db
+// # Notes  : tag-codewars
 // #-----------------------------------------------------------
 
 namespace Codewars

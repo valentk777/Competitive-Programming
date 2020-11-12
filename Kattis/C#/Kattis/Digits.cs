@@ -1,7 +1,6 @@
 ﻿// #-----------------------------------------------------------
-// # 
-// # https://open.kattis.com/problems/digits
-// # 
+// # URL    : https://open.kattis.com/problems/digits
+// # Notes  : tag-kattis
 // #-----------------------------------------------------------
 
 using System;

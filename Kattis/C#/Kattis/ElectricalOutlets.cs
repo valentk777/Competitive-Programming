@@ -1,7 +1,6 @@
 ﻿// #-----------------------------------------------------------
-// # 
-// # https://open.kattis.com/problems/electricaloutlets
-// # 
+// # URL    : https://open.kattis.com/problems/electricaloutlets
+// # Notes  : tag-kattis
 // #-----------------------------------------------------------
 
 using System;

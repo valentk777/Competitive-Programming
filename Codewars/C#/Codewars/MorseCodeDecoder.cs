@@ -1,7 +1,6 @@
 ﻿// #-----------------------------------------------------------
-// #
-// # https://www.codewars.com/kata/54b724efac3d5402db00065e
-// #
+// # URL    : https://www.codewars.com/kata/54b724efac3d5402db00065e
+// # Notes  : tag-codewars
 // #-----------------------------------------------------------
 
 using System.Collections.Generic;

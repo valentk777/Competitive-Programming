@@ -1,7 +1,6 @@
 ﻿// #-----------------------------------------------------------
-// #
-// # https://www.codewars.com/kata/520b9d2ad5c005041100000f
-// #
+// # URL    : https://www.codewars.com/kata/520b9d2ad5c005041100000f
+// # Notes  : tag-codewars
 // #-----------------------------------------------------------
 
 namespace Codewars

@@ -1,8 +1,8 @@
 # -----------------------------------------------------------
-#
-# https://www.codewars.com/kata/525f3eda17c7cd9f9e000b39
-#
+# URL    : https://www.codewars.com/kata/525f3eda17c7cd9f9e000b39
+# Notes  : tag-codewars
 # -----------------------------------------------------------
+
 
 def validate(number: str, func: str = None) -> int:
     if func is not None:

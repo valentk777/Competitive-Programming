@@ -1,7 +1,6 @@
 # -----------------------------------------------------------
-#
-# https://www.codewars.com/kata/51b62bf6a9c58071c600001b
-#
+# URL    : https://www.codewars.com/kata/51b62bf6a9c58071c600001b
+# Notes  : tag-codewars
 # -----------------------------------------------------------
 
 def solution(n):

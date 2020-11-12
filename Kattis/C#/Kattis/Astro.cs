@@ -1,7 +1,6 @@
 ﻿// #-----------------------------------------------------------
-// # 
-// # https://open.kattis.com/problems/astro
-// # 
+// # URL    : https://open.kattis.com/problems/astro
+// # Notes  : tag-kattis
 // #-----------------------------------------------------------
 
 using System;

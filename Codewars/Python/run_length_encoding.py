@@ -1,7 +1,6 @@
 # -----------------------------------------------------------
-#
-# https://www.codewars.com/kata/546dba39fa8da224e8000467
-#
+# URL    : https://www.codewars.com/kata/546dba39fa8da224e8000467
+# Notes  : tag-codewars
 # -----------------------------------------------------------
 
 def run_length_encoding(s):

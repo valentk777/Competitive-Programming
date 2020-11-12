@@ -1,7 +1,6 @@
 # -----------------------------------------------------------
-#
-# https://www.codewars.com/kata/515decfd9dcfc23bb6000006
-#
+# URL    : https://www.codewars.com/kata/515decfd9dcfc23bb6000006
+# Notes  : tag-codewars
 # -----------------------------------------------------------
 
 def is_valid_IP(string: str) -> bool:

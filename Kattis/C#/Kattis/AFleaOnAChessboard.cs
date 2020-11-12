@@ -1,7 +1,6 @@
 ﻿// #-----------------------------------------------------------
-// # 
-// # https://open.kattis.com/problems/fleaonachessboard
-// # 
+// # URL    : https://open.kattis.com/problems/fleaonachessboard
+// # Notes  : tag-kattis
 // #-----------------------------------------------------------
 
 using System;

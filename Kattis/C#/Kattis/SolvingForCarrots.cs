@@ -1,7 +1,6 @@
 ﻿// #-----------------------------------------------------------
-// # 
-// # https://open.kattis.com/problems/carrots
-// # 
+// # URL    : https://open.kattis.com/problems/carrots
+// # Notes  : tag-kattis
 // #-----------------------------------------------------------
 
 using System;

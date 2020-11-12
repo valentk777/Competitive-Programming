@@ -1,7 +1,6 @@
 ﻿// #-----------------------------------------------------------
-// # 
-// # https://open.kattis.com/problems/avion
-// # 
+// # URL    : https://open.kattis.com/problems/avion
+// # Notes  : tag-kattis
 // #-----------------------------------------------------------
 
 using System;

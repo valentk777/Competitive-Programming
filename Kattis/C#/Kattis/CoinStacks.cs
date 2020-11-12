@@ -1,7 +1,6 @@
 ﻿// #-----------------------------------------------------------
-// # 
-// # https://ncpc20.kattis.com/problems/coinstacks
-// # 
+// # URL    : https://ncpc20.kattis.com/problems/coinstacks
+// # Notes  : tag-kattis
 // #-----------------------------------------------------------
 
 using System;

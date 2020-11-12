@@ -1,7 +1,6 @@
 # -----------------------------------------------------------
-#
-# https://www.codewars.com/kata/529bf0e9bdf7657179000008
-#
+# URL    : https://www.codewars.com/kata/529bf0e9bdf7657179000008
+# Notes  : tag-codewars
 # -----------------------------------------------------------
 
 def valid_solution(board):

@@ -1,7 +1,6 @@
 ﻿// #-----------------------------------------------------------
-// # 
-// # https://open.kattis.com/problems/buka
-// # 
+// # URL    : https://open.kattis.com/problems/buka
+// # Notes  : tag-kattis
 // #-----------------------------------------------------------
 
 using System;

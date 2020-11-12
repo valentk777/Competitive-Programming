@@ -1,7 +1,6 @@
 # -----------------------------------------------------------
-#
-# https://www.codewars.com/kata/58161c5ac7e37d17fc00002f
-#
+# URL    : https://www.codewars.com/kata/58161c5ac7e37d17fc00002f
+# Notes  : tag-codewars
 # -----------------------------------------------------------
 
 def filter_array(arrX, odd, _from, _to):
