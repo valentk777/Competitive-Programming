@@ -11,7 +11,7 @@
 |-------------------------------------------------------------------------------|:------:|
 | [Codewars](https://github.com/valentk777/Contests/tree/master/Codewars)       |   29   |
 | [Kattis](https://github.com/valentk777/Contests/tree/master/Kattis)           |   8    | 
-| [Codeforces](https://github.com/valentk777/Contests/tree/master/Codeforces)   |   0    | 
+| [Codeforces](https://github.com/valentk777/Contests/tree/master/Codeforces)   |   4    | 
 
 
 ## Programming Languages used:
@@ -31,6 +31,7 @@
 * [Codewars](https://github.com/valentk777/Contests/search?q=tag-codewars)
 * [Kattis](https://github.com/valentk777/Contests/search?q=tag-kattis)
 * [Codeforces](https://github.com/valentk777/Contests/search?q=tag-codeforces)
+
 
 ### << Codewars Leveling System >>
 
