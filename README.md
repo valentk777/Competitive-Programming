@@ -11,7 +11,7 @@
 |-------------------------------------------------------------------------------|:------:|
 | [Codewars](https://github.com/valentk777/Contests/tree/master/Codewars)       |   29   |
 | [Kattis](https://github.com/valentk777/Contests/tree/master/Kattis)           |   8    | 
-| [Codeforces](https://github.com/valentk777/Contests/tree/master/Codeforces)   |   4    | 
+| [Codeforces](https://github.com/valentk777/Contests/tree/master/Codeforces)   |   13   | 
 
 
 ## Programming Languages used:
