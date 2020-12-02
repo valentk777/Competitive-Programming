@@ -1,10 +1,10 @@
 from typing import List
 
 
-def to_int(data: List[str]) -> List[int]:
-    return list(map(int, data))
+def to_int(data: str) -> List[int]:
+    return list(map(int, data.split()))
 
 
-def read(filename: str = "input.txt") -> List[int]:
+def read(filename: str = "input.txt") -> str:
     with open(filename, "r") as f:
-        return to_int(f.read().split())
+        return f.read()

@@ -1,6 +1,6 @@
-from utils import read
+from utils import read, to_int
 
-input_data = read()
+input_data = to_int(read())
 n = len(input_data)
 
 
