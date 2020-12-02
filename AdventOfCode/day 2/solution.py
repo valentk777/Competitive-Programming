@@ -11,10 +11,9 @@ class PassObject:
         self.password: str = password
 
 
-input_data = read().split('\n')
+input_data = read()
 
 pass_data = list(map(PassObject, input_data))
-n = len(pass_data)
 
 
 def compare_letters(letter: str):
