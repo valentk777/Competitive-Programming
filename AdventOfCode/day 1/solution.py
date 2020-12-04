@@ -1,6 +1,6 @@
-from utils import read, to_int
+from utils import read_lines, to_int
 
-input_data = to_int(read())
+input_data = to_int(read_lines())
 n = len(input_data)
 
 

@@ -1,6 +1,6 @@
-from utils import read
+from utils import read_lines
 
-input_data = read()
+input_data = read_lines()
 
 
 def get_tree_count_for_slope(right: int, down: int) -> int:
