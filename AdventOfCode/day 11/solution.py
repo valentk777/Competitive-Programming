@@ -1,6 +1,6 @@
-from utils import read
+from utils import read_lines
 
-input_data = read()
+input_data = read_lines()
 print(input_data)
 
 

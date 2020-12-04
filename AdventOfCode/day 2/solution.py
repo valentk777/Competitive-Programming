@@ -1,4 +1,4 @@
-from utils import read
+from utils import read_lines
 
 
 class PassObject:
@@ -11,7 +11,7 @@ class PassObject:
         self.password: str = password
 
 
-input_data = read()
+input_data = read_lines()
 
 pass_data = list(map(PassObject, input_data))
 
