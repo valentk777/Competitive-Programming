@@ -13,3 +13,9 @@ def read_lines(filename: str = "input.txt") -> List[str]:
 def read(filename: str = "input.txt") -> str:
     with codecs.open(filename, 'U') as f:
         return f.read()
+
+
+def read_with_empty_lines() -> List[List[str]]:
+    input_data = read().split(2 * '\n')
+    input_data = [x.split() for x in input_data]
+    return input_data

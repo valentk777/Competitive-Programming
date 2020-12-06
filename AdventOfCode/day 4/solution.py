@@ -1,6 +1,6 @@
 from typing import List, Iterable
 
-from utils import read
+from utils import read_with_empty_lines
 
 
 def to_dict(data_to_convert) -> dict:
@@ -9,12 +9,6 @@ def to_dict(data_to_convert) -> dict:
 
 def to_passports(data_to_convert) -> List[dict]:
     return list(map(to_dict, data_to_convert))
-
-
-def read_data() -> List[List[str]]:
-    input_data = read().split(2 * '\n')
-    input_data = [x.split() for x in input_data]
-    return input_data
 
 
 def is_valid(passport: dict) -> bool:
@@ -83,7 +77,7 @@ def solve_2(passports: List[dict]) -> None:
     print(len(list(all_valid)))
 
 
-init_data = read_data()
+init_data = read_with_empty_lines()
 init_data = to_passports(init_data)
 
 solve_1(init_data)
