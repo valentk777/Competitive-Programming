@@ -5,7 +5,6 @@ from utils import read_lines
 
 input_data = read_lines()
 input_data = list(map(int, input_data))
-print(input_data)
 
 
 def make_sums(data: List[int]):
