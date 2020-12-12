@@ -12,7 +12,7 @@
 | [Codewars](https://github.com/valentk777/Contests/tree/master/Codewars)       |   29   |
 | [Kattis](https://github.com/valentk777/Contests/tree/master/Kattis)           |   8    | 
 | [Codeforces](https://github.com/valentk777/Contests/tree/master/Codeforces)   |   13   | 
-| [AdventOfCode](https://adventofcode.com/2020)                                 |   11   | 
+| [AdventOfCode](https://adventofcode.com/2020)                                 |   12   | 
 
 
 ## Programming Languages used:
