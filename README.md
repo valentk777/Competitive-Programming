@@ -9,16 +9,17 @@
 
 | Platform                                                                      | Solved | 
 |-------------------------------------------------------------------------------|:------:|
-| [Codewars](https://github.com/valentk777/Contests/tree/master/Codewars)       |   29   |
+| [Codewars](https://github.com/valentk777/Contests/tree/master/Codewars)       |   35   |
 | [Kattis](https://github.com/valentk777/Contests/tree/master/Kattis)           |   8    | 
 | [Codeforces](https://github.com/valentk777/Contests/tree/master/Codeforces)   |   13   | 
-| [AdventOfCode](https://adventofcode.com/2020)                                 |   13   | 
+| [AdventOfCode](https://adventofcode.com/2020)                                 |   18   | 
 
 
 ## Programming Languages used:
 * [C#](https://github.com/valentk777/Contests/search?l=C%23)
 * [Python](https://github.com/valentk777/Contests/search?l=python)
 * [C++](https://github.com/valentk777/Contests/search?l=cpp)
+* [Scala](https://github.com/valentk777/Contests/search?l=scala)
 
 
 ## MyProfiles:
