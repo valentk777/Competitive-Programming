@@ -1,5 +1,6 @@
 # -----------------------------------------------------------
 # URL    : https://codeforces.com/contest/1480/problem/A
+# Title  : Yet Another String Game
 # Notes  : tag-codeforces, tag-problem-A, tag-div-2
 # -----------------------------------------------------------
 

@@ -1,5 +1,6 @@
 # -----------------------------------------------------------
 # URL    : https://codeforces.com/contest/1438/problem/A
+# Title  : Specific Tastes of Andre
 # Notes  : tag-codeforces, tag-problem-A, tag-div-2
 # -----------------------------------------------------------
 

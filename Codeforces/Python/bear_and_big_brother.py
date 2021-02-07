@@ -1,5 +1,6 @@
 # -----------------------------------------------------------
 # URL    : https://codeforces.com/contest/791/problem/A
+# Title  : Bear and Big Brother
 # Notes  : tag-codeforces, tag-problem-A, tag-div-2
 # -----------------------------------------------------------
 

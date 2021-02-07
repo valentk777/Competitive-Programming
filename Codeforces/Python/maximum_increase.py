@@ -1,5 +1,6 @@
 # -----------------------------------------------------------
 # URL    : https://codeforces.com/contest/702/problem/A
+# Title  : Maximum Increase
 # Notes  : tag-codeforces, tag-problem-A, tag-div-2
 # -----------------------------------------------------------
 

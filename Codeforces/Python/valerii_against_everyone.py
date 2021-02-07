@@ -1,5 +1,6 @@
 # -----------------------------------------------------------
 # URL    : https://codeforces.com/contest/1438/problem/B
+# Title  : Valerii Against Everyone
 # Notes  : tag-codeforces, tag-problem-B, tag-div-2
 # -----------------------------------------------------------
 

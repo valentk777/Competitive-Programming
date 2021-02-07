@@ -1,5 +1,6 @@
 # -----------------------------------------------------------
 # URL    : https://codeforces.com/contest/1447/problem/B
+# Title  : Numbers Box
 # Notes  : tag-codeforces, tag-problem-B, tag-div-2
 # -----------------------------------------------------------
 

@@ -1,5 +1,6 @@
 # -----------------------------------------------------------
 # URL    : https://codeforces.com/contest/1417/problem/B
+# Title  : Two Arrays
 # Notes  : tag-codeforces, tag-problem-B, tag-div-2
 # -----------------------------------------------------------
 
