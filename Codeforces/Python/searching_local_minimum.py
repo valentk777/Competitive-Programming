@@ -18,6 +18,7 @@ def solve():
 
     print(f"? {1}")
     left = int(input())
+    first = left
 
     if n == 1:
         print_ats(1)
@@ -30,7 +31,7 @@ def solve():
         print_ats(1 if left < middle else 2)
         return
 
-    for i in range(3, n):
+    for i in range(3, n + 1):
         print(f"? {i}")
         right = int(input())
 
@@ -39,6 +40,9 @@ def solve():
             return
 
         left, middle = middle, right
+
+    if first < min(left, middle):
+        print_ats(1)
 
 
 if __name__ == "__main__":
