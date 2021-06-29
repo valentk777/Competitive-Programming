@@ -14,6 +14,10 @@ typedef long double ld;
 #define forsn(i, s, e) for (ll i = s; i < e; i++)
 #define rforn(i, s) for (ll i = s; i >= 0; i--)
 #define rforsn(i, s, e) for (ll i = s; i >= e; i--)
+#define max_arr(x, n) *max_element(x, x + n)
+#define min_arr(x, n) *min_element(x, x + n)
+#define max_vec(x) max_element(x.begin(), x.end())
+#define min_vec(x) min_element(x.begin(), x.end())
 
 #define test() ll t; cin >> t; while (t--)
 #define dbg(x) cout<<#x<<" = "<<x<<endl;
@@ -32,6 +36,10 @@ void solve() {
     ll n;
     cin >> n;
 
+    ll a[n];
+
+    forn(i, n) cin >> a[i];
+
     
 }
 
@@ -44,6 +52,8 @@ int main() {
         #else
         time__("Run duration: ") solve();
         #endif
+
+        cout << endl;
     }
 
     return 0;

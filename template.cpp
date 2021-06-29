@@ -16,7 +16,7 @@ typedef long double ld;
 #define rforsn(i, s, e) for (ll i = s; i >= e; i--)
 
 #define test() ll t; cin >> t; while (t--)
-#define dbg(x) cout<<#x<<" = "<<x<<endl;
+#define dbg(x) cout<<#x<<" = "<<x<<ln
 
 /*----------------------------*/
 
@@ -29,31 +29,10 @@ void IO() {
 }
 
 void solve() {
-    ll w, h, n;
-    cin >> w >> h >> n;
+    ll n;
+    cin >> n;
 
-    int count = 1;
-    while (w % 2 == 0 && count < n) {
-        w = w / 2;
-        count *= 2;
-    }
-
-    if (count >= n) {
-        cout << "YES";
-        return;
-    }
-
-    while (h % 2 == 0 && count < n) {
-        h = h / 2;
-        count *= 2;
-    }
-
-    if (count >= n) {
-        cout << "YES";
-        return;
-    }
-
-    cout << (count >= n ? "YES" :"NO" );
+    
 }
 
 int main() {
@@ -65,8 +44,6 @@ int main() {
         #else
         time__("Run duration: ") solve();
         #endif
-
-        cout << endl;
     }
 
     return 0;
