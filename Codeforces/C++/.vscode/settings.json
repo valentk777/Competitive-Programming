@@ -68,7 +68,16 @@
         "forward_list": "cpp",
         "string_view": "cpp",
         "regex": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "bitset": "cpp",
+        "cfenv": "cpp",
+        "cinttypes": "cpp",
+        "csetjmp": "cpp",
+        "csignal": "cpp",
+        "cstdarg": "cpp",
+        "cuchar": "cpp",
+        "cwctype": "cpp",
+        "*.tcc": "cpp"
     },
     "C_Cpp.dimInactiveRegions": false
 }
