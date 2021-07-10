@@ -77,7 +77,8 @@
         "cstdarg": "cpp",
         "cuchar": "cpp",
         "cwctype": "cpp",
-        "*.tcc": "cpp"
+        "*.tcc": "cpp",
+        "numeric": "cpp"
     },
     "C_Cpp.dimInactiveRegions": false
 }
