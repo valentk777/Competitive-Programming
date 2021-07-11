@@ -33,19 +33,60 @@ void IO() {
 }
 
 void solve() {
-    ll n, a;
+    ll n;
     cin >> n;
 
-    ll cur = 0;
+    ll sum_a = 0, sum_b = 0;
+    ll a[n], b[n], c[n];
 
     forn(i, n) {
-        cin >> a;
-
-        ll diff = cur - (cur & a);
-        cur = a ^ diff;
-
-        cout << diff << " ";
+        cin >> a[i];
+        sum_a += a[i];
     }
+
+    forn(i, n) {
+        cin >> b[i];
+        sum_b += b[i];
+    }
+
+    if (sum_a % 2 == 0 && sum_b % 2 == 1 || sum_a % 2 == 1 && sum_b % 2 == 0) {
+        cout << -1 << endl;
+        return;
+    }
+
+    if (n == 1) {
+        if (a[0] != b[0]) {
+            cout << -1 << endl;
+            return;
+        } else {
+            cout << 0 << endl;
+            return;
+        }
+    }
+
+    forn(i, n) c[i] = a[i] - b[i];
+
+    vector<string> r;
+    int count = 0;
+
+    ll max_e = 0, min_e = 1;
+
+    while (max_e != 0 || min_e != 0) {
+        max_e = max_arr(c, n);
+        min_e = min_arr(c, n);
+
+        int pmax = distance(c, max_element(c, c + n));
+        int pmin = distance(c, min_element(c, c + n));
+        while (c[pmax] != 0 && c[pmin] != 0) {
+            c[pmax]--;
+            c[pmin]++;
+            count++;
+            r.push_back(to_string(pmax + 1) + " " + to_string(pmin + 1));
+        }
+    }
+
+    cout << count << endl;
+    for (string i : r) cout << i << endl;
 }
 
 int main() {
@@ -57,8 +98,6 @@ int main() {
 #else
         time__("Run duration: ") solve();
 #endif
-
-        cout << endl;
     }
 
     return 0;

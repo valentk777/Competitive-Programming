@@ -33,30 +33,56 @@ void IO() {
 }
 
 void solve() {
-    ll n, a;
+    ll n;
     cin >> n;
 
-    ll cur = 0;
+    ll a[n];
 
-    forn(i, n) {
-        cin >> a;
+    forn(i, n) cin >> a[i];
 
-        ll diff = cur - (cur & a);
-        cur = a ^ diff;
+    ll current_min_ind = 0;
 
-        cout << diff << " ";
+    while (true) {
+        ll* current_min = min_element(a, a + n);
+        ll pmin = distance(a, current_min);
+
+        if ((pmin - current_min_ind) % 2 == 0) {
+            current_min_ind++;
+            a[pmin] = 1000000;
+        } else if (*current_min == 1000000) {
+            cout << "YES";
+            return;
+        } else if (pmin + 1 < n) {
+            ll* new_min = min_element(a + pmin + 1, a + n);
+
+            if (*new_min == *current_min) {
+                ll pp_min = distance(a, new_min);
+
+                if ((pp_min - current_min_ind) % 2 == 0) {
+                    current_min_ind++;
+                    a[pp_min] = 1000000;
+                }
+            } else {
+                break;
+            }
+        } else {
+            break;
+        }
     }
+
+    cout << "NO";
+    return;
 }
 
 int main() {
     IO();
 
     test() {
-#ifdef ONLINE_JUDGE
+        #ifdef ONLINE_JUDGE
         solve();
-#else
+        #else
         time__("Run duration: ") solve();
-#endif
+        #endif
 
         cout << endl;
     }

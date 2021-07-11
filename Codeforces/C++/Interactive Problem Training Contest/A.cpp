@@ -33,33 +33,33 @@ void IO() {
 }
 
 void solve() {
-    ll n, a;
-    cin >> n;
+    int left = 1, right = 1000000, mid;
+    string ans;
 
-    ll cur = 0;
+    while (left != right) {
+        mid = (left + right + 1) / 2;
 
-    forn(i, n) {
-        cin >> a;
+        cout << mid << endl;
+        cin >> ans;
 
-        ll diff = cur - (cur & a);
-        cur = a ^ diff;
-
-        cout << diff << " ";
+        if (ans == "<") {
+            right = mid - 1;
+        } else {
+            left = mid;
+        }
     }
+
+    cout << "! " << left << endl;
 }
 
 int main() {
     IO();
 
-    test() {
-#ifdef ONLINE_JUDGE
-        solve();
-#else
-        time__("Run duration: ") solve();
-#endif
-
-        cout << endl;
-    }
+    #ifdef ONLINE_JUDGE
+    solve();
+    #else
+    time__("Run duration: ") solve();
+    #endif
 
     return 0;
 }

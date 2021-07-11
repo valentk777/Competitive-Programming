@@ -41,8 +41,6 @@ void solve() {
     forn(i, k) cin >> a[i];
     forn(i, k) cin >> t[i];
 
-    ll result[n];
-
     forn(i, n) {
         ll temp[k];
 
@@ -50,14 +48,8 @@ void solve() {
             temp[j] = t[j] + abs(a[j] - i - 1);
         }
 
-        // forn(i, k) cout << temp[i] << " ";
-        // cout << endl;
-
-
-        result[i] = min_arr(temp, k);
+        cout << min_arr(temp, k) << " ";
     }
-
-    forn(i, n) cout << result[i] << " ";
 }
 
 int main() {
