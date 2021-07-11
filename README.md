@@ -7,12 +7,11 @@
 
 ## Multiple challenges from multiple platforms
 
-| Platform                                                                      | Solved | 
-|-------------------------------------------------------------------------------|:------:|
-| [Codewars](https://github.com/valentk777/Contests/tree/master/Codewars)       |   35   |
-| [Kattis](https://github.com/valentk777/Contests/tree/master/Kattis)           |   8    | 
-| [Codeforces](https://github.com/valentk777/Contests/tree/master/Codeforces)   |   13   | 
-| [AdventOfCode](https://adventofcode.com/2020)                                 |   18   | 
+| Platform            
+| [Codewars](https://github.com/valentk777/Contests/tree/master/Codewars)
+| [Kattis](https://github.com/valentk777/Contests/tree/master/Kattis)
+| [Codeforces](https://github.com/valentk777/Contests/tree/master/Codeforces)
+| [AdventOfCode](https://adventofcode.com/2020)
 
 
 ## Programming Languages used:
