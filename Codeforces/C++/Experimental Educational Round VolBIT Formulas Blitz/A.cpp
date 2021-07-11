@@ -14,11 +14,22 @@ typedef long double ld;
 #define forsn(i, s, e) for (ll i = s; i < e; i++)
 #define rforn(i, s) for (ll i = s; i >= 0; i--)
 #define rforsn(i, s, e) for (ll i = s; i >= e; i--)
+#define max_arr(x, n) *max_element(x, x + n)
+#define min_arr(x, n) *min_element(x, x + n)
+#define max_vec(x) max_element(x.begin(), x.end())
+#define min_vec(x) min_element(x.begin(), x.end())
 
 #define test() ll t; cin >> t; while (t--)
-#define dbg(x) cout<<#x<<" = "<<x<<endl
+#define dbg(x) cout<<#x<<" = "<<x<<endl;
 
 /*----------------------------*/
+
+/* 
+NOTE:
+if (0) -> True, 1 - False
+x & 1 is equivalent to x % 2.
+x >> 1 is equivalent to x / 2
+*/
 
 void IO() {
     #ifndef ONLINE_JUDGE
@@ -28,40 +39,52 @@ void IO() {
     fast_cin();
 }
 
-void solve() {
-    ll n, i, j, count = 0;
-    cin >> n;
+ll binpow_for_prime_m(ll a, ll n, ll mod) {
+    n %= (mod - 1);
 
-    ll a[n];
+    ll res = 1;
 
-    forn(i, n) cin >> a[i];
-
-    forn(i, n - 1) {
-        forsn(j, i + 1, n) {
-            if (i + j > 2 * n - 1) {
-                break;
-            }
-
-            ll mult = a[i] * a[j];
-            if (mult == i + j + 2) {
-                count++;
-            }
+    while(n > 0) {
+        if (n & 1) {
+            res = res * a % mod;
         }
+
+        a = a * a % mod;
+        n >>= 1;
     }
 
-    cout << count << endl;
+    return res;
+}
+
+ll binpow(ll a, ll n, ll mod) {
+    ll res = 1;
+
+    while(n > 0) {
+        if (n & 1) {
+            res = res * a % mod;
+        }
+
+        a = a * a % mod;
+        n >>= 1;
+    }
+
+    return res;
+}
+
+void solve() {
+    ll n;
+    cin >> n;
+    cout << 25; // for every number 5^n, when n >= 2 last two digints equal 25 :D 
 }
 
 int main() {
     IO();
 
-    test() {
-        #ifdef ONLINE_JUDGE
-        solve();
-        #else
-        time__("Run duration: ") solve();
-        #endif
-    }
+    #ifdef ONLINE_JUDGE
+    solve();
+    #else
+    time__("Run duration: ") solve();
+    #endif
 
     return 0;
 }

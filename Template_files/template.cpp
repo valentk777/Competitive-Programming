@@ -18,6 +18,8 @@ typedef long double ld;
 #define min_arr(x, n) *min_element(x, x + n)
 #define max_vec(x) max_element(x.begin(), x.end())
 #define min_vec(x) min_element(x.begin(), x.end())
+#define max_tuple(x, n) *max_element(x, x + n, [](const auto& lhs, const auto& rhs) { return lhs.first < rhs.first; })
+#define min_tuple(x, n) *min_element(x, x + n, [](const auto& lhs, const auto& rhs) { return lhs.first < rhs.first; })
 
 #define test() ll t; cin >> t; while (t--)
 #define dbg(x) cout<<#x<<" = "<<x<<endl;

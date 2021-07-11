@@ -18,11 +18,17 @@ typedef long double ld;
 #define min_arr(x, n) *min_element(x, x + n)
 #define max_vec(x) max_element(x.begin(), x.end())
 #define min_vec(x) min_element(x.begin(), x.end())
+#define max_tuple(x, n) *max_element(x, x + n, [](const auto& lhs, const auto& rhs) { return lhs.first < rhs.first; })
+#define min_tuple(x, n) *min_element(x, x + n, [](const auto& lhs, const auto& rhs) { return lhs.first < rhs.first; })
+#define max_tuple_y(x, y, n) *max_element(x + y, x + n, [](const auto& lhs, const auto& rhs) { return lhs.first < rhs.first; })
+#define min_tuple_y(x, y, n) *min_element(x + y, x + n, [](const auto& lhs, const auto& rhs) { return lhs.first < rhs.first; })
 
 #define test() ll t; cin >> t; while (t--)
 #define dbg(x) cout<<#x<<" = "<<x<<endl;
 
 /*----------------------------*/
+
+const int max_n=1e5+5;
 
 void IO() {
     #ifndef ONLINE_JUDGE
@@ -32,7 +38,101 @@ void IO() {
     fast_cin();
 }
 
+void solve2() {
+    ll n;
+    cin >> n;
+    
+    vector<int> a(n + 1), ind(n + 1);
+
+    for (int i = 1; i <= n; i++) {
+        cin >> a[i];
+        ind[i] = i;
+    }
+
+    sort(ind.begin() + 1, ind.end(), [&a](const int aa, const int bb) -> bool {
+        if (a[aa] == a[bb])
+            return aa < bb;
+        else
+            return a[aa] < a[bb];
+    });
+
+    bool flag = true;
+    vector<int> vis(max_n);
+
+    for (int i = 1; i <= n; i++) {
+        vis[a[ind[i]]] += abs(ind[i] - i);
+    }
+
+    for (int i = 0; i < max_n && flag; i++) {
+        flag = (vis[i] % 2 == 0);
+    }
+
+    cout << (!flag ? "NO" : "YES");
+}
+
 void solve() {
+    ll n;
+    cin >> n;
+
+    pair<ll, ll> a[n];
+    forn(i, n) {
+        cin >> a[i].first;
+        a[i].second = i;
+    }
+
+    sort(a, a + n);
+
+    forn(i, n) {
+        if (a[i].second % 2 != i % 2) {
+            cout << "NO";
+            return;
+        }
+    }
+
+    cout << "YES";
+}
+
+void solution_to_slow_improved() {
+    ll n;
+    cin >> n;
+
+    pair<ll, ll> a[n];
+
+    forn(i, n) {
+        cin >> a[i].first;
+        a[i].second = i;
+    }
+
+    ll current_min_ind = 0;
+
+    while (true) {
+        auto current_min = min_tuple(a, n);
+
+        if ((current_min.second - current_min_ind) % 2 == 0) {
+            current_min_ind++;
+            a[current_min.second].first = 1000000;
+        } else if (current_min.first == 1000000) {
+            cout << "YES";
+            return;
+        } else if (current_min.second + 1 < n) {
+            auto new_min = min_tuple_y(a, current_min.second + 1, n);
+            if (new_min.first == current_min.first) {
+                if ((new_min.second - current_min_ind) % 2 == 0) {
+                    current_min_ind++;
+                    a[new_min.second].first = 1000000;
+                }
+            } else {
+                break;
+            }
+        } else {
+            break;
+        }
+    }
+
+    cout << "NO";
+}
+
+void solution_to_slow() {
     ll n;
     cin >> n;
 
@@ -71,18 +171,17 @@ void solve() {
     }
 
     cout << "NO";
-    return;
 }
 
 int main() {
     IO();
 
     test() {
-        #ifdef ONLINE_JUDGE
-        solve();
-        #else
-        time__("Run duration: ") solve();
-        #endif
+#ifdef ONLINE_JUDGE
+        solve2();
+#else
+        time__("Run duration: ") solve2();
+#endif
 
         cout << endl;
     }
