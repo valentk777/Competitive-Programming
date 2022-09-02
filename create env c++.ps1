@@ -1,6 +1,6 @@
-$BASE_PATH = "D:\Coding\Contests"
+$BASE_PATH = "C:\_Build\Contests"
 $TEMPLATE_FILE_NAME = "template.cpp"
-$TEMPLATE_FILE_DIR = "D:\Coding\Contests\Template_files"
+$TEMPLATE_FILE_DIR = "C:\_Build\Contests\Template_files"
 $TEMPLATE_FILE_LOCATION = Join-Path -Path $TEMPLATE_FILE_DIR -ChildPath $TEMPLATE_FILE_NAME
 
 $PLATFORM = Read-Host -Prompt """
