@@ -18,8 +18,6 @@ typedef long double ld;
 #define min_arr(x, n) *min_element(x, x + n)
 #define max_vec(x) max_element(x.begin(), x.end())
 #define min_vec(x) min_element(x.begin(), x.end())
-#define max_tuple(x, n) *max_element(x, x + n, [](const auto& lhs, const auto& rhs) { return lhs.first < rhs.first; })
-#define min_tuple(x, n) *min_element(x, x + n, [](const auto& lhs, const auto& rhs) { return lhs.first < rhs.first; })
 
 #define test() ll t; cin >> t; while (t--)
 #define dbg(x) cout<<#x<<" = "<<x<<endl;
@@ -35,18 +33,39 @@ void IO() {
 }
 
 void solve() {
-    ll x, y;
+    ll n, r, temp;
 
-    cin >> x >> y;
+    cin >> n >> r;
 
-    ll diff = x - y;
+    ll x[n];
 
-    if (diff > 1) {
-        cout << "YES";
+    forn(i, n) {
+        cin >> temp;
+        x[i] = temp;
     }
-    else {
-        cout << "NO";
+
+    sort(x, x + n);
+
+    ll c = 0;
+    ll result = 0;
+    ll hit_power = 0;
+
+    for (ll i = n - 1; i >= 0; i--){
+        if (i >= 0 && x[i] == c) {
+            continue;
+        }
+
+        c = x[i];
+
+        if (c - hit_power <= 0) {
+            break;
+        }
+        
+        result++;
+        hit_power += r;
     }
+
+    cout << result ;
 }
 
 int main() {
