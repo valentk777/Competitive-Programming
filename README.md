@@ -12,6 +12,7 @@
 | [Kattis](https://github.com/valentk777/Contests/tree/master/Kattis)
 | [Codeforces](https://github.com/valentk777/Contests/tree/master/Codeforces)
 | [AdventOfCode](https://adventofcode.com/2020)
+| [AlgoDaily](https://algodaily.com)
 
 
 ## Programming Languages used:
@@ -32,7 +33,7 @@
 * [Codewars](https://github.com/valentk777/Contests/search?q=tag-codewars)
 * [Kattis](https://github.com/valentk777/Contests/search?q=tag-kattis)
 * [Codeforces](https://github.com/valentk777/Contests/search?q=tag-codeforces)
-
+* [AlgoDaily](https://github.com/valentk777/Contests/search?q=tag-algodaily)
 
 ### << Codewars Leveling System >>
 
