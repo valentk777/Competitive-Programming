@@ -1,11 +1,10 @@
 # -----------------------------------------------------------
-# URL    : https://www.codewars.com/kata/59887207635904314100007b
+# URL    : https://www.codewars.com/kata/5647c3858d4acbbe550000ad
 # Notes  : tag-codewars
 # -----------------------------------------------------------
 
 
 from greenery import fsm, lego
-
 
 machine = fsm.fsm(
     alphabet={'0', '1'},
