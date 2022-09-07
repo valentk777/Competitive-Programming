@@ -1,3 +1,8 @@
+/*-----------------------------------------------------------*/
+/* URL    : https://codeforces.com/contest/1472/problem/A
+/* Title  : Fair Division
+/* Notes  : tag-codeforces, tag-problem-B, tag-div-3
+/*-----------------------------------------------------------*/
 /*-------- valentk777 --------*/
 #include <bits/stdc++.h>
 /*----------------------------*/

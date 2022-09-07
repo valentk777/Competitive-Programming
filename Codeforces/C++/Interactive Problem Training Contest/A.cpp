@@ -1,3 +1,8 @@
+/*-----------------------------------------------------------*/
+/* URL    : https://codeforces.com/gym/101021/problem/1
+/* Title  : Guess the Number
+/* Notes  : tag-codeforces, tag-problem-A
+/*-----------------------------------------------------------*/
 /*-------- valentk777 --------*/
 #include <bits/stdc++.h>
 /*----------------------------*/

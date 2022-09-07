@@ -1,3 +1,8 @@
+/*-----------------------------------------------------------*/
+/* URL    : https://codeforces.com/contest/1538/problem/B
+/* Title  : Friends and Candies
+/* Notes  : tag-codeforces, tag-problem-B, tag-div-3
+/*-----------------------------------------------------------*/
 /*-------- valentk777 --------*/
 #include <bits/stdc++.h>
 /*----------------------------*/

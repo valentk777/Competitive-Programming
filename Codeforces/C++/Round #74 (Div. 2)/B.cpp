@@ -1,3 +1,8 @@
+/*-----------------------------------------------------------*/
+/* URL    : https://codeforces.com/contest/1238/problem/B
+/* Title  : Kill 'Em All
+/* Notes  : tag-codeforces, tag-problem-B, tag-div-2
+/*-----------------------------------------------------------*/
 /*-------- valentk777 --------*/
 #include <bits/stdc++.h>
 /*----------------------------*/

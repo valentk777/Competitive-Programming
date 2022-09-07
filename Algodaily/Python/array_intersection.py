@@ -1,4 +1,7 @@
-# https://algodaily.com/challenge_slides/array-intersection
+# -----------------------------------------------------------
+# URL    : https://algodaily.com/challenge_slides/array-intersection
+# Notes  : tag-algodaily
+# -----------------------------------------------------------
 
 
 def intersection(nums1, nums2):

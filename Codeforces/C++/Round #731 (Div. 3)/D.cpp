@@ -1,3 +1,8 @@
+/*-----------------------------------------------------------*/
+/* URL    : https://codeforces.com/contest/1547/problem/D
+/* Title  : Co-growing Sequence
+/* Notes  : tag-codeforces, tag-problem-D, tag-div-3
+/*-----------------------------------------------------------*/
 /*-------- valentk777 --------*/
 #include <bits/stdc++.h>
 /*----------------------------*/

@@ -1,3 +1,8 @@
+/*-----------------------------------------------------------*/
+/* URL    : https://codeforces.com/contest/474/problem/A
+/* Title  : Keyboard
+/* Notes  : tag-codeforces, tag-problem-A, tag-div-2
+/*-----------------------------------------------------------*/
 /*-------- valentk777 --------*/
 #include <bits/stdc++.h>
 /*----------------------------*/

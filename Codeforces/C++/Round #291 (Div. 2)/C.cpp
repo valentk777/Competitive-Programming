@@ -1,3 +1,8 @@
+/*-----------------------------------------------------------*/
+/* URL    : https://codeforces.com/contest/514/problem/C
+/* Title  : Watto and Mechanism
+/* Notes  : tag-codeforces, tag-problem-C, tag-div-2
+/*-----------------------------------------------------------*/
 /*-------- valentk777 --------*/
 #include <bits/stdc++.h>
 /*----------------------------*/

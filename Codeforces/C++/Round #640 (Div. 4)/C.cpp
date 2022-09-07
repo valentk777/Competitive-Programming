@@ -1,3 +1,8 @@
+/*-----------------------------------------------------------*/
+/* URL    : https://codeforces.com/contest/1352/problem/C
+/* Title  : K-th Not Divisible by n
+/* Notes  : tag-codeforces, tag-problem-C, tag-div-4
+/*-----------------------------------------------------------*/
 /*-------- valentk777 --------*/
 #include <bits/stdc++.h>
 /*----------------------------*/

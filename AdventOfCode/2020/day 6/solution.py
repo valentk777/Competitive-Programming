@@ -1,3 +1,8 @@
+# -----------------------------------------------------------
+# Notes  : tag-adventOfCode
+# -----------------------------------------------------------
+
+
 from functools import reduce
 from typing import Iterator
 

@@ -1,4 +1,7 @@
-# https://algodaily.com/challenge_slides/fizz-buzz
+# -----------------------------------------------------------
+# URL    : https://algodaily.com/challenge_slides/fizz-buzz
+# Notes  : tag-algodaily
+# -----------------------------------------------------------
 
 
 def fizz_buzz(n):

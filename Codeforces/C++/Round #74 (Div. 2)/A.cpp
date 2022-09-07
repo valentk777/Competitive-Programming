@@ -1,3 +1,8 @@
+/*-----------------------------------------------------------*/
+/* URL    : https://codeforces.com/contest/1238/problem/A
+/* Title  : Prime Subtraction
+/* Notes  : tag-codeforces, tag-problem-A, tag-div-2
+/*-----------------------------------------------------------*/
 /*-------- valentk777 --------*/
 #include <bits/stdc++.h>
 /*----------------------------*/

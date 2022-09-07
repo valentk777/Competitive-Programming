@@ -1,4 +1,7 @@
-# https://algodaily.com/challenge_slides/reverse-a-string
+# -----------------------------------------------------------
+# URL    : https://algodaily.com/challenge_slides/reverse-a-string
+# Notes  : tag-algodaily
+# -----------------------------------------------------------
 
 
 def reverse_string_old(str1):

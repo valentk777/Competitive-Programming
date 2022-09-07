@@ -1,4 +1,8 @@
-# https://algodaily.com/challenge_slides/validate-palindrome
+# -----------------------------------------------------------
+# URL    : https://algodaily.com/challenge_slides/validate-palindrome
+# Notes  : tag-algodaily
+# -----------------------------------------------------------
+
 
 def is_palindrome(s):
     s = s.lower().replace(" ", "")
@@ -52,9 +56,7 @@ import unittest
 class Test(unittest.TestCase):
     def test_1(self):
         assert is_palindrome("A Santa Lived As a Devil At NASA") == True
-        print(
-            "PASSED: assert is_palindrome('A Santa Lived As a Devil At NASA') == True"
-        )
+        print("PASSED: assert is_palindrome('A Santa Lived As a Devil At NASA') == True")
 
     def test_2(self):
         assert is_palindrome("gold") == False

@@ -1,3 +1,8 @@
+/*-----------------------------------------------------------*/
+/* URL    : https://codeforces.com/contest/1541/problem/B
+/* Title  : Pleasant Pairs
+/* Notes  : tag-codeforces, tag-problem-B, tag-div-2
+/*-----------------------------------------------------------*/
 /*-------- valentk777 --------*/
 #include <bits/stdc++.h>
 /*----------------------------*/

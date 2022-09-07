@@ -1,3 +1,8 @@
+/*-----------------------------------------------------------*/
+/* URL    : https://codeforces.com/contest/1472/problem/A
+/* Title  : Even-Odd Game
+/* Notes  : tag-codeforces, tag-problem-D, tag-div-3
+/*-----------------------------------------------------------*/
 /*-------- valentk777 --------*/
 #include <bits/stdc++.h>
 /*----------------------------*/

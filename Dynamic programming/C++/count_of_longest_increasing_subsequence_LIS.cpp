@@ -1,3 +1,8 @@
+/*-----------------------------------------------------------*/
+/* URL    : URL
+/* Title  : TITLE
+/* Notes  : tag-codeforces, tag-problem-XXX, tag-div-X
+/*-----------------------------------------------------------*/
 /*-------- valentk777 --------*/
 #include <bits/stdc++.h>
 // #include <map>

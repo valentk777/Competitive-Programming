@@ -14,19 +14,18 @@
 | [AdventOfCode](https://adventofcode.com/2020)
 | [AlgoDaily](https://algodaily.com)
 
-
 ## Programming Languages used:
+
 * [C#](https://github.com/valentk777/Contests/search?l=C%23)
 * [Python](https://github.com/valentk777/Contests/search?l=python)
 * [C++](https://github.com/valentk777/Contests/search?l=cpp)
 * [Scala](https://github.com/valentk777/Contests/search?l=scala)
 
-
 ## MyProfiles:
+
 * https://www.codewars.com/users/valentk777
 * https://open.kattis.com/users/valentk777
 * https://codeforces.com/profile/valentk777
-
 
 ## Problems list
 
@@ -34,6 +33,7 @@
 * [Kattis](https://github.com/valentk777/Contests/search?q=tag-kattis)
 * [Codeforces](https://github.com/valentk777/Contests/search?q=tag-codeforces)
 * [AlgoDaily](https://github.com/valentk777/Contests/search?q=tag-algodaily)
+* [AdventOfCode](https://github.com/valentk777/Contests/search?q=tag-adventOfCode)
 
 ### << Codewars Leveling System >>
 
