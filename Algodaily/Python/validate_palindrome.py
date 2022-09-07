@@ -1,4 +1,4 @@
-# https://algodaily.com/challenge_slides/validate-palindrome/multiple-choice-8geYf2I0oTw
+# https://algodaily.com/challenge_slides/validate-palindrome
 
 def is_palindrome(s):
     s = s.lower().replace(" ", "")

@@ -1,4 +1,4 @@
-# https://algodaily.com/challenge_slides/reverse-only-alphabetical/info-screen-BRa82p8gxTk
+# https://algodaily.com/challenge_slides/reverse-only-alphabetical
 
 def reverse_only_alpha(s):
     arr = list(s)
