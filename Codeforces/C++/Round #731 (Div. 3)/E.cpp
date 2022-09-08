@@ -1,7 +1,7 @@
 /*-----------------------------------------------------------*/
 /* URL    : https://codeforces.com/contest/1547/problem/E
 /* Title  : Air Conditioners
-/* Notes  : tag-codeforces, tag-problem-E, tag-div-3
+/* Notes  : tag-codeforces, tag-problem-E, tag-div-3, tag-not-pass
 /*-----------------------------------------------------------*/
 /*-------- valentk777 --------*/
 #include <bits/stdc++.h>

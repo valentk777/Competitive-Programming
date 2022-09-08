@@ -1,7 +1,7 @@
 /*-----------------------------------------------------------*/
 /* URL    : https://codeforces.com/contest/1546/problem/C
 /* Title  : AquaMoon and Strange Sort
-/* Notes  : tag-codeforces, tag-problem-C, tag-div-2
+/* Notes  : tag-codeforces, tag-problem-C, tag-div-2, tag-not-pass
 /*-----------------------------------------------------------*/
 /*-------- valentk777 --------*/
 #include <bits/stdc++.h>

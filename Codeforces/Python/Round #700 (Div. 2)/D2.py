@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
 # URL    : https://codeforces.com/contest/1480/problem/D2
 # Title  : Painting the Array II
-# Notes  : tag-codeforces, tag-problem-D, tag-div-2
+# Notes  : tag-codeforces, tag-problem-D, tag-div-2, tag-not-pass
 # -----------------------------------------------------------
 
 

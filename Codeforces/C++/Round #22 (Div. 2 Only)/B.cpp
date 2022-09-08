@@ -1,7 +1,7 @@
 /*-----------------------------------------------------------*/
-/* URL    : URL
-/* Title  : TITLE
-/* Notes  : tag-codeforces, tag-problem-B, tag-div-2
+/* URL    : https://codeforces.com/contest/22/problem/B
+/* Title  : Bargaining Table
+/* Notes  : tag-codeforces, tag-problem-B, tag-div-2, tag-not-pass
 /*-----------------------------------------------------------*/
 /*-------- valentk777 --------*/
 #include <bits/stdc++.h>
@@ -32,9 +32,6 @@ void IO() {
     #endif
     fast_cin();
 }
-
-// https://codeforces.com/contest/22/problem/B
-// #NotPass
 
 void solve() {
     int n, m;

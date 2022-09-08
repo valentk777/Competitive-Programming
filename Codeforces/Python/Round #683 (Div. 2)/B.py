@@ -15,6 +15,7 @@ def solve():
     neg_numbers = []
     sum_a = 0
     is_zero = False
+
     for i in range(n * m):
         if a[i] < 0:
             neg_numbers.append(a[i])

@@ -1,7 +1,7 @@
 /*-----------------------------------------------------------*/
 /* URL    : https://codeforces.com/contest/1546/problem/A
 /* Title  : AquaMoon and Two Arrays
-/* Notes  : tag-codeforces, tag-problem-A, tag-div-2
+/* Notes  : tag-codeforces, tag-problem-A, tag-div-2, tag-not-pass
 /*-----------------------------------------------------------*/
 /*-------- valentk777 --------*/
 #include <bits/stdc++.h>
