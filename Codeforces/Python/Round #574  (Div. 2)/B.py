@@ -1,5 +1,5 @@
 # -----------------------------------------------------------
-# URL    : https://codeforces.com/problemset/problem/1195/C
+# URL    : https://codeforces.com/contest/1195/problem/C
 # Title  : Basketball Exercise
 # Notes  : tag-codeforces, tag-problem-C, tag-div-2
 # -----------------------------------------------------------

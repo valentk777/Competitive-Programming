@@ -4,6 +4,7 @@
 # Notes  : tag-codeforces, tag-problem-A, tag-div-2
 # -----------------------------------------------------------
 
+
 def solve():
     n = int(input())
 

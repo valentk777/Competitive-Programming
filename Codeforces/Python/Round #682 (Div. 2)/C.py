@@ -4,6 +4,7 @@
 # Notes  : tag-codeforces, tag-problem-C, tag-div-2
 # -----------------------------------------------------------
 
+
 def solve():
     n, m = list(map(int, input().split()))
     for i in range(n):

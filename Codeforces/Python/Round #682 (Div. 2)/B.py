@@ -4,6 +4,7 @@
 # Notes  : tag-codeforces, tag-problem-B, tag-div-2
 # -----------------------------------------------------------
 
+
 def solve():
     n = int(input())
     a = list(map(int, input().split()))

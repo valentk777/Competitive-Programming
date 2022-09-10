@@ -1,5 +1,5 @@
 # -----------------------------------------------------------
-# URL    : https://codeforces.com/problemset/problem/996/A
+# URL    : https://codeforces.com/contest/996/problem/A
 # Title  : Hit the Lottery
 # Notes  : tag-codeforces, tag-problem-A, tag-div-2
 # -----------------------------------------------------------

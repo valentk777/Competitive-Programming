@@ -4,6 +4,7 @@
 # Notes  : tag-codeforces, tag-problem-B, tag-div-2, tag-not-pass
 # -----------------------------------------------------------
 
+
 def solve():
     a, b, n = list(map(int, input().split()))
     a_i = list(map(int, input().split()))

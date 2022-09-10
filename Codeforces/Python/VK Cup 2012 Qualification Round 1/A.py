@@ -1,5 +1,5 @@
 # -----------------------------------------------------------
-# URL    : https://codeforces.com/problemset/problem/158/A
+# URL    : https://codeforces.com/contest/158/problem/A
 # Title  : Next Round
 # Notes  : tag-codeforces, tag-problem-A, tag-div-none
 # -----------------------------------------------------------
