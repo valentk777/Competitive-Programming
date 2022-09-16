@@ -1,53 +1,54 @@
 # -----------------------------------------------------------
 # URL    : https://codeforces.com/contest/1729/problem/F
 # Title  : Title
-# Notes  : tag-codeforces, tag-problem-F, tag-div-3, tag-not-pass
+# Notes  : tag-codeforces, tag-problem-F, tag-div-3
 # -----------------------------------------------------------
+
+INF = 10 ** 5
 
 
 def solve():
     s = input()
-    n = len(s)
     w, m = list(map(int, input().split()))  # length of substring, queries
 
-    found = 0
-    options = {_i: [] for _i in range(0, 9)}
+    partial_sums = [0]
 
-    for _i in range(1, n - w + 2):
-        if found == 9 * 2:
-            break
+    for char in s:
+        partial_sums.append((partial_sums[-1] + int(char)) % 9)
 
-        r = int(s[_i - 1:_i + w - 1]) % 9
+    mods_1 = [-1 for _ in range(9)]
+    mods_2 = [-1 for _ in range(9)]
 
-        if len(options[r]) < 2:
-            options[r].append(_i)
-            found += 1
+    # iterate from end and leave only last best mod
+    for i in range(len(s) - w, -1, -1):
+        mod = (partial_sums[i + w] - partial_sums[i] + 9) % 9
+        mods_2[mod] = mods_1[mod]
+        mods_1[mod] = i
 
-    for i in range(m):
+    for _ in range(m):
         l, r, k = list(map(int, input().split()))
-        vv = int(s[l - 1:r]) % 9
+        min_1, min_2 = INF, INF
+        mod_lr = (partial_sums[r] - partial_sums[l - 1] + 9) % 9
 
-        results = set()
+        for i in range(9):
+            # only if mod exist and L smaller than we already have
+            if -1 < mods_1[i] < min_1:
+                mod_rm2 = (k - i * mod_lr + 81) % 9
 
-        for mod1 in range(0, 9):
-            for mod2 in range(0, 9):
-                if (mod1 * vv + mod2) % 9 == k and len(options[mod1]) > 0 and len(options[mod2]) > 0:
-                    if mod1 == mod2 and len(options[mod1]) == 2:
-                        results.add((options[mod1][0], options[mod1][1]))
-                    else:
-                        L1 = min(options[mod1])
-                        L2 = min(options[mod2])
+                # if mod1 == mod2
+                if mod_rm2 == i:
 
-                        if L1 == L2:
-                            continue
+                    # if mod2 exist
+                    if mods_2[mod_rm2] > -1:
+                        min_1, min_2 = mods_1[i], mods_2[i]
+                else:
+                    if mods_1[mod_rm2] > -1:
+                        min_1, min_2 = mods_1[i], mods_1[mod_rm2]
 
-                        results.add((L1, L2))
-
-        if len(results) > 0:
-            results = sorted(results, key=lambda x: (x[0], x[1]))
-            print(f"{results[0][0]} {results[0][1]}")
-        else:
+        if min_1 == INF:
             print("-1 -1")
+        else:
+            print(f"{min_1 + 1} {min_2 + 1}")
 
 
 if __name__ == "__main__":
