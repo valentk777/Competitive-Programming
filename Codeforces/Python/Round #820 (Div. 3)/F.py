@@ -1,6 +1,6 @@
 # -----------------------------------------------------------
 # URL    : https://codeforces.com/contest/1729/problem/F
-# Title  : Title
+# Title  : Kirei and the Linear Function
 # Notes  : tag-codeforces, tag-problem-F, tag-div-3
 # -----------------------------------------------------------
 
