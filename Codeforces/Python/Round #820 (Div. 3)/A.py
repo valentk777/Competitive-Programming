@@ -8,13 +8,13 @@
 def solve():
     a, b, c = list(map(int, input().split()))
 
-    if a == (abs(c-b) + c):
+    if a == (abs(c - b) + c):
         return 3
 
-    if a > (abs(c-b) + c):
+    if a > (abs(c - b) + c):
         return 2
 
-    if a < (abs(c-b) + c):
+    if a < (abs(c - b) + c):
         return 1
 
 

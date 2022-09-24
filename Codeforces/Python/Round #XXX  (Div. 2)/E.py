@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
-# URL    : https://codeforces.com/contest/1451/problem/B
-# Title  : Non-Substring Subsequence
-# Notes  : tag-codeforces, tag-problem-B, tag-div-2
+# URL    : https://codeforces.com/contest/XXXXX/problem/E
+# Title  : TEXT
+# Notes  : tag-codeforces, tag-problem-E, tag-div-2
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
@@ -21,30 +21,14 @@ INF = maxsize
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    n, q = intl()
-    s = list(inp())
-
-    for i in range(q):
-        l, r = intl()
-        left_s = s[:l - 1]
-        right_s = s[r:]
-
-        if s[l - 1] in left_s:
-            print("YES")
-            continue
-
-        if s[r - 1] in right_s:
-            print("YES")
-            continue
-
-        print("NO")
+    pass
 
 
 def run():
     t = iinp()
 
     for _ in range(t):
-        solve()
+        print(solve())
 
 
 if __name__ == "__main__":
