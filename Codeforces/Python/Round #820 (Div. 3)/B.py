@@ -16,7 +16,7 @@ def solve():
     i = 0
 
     while i < n:
-        if s[i] == '0':
+        if s[i] == "0":
             result += chr(int(s[i + 2] + s[i + 1]) + base)
             i += 3
         else:

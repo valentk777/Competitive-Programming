@@ -89,8 +89,8 @@ def solve_fast():
     bb = [0 for _ in range(27)]
 
     for i in range(n):
-        aa[ord(a[i]) - ord('a')] += 1
-        bb[ord(b[i]) - ord('a')] += 1
+        aa[ord(a[i]) - ord("a")] += 1
+        bb[ord(b[i]) - ord("a")] += 1
 
     for i in range(25):
         if aa[i] < bb[i]:
@@ -118,7 +118,7 @@ def run():
 
 if __name__ == "__main__":
     if os.environ.get("DEBUG_CODEFORCES"):
-        stdin = open('../input.txt', 'r')
+        stdin = open("../input.txt", "r")
         start_time = time.time()
         run()
         print("\n--- %s seconds ---\n" % (time.time() - start_time))

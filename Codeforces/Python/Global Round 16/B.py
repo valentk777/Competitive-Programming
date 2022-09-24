@@ -7,7 +7,7 @@
 
 def solve_using_list():
     s = input()
-    zeros = list(filter(lambda x: x != "", s.split('1')))
+    zeros = list(filter(lambda x: x != "", s.split("1")))
     zeros_len = len(zeros)
 
     if zeros_len == 0:
@@ -26,13 +26,13 @@ def solve_using_iteration():
 
     for i in range(0, n - 1):
         if s[i] != s[i + 1]:
-            if s[i] == '0':
+            if s[i] == "0":
                 result += 1
 
         if result > 1:
             return 2
 
-    if s[n - 1] == '0':
+    if s[n - 1] == "0":
         result += 1
 
     return min(2, result)

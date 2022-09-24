@@ -10,9 +10,9 @@ def solve():
 
     for i in range(len(s)):
         if i % 2 == 0:
-            s[i] = 'b' if s[i] == 'a' else 'a'
+            s[i] = "b" if s[i] == "a" else "a"
         else:
-            s[i] = 'y' if s[i] == 'z' else 'z'
+            s[i] = "y" if s[i] == "z" else "z"
 
     print("".join(s))
 
