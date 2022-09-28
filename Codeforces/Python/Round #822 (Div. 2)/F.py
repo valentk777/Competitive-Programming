@@ -1,13 +1,12 @@
 # -----------------------------------------------------------
-# URL    : https://codeforces.com/contest/1480/problem/B
-# Title  : The Great Hero
-# Notes  : tag-codeforces, tag-problem-B, tag-div-2
+# URL    : https://codeforces.com/contest/1734/problem/F
+# Title  : Zeros and Ones
+# Notes  : tag-codeforces, tag-problem-F, tag-div-2, tag-not-pass
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
 import os
 import time
-from math import ceil
 from sys import stdin, maxsize
 
 inp = lambda: stdin.readline().strip()
@@ -18,28 +17,48 @@ strl = lambda: list(inp().split())
 MOD = 10 ** 9 + 7
 INF = maxsize
 
-
 # -------------------------------------------------------Solution-------------------------------------------------------
 
-def solve():
-    a, b, n = intl()
-    a_i = intl()
-    b_i = intl()
 
-    all_damage = sum(a_i[i] * ceil(b_i[i] / a) for i in range(n))
+_s = ["01"]
+_s_len = 1
+_max_number = 2
 
-    b -= all_damage
 
-    if b > 0:
-        return "YES"
+def invert_bits(number):
+    return "".join(["1" if i == "0" else "0" for i in number])
 
-    # if hero alive after all damage except any of monster damage, then hero can select that monster as a last one
-    # and dead alter the last monster hit
+
+def hamming_distance(a, b, n):
+    _sum = 0
+
     for i in range(n):
-        if b + a_i[i] > 0:
-            return "YES"
+        if a[i] != b[i]:
+            _sum += 1
 
-    return "NO"
+    return _sum
+    # return (a ^ b).bit_count()
+
+
+def precompute(until=10 ** 18):
+    global _s, _s_len, _max_number
+
+    while _max_number < until:
+        _s.append(_s[-1] + invert_bits(_s[-1]))
+        _s_len += 1
+        _max_number <<= 1
+
+
+def solve():
+    x = 10
+    print(bin(10))
+
+    n, m = intl()
+
+    precompute(n + m)
+
+    dist = hamming_distance(_s[-1][:m], _s[-1][n:n + m], m)
+    return dist
 
 
 def run():

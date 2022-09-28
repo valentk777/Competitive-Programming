@@ -1,13 +1,12 @@
 # -----------------------------------------------------------
-# URL    : https://codeforces.com/contest/1480/problem/B
-# Title  : The Great Hero
-# Notes  : tag-codeforces, tag-problem-B, tag-div-2
+# URL    : https://codeforces.com/contest/580/problem/A
+# Title  : Kefa and First Steps
+# Notes  : tag-codeforces, tag-problem-A, tag-div-2
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
 import os
 import time
-from math import ceil
 from sys import stdin, maxsize
 
 inp = lambda: stdin.readline().strip()
@@ -22,31 +21,23 @@ INF = maxsize
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    a, b, n = intl()
-    a_i = intl()
-    b_i = intl()
+    n = iinp()
+    a = intl()
 
-    all_damage = sum(a_i[i] * ceil(b_i[i] / a) for i in range(n))
+    dp = [[0, -1] for _ in range(n + 1)]  # max value / value itself
+    dp[0] = [0, 0]
 
-    b -= all_damage
+    for i in range(1, n + 1):
+        if dp[i - 1][1] <= a[i - 1]:
+            dp[i] = [dp[i - 1][0] + 1, a[i - 1]]
+        else:
+            dp[i] = [1, a[i - 1]]
 
-    if b > 0:
-        return "YES"
-
-    # if hero alive after all damage except any of monster damage, then hero can select that monster as a last one
-    # and dead alter the last monster hit
-    for i in range(n):
-        if b + a_i[i] > 0:
-            return "YES"
-
-    return "NO"
+    return max([i[0] for i in dp])
 
 
 def run():
-    t = iinp()
-
-    for _ in range(t):
-        print(solve())
+    print(solve())
 
 
 if __name__ == "__main__":

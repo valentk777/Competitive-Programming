@@ -1,49 +1,64 @@
 # -----------------------------------------------------------
 # URL    : https://codeforces.com/contest/1480/problem/C
 # Title  : Searching Local Minimum
-# Notes  : tag-codeforces, tag-problem-C, tag-div-2, tag-not-pass
+# Notes  : tag-codeforces, tag-problem-C, tag-div-2
 # -----------------------------------------------------------
 
+# ---------------------------------------------------Shared part--------------------------------------------------------
+from sys import maxsize, stdout
 
-from sys import stdout
+MOD = 10 ** 9 + 7
+INF = maxsize
 
+
+# -------------------------------------------------------Solution-------------------------------------------------------
 
 def print_ats(ats: int):
     print(f"! {ats}")
     stdout.flush()
 
 
-def solve():
+def query(x):
+    print(f"? {x}")
+    return int(input())
+
+
+def solve_slow():
     n = int(input())
-    n = n if n < 100 else 100
 
-    print(f"? {1}")
-    left = int(input())
-    first = left
+    mid = -INF
+    right = -INF
 
-    if n == 1:
-        print_ats(1)
-        return
+    for i in range(1, n + 1):
+        left = mid
+        mid = right
+        right = query(i)
 
-    print(f"? {2}")
-    middle = int(input())
-
-    if n == 2:
-        print_ats(1 if left < middle else 2)
-        return
-
-    for i in range(3, n + 1):
-        print(f"? {i}")
-        right = int(input())
-
-        if middle < min(left, right):
+        if left > mid < right:
             print_ats(i - 1)
             return
 
-        left, middle = middle, right
 
-    if first < min(left, middle):
-        print_ats(1)
+def solve():
+    n = int(input())
+
+    a = [INF for _ in range(n + 1)]
+
+    left = 1
+    right = n
+
+    while left < right:
+        midd = (left + right) // 2
+
+        a[midd] = query(midd)
+        a[midd + 1] = query(midd + 1)
+
+        if a[midd] < a[midd + 1]:
+            right = midd
+        else:
+            left = midd + 1
+
+    print_ats(left)
 
 
 if __name__ == "__main__":
