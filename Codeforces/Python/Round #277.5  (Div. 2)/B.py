@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
-# URL    : https://codeforces.com/contest/XXXXX/problem/X
-# Title  : TEXT
-# Notes  : tag-codeforces, tag-problem-X, tag-div-2
+# URL    : https://codeforces.com/contest/489/problem/C
+# Title  : Given Length and Sum of Digits...
+# Notes  : tag-codeforces, tag-problem-C, tag-div-2
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
@@ -21,15 +21,37 @@ INF = maxsize
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
+
 def solve():
-    pass
+    m, s = intl()  # len and sum of digits
+
+    max_number = []
+    min_number = []
+    max_s = s
+    min_s = s
+
+    for i in range(m - 1):
+        _max_possible = min(9, max_s)
+        max_number.append(_max_possible)
+        max_s -= _max_possible
+
+        _max_possible = min(9, min_s - 1)
+        min_number.append(_max_possible)
+        min_s -= _max_possible
+
+    max_number.append(min(9, max_s))
+    min_number.append(min(9, min_s))
+
+    if (s == 0 and m > 1) or sum(min_number) != sum(max_number) or len(max_number) != m or sum(max_number) != s:
+        print(-1, -1)
+    else:
+        max_number = "".join(map(str, max_number))
+        min_number = "".join(map(str, reversed(min_number)))
+        print(min_number, max_number)
 
 
 def run():
-    t = iinp()
-
-    for _ in range(t):
-        print(solve())
+    solve()
 
 
 if __name__ == "__main__":
