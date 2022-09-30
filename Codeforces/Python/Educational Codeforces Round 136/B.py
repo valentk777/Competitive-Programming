@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
-# URL    : https://codeforces.com/contest/XXXXX/problem/A
-# Title  : TEXT
-# Notes  : tag-codeforces, tag-problem-A, tag-div-2
+# URL    : https://codeforces.com/contest/1739/problem/B
+# Title  : Array Recovery
+# Notes  : tag-codeforces, tag-problem-B, tag-div-2
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
@@ -22,7 +22,18 @@ INF = maxsize
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    pass
+    n = iinp()
+    d = intl()
+
+    a = [d[0]]
+
+    for i in range(1, n):
+        if a[i-1] - d[i] >= 0 and a[i-1] - d[i] != d[i] + a[i-1]:
+            return -1
+
+        a.append(d[i] + a[i-1])
+
+    return list_to_string(a)
 
 
 def run():

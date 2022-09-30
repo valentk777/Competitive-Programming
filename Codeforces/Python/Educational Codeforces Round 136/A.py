@@ -1,6 +1,6 @@
 # -----------------------------------------------------------
-# URL    : https://codeforces.com/contest/XXXXX/problem/A
-# Title  : TEXT
+# URL    : https://codeforces.com/contest/1739/problem/A
+# Title  : Immobile Knight
 # Notes  : tag-codeforces, tag-problem-A, tag-div-2
 # -----------------------------------------------------------
 
@@ -22,7 +22,12 @@ INF = maxsize
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    pass
+    n, m = intl()
+
+    if (n == 3 and m == 3) or (n == 2 and m == 3) or (n == 3 and m == 2):
+        return f"2 2"
+    else:
+        return f"1 1"
 
 
 def run():
