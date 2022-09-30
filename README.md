@@ -35,7 +35,20 @@
 * [AlgoDaily](https://github.com/valentk777/Contests/search?q=tag-algodaily)
 * [AdventOfCode](https://github.com/valentk777/Contests/search?q=tag-adventOfCode)
 
-### << Codewars Leveling System >>
+## Statistics
+<!--
+brew install scc
+scc -i cpp,cs,py AdventOfCode Algodaily Codeforces Codewars 'Dynamic programming' Kattis/
+-->
 
-![CodeWars levels](https://i.imgur.com/Vm77XMv.png)
-
+```
+───────────────────────────────────────────────────────────────────────────────
+Language                 Files     Lines   Blanks  Comments     Code Complexity
+───────────────────────────────────────────────────────────────────────────────
+Python                     148      6982     1747       879     4356       1128
+C++                         30      2653      458       346     1849        434
+C#                          28       930      126       108      696        104
+───────────────────────────────────────────────────────────────────────────────
+Total                      206     10565     2331      1333     6901       1666
+───────────────────────────────────────────────────────────────────────────────
+```
