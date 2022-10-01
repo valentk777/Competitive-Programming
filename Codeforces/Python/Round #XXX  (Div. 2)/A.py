@@ -7,6 +7,7 @@
 # ---------------------------------------------------Shared part--------------------------------------------------------
 import os
 import time
+from collections import defaultdict
 from sys import stdin, maxsize
 
 inp = lambda: stdin.readline().strip()
@@ -14,6 +15,7 @@ iinp = lambda: int(inp())
 intl = lambda: list(map(int, inp().split()))
 strl = lambda: list(inp().split())
 list_to_string = lambda _a: " ".join(map(str, _a))
+_dp = lambda default_value: defaultdict(lambda: default_value)
 
 MOD = 10 ** 9 + 7
 INF = maxsize
