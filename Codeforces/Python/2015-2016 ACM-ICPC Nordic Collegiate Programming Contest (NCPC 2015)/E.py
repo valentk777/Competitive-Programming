@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
-# URL    : https://codeforces.com/contest/1475/problem/B
-# Title  : New Year's Number
-# Notes  : tag-codeforces, tag-problem-B, tag-div-3
+# URL    : https://codeforces.com/gym/100781
+# Title  : Entertainment Box
+# Notes  : tag-codeforces, tag-problem-E, tag-not-pass
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
@@ -24,26 +24,36 @@ INF = maxsize
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    t = iinp()
+    n, k = intl()
 
-    dp = _dp(0)
-    dp[2020] = 1
-    dp[2021] = 1
+    events = []
+    _count = 0
 
-    for i in range(2022, 1000001):
-        dp[i] = dp[i - 2020] | dp[i - 2021]
+    for i in range(n):
+        x, y = intl()
+        events.append([x, y])
 
-    for _ in range(t):
-        n = iinp()
+    events = sorted(events, key=lambda q: q[1])
+    new_events = []
 
-        if dp[n] == 1:
-            print("YES")
-        else:
-            print("NO")
+    for _ in range(k):
+        finish = 0
+
+        for event in events:
+            if finish <= event[0]:
+                finish = event[1]
+                _count += 1
+            else:
+                new_events.append(event)
+
+        events = new_events
+        new_events = []
+
+    return _count
 
 
 def run():
-    solve()
+    print(solve())
 
 
 if __name__ == "__main__":

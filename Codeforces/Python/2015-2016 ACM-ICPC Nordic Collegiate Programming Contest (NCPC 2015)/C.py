@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
-# URL    : https://codeforces.com/contest/1475/problem/B
-# Title  : New Year's Number
-# Notes  : tag-codeforces, tag-problem-B, tag-div-3
+# URL    : https://codeforces.com/gym/100781
+# Title  : Cryptographer’s Conundrum
+# Notes  : tag-codeforces, tag-problem-C
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
@@ -24,26 +24,26 @@ INF = maxsize
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    t = iinp()
+    s = inp()
+    _count = 0
 
-    dp = _dp(0)
-    dp[2020] = 1
-    dp[2021] = 1
+    for i in range(0, len(s), 3):
+        if s[i] != 'P':
+            _count += 1
 
-    for i in range(2022, 1000001):
-        dp[i] = dp[i - 2020] | dp[i - 2021]
+    for i in range(1, len(s), 3):
+        if s[i] != 'E':
+            _count += 1
 
-    for _ in range(t):
-        n = iinp()
+    for i in range(2, len(s), 3):
+        if s[i] != 'R':
+            _count += 1
 
-        if dp[n] == 1:
-            print("YES")
-        else:
-            print("NO")
 
+    return _count
 
 def run():
-    solve()
+    print(solve())
 
 
 if __name__ == "__main__":
