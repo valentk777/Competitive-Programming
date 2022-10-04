@@ -7,12 +7,16 @@
 # ---------------------------------------------------Shared part--------------------------------------------------------
 import os
 import time
+from collections import defaultdict
 from sys import stdin, maxsize
 
 inp = lambda: stdin.readline().strip()
 iinp = lambda: int(inp())
 intl = lambda: list(map(int, inp().split()))
 strl = lambda: list(inp().split())
+list_to_string = lambda _a: "".join(map(str, _a))
+list_to_string_list = lambda _a: " ".join(map(str, _a))
+_dp = lambda default_value: defaultdict(lambda: default_value)
 
 MOD = 10 ** 9 + 7
 INF = maxsize
@@ -57,25 +61,26 @@ def string_to_mask(x):
         return 4
 
 
-# memory limit exceeded
-def solve_dp():
-    s = list(inp())
-    n = len(s)
-
+# time limit exceeded
+def solve_dp_slow():
     _min = INF
+
+    s = list(inp())
 
     if s.count("1") == 0 or s.count("2") == 0 or s.count("3") == 0:
         return 0
 
-    dp = [0 for _ in range(n + 1)]
     s = list(map(string_to_mask, s))
+    n = len(s)
+
+    dp = [0 for _ in range(n + 1)]
+    _min = INF
 
     for i in range(1, n + 1):
         dp[i - 1] = s[i - 1]
 
-        # for j in range(i, n + 1):
-        for j in range(i):
-            dp[j] = dp[j - 1] | s[j - 1]
+        for j in range(i, n):
+            dp[j] = dp[j - 1] | s[j]
 
             if dp[j] == 7:
                 _min = min(_min, j + 1 - i)
@@ -87,12 +92,17 @@ def solve_dp():
         return _min
 
 
+def solve_dp():
+    s = list(inp())
+
+    return 0
+
+
 def run():
     t = iinp()
 
     for _ in range(t):
-        print(solve())
-        # print(solve_dp())
+        print(solve_dp())
 
 
 if __name__ == "__main__":
