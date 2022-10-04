@@ -17,6 +17,7 @@ strl = lambda: list(inp().split())
 list_to_string = lambda _a: "".join(map(str, _a))
 list_to_string_list = lambda _a: " ".join(map(str, _a))
 _dp = lambda default_value: defaultdict(lambda: default_value)
+print_dp = lambda _dict: list(map(lambda item: print(f"{item[0]} = {item[1]}"), _dict.items()))
 
 MOD = 10 ** 9 + 7
 INF = maxsize
