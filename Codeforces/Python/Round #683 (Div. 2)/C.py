@@ -1,52 +1,79 @@
 # -----------------------------------------------------------
 # URL    : https://codeforces.com/contest/1447/problem/C
 # Title  : Knapsack
-# Notes  : tag-codeforces, tag-problem-C, tag-div-2, tag-not-pass
+# Notes  : tag-codeforces, tag-problem-C, tag-div-2
 # -----------------------------------------------------------
 
+# ---------------------------------------------------Shared part--------------------------------------------------------
+import os
+import time
+from collections import defaultdict
+from math import ceil
+from sys import stdin, maxsize
 
-import math
+inp = lambda: stdin.readline().strip()
+iinp = lambda: int(inp())
+intl = lambda: list(map(int, inp().split()))
+strl = lambda: list(inp().split())
+list_to_string = lambda _a: "".join(map(str, _a))
+list_to_string_list = lambda _a: " ".join(map(str, _a))
+_dp = lambda default_value: defaultdict(lambda: default_value)
 
+MOD = 10 ** 9 + 7
+INF = maxsize
+
+
+# -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    n, w = list(map(int, input().split()))
-    a = list(map(int, input().split()))
-    half_w = math.floor(w // 2)
+    n, w = intl()
+    a = intl()
+    half_w = ceil(w / 2)
 
-    if min(a) > w:
+    aa = [(e, i + 1) for i, e in enumerate(a)]
+    aa = filter(lambda x: x[0] <= w, aa)
+    aa = sorted(aa, key=lambda x: x[0], reverse=True)
+
+    if len(aa) == 0:
         print(-1)
-    else:
-        items_to_pack = []
-        total_sum = 0
+        return
 
-        for i in range(n):
-            if a[i] > w:
-                a[i] = 0
+    if aa[-1][0] > w:
+        print(-1)
+        return
 
-        while half_w > total_sum:
-            maxx = max(a)
+    if aa[0][0] >= half_w:
+        print(1)
+        print(aa[0][1])
+        return
 
-            if maxx == 0:
-                break
+    items_to_pack = []
+    total_sum = 0
 
-            summ = total_sum + maxx
-            idx = a.index(maxx)
+    for i in range(len(aa)):
+        items_to_pack.append(aa[i][1])
+        total_sum += aa[i][0]
 
-            if summ <= w:
-                total_sum = summ
-                items_to_pack.append(idx + 1)
-
-            a[idx] = 0
-
-        if half_w <= total_sum:
+        if total_sum >= half_w:
             print(len(items_to_pack))
-            print(" ".join(map(str, items_to_pack)))
-        else:
-            print(-1)
+            print(list_to_string_list(items_to_pack))
+            return
+
+    print(-1)
 
 
-if __name__ == "__main__":
-    t = int(input())
+def run():
+    t = iinp()
 
     for _ in range(t):
         solve()
+
+
+if __name__ == "__main__":
+    if os.environ.get("DEBUG_CODEFORCES"):
+        stdin = open("../input.txt", "r")
+        start_time = time.time()
+        run()
+        print("\n--- %s seconds ---\n" % (time.time() - start_time))
+    else:
+        run()
