@@ -14,7 +14,8 @@ inp = lambda: stdin.readline().strip()
 iinp = lambda: int(inp())
 intl = lambda: list(map(int, inp().split()))
 strl = lambda: list(inp().split())
-list_to_string = lambda _a: " ".join(map(str, _a))
+list_to_string = lambda _a: "".join(map(str, _a))
+list_to_string_list = lambda _a: " ".join(map(str, _a))
 _dp = lambda default_value: defaultdict(lambda: default_value)
 
 MOD = 10 ** 9 + 7

@@ -39,8 +39,8 @@ def solve():
         if s[i] != 'R':
             _count += 1
 
-
     return _count
+
 
 def run():
     print(solve())
