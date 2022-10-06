@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
 # URL    : https://codeforces.com/contest/1354/problem/B
 # Title  : Ternary String
-# Notes  : tag-codeforces, tag-problem-B, tag-div-2, tag-not-pass
+# Notes  : tag-codeforces, tag-problem-B, tag-div-2
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
@@ -17,6 +17,7 @@ strl = lambda: list(inp().split())
 list_to_string = lambda _a: "".join(map(str, _a))
 list_to_string_list = lambda _a: " ".join(map(str, _a))
 _dp = lambda default_value: defaultdict(lambda: default_value)
+print_dp = lambda _dict: list(map(lambda item: print(f"{item[0]} = {item[1]}"), _dict.items()))
 
 MOD = 10 ** 9 + 7
 INF = maxsize
@@ -24,7 +25,7 @@ INF = maxsize
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
-# time limit exceeded
+# Time limit exceeded
 def solve():
     s = inp()
     n = len(s)
@@ -61,7 +62,7 @@ def string_to_mask(x):
         return 4
 
 
-# time limit exceeded
+# Time limit exceeded
 def solve_dp_slow():
     _min = INF
 
@@ -92,10 +93,53 @@ def solve_dp_slow():
         return _min
 
 
-def solve_dp():
-    s = list(inp())
+def is_full_number_exist(dp, _from, _to, _string):
+    return (dp[_from, 1] - dp[_to, 1] + (_string[_to] == 1) >= 1
+            and dp[_from, 2] - dp[_to, 2] + (_string[_to] == 2) >= 1
+            and dp[_from, 3] - dp[_to, 3] + (_string[_to] == 3) >= 1)
 
-    return 0
+
+def solve_dp():
+    s = list(map(int, list(inp())))
+    n = len(s)
+
+    # count of numbers in [position, number_we_count]
+    dp = _dp(0)
+    dp[0, s[0]] = 1
+
+    for i in range(1, n):
+        for j in range(1, 4):
+            if j == s[i]:
+                dp[i, j] = dp[i - 1, j] + 1
+            else:
+                dp[i, j] = dp[i - 1, j]
+
+    _max = INF
+
+    for c in range(2, n):
+        i = 0
+        j = c
+
+        while j - i > 1:
+            _mid = (i + j) // 2
+
+            if is_full_number_exist(dp, c, _mid, s):
+                i = _mid
+            else:
+                j = _mid
+
+        if is_full_number_exist(dp, c, j, s):
+            _max = min(_max, c - j + 1)
+        elif is_full_number_exist(dp, c, i, s):
+            _max = min(_max, c - i + 1)
+
+        if _max == 3:
+            return _max
+
+    if _max == INF:
+        return 0
+    else:
+        return _max
 
 
 def run():
