@@ -1,8 +1,8 @@
 # Contests
 
 ![My Codewarrior Profile Badge](https://www.codewars.com/users/valentk777/badges/micro)
-[![Kattis](https://img.shields.io/badge/Kattis-23.9-COLOR.svg)](https://open.kattis.com/users/valentk777)
-[![Codeforces](https://img.shields.io/badge/Codeforces-995-COLOR.svg)](https://codeforces.com/profile/valentk777)
+[![Kattis](https://img.shields.io/badge/Kattis-54.4-COLOR.svg)](https://open.kattis.com/users/valentk777)
+[![Codeforces](https://img.shields.io/badge/Codeforces-1017-COLOR.svg)](https://codeforces.com/profile/valentk777)
 ![Last Commit](https://img.shields.io/github/last-commit/valentk777/Contests.svg)
 
 ## Multiple challenges from multiple platforms
