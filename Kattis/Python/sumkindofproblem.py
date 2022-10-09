@@ -1,6 +1,6 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/xxxxx
-# Title  : TEXT
+# URL    : https://open.kattis.com/problems/sumkindofproblem
+# Title  : Sum Kind of Problem
 # Notes  : tag-kattis
 # -----------------------------------------------------------
 
@@ -10,7 +10,7 @@ import time
 from collections import defaultdict
 from sys import stdin, maxsize
 
-inp = lambda: stdin.readline().strip("\n")
+inp = lambda: stdin.readline().strip()
 iinp = lambda: int(inp())
 intl = lambda: list(map(int, inp().split()))
 strl = lambda: list(inp().split())
@@ -27,15 +27,22 @@ INF = maxsize
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    pass
+    k, n = intl()
 
+    _sum = 0
+    _sum_odd = 0
+    _sum_even = 0
 
-def run():
-    print(solve())
+    for i in range(1, n + 1):
+        _sum += i
 
+    for i in range(1, (2 * n) + 1, 2):
+        _sum_odd += i
 
-def run():
-    solve()
+    for i in range(2, (2 * n) + 1, 2):
+        _sum_even += i
+
+    print(k, _sum, _sum_odd, _sum_even)
 
 
 def run():
@@ -43,14 +50,6 @@ def run():
 
     for _ in range(t):
         solve()
-
-
-def run():
-    try:
-        while True:
-            print(solve())
-    except:
-        pass
 
 
 if __name__ == "__main__":

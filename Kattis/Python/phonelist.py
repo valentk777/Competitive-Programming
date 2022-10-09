@@ -1,6 +1,6 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/xxxxx
-# Title  : TEXT
+# URL    : https://open.kattis.com/problems/phonelist
+# Title  : Phone List
 # Notes  : tag-kattis
 # -----------------------------------------------------------
 
@@ -26,31 +26,47 @@ INF = maxsize
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
+
+def create_prefixes(phone_list):
+    prefixes = _dp([])
+
+    for phone in phone_list:
+        for i in range(1, len(phone)):
+            prefix = phone[0:i]
+            prefixes[prefix].append(phone)
+
+    return prefixes
+
+
+def create_prefixes_bool(phone_list):
+    prefixes = _dp(False)
+
+    for phone in phone_list:
+        for i in range(1, len(phone)):
+            prefix = phone[0:i]
+            prefixes[prefix] = True
+
+    return prefixes
+
+
 def solve():
-    pass
+    n = iinp()
 
+    numbers = list_from_inp(n)
+    prefixes = create_prefixes_bool(numbers)
+    # prefixes = create_prefixes(numbers)
 
-def run():
-    print(solve())
-
-
-def run():
-    solve()
+    for number in numbers:
+        if prefixes.get(number):
+            return "NO"
+    return "YES"
 
 
 def run():
     t = iinp()
 
     for _ in range(t):
-        solve()
-
-
-def run():
-    try:
-        while True:
-            print(solve())
-    except:
-        pass
+        print(solve())
 
 
 if __name__ == "__main__":

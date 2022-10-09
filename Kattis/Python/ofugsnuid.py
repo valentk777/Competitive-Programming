@@ -1,6 +1,6 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/xxxxx
-# Title  : TEXT
+# URL    : https://open.kattis.com/problems/ofugsnuid
+# Title  : Reverse
 # Notes  : tag-kattis
 # -----------------------------------------------------------
 
@@ -27,30 +27,16 @@ INF = maxsize
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    pass
+    n = iinp()
+    s = list_from_inp(n)
+    s = s[::-1]
 
-
-def run():
-    print(solve())
+    for i in range(n):
+        print(s[i])
 
 
 def run():
     solve()
-
-
-def run():
-    t = iinp()
-
-    for _ in range(t):
-        solve()
-
-
-def run():
-    try:
-        while True:
-            print(solve())
-    except:
-        pass
 
 
 if __name__ == "__main__":

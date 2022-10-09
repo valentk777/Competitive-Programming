@@ -1,6 +1,6 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/xxxxx
-# Title  : TEXT
+# URL    : https://open.kattis.com/problems/romans
+# Title  : Roaming Romans
 # Notes  : tag-kattis
 # -----------------------------------------------------------
 
@@ -27,30 +27,11 @@ INF = maxsize
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    pass
+    return round(float(inp()) * 5280 / 4854 * 1000)
 
 
 def run():
     print(solve())
-
-
-def run():
-    solve()
-
-
-def run():
-    t = iinp()
-
-    for _ in range(t):
-        solve()
-
-
-def run():
-    try:
-        while True:
-            print(solve())
-    except:
-        pass
 
 
 if __name__ == "__main__":

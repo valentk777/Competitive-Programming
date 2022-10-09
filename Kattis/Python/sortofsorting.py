@@ -1,6 +1,6 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/xxxxx
-# Title  : TEXT
+# URL    : https://open.kattis.com/problems/sortofsorting
+# Title  : Sort of Sorting
 # Notes  : tag-kattis
 # -----------------------------------------------------------
 
@@ -27,28 +27,23 @@ INF = maxsize
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    pass
+    n = iinp()
 
+    if n == 0:
+        raise Exception()
 
-def run():
-    print(solve())
+    names = list_from_inp(n)
+    names = sorted(names, key=lambda x: (x[0], x[1]))
 
-
-def run():
-    solve()
-
-
-def run():
-    t = iinp()
-
-    for _ in range(t):
-        solve()
+    for name in names:
+        print(name)
+    print()
 
 
 def run():
     try:
         while True:
-            print(solve())
+            solve()
     except:
         pass
 

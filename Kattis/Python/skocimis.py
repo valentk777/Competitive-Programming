@@ -1,6 +1,6 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/xxxxx
-# Title  : TEXT
+# URL    : https://open.kattis.com/problems/skocimis
+# Title  : Skocimis
 # Notes  : tag-kattis
 # -----------------------------------------------------------
 
@@ -10,7 +10,7 @@ import time
 from collections import defaultdict
 from sys import stdin, maxsize
 
-inp = lambda: stdin.readline().strip("\n")
+inp = lambda: stdin.readline().strip()
 iinp = lambda: int(inp())
 intl = lambda: list(map(int, inp().split()))
 strl = lambda: list(inp().split())
@@ -27,30 +27,25 @@ INF = maxsize
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    pass
+    a, b, c = intl()
+
+    _count = 0
+
+    while b - a > 1 or c - b > 1:
+        if b - a >= c - b:
+            c = b
+            b = a + 1
+        else:
+            a = b
+            b = c - 1
+
+        _count += 1
+
+    return _count
 
 
 def run():
     print(solve())
-
-
-def run():
-    solve()
-
-
-def run():
-    t = iinp()
-
-    for _ in range(t):
-        solve()
-
-
-def run():
-    try:
-        while True:
-            print(solve())
-    except:
-        pass
 
 
 if __name__ == "__main__":

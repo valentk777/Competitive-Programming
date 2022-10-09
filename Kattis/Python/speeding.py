@@ -1,6 +1,6 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/xxxxx
-# Title  : TEXT
+# URL    : https://open.kattis.com/problems/speeding
+# Title  : Speeding
 # Notes  : tag-kattis
 # -----------------------------------------------------------
 
@@ -10,7 +10,7 @@ import time
 from collections import defaultdict
 from sys import stdin, maxsize
 
-inp = lambda: stdin.readline().strip("\n")
+inp = lambda: stdin.readline().strip()
 iinp = lambda: int(inp())
 intl = lambda: list(map(int, inp().split()))
 strl = lambda: list(inp().split())
@@ -27,30 +27,26 @@ INF = maxsize
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    pass
+    n = iinp()
+
+    pt, pd = intl()
+
+    best_speed = -INF
+
+    for i in range(1, n):
+        t, d = intl()
+
+        v = (d - pd) // (t - pt)
+
+        best_speed = max(best_speed, v)
+
+        pt, pd = t, d
+
+    return best_speed
 
 
 def run():
     print(solve())
-
-
-def run():
-    solve()
-
-
-def run():
-    t = iinp()
-
-    for _ in range(t):
-        solve()
-
-
-def run():
-    try:
-        while True:
-            print(solve())
-    except:
-        pass
 
 
 if __name__ == "__main__":

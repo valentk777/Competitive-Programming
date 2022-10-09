@@ -1,6 +1,6 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/xxxxx
-# Title  : TEXT
+# URL    : https://open.kattis.com/problems/bijele
+# Title  : Bijele
 # Notes  : tag-kattis
 # -----------------------------------------------------------
 
@@ -27,30 +27,23 @@ INF = maxsize
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    pass
+    _set = intl()
+    ats = []
+
+    for i in range(0, 2):
+        ats.append(1 - _set[i])
+
+    for i in range(2, 5):
+        ats.append(2 - _set[i])
+
+    for i in range(5, 6):
+        ats.append(8 - _set[i])
+
+    return list_to_string_list(ats)
 
 
 def run():
     print(solve())
-
-
-def run():
-    solve()
-
-
-def run():
-    t = iinp()
-
-    for _ in range(t):
-        solve()
-
-
-def run():
-    try:
-        while True:
-            print(solve())
-    except:
-        pass
 
 
 if __name__ == "__main__":

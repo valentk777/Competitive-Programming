@@ -1,6 +1,6 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/xxxxx
-# Title  : TEXT
+# URL    : https://open.kattis.com/problems/pot
+# Title  : Pot
 # Notes  : tag-kattis
 # -----------------------------------------------------------
 
@@ -27,30 +27,19 @@ INF = maxsize
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    pass
+    n = iinp()
+
+    ats = 0
+
+    for i in range(n):
+        s = inp()
+        ats += int(s[:-1]) ** int(s[-1])
+
+    return ats
 
 
 def run():
     print(solve())
-
-
-def run():
-    solve()
-
-
-def run():
-    t = iinp()
-
-    for _ in range(t):
-        solve()
-
-
-def run():
-    try:
-        while True:
-            print(solve())
-    except:
-        pass
 
 
 if __name__ == "__main__":

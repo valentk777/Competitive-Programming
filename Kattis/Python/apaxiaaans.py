@@ -1,6 +1,6 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/xxxxx
-# Title  : TEXT
+# URL    : https://open.kattis.com/problems/apaxiaaans
+# Title  : Apaxiaaaaaaaaaaaans!
 # Notes  : tag-kattis
 # -----------------------------------------------------------
 
@@ -27,30 +27,18 @@ INF = maxsize
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    pass
+    s = inp()
+    ats = [""]
+
+    for c in s:
+        if c != ats[-1]:
+            ats.append(c)
+
+    return list_to_string(ats)
 
 
 def run():
     print(solve())
-
-
-def run():
-    solve()
-
-
-def run():
-    t = iinp()
-
-    for _ in range(t):
-        solve()
-
-
-def run():
-    try:
-        while True:
-            print(solve())
-    except:
-        pass
 
 
 if __name__ == "__main__":

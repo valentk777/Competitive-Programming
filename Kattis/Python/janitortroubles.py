@@ -1,6 +1,6 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/xxxxx
-# Title  : TEXT
+# URL    : https://open.kattis.com/problems/janitortroubles
+# Title  : Janitor Troubles
 # Notes  : tag-kattis
 # -----------------------------------------------------------
 
@@ -8,6 +8,7 @@
 import os
 import time
 from collections import defaultdict
+from math import sqrt
 from sys import stdin, maxsize
 
 inp = lambda: stdin.readline().strip("\n")
@@ -27,30 +28,14 @@ INF = maxsize
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    pass
+    a, b, c, d = intl()
+
+    semi_perimeter = (a + b + c + d) / 2
+    return sqrt((semi_perimeter - a) * (semi_perimeter - b) * (semi_perimeter - c) * (semi_perimeter - d))
 
 
 def run():
     print(solve())
-
-
-def run():
-    solve()
-
-
-def run():
-    t = iinp()
-
-    for _ in range(t):
-        solve()
-
-
-def run():
-    try:
-        while True:
-            print(solve())
-    except:
-        pass
 
 
 if __name__ == "__main__":

@@ -1,6 +1,6 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/xxxxx
-# Title  : TEXT
+# URL    : https://open.kattis.com/problems/statistics
+# Title  : Statistics
 # Notes  : tag-kattis
 # -----------------------------------------------------------
 
@@ -26,29 +26,19 @@ INF = maxsize
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
-def solve():
-    pass
+def solve(case):
+    x = intl()
+    x = x[1:]
+
+    print(f"Case {case}: {min(x)} {max(x)} {max(x) - min(x)}")
 
 
 def run():
-    print(solve())
-
-
-def run():
-    solve()
-
-
-def run():
-    t = iinp()
-
-    for _ in range(t):
-        solve()
-
-
-def run():
+    _count = 1
     try:
         while True:
-            print(solve())
+            solve(_count)
+            _count += 1
     except:
         pass
 

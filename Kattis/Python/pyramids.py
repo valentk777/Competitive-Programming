@@ -1,6 +1,6 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/xxxxx
-# Title  : TEXT
+# URL    : https://open.kattis.com/problems/pyramids
+# Title  : Building Pyramids
 # Notes  : tag-kattis
 # -----------------------------------------------------------
 
@@ -27,30 +27,22 @@ INF = maxsize
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    pass
+    n = iinp()
+
+    sums = [0]
+
+    i = 1
+    height = 0
+    while sums[-1] <= n:
+        sums.append(sums[-1] + i ** 2)
+        i += 2
+        height += 1
+
+    return height - 1
 
 
 def run():
     print(solve())
-
-
-def run():
-    solve()
-
-
-def run():
-    t = iinp()
-
-    for _ in range(t):
-        solve()
-
-
-def run():
-    try:
-        while True:
-            print(solve())
-    except:
-        pass
 
 
 if __name__ == "__main__":

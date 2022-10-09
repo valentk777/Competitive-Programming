@@ -1,6 +1,6 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/xxxxx
-# Title  : TEXT
+# URL    : https://open.kattis.com/problems/alphabetspam
+# Title  : Alphabet Spam
 # Notes  : tag-kattis
 # -----------------------------------------------------------
 
@@ -27,30 +27,32 @@ INF = maxsize
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    pass
+    s = list(inp())
+    n = len(s)
 
+    count_whitespace = 0
+    count_lowercase = 0
+    count_uppercase = 0
+    count_symbols = 0
 
-def run():
-    print(solve())
+    for i in range(n):
+        if s[i] == "_":
+            count_whitespace += 1
+        elif ord("a") <= ord(s[i]) <= ord("z"):
+            count_lowercase += 1
+        elif ord("A") <= ord(s[i]) <= ord("Z"):
+            count_uppercase += 1
+        else:
+            count_symbols += 1
+
+    print(count_whitespace / n)
+    print(count_lowercase / n)
+    print(count_uppercase / n)
+    print(count_symbols / n)
 
 
 def run():
     solve()
-
-
-def run():
-    t = iinp()
-
-    for _ in range(t):
-        solve()
-
-
-def run():
-    try:
-        while True:
-            print(solve())
-    except:
-        pass
 
 
 if __name__ == "__main__":

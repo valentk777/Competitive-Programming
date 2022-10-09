@@ -1,6 +1,6 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/xxxxx
-# Title  : TEXT
+# URL    : https://open.kattis.com/problems/greetings2
+# Title  : Greetings!
 # Notes  : tag-kattis
 # -----------------------------------------------------------
 
@@ -27,30 +27,21 @@ INF = maxsize
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    pass
+    s = list(inp())
+
+    ats = []
+
+    for c in s:
+        ats.append(c)
+
+        if c == "e":
+            ats.append(c)
+
+    return list_to_string(ats)
 
 
 def run():
     print(solve())
-
-
-def run():
-    solve()
-
-
-def run():
-    t = iinp()
-
-    for _ in range(t):
-        solve()
-
-
-def run():
-    try:
-        while True:
-            print(solve())
-    except:
-        pass
 
 
 if __name__ == "__main__":

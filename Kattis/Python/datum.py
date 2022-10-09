@@ -1,6 +1,6 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/xxxxx
-# Title  : TEXT
+# URL    : https://open.kattis.com/problems/datum
+# Title  : Datum
 # Notes  : tag-kattis
 # -----------------------------------------------------------
 
@@ -23,34 +23,36 @@ list_from_inp = lambda n: [inp() for _ in range(n)]
 MOD = 10 ** 9 + 7
 INF = maxsize
 
-
 # -------------------------------------------------------Solution-------------------------------------------------------
 
+day_map = {
+    0: "Thursday",
+    1: "Friday",
+    2: "Saturday",
+    3: "Sunday",
+    4: "Monday",
+    5: "Tuesday",
+    6: "Wednesday",
+}
+
+
 def solve():
-    pass
+    x = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
+    d, m = intl()
+
+    day_in_year = 0
+
+    for i in range(1, m):
+        day_in_year += x[i - 1]
+
+    day_in_year += d
+
+    return day_map[(day_in_year - 1) % 7]
 
 
 def run():
     print(solve())
-
-
-def run():
-    solve()
-
-
-def run():
-    t = iinp()
-
-    for _ in range(t):
-        solve()
-
-
-def run():
-    try:
-        while True:
-            print(solve())
-    except:
-        pass
 
 
 if __name__ == "__main__":
