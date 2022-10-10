@@ -1,6 +1,6 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/sorttwonumbers
-# Title  : Sort Two Numbers
+# URL    : https://open.kattis.com/problems/runlengthencodingrun
+# Title  : Run-Length Encoding, Run!
 # Notes  : tag-kattis
 # -----------------------------------------------------------
 
@@ -10,7 +10,7 @@ import time
 from collections import defaultdict
 from sys import stdin, maxsize
 
-inp = lambda: stdin.readline().strip()
+inp = lambda: stdin.readline().strip("\n")
 iinp = lambda: int(inp())
 intl = lambda: list(map(int, inp().split()))
 strl = lambda: list(inp().split())
@@ -27,8 +27,32 @@ INF = maxsize
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    a = intl()
-    return list_to_string_list(sorted(a))
+    s = strl()
+
+    command = s[0]
+    message = s[1]
+    ats = []
+
+    if command == "E":
+        prev = message[0]
+        _count = 0
+
+        for i in range(len(message)):
+            if message[i] == prev:
+                _count += 1
+            else:
+                ats.append(prev + str(_count))
+                _count = 1
+                prev = message[i]
+
+        ats.append(prev + str(_count))
+    else:
+        _count = 0
+
+        for i in range(1, len(message), 2):
+            ats.append(message[i - 1] * int(message[i]))
+
+    return list_to_string(ats)
 
 
 def run():

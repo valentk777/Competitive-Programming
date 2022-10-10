@@ -1,6 +1,6 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/sorttwonumbers
-# Title  : Sort Two Numbers
+# URL    : https://open.kattis.com/problems/fizzbuzz
+# Title  : FizzBuzz
 # Notes  : tag-kattis
 # -----------------------------------------------------------
 
@@ -10,7 +10,7 @@ import time
 from collections import defaultdict
 from sys import stdin, maxsize
 
-inp = lambda: stdin.readline().strip()
+inp = lambda: stdin.readline().strip("\n")
 iinp = lambda: int(inp())
 intl = lambda: list(map(int, inp().split()))
 strl = lambda: list(inp().split())
@@ -27,12 +27,21 @@ INF = maxsize
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    a = intl()
-    return list_to_string_list(sorted(a))
+    x, y, n = intl()
+
+    for i in range(1, n + 1):
+        if i % x == 0 and i % y == 0:
+            print('FizzBuzz')
+        elif i % x == 0:
+            print('Fizz')
+        elif i % y == 0:
+            print('Buzz')
+        else:
+            print(i)
 
 
 def run():
-    print(solve())
+    solve()
 
 
 if __name__ == "__main__":

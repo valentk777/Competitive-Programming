@@ -1,6 +1,6 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/sorttwonumbers
-# Title  : Sort Two Numbers
+# URL    : https://open.kattis.com/problems/modulo
+# Title  : Modulo
 # Notes  : tag-kattis
 # -----------------------------------------------------------
 
@@ -10,7 +10,7 @@ import time
 from collections import defaultdict
 from sys import stdin, maxsize
 
-inp = lambda: stdin.readline().strip()
+inp = lambda: stdin.readline().strip("\n")
 iinp = lambda: int(inp())
 intl = lambda: list(map(int, inp().split()))
 strl = lambda: list(inp().split())
@@ -27,8 +27,16 @@ INF = maxsize
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    a = intl()
-    return list_to_string_list(sorted(a))
+    numbers = set()
+
+    try:
+        while True:
+            i = iinp()
+            numbers.add(i)
+    except:
+        pass
+
+    return len({number % 42 for number in numbers})
 
 
 def run():

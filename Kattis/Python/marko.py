@@ -1,16 +1,17 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/sorttwonumbers
-# Title  : Sort Two Numbers
+# URL    : https://open.kattis.com/problems/marko
+# Title  : Marko
 # Notes  : tag-kattis
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
 import os
+import re
 import time
 from collections import defaultdict
 from sys import stdin, maxsize
 
-inp = lambda: stdin.readline().strip()
+inp = lambda: stdin.readline().strip("\n")
 iinp = lambda: int(inp())
 intl = lambda: list(map(int, inp().split()))
 strl = lambda: list(inp().split())
@@ -23,12 +24,38 @@ list_from_inp = lambda n: [inp() for _ in range(n)]
 MOD = 10 ** 9 + 7
 INF = maxsize
 
-
 # -------------------------------------------------------Solution-------------------------------------------------------
 
+
+keyboard = {
+    '2': '[abc]{1}',
+    '3': '[def]{1}',
+    '4': '[ghi]{1}',
+    '5': '[jkl]{1}',
+    '6': '[mno]{1}',
+    '7': '[pqrs]{1}',
+    '8': '[tuv]{1}',
+    '9': '[wxyz]{1}'
+}
+
+
 def solve():
-    a = intl()
-    return list_to_string_list(sorted(a))
+    n = iinp()
+    words = list_from_inp(n)
+    s = inp()
+
+    expression = '^'
+
+    for letter in s:
+        expression += keyboard[letter]
+
+    possible = 0
+
+    for word in words:
+        if re.match(expression, word) is not None:
+            possible += 1
+
+    return possible
 
 
 def run():

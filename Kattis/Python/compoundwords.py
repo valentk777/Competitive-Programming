@@ -1,6 +1,6 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/sorttwonumbers
-# Title  : Sort Two Numbers
+# URL    : https://open.kattis.com/problems/compoundwords
+# Title  : Compound Words
 # Notes  : tag-kattis
 # -----------------------------------------------------------
 
@@ -10,7 +10,7 @@ import time
 from collections import defaultdict
 from sys import stdin, maxsize
 
-inp = lambda: stdin.readline().strip()
+inp = lambda: stdin.readline().strip("\n")
 iinp = lambda: int(inp())
 intl = lambda: list(map(int, inp().split()))
 strl = lambda: list(inp().split())
@@ -27,12 +27,32 @@ INF = maxsize
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    a = intl()
-    return list_to_string_list(sorted(a))
+    words = set()
+
+    while True:
+        line = strl()
+
+        if not line:
+            break
+
+        for word in line:
+            words.add(word)
+
+    ats = set()
+    words = list(words)
+
+    for i in range(len(words)):
+        for j in range(i + 1, len(words)):
+            ats.add(words[i] + words[j])
+            ats.add(words[j] + words[i])
+
+    ats = sorted(ats)
+    for i in ats:
+        print(i)
 
 
 def run():
-    print(solve())
+    solve()
 
 
 if __name__ == "__main__":

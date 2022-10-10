@@ -1,6 +1,6 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/sorttwonumbers
-# Title  : Sort Two Numbers
+# URL    : https://open.kattis.com/problems/4thought
+# Title  : 4 thought
 # Notes  : tag-kattis
 # -----------------------------------------------------------
 
@@ -8,9 +8,10 @@
 import os
 import time
 from collections import defaultdict
+from math import floor
 from sys import stdin, maxsize
 
-inp = lambda: stdin.readline().strip()
+inp = lambda: stdin.readline().strip("\n")
 iinp = lambda: int(inp())
 intl = lambda: list(map(int, inp().split()))
 strl = lambda: list(inp().split())
@@ -27,12 +28,33 @@ INF = maxsize
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    a = intl()
-    return list_to_string_list(sorted(a))
+    n = iinp()
+    operators = ['*', '//', '+', '-']
+
+    if abs(n) > 256:
+        return "no solution"
+
+    results = _dp(0)
+
+    for i in operators:
+        for j in operators:
+            for k in operators:
+                expression = f"4 {i} 4 {j} 4 {k} 4"
+                result = floor(eval(expression))
+                expression = expression.replace("//", "/")
+                results[result] = f"{expression} = {result}"
+
+    if n in results.keys():
+        return results[n]
+    else:
+        return "no solution"
 
 
 def run():
-    print(solve())
+    t = iinp()
+
+    for _ in range(t):
+        print(solve())
 
 
 if __name__ == "__main__":

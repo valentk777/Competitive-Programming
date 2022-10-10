@@ -1,6 +1,6 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/sorttwonumbers
-# Title  : Sort Two Numbers
+# URL    : https://open.kattis.com/problems/suspensionbridges
+# Title  : Suspension Bridges
 # Notes  : tag-kattis
 # -----------------------------------------------------------
 
@@ -8,9 +8,10 @@
 import os
 import time
 from collections import defaultdict
+from math import cosh, sinh
 from sys import stdin, maxsize
 
-inp = lambda: stdin.readline().strip()
+inp = lambda: stdin.readline().strip("\n")
 iinp = lambda: int(inp())
 intl = lambda: list(map(int, inp().split()))
 strl = lambda: list(inp().split())
@@ -26,9 +27,22 @@ INF = maxsize
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
+
 def solve():
-    a = intl()
-    return list_to_string_list(sorted(a))
+    d, s = intl()
+
+    lower, upper = 0.00000001, 10000000000
+    mid = 0
+
+    while upper - lower > 0.0000000001:
+        mid = (upper + lower) / 2
+
+        if mid + s < mid * cosh(d / (2 * mid)):
+            lower = mid
+        else:
+            upper = mid
+
+    return 2 * mid * sinh(d / (2 * mid))
 
 
 def run():

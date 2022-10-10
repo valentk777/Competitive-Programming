@@ -1,6 +1,6 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/sorttwonumbers
-# Title  : Sort Two Numbers
+# URL    : https://open.kattis.com/problems/differentdistances
+# Title  : Different Distances
 # Notes  : tag-kattis
 # -----------------------------------------------------------
 
@@ -10,7 +10,7 @@ import time
 from collections import defaultdict
 from sys import stdin, maxsize
 
-inp = lambda: stdin.readline().strip()
+inp = lambda: stdin.readline().strip("\n")
 iinp = lambda: int(inp())
 intl = lambda: list(map(int, inp().split()))
 strl = lambda: list(inp().split())
@@ -27,12 +27,22 @@ INF = maxsize
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    a = intl()
-    return list_to_string_list(sorted(a))
+    s = list(map(float, inp().split()))
+
+    if len(s) == 0:
+        raise
+
+    x1, y1, x2, y2, p = s
+
+    print((abs(x1 - x2) ** p + abs(y1 - y2) ** p) ** (1 / p))
 
 
 def run():
-    print(solve())
+    try:
+        while True:
+            solve()
+    except:
+        pass
 
 
 if __name__ == "__main__":

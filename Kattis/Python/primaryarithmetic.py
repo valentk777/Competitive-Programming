@@ -1,6 +1,6 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/sorttwonumbers
-# Title  : Sort Two Numbers
+# URL    : https://open.kattis.com/problems/primaryarithmetic
+# Title  : Primary Arithmetic
 # Notes  : tag-kattis
 # -----------------------------------------------------------
 
@@ -10,7 +10,7 @@ import time
 from collections import defaultdict
 from sys import stdin, maxsize
 
-inp = lambda: stdin.readline().strip()
+inp = lambda: stdin.readline().strip("\n")
 iinp = lambda: int(inp())
 intl = lambda: list(map(int, inp().split()))
 strl = lambda: list(inp().split())
@@ -27,12 +27,38 @@ INF = maxsize
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    a = intl()
-    return list_to_string_list(sorted(a))
+    a, b = strl()
+
+    if a == b == "0":
+        return
+
+    n = max(len(a), len(b))
+    a = a.zfill(n)[::-1]
+    b = b.zfill(n)[::-1]
+    carry = 0
+    _count = 0
+
+    for i in range(n):
+        if int(a[i]) + int(b[i]) + carry > 9:
+            carry = 1
+            _count += 1
+        else:
+            carry = 0
+
+    if _count > 1:
+        print(f"{_count} carry operations.")
+    elif _count == 1:
+        print(f"{_count} carry operation.")
+    else:
+        print("No carry operation.")
 
 
 def run():
-    print(solve())
+    try:
+        while True:
+            solve()
+    except:
+        pass
 
 
 if __name__ == "__main__":

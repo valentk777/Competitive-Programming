@@ -1,6 +1,6 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/sorttwonumbers
-# Title  : Sort Two Numbers
+# URL    : https://open.kattis.com/problems/repeatingdecimal
+# Title  : Repeating Decimal
 # Notes  : tag-kattis
 # -----------------------------------------------------------
 
@@ -8,9 +8,10 @@
 import os
 import time
 from collections import defaultdict
+from decimal import Decimal, getcontext
 from sys import stdin, maxsize
 
-inp = lambda: stdin.readline().strip()
+inp = lambda: stdin.readline().strip("\n")
 iinp = lambda: int(inp())
 intl = lambda: list(map(int, inp().split()))
 strl = lambda: list(inp().split())
@@ -22,17 +23,40 @@ list_from_inp = lambda n: [inp() for _ in range(n)]
 
 MOD = 10 ** 9 + 7
 INF = maxsize
+getcontext().prec = 10000
 
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
+def solve_slow():
+    a, b, c = intl()
+
+    result = str(Decimal(a) / Decimal(b))
+
+    if len(result) < c + 2:
+        result += "0" * (c + 2 - len(result))
+
+    return result[:c + 2]
+
+
 def solve():
-    a = intl()
-    return list_to_string_list(sorted(a))
+    a, b, c = intl()
+
+    ats = ["0."]
+    for i in range(c):
+        a *= 10
+        ats.append(a // b)
+        a %= b
+
+    return list_to_string(ats)
 
 
 def run():
-    print(solve())
+    try:
+        while True:
+            print(solve())
+    except:
+        pass
 
 
 if __name__ == "__main__":

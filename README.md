@@ -2,7 +2,7 @@
 
 ![Last Commit](https://img.shields.io/github/last-commit/valentk777/Contests.svg)
 [![Codeforces](https://img.shields.io/badge/Codeforces-1017-COLOR.svg)](https://codeforces.com/profile/valentk777)
-[![Kattis](https://img.shields.io/badge/Kattis-117.0-COLOR.svg)](https://open.kattis.com/users/valentk777)
+[![Kattis](https://img.shields.io/badge/Kattis-156.2-COLOR.svg)](https://open.kattis.com/users/valentk777)
 ![My Codewarrior Profile Badge](https://www.codewars.com/users/valentk777/badges/micro)
 
 
