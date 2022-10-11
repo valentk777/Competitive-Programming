@@ -13,8 +13,8 @@ INF = maxsize
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
-def print_ats(ats: int):
-    print(f"! {ats}")
+def print_ats(ans: int):
+    print(f"! {ans}")
     stdout.flush()
 
 

@@ -56,22 +56,22 @@ def solve():
         print("NO")
         return
 
-    ats = []
+    ans = []
 
     for i in range(m):
-        ats.append([0 for _ in range(n)])
+        ans.append([0 for _ in range(n)])
 
     for i in range(m):
         if m_sums[i] == n:
-            ats[i] = [-1 for i in range(n)]
+            ans[i] = [-1 for i in range(n)]
 
     for i in range(n):
         for j in range(m):
-            if ats[j][i] == -1:
+            if ans[j][i] == -1:
                 if n_sums[i] == m:
-                    ats[j][i] = 1
+                    ans[j][i] = 1
                 else:
-                    ats[j][i] = 0
+                    ans[j][i] = 0
 
     ats_m_sums = [0 for _ in range(m)]
     ats_n_sums = [0 for _ in range(n)]
@@ -79,7 +79,7 @@ def solve():
     for i in range(m):
         _sum = 0
         for j in range(n):
-            _sum |= ats[i][j]
+            _sum |= ans[i][j]
 
         ats_m_sums[i] = _sum
 
@@ -87,7 +87,7 @@ def solve():
         _sum = 0
 
         for i in range(m):
-            _sum |= ats[i][j]
+            _sum |= ans[i][j]
 
         ats_n_sums[j] = _sum
 
@@ -100,7 +100,7 @@ def solve():
     print("YES")
 
     for i in range(m):
-        print(list_to_string_list(ats[i]))
+        print(list_to_string_list(ans[i]))
 
 
 def run():
