@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
-# URL    : https://codeforces.com/contest/XXXXX/problem/A
+# URL    : https://codeforces.com/contest/ROUND_NUMBER/problem/PROBLEM_LETTER
 # Title  : TEXT
-# Notes  : tag-codeforces, tag-problem-A, tag-div-2
+# Notes  : tag-codeforces, tag-problem-PROBLEM_LETTER, tag-div-DIVISION
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
