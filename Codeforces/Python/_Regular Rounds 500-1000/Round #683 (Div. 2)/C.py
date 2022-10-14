@@ -71,7 +71,7 @@ def run():
 
 if __name__ == "__main__":
     if os.environ.get("DEBUG_CODEFORCES"):
-        stdin = open("../input.txt", "r")
+        stdin = open("../../input.txt", "r")
         start_time = time.time()
         run()
         print("\n--- %s seconds ---\n" % (time.time() - start_time))

@@ -22,6 +22,29 @@ class RoundData:
         self.round_number = self._get_round_number()
         self.division = self._get_division_number()
         self._problems = None
+        self.sample_data = self._get_sample_data()
+
+    def get_problems(self):
+        if self._problems is not None:
+            return self._problems
+
+        if "problem" in self.web_url:
+            problems_number = self.web_url.split("problem")[1]
+            problem_name = self._web_content.select_one(".problemindexholder").select_one(".title").text
+
+            self._problems = [[problems_number.strip("/"), problem_name]]
+            return self._problems
+
+        result = []
+
+        for i in range(ord("A"), ord("G") + 1):
+            result.append([
+                chr(i), self._get_problem_name(f"https://codeforces.com/contest/{self.contest_number}/problem/{chr(i)}")
+            ])
+
+        self._problems = result
+
+        return self._problems
 
     def _get_contest_number(self) -> str:
         contest_number = self.web_url.split("contest")[1]
@@ -54,31 +77,14 @@ class RoundData:
         problem_name = web_content.select_one(".problemindexholder").select_one(".title").text
         return problem_name
 
-    def get_problems(self):
-        if self._problems is not None:
-            return self._problems
-
-        if "problem" in self.web_url:
-            problems_number = self.web_url.split("problem")[1]
-            problem_name = self._web_content.select_one(".problemindexholder").select_one(".title").text
-
-            self._problems = [[problems_number.strip("/"), problem_name]]
-            return self._problems
-
-        result = []
-
-        for i in range(ord("A"), ord("G") + 1):
-            result.append([
-                chr(i), self._get_problem_name(f"https://codeforces.com/contest/{self.contest_number}/problem/{chr(i)}")
-            ])
-
-        self._problems = result
-
-        return self._problems
-
     def _scrape_url(self, web_url):
         r = requests.get(web_url)
         return BeautifulSoup(r.content, 'html.parser')
+
+    def _get_sample_data(self):
+        sample_data = self._web_content.select_one('.sample-test')
+        sample_data = sample_data.select_one('.input > pre').text
+        return sample_data
 
 
 def modify_file(copy_to: Path, round_data: RoundData) -> None:
@@ -108,11 +114,12 @@ def copy_file_and_update_information(from_path: Path, copy_to: Path, round_data:
             logging.error("File already created")
 
 
-def create_input_file():
+def create_input_file(round_data: RoundData) -> None:
     logger.info("Creating input file")
 
-    with open('input.txt', 'a') as f:
-        f.write('')
+    # clean input file for future
+    with open('input.txt', 'w') as f:
+        f.write(round_data.sample_data)
 
 
 def get_folder_path(round_data: RoundData) -> Path:
@@ -147,7 +154,7 @@ def generate_folder_with_problems() -> None:
     folder_path = get_folder_path(round_data)
     create_folder(folder_path)
     template = get_template_file_path()
-    create_input_file()
+    create_input_file(round_data)
     copy_file_and_update_information(template, folder_path, round_data)
     modify_file(folder_path, round_data)
 

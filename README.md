@@ -12,18 +12,19 @@
 ## Statistics
 <!--
 brew install scc
-scc -i cpp,cs,py AdventOfCode Algodaily Codeforces Codewars 'Dynamic programming' Kattis/
+scc -i cpp,cs,py,sc AdventOfCode Algodaily Codeforces Codewars GoogleKickStart Kattis/
 -->
 
 ```
 ───────────────────────────────────────────────────────────────────────────────
 Language                 Files     Lines   Blanks  Comments     Code Complexity
 ───────────────────────────────────────────────────────────────────────────────
-Python                     251     14379     2022      1531    10826       1175
-C++                         30      2653      458       346     1849        434
+Python                     241     14016     1993      1462    10561       1174
 C#                          28       930      126       108      696        104
+C++                         27      2420      413       309     1698        411
+Scala                        6       214       20        24      170         15
 ───────────────────────────────────────────────────────────────────────────────
-Total                      309     17962     2606      1985    13371       1713
+Total                      302     17580     2552      1903    13125       1704
 ───────────────────────────────────────────────────────────────────────────────
 ```
 
@@ -42,10 +43,13 @@ Total                      309     17962     2606      1985    13371       1713
 
 ## --> by programming language
 
-* [C#](https://github.com/valentk777/Contests/search?l=C%23)
 * [Python](https://github.com/valentk777/Contests/search?l=python)
+* [C#](https://github.com/valentk777/Contests/search?l=C%23)
 * [C++](https://github.com/valentk777/Contests/search?l=cpp)
 * [Scala](https://github.com/valentk777/Contests/search?l=scala)
+
+## --> codeforces template generator
+* [PythonFile](https://github.com/valentk777/Contests/blob/main/Codeforces/Python/generate_teplate.py)
 
 #
 # Multiple challenges from multiple platforms
