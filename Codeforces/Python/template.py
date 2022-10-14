@@ -1,6 +1,6 @@
 # -----------------------------------------------------------
-# URL    : https://codeforces.com/contest/ROUND_NUMBER/problem/PROBLEM_LETTER
-# Title  : TEXT
+# URL    : https://codeforces.com/contest/CONTEST_NUMBER/problem/PROBLEM_LETTER
+# Title  : PROBLEM_TITLE
 # Notes  : tag-codeforces, tag-problem-PROBLEM_LETTER, tag-div-DIVISION
 # -----------------------------------------------------------
 
