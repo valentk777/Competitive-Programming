@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
 # URL    : https://codeforces.com/contest/182/problem/D
 # Title  : Common Divisors
-# Notes  : tag-codeforces, tag-problem-D, tag-div-2, tag-not-pass
+# Notes  : tag-codeforces, tag-problem-D, tag-div-2
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
@@ -26,7 +26,7 @@ INF = maxsize
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 # Time limit exceeded
-def solve():
+def solve_slow():
     first_str = inp()
     n_first_str = len(first_str)
 
@@ -71,6 +71,35 @@ def solve():
             _count += 1
 
     return _count
+
+
+def solve():
+    longer_str = inp()
+    shorted_str = inp()
+
+    n_longer_str = len(longer_str)
+    n_shorted_str = len(shorted_str)
+
+    # take longer
+    if n_longer_str < n_shorted_str:
+        longer_str, shorted_str = shorted_str, longer_str
+        n_longer_str, n_shorted_str = n_shorted_str, n_longer_str
+
+    candidates = []
+
+    for i in range(1, n_longer_str + 1):
+        if n_longer_str % i == 0 and n_shorted_str % i == 0:
+            candidates.append(i)
+
+    ans = 0
+
+    for idx in candidates:
+        substring = longer_str[0:idx]
+
+        if longer_str.count(substring) == n_longer_str / idx and shorted_str.count(substring) == n_shorted_str / idx:
+            ans += 1
+
+    return ans
 
 
 def run():

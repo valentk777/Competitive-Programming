@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
-# URL    : https://codeforces.com/contest/CONTEST_NUMBER/problem/PROBLEM_LETTER
-# Title  : PROBLEM_TITLE
-# Notes  : tag-codeforces, tag-problem-PROBLEM_LETTER, tag-div-DIVISION
+# URL    : https://codeforces.com/gym/101021/problem/1
+# Title  : 1. Guess the Number
+# Notes  : tag-codeforces
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
@@ -17,14 +17,9 @@ strl = lambda: list(inp().split())
 list_to_string = lambda _a: "".join(map(str, _a))
 list_to_string_list = lambda _a: " ".join(map(str, _a))
 _dp = lambda default_value: defaultdict(lambda: default_value)
+print_dp = lambda _dict: list(map(lambda item: print(f"{item[0]} = {item[1]}"), _dict.items()))
 flush = lambda: stdout.flush()
 print_flush = lambda _text: (print(_text), flush())
-
-
-def print_dp(_dict):
-    for item in _dict.items():
-        print(f"{item[0]} = {item[1]}")
-
 
 MOD = 10 ** 9 + 7
 INF = maxsize
@@ -33,15 +28,26 @@ INF = maxsize
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    pass
+    left = 0
+    right = 10**6
+
+    while left < right:
+        mid = (left + right + 1) // 2
+
+        print_flush(mid)
+
+        ans = inp()
+
+        if ans == "<":
+            right = mid - 1
+        else:
+            left = mid
+
+    return f"! {left}"
 
 
 def run():
-    t = iinp()
-
-    for _ in range(t):
-        print(solve())
-
+    print(solve())
 
 if __name__ == "__main__":
     if os.environ.get("DEBUG_CODEFORCES"):

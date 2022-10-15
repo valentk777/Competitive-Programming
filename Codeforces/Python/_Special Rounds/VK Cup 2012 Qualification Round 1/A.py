@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
 # URL    : https://codeforces.com/contest/158/problem/A
 # Title  : Next Round
-# Notes  : tag-codeforces, tag-problem-A, tag-div-none
+# Notes  : tag-codeforces, tag-problem-A
 # -----------------------------------------------------------
 
 
