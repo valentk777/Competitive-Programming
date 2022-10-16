@@ -114,7 +114,7 @@ def solve_dp():
             else:
                 dp[i, j] = dp[i - 1, j]
 
-    _max = INF
+    _min = INF
 
     for c in range(2, n):
         i = 0
@@ -129,17 +129,19 @@ def solve_dp():
                 j = _mid
 
         if is_full_number_exist(dp, c, j, s):
-            _max = min(_max, c - j + 1)
+            if c - j + 1 < _min:
+                _min = c - j + 1
         elif is_full_number_exist(dp, c, i, s):
-            _max = min(_max, c - i + 1)
+            if c - i + 1 < _min:
+                _min = c - i + 1
 
-        if _max == 3:
-            return _max
+        if _min == 3:
+            return _min
 
-    if _max == INF:
+    if _min == INF:
         return 0
     else:
-        return _max
+        return _min
 
 
 def run():
