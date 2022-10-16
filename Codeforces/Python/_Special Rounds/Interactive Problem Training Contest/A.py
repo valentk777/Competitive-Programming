@@ -29,7 +29,7 @@ INF = maxsize
 
 def solve():
     left = 0
-    right = 10**6
+    right = 10 ** 6
 
     while left < right:
         mid = (left + right + 1) // 2
@@ -48,6 +48,7 @@ def solve():
 
 def run():
     print(solve())
+
 
 if __name__ == "__main__":
     if os.environ.get("DEBUG_CODEFORCES"):
