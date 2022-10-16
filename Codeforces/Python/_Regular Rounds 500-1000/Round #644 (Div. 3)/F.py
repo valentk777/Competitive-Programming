@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
-# URL    : https://codeforces.com/contest/CONTEST_NUMBER/problem/PROBLEM_LETTER
-# Title  : PROBLEM_TITLE
-# Notes  : tag-codeforces, tag-problem-PROBLEM_LETTER, tag-div-DIVISION
+# URL    : https://codeforces.com/contest/1360/problem/F
+# Title  : F. Spy-string
+# Notes  : tag-codeforces, tag-problem-F, tag-div-3
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
@@ -16,7 +16,8 @@ intl = lambda: list(map(int, inp().split()))
 strl = lambda: list(inp().split())
 list_to_string = lambda _a: "".join(map(str, _a))
 list_to_string_list = lambda _a: " ".join(map(str, _a))
-_dp = lambda default_value: defaultdict(lambda: default_value)
+ddict = defaultdict
+_dp = lambda default_value: ddict(lambda: default_value)
 flush = lambda: stdout.flush()
 print_flush = lambda _text: (print(_text), flush())
 
@@ -34,8 +35,29 @@ M = 9999999999879998
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
+def get_all_possible_string_combinations(s, m):
+    _strings = set()
+
+    for j in range(26):
+        for i in range(m):
+            _strings.add(s[:i] + chr(97 + j) + s[i + 1:])
+
+    return _strings
+
+
 def solve():
-    pass
+    n, m = intl()
+    s = inp()
+
+    st = get_all_possible_string_combinations(s, m)
+
+    for i in range(n - 1):
+        st = st & get_all_possible_string_combinations(inp(), m)
+
+    if st:
+        return list(st)[0]
+    else:
+        return -1
 
 
 def run():

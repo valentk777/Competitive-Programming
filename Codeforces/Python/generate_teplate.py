@@ -11,7 +11,7 @@ logger = logging.getLogger()
 logger.setLevel(1)
 
 CURRENT_PATH = Path(getcwd())
-WEB_URL = "https://codeforces.com/contest/111/problem/A"
+WEB_URL = "https://codeforces.com/contest/1360/problem/F"
 
 
 class RoundData:
@@ -24,12 +24,31 @@ class RoundData:
         self._problems = None
         self.sample_data = self._get_sample_data()
 
+    def __str__(self):
+        return f"""
+        
+|----------------------------------------------------------------------------------
+|    ROUND: #{self.round_number}
+|
+|    Division: {self.division}
+|    Contest: {self.contest_number}
+|    
+|    Problems:
+|       - {list(map(lambda x: x[1], self._problems))}
+|----------------------------------------------------------------------------------
+        """
+
     def get_problems(self):
         if self._problems is not None:
             return self._problems
 
         if "problem" in self.web_url:
-            problems_number = self.web_url.split("problem")[1]
+            problems_number = self.web_url.split("problem")[-1]
+
+            if "problemset" in self.web_url:
+                problems_number = problems_number.strip("/").split("/")[-1]
+            else:
+                problems_number = problems_number[1]
             problem_name = self._web_content.select_one(".problemindexholder").select_one(".title").text
 
             self._problems = [[problems_number.strip("/"), problem_name]]
@@ -47,7 +66,13 @@ class RoundData:
         return self._problems
 
     def _get_contest_number(self) -> str:
-        contest_number = self.web_url.split("contest")[1]
+        if "contest" in self.web_url:
+            contest_number = self.web_url.split("contest")[1]
+        elif "problemset" in self.web_url:
+            contest_number = self.web_url.split("problem")[-1].strip("/").split("/")[0]
+        else:
+            logging.error("Cannot find contest or problemset")
+            raise Exception("Cannot find contest or problemset")
 
         if "problem" in contest_number:
             contest_number = contest_number.split("problem")[0]
@@ -157,6 +182,7 @@ def generate_folder_with_problems() -> None:
     create_input_file(round_data)
     copy_file_and_update_information(template, folder_path, round_data)
     modify_file(folder_path, round_data)
+    logger.info(round_data)
 
     logger.info("Script ended")
 
