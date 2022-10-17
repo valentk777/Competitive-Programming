@@ -1,13 +1,13 @@
 # -----------------------------------------------------------
 # URL    : https://codeforces.com/contest/1137/problem/B
-# Title  : Sushi for Two
-# Notes  : tag-codeforces, tag-problem-B, tag-div-1, tag-not-pass
+# Title  : Camp Schedule
+# Notes  : tag-codeforces, tag-problem-B, tag-div-1
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
 import os
 import time
-from collections import defaultdict
+from collections import defaultdict, Counter
 from sys import stdin, maxsize
 
 inp = lambda: stdin.readline().strip()
@@ -25,36 +25,87 @@ INF = maxsize
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
-# Wrong answer
-# count number of two consecutive elements
+
+def get_length_of_longest_prefix_suffix(s):
+    n = len(s)
+    lps = [0] * n  # lps[0] is always 0
+    length_of_prev_longest_prefix = 0
+
+    i = 1
+
+    while i < n:
+        if s[i] == s[length_of_prev_longest_prefix]:
+            length_of_prev_longest_prefix = length_of_prev_longest_prefix + 1
+            lps[i] = length_of_prev_longest_prefix
+            i = i + 1
+
+        else:
+            # (pat[i] != pat[len])
+            # This is tricky. Consider the example. AAACAAAA and i = 7. The idea is similar to search step.
+            if length_of_prev_longest_prefix != 0:
+                length_of_prev_longest_prefix = lps[length_of_prev_longest_prefix - 1]
+
+                # Also, note that we do not increment i here
+
+            else:
+
+                # if (len == 0)
+                lps[i] = 0
+                i = i + 1
+
+    res = lps[n - 1]
+
+    # Since we are looking for
+    # non overlapping parts.
+    if res > n / 2:
+        return n // 2
+    else:
+        return res
+
+
 def solve():
     s = inp()
     t = inp()
 
-    n_s = len(s)
-    n_t = len(t)
+    count_s = Counter(s)
+    count_t = Counter(t)
 
-    if n_s < n_t:
+    if count_s["0"] < count_t["0"] or count_s["1"] < count_t["1"]:
         return s
 
-    count_s = _dp(0)
-    count_t = _dp(0)
-
-    for i in range(n_s):
-        count_s[s[i]] += 1
-
-    for i in range(n_t):
-        count_t[t[i]] += 1
-
+    # we need to create this string because normally only half of string should be added
+    # when calculating prefix and suffix. We want to find at best n-1 long string (not n // 2).
+    # to cover a case where 1111 -> 111 (not 11). so we need only 1 "1" at the end
+    n_prefix = get_length_of_longest_prefix_suffix(t + "#" + t[1:])
     ans = ""
 
-    while count_s["0"] - count_t["0"] >= 0 and count_s["1"] - count_t["1"] >= 0:
+    # create first pattern
+    if count_s["0"] - count_t["0"] >= 0 and count_s["1"] - count_t["1"] >= 0:
         count_s["0"] -= count_t["0"]
         count_s["1"] -= count_t["1"]
-
         ans += t
 
+    # we know that t could be generated from previous t.
+    # so we will modify t by removing prefix also as suffix and continue
+    if n_prefix != 0:
+        t = t[n_prefix:]
+        count_t = Counter(t)
+
+    while count_s["0"] - count_t["0"] >= 0 and count_s["1"] - count_t["1"] >= 0:
+        _min = INF
+
+        if count_t["0"] > 0:
+            _min = min(count_s["0"] // count_t["0"], _min)
+        if count_t["1"] > 0:
+            _min = min(count_s["1"] // count_t["1"], _min)
+
+        ans += t * _min
+        count_s["0"] -= _min * count_t["0"]
+        count_s["1"] -= _min * count_t["1"]
+        break
+
     ans += count_s["0"] * "0" + count_s["1"] * "1"
+
     return ans
 
 

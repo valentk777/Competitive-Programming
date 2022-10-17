@@ -1,3 +1,7 @@
+import re
+from collections import Counter
+
+
 def polynomial_hash(s):
     _hash = 0
     _pow = 1
@@ -7,6 +11,7 @@ def polynomial_hash(s):
         _pow = (_pow * A) % M
 
     return _hash
+
 
 def str_hash(s):
     _hash = 0
@@ -94,5 +99,77 @@ def suffix_length(s1, s2):
     return i
 
 
+# slow
+def get_length_of_longest_prefix_suffix(s):
+    return len(re.findall(r'^(\w*).*\1$', s)[0])
+
+
+# get count of letters
+s = "aaabbbxxx"
+xxx = Counter(s)
+print(xxx)
+
 A = 911382323
 M = 9999999999879998
+
+
+def get_length_of_longest_prefix_suffix(s):
+    n = len(s)
+    lps = [0] * n  # lps[0] is always 0
+    length_of_prev_longest_prefix = 0
+
+    i = 1
+
+    while i < n:
+        if s[i] == s[length_of_prev_longest_prefix]:
+            length_of_prev_longest_prefix = length_of_prev_longest_prefix + 1
+            lps[i] = length_of_prev_longest_prefix
+            i = i + 1
+
+        else:
+            # (pat[i] != pat[len])
+            # This is tricky. Consider
+            # the example. AAACAAAA
+            # and i = 7. The idea is
+            # similar to search step.
+
+            if length_of_prev_longest_prefix != 0:
+                length_of_prev_longest_prefix = lps[length_of_prev_longest_prefix - 1]
+
+                # Also, note that we do
+                # not increment i here
+
+            else:
+
+                # if (len == 0)
+                lps[i] = 0
+                i = i + 1
+
+    res = lps[n - 1]
+
+    # Since we are looking for
+    # non overlapping parts.
+    if res > n / 2:
+        return n // 2
+    else:
+        return res
+
+
+# return you number of 2 divisors in provided x (slow)
+def count_number_of_n_divisors(x, n):
+    return 0 if x % n else count_number_of_n_divisors(x // n, n) + 1
+
+
+# fast
+def count_number_of_2_divisors(x):
+    ans = 0
+
+    while x & 1 == 0:
+        ans += 1
+        x //= 2
+
+    return ans
+
+
+print(count_number_of_n_divisors(10, 2) == 1)
+print(count_number_of_n_divisors(8, 2) == 3)

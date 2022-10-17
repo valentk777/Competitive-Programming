@@ -11,7 +11,7 @@ logger = logging.getLogger()
 logger.setLevel(1)
 
 CURRENT_PATH = Path(getcwd())
-WEB_URL = "https://codeforces.com/contest/1720"
+WEB_URL = "https://codeforces.com/problemset/problem/1746/B"
 
 
 class RoundData:
@@ -189,14 +189,14 @@ def create_folder(folder_path: Path) -> None:
 def generate_folder_with_problems() -> None:
     logger.info("Script started")
 
-    # round_data = RoundData(WEB_URL)
-    round_data = RoundData(
-        web_url="",
-        contest_number="1747",
-        round_number=828,
-        division="3",
-        is_started=False,
-    )
+    round_data = RoundData(WEB_URL)
+    # round_data = RoundData(
+    #     web_url="",
+    #     contest_number="1747",
+    #     round_number=828,
+    #     division="3",
+    #     is_started=False,
+    # )
     folder_path = get_folder_path(round_data)
     create_folder(folder_path)
     template = get_template_file_path()

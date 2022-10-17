@@ -106,7 +106,7 @@ N = NumberGenerators(
     number_of_symbols_in_single_line=2 * 10 ** 5,
     number_of_test_cases=2,
     min_number_value=1,
-    max_number_value=1000,
+    max_number_value=1000000000,
 )
 
 S = StringGenerators(
