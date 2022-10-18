@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/PROBLEM_NAME
-# Title  : PROBLEM_TITLE
-# Notes  : tag-kattis, tag-LEVEL
+# URL    : https://open.kattis.com/problems/discdistrict
+# Title  : Disc District
+# Notes  : tag-kattis, tag-easy
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
@@ -10,7 +10,7 @@ import time
 from collections import defaultdict
 from sys import stdin, maxsize
 
-inp = lambda: stdin.readline().strip("\n")
+inp = lambda: stdin.readline().strip()
 iinp = lambda: int(inp())
 intl = lambda: list(map(int, inp().split()))
 strl = lambda: list(inp().split())
@@ -22,29 +22,36 @@ list_from_inp = lambda n: [inp() for _ in range(n)]
 
 MOD = 10 ** 9 + 7
 INF = maxsize
-A = 911382323
-M = 9999999999879998
 
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    pass
+    r = iinp()
+    print(1, r)
+
+
+def solve_2():
+    r = iinp()
+    r2 = r ** 2
+    x, y = 0, 0
+    _min = INF
+
+    for _x in range(r + 1):
+        for _y in range(r + 1):
+            s = _x ** 2 + _y ** 2
+
+            if s - r2 > 0:
+                if s < _min:
+                    _min = s
+                    x = _x
+                    y = _y
+
+    print(x, y)
 
 
 def run():
     solve()
-
-
-def run():
-    print(solve())
-
-
-def run():
-    t = iinp()
-
-    for _ in range(t):
-        solve()
 
 
 if __name__ == "__main__":

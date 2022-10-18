@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/PROBLEM_NAME
-# Title  : PROBLEM_TITLE
-# Notes  : tag-kattis, tag-LEVEL
+# URL    : https://open.kattis.com/problems/phonelist
+# Title  : Phone List
+# Notes  : tag-kattis, tag-medium
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
@@ -22,29 +22,51 @@ list_from_inp = lambda n: [inp() for _ in range(n)]
 
 MOD = 10 ** 9 + 7
 INF = maxsize
-A = 911382323
-M = 9999999999879998
 
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
+
+def create_prefixes(phone_list):
+    prefixes = _dp([])
+
+    for phone in phone_list:
+        for i in range(1, len(phone)):
+            prefix = phone[0:i]
+            prefixes[prefix].append(phone)
+
+    return prefixes
+
+
+def create_prefixes_bool(phone_list):
+    prefixes = _dp(False)
+
+    for phone in phone_list:
+        for i in range(1, len(phone)):
+            prefix = phone[0:i]
+            prefixes[prefix] = True
+
+    return prefixes
+
+
 def solve():
-    pass
+    n = iinp()
 
+    numbers = list_from_inp(n)
+    prefixes = create_prefixes_bool(numbers)
+    # prefixes = create_prefixes(numbers)
 
-def run():
-    solve()
-
-
-def run():
-    print(solve())
+    for number in numbers:
+        if prefixes.get(number):
+            return "NO"
+    return "YES"
 
 
 def run():
     t = iinp()
 
     for _ in range(t):
-        solve()
+        print(solve())
 
 
 if __name__ == "__main__":

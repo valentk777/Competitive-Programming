@@ -1,13 +1,14 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/PROBLEM_NAME
-# Title  : PROBLEM_TITLE
-# Notes  : tag-kattis, tag-LEVEL
+# URL    : https://open.kattis.com/problems/4thought
+# Title  : 4 thought
+# Notes  : tag-kattis, tag-2. medium
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
 import os
 import time
 from collections import defaultdict
+from math import floor
 from sys import stdin, maxsize
 
 inp = lambda: stdin.readline().strip("\n")
@@ -22,29 +23,38 @@ list_from_inp = lambda n: [inp() for _ in range(n)]
 
 MOD = 10 ** 9 + 7
 INF = maxsize
-A = 911382323
-M = 9999999999879998
 
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    pass
+    n = iinp()
+    operators = ['*', '//', '+', '-']
 
+    if abs(n) > 256:
+        return "no solution"
 
-def run():
-    solve()
+    results = _dp(0)
 
+    for i in operators:
+        for j in operators:
+            for k in operators:
+                expression = f"4 {i} 4 {j} 4 {k} 4"
+                result = floor(eval(expression))
+                expression = expression.replace("//", "/")
+                results[result] = f"{expression} = {result}"
 
-def run():
-    print(solve())
+    if n in results.keys():
+        return results[n]
+    else:
+        return "no solution"
 
 
 def run():
     t = iinp()
 
     for _ in range(t):
-        solve()
+        print(solve())
 
 
 if __name__ == "__main__":

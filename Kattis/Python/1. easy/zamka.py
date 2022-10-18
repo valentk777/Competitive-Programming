@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/PROBLEM_NAME
-# Title  : PROBLEM_TITLE
-# Notes  : tag-kattis, tag-LEVEL
+# URL    : https://open.kattis.com/problems/zamka
+# Title  : Zamka
+# Notes  : tag-kattis, tag-easy
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
@@ -10,7 +10,7 @@ import time
 from collections import defaultdict
 from sys import stdin, maxsize
 
-inp = lambda: stdin.readline().strip("\n")
+inp = lambda: stdin.readline().strip()
 iinp = lambda: int(inp())
 intl = lambda: list(map(int, inp().split()))
 strl = lambda: list(inp().split())
@@ -22,29 +22,32 @@ list_from_inp = lambda n: [inp() for _ in range(n)]
 
 MOD = 10 ** 9 + 7
 INF = maxsize
-A = 911382323
-M = 9999999999879998
 
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
+def sum_digits(n):
+    return sum(list(map(int, str(n).strip())))
+
+
 def solve():
-    pass
+    l = iinp()
+    d = iinp()
+    x = iinp()
+
+    n = INF
+    m = -INF
+    for i in range(l, d + 1):
+        if sum_digits(i) == x:
+            n = min(n, i)
+            m = max(m, i)
+
+    print(n)
+    print(m)
 
 
 def run():
     solve()
-
-
-def run():
-    print(solve())
-
-
-def run():
-    t = iinp()
-
-    for _ in range(t):
-        solve()
 
 
 if __name__ == "__main__":

@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/PROBLEM_NAME
-# Title  : PROBLEM_TITLE
-# Notes  : tag-kattis, tag-LEVEL
+# URL    : https://open.kattis.com/problems/tarifa
+# Title  : Tarifa
+# Notes  : tag-kattis, tag-easy
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
@@ -10,7 +10,7 @@ import time
 from collections import defaultdict
 from sys import stdin, maxsize
 
-inp = lambda: stdin.readline().strip("\n")
+inp = lambda: stdin.readline().strip()
 iinp = lambda: int(inp())
 intl = lambda: list(map(int, inp().split()))
 strl = lambda: list(inp().split())
@@ -22,29 +22,20 @@ list_from_inp = lambda n: [inp() for _ in range(n)]
 
 MOD = 10 ** 9 + 7
 INF = maxsize
-A = 911382323
-M = 9999999999879998
 
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    pass
+    x = iinp()
+    n = iinp()
+    p = list(map(int, list_from_inp(n)))
 
-
-def run():
-    solve()
+    return x * (n + 1) - sum(p)
 
 
 def run():
     print(solve())
-
-
-def run():
-    t = iinp()
-
-    for _ in range(t):
-        solve()
 
 
 if __name__ == "__main__":

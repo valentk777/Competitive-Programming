@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/PROBLEM_NAME
-# Title  : PROBLEM_TITLE
-# Notes  : tag-kattis, tag-LEVEL
+# URL    : https://open.kattis.com/problems/alphabetspam
+# Title  : Alphabet Spam
+# Notes  : tag-kattis, tag-1. easy
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
@@ -22,29 +22,37 @@ list_from_inp = lambda n: [inp() for _ in range(n)]
 
 MOD = 10 ** 9 + 7
 INF = maxsize
-A = 911382323
-M = 9999999999879998
 
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    pass
+    s = list(inp())
+    n = len(s)
+
+    count_whitespace = 0
+    count_lowercase = 0
+    count_uppercase = 0
+    count_symbols = 0
+
+    for i in range(n):
+        if s[i] == "_":
+            count_whitespace += 1
+        elif ord("a") <= ord(s[i]) <= ord("z"):
+            count_lowercase += 1
+        elif ord("A") <= ord(s[i]) <= ord("Z"):
+            count_uppercase += 1
+        else:
+            count_symbols += 1
+
+    print(count_whitespace / n)
+    print(count_lowercase / n)
+    print(count_uppercase / n)
+    print(count_symbols / n)
 
 
 def run():
     solve()
-
-
-def run():
-    print(solve())
-
-
-def run():
-    t = iinp()
-
-    for _ in range(t):
-        solve()
 
 
 if __name__ == "__main__":

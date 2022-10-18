@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/PROBLEM_NAME
-# Title  : PROBLEM_TITLE
-# Notes  : tag-kattis, tag-LEVEL
+# URL    : https://open.kattis.com/problems/bijele
+# Title  : Bijele
+# Notes  : tag-kattis, tag-1. easy
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
@@ -22,29 +22,28 @@ list_from_inp = lambda n: [inp() for _ in range(n)]
 
 MOD = 10 ** 9 + 7
 INF = maxsize
-A = 911382323
-M = 9999999999879998
 
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    pass
+    _set = intl()
+    ats = []
 
+    for i in range(0, 2):
+        ats.append(1 - _set[i])
 
-def run():
-    solve()
+    for i in range(2, 5):
+        ats.append(2 - _set[i])
+
+    for i in range(5, 6):
+        ats.append(8 - _set[i])
+
+    return list_to_string_list(ats)
 
 
 def run():
     print(solve())
-
-
-def run():
-    t = iinp()
-
-    for _ in range(t):
-        solve()
 
 
 if __name__ == "__main__":

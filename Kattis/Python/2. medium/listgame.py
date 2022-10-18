@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/PROBLEM_NAME
-# Title  : PROBLEM_TITLE
-# Notes  : tag-kattis, tag-LEVEL
+# URL    : https://open.kattis.com/problems/listgame
+# Title  : A List Game
+# Notes  : tag-kattis, tag-medium
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
@@ -22,29 +22,27 @@ list_from_inp = lambda n: [inp() for _ in range(n)]
 
 MOD = 10 ** 9 + 7
 INF = maxsize
-A = 911382323
-M = 9999999999879998
 
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    pass
+    x = iinp()
+    _count = 1
+    factor = 2
 
+    while x >= factor ** 2:
+        if x % factor == 0:
+            _count += 1
+            x //= factor
+        else:
+            factor += 1
 
-def run():
-    solve()
+    return _count
 
 
 def run():
     print(solve())
-
-
-def run():
-    t = iinp()
-
-    for _ in range(t):
-        solve()
 
 
 if __name__ == "__main__":

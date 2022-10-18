@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/PROBLEM_NAME
-# Title  : PROBLEM_TITLE
-# Notes  : tag-kattis, tag-LEVEL
+# URL    : https://open.kattis.com/problems/sortofsorting
+# Title  : Sort of Sorting
+# Notes  : tag-kattis, tag-easy
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
@@ -22,29 +22,30 @@ list_from_inp = lambda n: [inp() for _ in range(n)]
 
 MOD = 10 ** 9 + 7
 INF = maxsize
-A = 911382323
-M = 9999999999879998
 
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    pass
+    n = iinp()
+
+    if n == 0:
+        raise Exception()
+
+    names = list_from_inp(n)
+    names = sorted(names, key=lambda x: (x[0], x[1]))
+
+    for name in names:
+        print(name)
+    print()
 
 
 def run():
-    solve()
-
-
-def run():
-    print(solve())
-
-
-def run():
-    t = iinp()
-
-    for _ in range(t):
-        solve()
+    try:
+        while True:
+            solve()
+    except:
+        pass
 
 
 if __name__ == "__main__":

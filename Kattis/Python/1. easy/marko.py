@@ -1,11 +1,12 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/PROBLEM_NAME
-# Title  : PROBLEM_TITLE
-# Notes  : tag-kattis, tag-LEVEL
+# URL    : https://open.kattis.com/problems/marko
+# Title  : Marko
+# Notes  : tag-kattis, tag-1. easy
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
 import os
+import re
 import time
 from collections import defaultdict
 from sys import stdin, maxsize
@@ -22,29 +23,43 @@ list_from_inp = lambda n: [inp() for _ in range(n)]
 
 MOD = 10 ** 9 + 7
 INF = maxsize
-A = 911382323
-M = 9999999999879998
-
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
+
+keyboard = {
+    '2': '[abc]{1}',
+    '3': '[def]{1}',
+    '4': '[ghi]{1}',
+    '5': '[jkl]{1}',
+    '6': '[mno]{1}',
+    '7': '[pqrs]{1}',
+    '8': '[tuv]{1}',
+    '9': '[wxyz]{1}'
+}
+
+
 def solve():
-    pass
+    n = iinp()
+    words = list_from_inp(n)
+    s = inp()
 
+    expression = '^'
 
-def run():
-    solve()
+    for letter in s:
+        expression += keyboard[letter]
+
+    possible = 0
+
+    for word in words:
+        if re.match(expression, word) is not None:
+            possible += 1
+
+    return possible
 
 
 def run():
     print(solve())
-
-
-def run():
-    t = iinp()
-
-    for _ in range(t):
-        solve()
 
 
 if __name__ == "__main__":

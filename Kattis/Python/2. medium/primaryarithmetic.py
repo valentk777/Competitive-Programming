@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/PROBLEM_NAME
-# Title  : PROBLEM_TITLE
-# Notes  : tag-kattis, tag-LEVEL
+# URL    : https://open.kattis.com/problems/primaryarithmetic
+# Title  : Primary Arithmetic
+# Notes  : tag-kattis, tag-medium
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
@@ -22,29 +22,43 @@ list_from_inp = lambda n: [inp() for _ in range(n)]
 
 MOD = 10 ** 9 + 7
 INF = maxsize
-A = 911382323
-M = 9999999999879998
 
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    pass
+    a, b = strl()
+
+    if a == b == "0":
+        return
+
+    n = max(len(a), len(b))
+    a = a.zfill(n)[::-1]
+    b = b.zfill(n)[::-1]
+    carry = 0
+    _count = 0
+
+    for i in range(n):
+        if int(a[i]) + int(b[i]) + carry > 9:
+            carry = 1
+            _count += 1
+        else:
+            carry = 0
+
+    if _count > 1:
+        print(f"{_count} carry operations.")
+    elif _count == 1:
+        print(f"{_count} carry operation.")
+    else:
+        print("No carry operation.")
 
 
 def run():
-    solve()
-
-
-def run():
-    print(solve())
-
-
-def run():
-    t = iinp()
-
-    for _ in range(t):
-        solve()
+    try:
+        while True:
+            solve()
+    except:
+        pass
 
 
 if __name__ == "__main__":

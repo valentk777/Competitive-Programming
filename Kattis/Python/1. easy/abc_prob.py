@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/PROBLEM_NAME
-# Title  : PROBLEM_TITLE
-# Notes  : tag-kattis, tag-LEVEL
+# URL    : https://open.kattis.com/problems/abc
+# Title  : ABC
+# Notes  : tag-kattis, tag-1. easy
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
@@ -22,29 +22,31 @@ list_from_inp = lambda n: [inp() for _ in range(n)]
 
 MOD = 10 ** 9 + 7
 INF = maxsize
-A = 911382323
-M = 9999999999879998
 
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    pass
+    x = intl()
+    s = inp()
+
+    x = sorted(x)
+    a, b, c = x
+    ats = []
+
+    for i in range(3):
+        if s[i] == "A":
+            ats.append(a)
+        elif s[i] == "B":
+            ats.append(b)
+        else:
+            ats.append(c)
+
+    print(list_to_string_list(ats))
 
 
 def run():
     solve()
-
-
-def run():
-    print(solve())
-
-
-def run():
-    t = iinp()
-
-    for _ in range(t):
-        solve()
 
 
 if __name__ == "__main__":

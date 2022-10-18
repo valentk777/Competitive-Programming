@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/PROBLEM_NAME
-# Title  : PROBLEM_TITLE
-# Notes  : tag-kattis, tag-LEVEL
+# URL    : https://open.kattis.com/problems/highesthill
+# Title  : Highest Hill
+# Notes  : tag-kattis, tag-medium
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
@@ -10,7 +10,7 @@ import time
 from collections import defaultdict
 from sys import stdin, maxsize
 
-inp = lambda: stdin.readline().strip("\n")
+inp = lambda: stdin.readline().strip()
 iinp = lambda: int(inp())
 intl = lambda: list(map(int, inp().split()))
 strl = lambda: list(inp().split())
@@ -22,29 +22,62 @@ list_from_inp = lambda n: [inp() for _ in range(n)]
 
 MOD = 10 ** 9 + 7
 INF = maxsize
-A = 911382323
-M = 9999999999879998
 
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    pass
+    n = iinp()
+    h = intl()
 
+    start_index = 0
 
-def run():
-    solve()
+    while h[start_index] > h[start_index + 1]:
+        start_index += 1
+
+    h = h[start_index:]
+    n -= start_index
+
+    min_max = [h[0]]
+
+    start_index = 1
+
+    while start_index + 1 < n:
+        while start_index + 1 < n and h[start_index] == h[start_index + 1]:
+            start_index += 1
+
+        if start_index + 1 == n:
+            break
+
+        while start_index + 1 < n and h[start_index] <= h[start_index + 1]:
+            start_index += 1
+
+        min_max.append(h[start_index])
+
+        if start_index + 1 == n:
+            break
+
+        while start_index + 1 < n and h[start_index] >= h[start_index + 1]:
+            start_index += 1
+
+        min_max.append(h[start_index])
+        start_index += 1
+
+    n = len(min_max)
+
+    if n < 3:
+        return 0
+
+    _max_mid = -INF
+
+    for i in range(1, n - 1, 2):
+        _max_mid = max(_max_mid, min(min_max[i] - min_max[i - 1], min_max[i] - min_max[i + 1]))
+
+    return _max_mid
 
 
 def run():
     print(solve())
-
-
-def run():
-    t = iinp()
-
-    for _ in range(t):
-        solve()
 
 
 if __name__ == "__main__":

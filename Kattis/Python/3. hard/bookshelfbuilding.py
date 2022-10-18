@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/PROBLEM_NAME
-# Title  : PROBLEM_TITLE
-# Notes  : tag-kattis, tag-LEVEL
+# URL    : https://open.kattis.com/problems/bookshelfbuilding
+# Title  : Bookshelf Building
+# Notes  : tag-kattis, tag-hard, tag-not-pass
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
@@ -10,7 +10,7 @@ import time
 from collections import defaultdict
 from sys import stdin, maxsize
 
-inp = lambda: stdin.readline().strip("\n")
+inp = lambda: stdin.readline().strip()
 iinp = lambda: int(inp())
 intl = lambda: list(map(int, inp().split()))
 strl = lambda: list(inp().split())
@@ -22,29 +22,49 @@ list_from_inp = lambda n: [inp() for _ in range(n)]
 
 MOD = 10 ** 9 + 7
 INF = maxsize
-A = 911382323
-M = 9999999999879998
 
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    pass
+    # x - width, y = height
+    n, x, y = intl()
 
+    books = []
+    for i in range(n):
+        w, h = intl()
+        books.append((w, h, w * h))
 
-def run():
-    solve()
+    books = sorted(books, key=lambda book: (book[1], book[2]), reverse=True)
+
+    board = books[0][1]
+
+    x_up = x
+    x_down = x
+    y_up = y - board
+
+    for i in range(n):
+        if books[i][1] > y:
+            return "impossible"
+
+        if x_down - books[i][0] >= 0:
+            x_down -= books[i][0]
+        elif y_up >= books[i][1]:
+            if x_up - books[i][0] >= 0:
+                x_up -= books[i][0]
+            else:
+                return "impossible"
+        else:
+            return "impossible"
+
+    if board == y:
+        return -1
+
+    return board
 
 
 def run():
     print(solve())
-
-
-def run():
-    t = iinp()
-
-    for _ in range(t):
-        solve()
 
 
 if __name__ == "__main__":

@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/PROBLEM_NAME
-# Title  : PROBLEM_TITLE
-# Notes  : tag-kattis, tag-LEVEL
+# URL    : https://open.kattis.com/problems/compoundwords
+# Title  : Compound Words
+# Notes  : tag-kattis, tag-easy
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
@@ -22,29 +22,37 @@ list_from_inp = lambda n: [inp() for _ in range(n)]
 
 MOD = 10 ** 9 + 7
 INF = maxsize
-A = 911382323
-M = 9999999999879998
 
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    pass
+    words = set()
+
+    while True:
+        line = strl()
+
+        if not line:
+            break
+
+        for word in line:
+            words.add(word)
+
+    ats = set()
+    words = list(words)
+
+    for i in range(len(words)):
+        for j in range(i + 1, len(words)):
+            ats.add(words[i] + words[j])
+            ats.add(words[j] + words[i])
+
+    ats = sorted(ats)
+    for i in ats:
+        print(i)
 
 
 def run():
     solve()
-
-
-def run():
-    print(solve())
-
-
-def run():
-    t = iinp()
-
-    for _ in range(t):
-        solve()
 
 
 if __name__ == "__main__":

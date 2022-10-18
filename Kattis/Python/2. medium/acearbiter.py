@@ -1,16 +1,17 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/PROBLEM_NAME
-# Title  : PROBLEM_TITLE
-# Notes  : tag-kattis, tag-LEVEL
+# URL    : https://open.kattis.com/problems/acearbiter
+# Title  : Ace Arbiter
+# Notes  : tag-kattis, tag-medium
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
 import os
 import time
 from collections import defaultdict
+from math import floor
 from sys import stdin, maxsize
 
-inp = lambda: stdin.readline().strip("\n")
+inp = lambda: stdin.readline().strip()
 iinp = lambda: int(inp())
 intl = lambda: list(map(int, inp().split()))
 strl = lambda: list(inp().split())
@@ -22,29 +23,45 @@ list_from_inp = lambda n: [inp() for _ in range(n)]
 
 MOD = 10 ** 9 + 7
 INF = maxsize
-A = 911382323
-M = 9999999999879998
 
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    pass
+    n = iinp()
+    a, b = list(map(int, inp().split("-")))
+    _a = a
+    _b = b
+    is_end = a == 11 or b == 11
 
+    if a == 11 and b == 11:
+        return f"error {1}"
 
-def run():
-    solve()
+    for i in range(1, n):
+        a, b = list(map(int, inp().split("-")))
+
+        if a == _a and b == _b:
+            continue
+
+        if floor((_a + _b + 1) / 2.0) % 2 != floor((a + b + 1) / 2.0) % 2:
+            _a, _b = _b, _a
+
+        if a < _a or b < _b:
+            return f"error {i + 1}"
+
+        if is_end:
+            return f"error {i + 1}"
+        else:
+            is_end = a == 11 or b == 11
+
+        _a = a
+        _b = b
+
+    return "ok"
 
 
 def run():
     print(solve())
-
-
-def run():
-    t = iinp()
-
-    for _ in range(t):
-        solve()
 
 
 if __name__ == "__main__":

@@ -1,13 +1,14 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/PROBLEM_NAME
-# Title  : PROBLEM_TITLE
-# Notes  : tag-kattis, tag-LEVEL
+# URL    : https://open.kattis.com/problems/janitortroubles
+# Title  : Janitor Troubles
+# Notes  : tag-kattis, tag-easy
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
 import os
 import time
 from collections import defaultdict
+from math import sqrt
 from sys import stdin, maxsize
 
 inp = lambda: stdin.readline().strip("\n")
@@ -22,29 +23,19 @@ list_from_inp = lambda n: [inp() for _ in range(n)]
 
 MOD = 10 ** 9 + 7
 INF = maxsize
-A = 911382323
-M = 9999999999879998
 
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    pass
+    a, b, c, d = intl()
 
-
-def run():
-    solve()
+    semi_perimeter = (a + b + c + d) / 2
+    return sqrt((semi_perimeter - a) * (semi_perimeter - b) * (semi_perimeter - c) * (semi_perimeter - d))
 
 
 def run():
     print(solve())
-
-
-def run():
-    t = iinp()
-
-    for _ in range(t):
-        solve()
 
 
 if __name__ == "__main__":

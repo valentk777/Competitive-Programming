@@ -1,13 +1,14 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/PROBLEM_NAME
-# Title  : PROBLEM_TITLE
-# Notes  : tag-kattis, tag-LEVEL
+# URL    : https://open.kattis.com/problems/suspensionbridges
+# Title  : Suspension Bridges
+# Notes  : tag-kattis, tag-medium
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
 import os
 import time
 from collections import defaultdict
+from math import cosh, sinh
 from sys import stdin, maxsize
 
 inp = lambda: stdin.readline().strip("\n")
@@ -22,29 +23,30 @@ list_from_inp = lambda n: [inp() for _ in range(n)]
 
 MOD = 10 ** 9 + 7
 INF = maxsize
-A = 911382323
-M = 9999999999879998
 
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
+
 def solve():
-    pass
+    d, s = intl()
 
+    lower, upper = 0.00000001, 10000000000
+    mid = 0
 
-def run():
-    solve()
+    while upper - lower > 0.0000000001:
+        mid = (upper + lower) / 2
+
+        if mid + s < mid * cosh(d / (2 * mid)):
+            lower = mid
+        else:
+            upper = mid
+
+    return 2 * mid * sinh(d / (2 * mid))
 
 
 def run():
     print(solve())
-
-
-def run():
-    t = iinp()
-
-    for _ in range(t):
-        solve()
 
 
 if __name__ == "__main__":

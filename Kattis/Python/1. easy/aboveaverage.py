@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/PROBLEM_NAME
-# Title  : PROBLEM_TITLE
-# Notes  : tag-kattis, tag-LEVEL
+# URL    : https://open.kattis.com/problems/aboveaverage
+# Title  : Above Average
+# Notes  : tag-kattis, tag-1. easy
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
@@ -22,29 +22,26 @@ list_from_inp = lambda n: [inp() for _ in range(n)]
 
 MOD = 10 ** 9 + 7
 INF = maxsize
-A = 911382323
-M = 9999999999879998
 
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    pass
+    grades = intl()
+    n = grades[0]
+    grades = grades[1:]
 
+    average = sum(grades) / max(n, 1)
+    above = list(filter(lambda x: x > average, grades))
 
-def run():
-    solve()
-
-
-def run():
-    print(solve())
+    return '{0:.3f}%'.format(len(above) * 100 / len(grades))
 
 
 def run():
     t = iinp()
 
     for _ in range(t):
-        solve()
+        print(solve())
 
 
 if __name__ == "__main__":

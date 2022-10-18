@@ -1,50 +1,44 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/PROBLEM_NAME
-# Title  : PROBLEM_TITLE
-# Notes  : tag-kattis, tag-LEVEL
+# URL    : https://open.kattis.com/problems/flipflow
+# Title  : Flip Flow
+# Notes  : tag-kattis, tag-easy
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
 import os
 import time
-from collections import defaultdict
 from sys import stdin, maxsize
 
-inp = lambda: stdin.readline().strip("\n")
+inp = lambda: stdin.readline().strip()
 iinp = lambda: int(inp())
 intl = lambda: list(map(int, inp().split()))
 strl = lambda: list(inp().split())
-list_to_string = lambda _a: "".join(map(str, _a))
-list_to_string_list = lambda _a: " ".join(map(str, _a))
-_dp = lambda default_value: defaultdict(lambda: default_value)
-print_dp = lambda _dict: list(map(lambda item: print(f"{item[0]} = {item[1]}"), _dict.items()))
-list_from_inp = lambda n: [inp() for _ in range(n)]
 
 MOD = 10 ** 9 + 7
 INF = maxsize
-A = 911382323
-M = 9999999999879998
 
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    pass
+    t, s, n = intl()
+    a = intl()
+
+    flip_time = a[0]
+    half_top = s
+    half_bottom = 0
+
+    for i in range(1, n):
+        duration = a[i] - flip_time
+        half_top, half_bottom = min(s, half_bottom + duration), max(0, half_top - duration)
+        flip_time = a[i]
+
+    duration = t - flip_time
+    print(max(0, half_top - duration))
 
 
 def run():
     solve()
-
-
-def run():
-    print(solve())
-
-
-def run():
-    t = iinp()
-
-    for _ in range(t):
-        solve()
 
 
 if __name__ == "__main__":

@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/PROBLEM_NAME
-# Title  : PROBLEM_TITLE
-# Notes  : tag-kattis, tag-LEVEL
+# URL    : https://open.kattis.com/problems/runlengthencodingrun
+# Title  : Run-Length Encoding, Run!
+# Notes  : tag-kattis, tag-easy
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
@@ -22,29 +22,41 @@ list_from_inp = lambda n: [inp() for _ in range(n)]
 
 MOD = 10 ** 9 + 7
 INF = maxsize
-A = 911382323
-M = 9999999999879998
 
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    pass
+    s = strl()
 
+    command = s[0]
+    message = s[1]
+    ats = []
 
-def run():
-    solve()
+    if command == "E":
+        prev = message[0]
+        _count = 0
+
+        for i in range(len(message)):
+            if message[i] == prev:
+                _count += 1
+            else:
+                ats.append(prev + str(_count))
+                _count = 1
+                prev = message[i]
+
+        ats.append(prev + str(_count))
+    else:
+        _count = 0
+
+        for i in range(1, len(message), 2):
+            ats.append(message[i - 1] * int(message[i]))
+
+    return list_to_string(ats)
 
 
 def run():
     print(solve())
-
-
-def run():
-    t = iinp()
-
-    for _ in range(t):
-        solve()
 
 
 if __name__ == "__main__":

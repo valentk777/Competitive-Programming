@@ -1,13 +1,14 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/PROBLEM_NAME
-# Title  : PROBLEM_TITLE
-# Notes  : tag-kattis, tag-LEVEL
+# URL    : https://open.kattis.com/problems/repeatingdecimal
+# Title  : Repeating Decimal
+# Notes  : tag-kattis, tag-medium
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
 import os
 import time
 from collections import defaultdict
+from decimal import Decimal, getcontext
 from sys import stdin, maxsize
 
 inp = lambda: stdin.readline().strip("\n")
@@ -22,29 +23,40 @@ list_from_inp = lambda n: [inp() for _ in range(n)]
 
 MOD = 10 ** 9 + 7
 INF = maxsize
-A = 911382323
-M = 9999999999879998
+getcontext().prec = 10000
 
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
+def solve_slow():
+    a, b, c = intl()
+
+    result = str(Decimal(a) / Decimal(b))
+
+    if len(result) < c + 2:
+        result += "0" * (c + 2 - len(result))
+
+    return result[:c + 2]
+
+
 def solve():
-    pass
+    a, b, c = intl()
+
+    ats = ["0."]
+    for i in range(c):
+        a *= 10
+        ats.append(a // b)
+        a %= b
+
+    return list_to_string(ats)
 
 
 def run():
-    solve()
-
-
-def run():
-    print(solve())
-
-
-def run():
-    t = iinp()
-
-    for _ in range(t):
-        solve()
+    try:
+        while True:
+            print(solve())
+    except:
+        pass
 
 
 if __name__ == "__main__":

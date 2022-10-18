@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/PROBLEM_NAME
-# Title  : PROBLEM_TITLE
-# Notes  : tag-kattis, tag-LEVEL
+# URL    : https://open.kattis.com/problems/sumkindofproblem
+# Title  : Sum Kind of Problem
+# Notes  : tag-kattis, tag-easy
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
@@ -10,7 +10,7 @@ import time
 from collections import defaultdict
 from sys import stdin, maxsize
 
-inp = lambda: stdin.readline().strip("\n")
+inp = lambda: stdin.readline().strip()
 iinp = lambda: int(inp())
 intl = lambda: list(map(int, inp().split()))
 strl = lambda: list(inp().split())
@@ -22,22 +22,27 @@ list_from_inp = lambda n: [inp() for _ in range(n)]
 
 MOD = 10 ** 9 + 7
 INF = maxsize
-A = 911382323
-M = 9999999999879998
 
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    pass
+    k, n = intl()
 
+    _sum = 0
+    _sum_odd = 0
+    _sum_even = 0
 
-def run():
-    solve()
+    for i in range(1, n + 1):
+        _sum += i
 
+    for i in range(1, (2 * n) + 1, 2):
+        _sum_odd += i
 
-def run():
-    print(solve())
+    for i in range(2, (2 * n) + 1, 2):
+        _sum_even += i
+
+    print(k, _sum, _sum_odd, _sum_even)
 
 
 def run():
