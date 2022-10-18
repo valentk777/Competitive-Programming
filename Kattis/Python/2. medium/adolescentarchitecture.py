@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
 # URL    : https://open.kattis.com/problems/adolescentarchitecture
 # Title  : Adolescent Architecture
-# Notes  : tag-kattis, tag-2. medium
+# Notes  : tag-kattis, tag-medium
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

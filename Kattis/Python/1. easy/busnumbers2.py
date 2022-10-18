@@ -1,14 +1,13 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/4thought
-# Title  : 4 thought
-# Notes  : tag-kattis, tag-medium
+# URL    : https://open.kattis.com/problems/busnumbers2
+# Title  : Bus Numbers
+# Notes  : tag-kattis, tag-easy
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
 import os
 import time
 from collections import defaultdict
-from math import floor
 from sys import stdin, maxsize
 
 inp = lambda: stdin.readline().strip("\n")
@@ -23,38 +22,34 @@ list_from_inp = lambda n: [inp() for _ in range(n)]
 
 MOD = 10 ** 9 + 7
 INF = maxsize
+A = 911382323
+M = 9999999999879998
 
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
     n = iinp()
-    operators = ['*', '//', '+', '-']
 
-    if abs(n) > 256:
-        return "no solution"
+    all_cubes = [i ** 3 for i in range(1, 75)]
+    all_cubes = list(filter(lambda x: x < n, all_cubes))
 
-    results = _dp(0)
+    candidates = _dp(0)
 
-    for i in operators:
-        for j in operators:
-            for k in operators:
-                expression = f"4 {i} 4 {j} 4 {k} 4"
-                result = floor(eval(expression))
-                expression = expression.replace("//", "/")
-                results[result] = f"{expression} = {result}"
+    for i in range(len(all_cubes)):
+        for j in range(i, len(all_cubes)):
+            candidates[all_cubes[i] + all_cubes[j]] += 1
 
-    if n in results.keys():
-        return results[n]
+    candidates = dict(filter(lambda x: x[0] <= n and x[1] > 1, candidates.items()))
+
+    if len(candidates.keys()) > 0:
+        return max(candidates.keys())
     else:
-        return "no solution"
+        return "none"
 
 
 def run():
-    t = iinp()
-
-    for _ in range(t):
-        print(solve())
+    print(solve())
 
 
 if __name__ == "__main__":

@@ -1,14 +1,13 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/4thought
-# Title  : 4 thought
-# Notes  : tag-kattis, tag-medium
+# URL    : https://open.kattis.com/problems/reverserot
+# Title  : Reverse Rot
+# Notes  : tag-kattis, tag-easy
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
 import os
 import time
 from collections import defaultdict
-from math import floor
 from sys import stdin, maxsize
 
 inp = lambda: stdin.readline().strip("\n")
@@ -23,38 +22,43 @@ list_from_inp = lambda n: [inp() for _ in range(n)]
 
 MOD = 10 ** 9 + 7
 INF = maxsize
-
+A = 911382323
+M = 9999999999879998
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
-def solve():
-    n = iinp()
-    operators = ['*', '//', '+', '-']
+alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ_."
 
-    if abs(n) > 256:
-        return "no solution"
 
-    results = _dp(0)
+def encrypt_letter(c, n):
+    _ord = 0
 
-    for i in operators:
-        for j in operators:
-            for k in operators:
-                expression = f"4 {i} 4 {j} 4 {k} 4"
-                result = floor(eval(expression))
-                expression = expression.replace("//", "/")
-                results[result] = f"{expression} = {result}"
-
-    if n in results.keys():
-        return results[n]
+    if c == ".":
+        _ord = 27
+    elif c == "_":
+        _ord = 26
     else:
-        return "no solution"
+        _ord = ord(c) - ord("A")
+
+    return alphabet[(_ord + n) % 28]
+
+
+def solve():
+    n, s = strl()
+    n = int(n)
+
+    ans = [encrypt_letter(s[i], n) for i in range(len(s))]
+    ans = ans[::-1]
+
+    return list_to_string(ans)
 
 
 def run():
-    t = iinp()
-
-    for _ in range(t):
-        print(solve())
+    try:
+        while True:
+            print(solve())
+    except:
+        pass
 
 
 if __name__ == "__main__":

@@ -1,6 +1,6 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/4thought
-# Title  : 4 thought
+# URL    : https://open.kattis.com/problems/grille
+# Title  : What's on the Grille?
 # Notes  : tag-kattis, tag-medium
 # -----------------------------------------------------------
 
@@ -8,7 +8,6 @@
 import os
 import time
 from collections import defaultdict
-from math import floor
 from sys import stdin, maxsize
 
 inp = lambda: stdin.readline().strip("\n")
@@ -23,38 +22,58 @@ list_from_inp = lambda n: [inp() for _ in range(n)]
 
 MOD = 10 ** 9 + 7
 INF = maxsize
+A = 911382323
+M = 9999999999879998
 
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
+def rotate_90_degree_clckwise(matrix):
+    new_matrix = []
+    for i in range(len(matrix[0])):
+        li = list(map(lambda x: x[i], matrix))
+        li.reverse()
+        new_matrix.append(li)
+
+    return new_matrix
+
+
 def solve():
     n = iinp()
-    operators = ['*', '//', '+', '-']
+    grille = [list(inp()) for _ in range(n)]
+    translated = [["*" for _ in range(n)] for _ in range(n)]
+    message = inp()
+    message_idx = 0
 
-    if abs(n) > 256:
-        return "no solution"
+    if n == 1:
+        return message
 
-    results = _dp(0)
+    for rotations in range(4):
+        for row in range(n):
+            for column in range(n):
+                if grille[row][column] == ".":
+                    if message_idx == len(message):
+                        return "invalid grille"
 
-    for i in operators:
-        for j in operators:
-            for k in operators:
-                expression = f"4 {i} 4 {j} 4 {k} 4"
-                result = floor(eval(expression))
-                expression = expression.replace("//", "/")
-                results[result] = f"{expression} = {result}"
+                    translated[row][column] = message[message_idx]
+                    message_idx += 1
 
-    if n in results.keys():
-        return results[n]
-    else:
-        return "no solution"
+        grille = rotate_90_degree_clckwise(grille)
+
+    ans = ""
+
+    for row in range(n):
+        for column in range(n):
+            if translated[row][column] == "*":
+                return "invalid grille"
+
+            ans += translated[row][column]
+
+    return ans
 
 
 def run():
-    t = iinp()
-
-    for _ in range(t):
-        print(solve())
+    print(solve())
 
 
 if __name__ == "__main__":

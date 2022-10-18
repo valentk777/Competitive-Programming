@@ -1,6 +1,6 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/4thought
-# Title  : 4 thought
+# URL    : https://open.kattis.com/problems/secretsanta
+# Title  : Secret Santa
 # Notes  : tag-kattis, tag-medium
 # -----------------------------------------------------------
 
@@ -8,7 +8,6 @@
 import os
 import time
 from collections import defaultdict
-from math import floor
 from sys import stdin, maxsize
 
 inp = lambda: stdin.readline().strip("\n")
@@ -23,38 +22,37 @@ list_from_inp = lambda n: [inp() for _ in range(n)]
 
 MOD = 10 ** 9 + 7
 INF = maxsize
+A = 911382323
+M = 9999999999879998
 
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
+def factorial(n):
+    if n > 10:
+        return 1000000
+    if n == 1 or n == 2:
+        return n
+    else:
+        return n * factorial(n - 1)
+
+
 def solve():
     n = iinp()
-    operators = ['*', '//', '+', '-']
 
-    if abs(n) > 256:
-        return "no solution"
+    if n > 10:
+        n = 10
 
-    results = _dp(0)
+    prob = 0.0
 
-    for i in operators:
-        for j in operators:
-            for k in operators:
-                expression = f"4 {i} 4 {j} 4 {k} 4"
-                result = floor(eval(expression))
-                expression = expression.replace("//", "/")
-                results[result] = f"{expression} = {result}"
+    for i in range(1, n + 1):
+        prob += (-1) ** (i + 1) * 1 / factorial(i)
 
-    if n in results.keys():
-        return results[n]
-    else:
-        return "no solution"
+    return prob
 
 
 def run():
-    t = iinp()
-
-    for _ in range(t):
-        print(solve())
+    print(solve())
 
 
 if __name__ == "__main__":

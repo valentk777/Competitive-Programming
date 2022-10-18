@@ -1,6 +1,6 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/4thought
-# Title  : 4 thought
+# URL    : https://open.kattis.com/problems/almostperfect
+# Title  : Almost Perfect
 # Notes  : tag-kattis, tag-medium
 # -----------------------------------------------------------
 
@@ -8,7 +8,7 @@
 import os
 import time
 from collections import defaultdict
-from math import floor
+from math import sqrt
 from sys import stdin, maxsize
 
 inp = lambda: stdin.readline().strip("\n")
@@ -23,38 +23,51 @@ list_from_inp = lambda n: [inp() for _ in range(n)]
 
 MOD = 10 ** 9 + 7
 INF = maxsize
+A = 911382323
+M = 9999999999879998
 
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
+def get_divisors(n):
+    i = 1
+    divisors = []
+
+    while i <= sqrt(n):
+        if n % i == 0:
+            if n / i != i:
+                divisors.append(n // i)
+
+            divisors.append(i)
+
+        i = i + 1
+
+    return divisors
+
+
 def solve():
     n = iinp()
-    operators = ['*', '//', '+', '-']
 
-    if abs(n) > 256:
-        return "no solution"
+    divisors = get_divisors(n)
+    divisors_sum = sum(divisors) - n
 
-    results = _dp(0)
+    is_perfect = divisors_sum == n
+    is_almost_perfect = n - 2 <= divisors_sum <= n + 2
 
-    for i in operators:
-        for j in operators:
-            for k in operators:
-                expression = f"4 {i} 4 {j} 4 {k} 4"
-                result = floor(eval(expression))
-                expression = expression.replace("//", "/")
-                results[result] = f"{expression} = {result}"
-
-    if n in results.keys():
-        return results[n]
+    if is_perfect:
+        print(n, "perfect")
+    elif is_almost_perfect:
+        print(n, "almost perfect")
     else:
-        return "no solution"
+        print(n, "not perfect")
 
 
 def run():
-    t = iinp()
-
-    for _ in range(t):
-        print(solve())
+    try:
+        while True:
+            solve()
+    except:
+        pass
 
 
 if __name__ == "__main__":

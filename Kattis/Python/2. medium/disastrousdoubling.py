@@ -1,6 +1,6 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/4thought
-# Title  : 4 thought
+# URL    : https://open.kattis.com/problems/disastrousdoubling
+# Title  : Disastrous Doubling
 # Notes  : tag-kattis, tag-medium
 # -----------------------------------------------------------
 
@@ -8,7 +8,6 @@
 import os
 import time
 from collections import defaultdict
-from math import floor
 from sys import stdin, maxsize
 
 inp = lambda: stdin.readline().strip("\n")
@@ -23,38 +22,29 @@ list_from_inp = lambda n: [inp() for _ in range(n)]
 
 MOD = 10 ** 9 + 7
 INF = maxsize
+A = 911382323
+M = 9999999999879998
 
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
     n = iinp()
-    operators = ['*', '//', '+', '-']
+    b = intl()
 
-    if abs(n) > 256:
-        return "no solution"
+    current = 1
+    for i in range(n):
+        current *= 2
+        current -= b[i]
 
-    results = _dp(0)
+        if current < 0:
+            return "error"
 
-    for i in operators:
-        for j in operators:
-            for k in operators:
-                expression = f"4 {i} 4 {j} 4 {k} 4"
-                result = floor(eval(expression))
-                expression = expression.replace("//", "/")
-                results[result] = f"{expression} = {result}"
-
-    if n in results.keys():
-        return results[n]
-    else:
-        return "no solution"
+    return current % MOD
 
 
 def run():
-    t = iinp()
-
-    for _ in range(t):
-        print(solve())
+    print(solve())
 
 
 if __name__ == "__main__":

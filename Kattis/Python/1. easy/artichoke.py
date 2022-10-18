@@ -1,14 +1,14 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/4thought
-# Title  : 4 thought
-# Notes  : tag-kattis, tag-medium
+# URL    : https://open.kattis.com/problems/artichoke
+# Title  : Amalgamated Artichokes
+# Notes  : tag-kattis, tag-easy
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
 import os
 import time
 from collections import defaultdict
-from math import floor
+from math import sin, cos
 from sys import stdin, maxsize
 
 inp = lambda: stdin.readline().strip("\n")
@@ -23,38 +23,41 @@ list_from_inp = lambda n: [inp() for _ in range(n)]
 
 MOD = 10 ** 9 + 7
 INF = maxsize
+A = 911382323
+M = 9999999999879998
 
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
+
 def solve():
-    n = iinp()
-    operators = ['*', '//', '+', '-']
+    p, a, b, c, d, n = intl()
 
-    if abs(n) > 256:
-        return "no solution"
+    def price(k):
+        return p * (sin(a * k + b) + cos(c * k + d) + 2)
 
-    results = _dp(0)
+    prices = []
 
-    for i in operators:
-        for j in operators:
-            for k in operators:
-                expression = f"4 {i} 4 {j} 4 {k} 4"
-                result = floor(eval(expression))
-                expression = expression.replace("//", "/")
-                results[result] = f"{expression} = {result}"
+    for i in range(1, n + 1):
+        prices.append(price(i))
 
-    if n in results.keys():
-        return results[n]
-    else:
-        return "no solution"
+    max_price = 0
+    max_decline = 0
+
+    for i in range(n):
+        diff = max_price - prices[i]
+
+        if diff > max_decline:
+            max_decline = diff
+
+        if diff < 0:
+            max_price = prices[i]
+
+    return max_decline
 
 
 def run():
-    t = iinp()
-
-    for _ in range(t):
-        print(solve())
+    print(solve())
 
 
 if __name__ == "__main__":
