@@ -12,19 +12,20 @@
 ## Statistics
 <!--
 brew install scc
-scc -i cpp,cs,py,sc AdventOfCode Algodaily Codeforces Codewars GoogleKickStart Kattis/
+scc -i cpp,cs,py,sc,sql AdventOfCode Algodaily Codeforces Codewars GoogleKickStart Kattis/
 -->
 
 ```
 ───────────────────────────────────────────────────────────────────────────────
 Language                 Files     Lines   Blanks  Comments     Code Complexity
 ───────────────────────────────────────────────────────────────────────────────
-Python                     271     16571     2111      1664    12796       1217
-C#                          28       930      126       108      696        104
+Python                     293     16821     2147      1752    12922       1254
+C#                          50      1720      242       217     1261        161
 C++                         27      2420      413       309     1698        411
-Scala                        6       214       20        24      170         15
+SQL                         16       162       17        64       81          1
+Scala                       12       271       27        48      196         17
 ───────────────────────────────────────────────────────────────────────────────
-Total                      332     20135     2670      2105    15360       1747
+Total                      398     21394     2846      2390    16158       1844
 ───────────────────────────────────────────────────────────────────────────────
 ```
 
