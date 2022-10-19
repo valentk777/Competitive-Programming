@@ -1,5 +1,6 @@
 import re
 from collections import Counter
+from math import sqrt
 
 
 def polynomial_hash(s):
@@ -173,3 +174,51 @@ def count_number_of_2_divisors(x):
 
 print(count_number_of_n_divisors(10, 2) == 1)
 print(count_number_of_n_divisors(8, 2) == 3)
+
+
+def factorial(n):
+    if n > 10:
+        return 1000000
+    if n == 1 or n == 2:
+        return n
+    else:
+        return n * factorial(n - 1)
+
+
+def get_divisors(n):
+    i = 1
+    divisors = []
+
+    while i <= sqrt(n):
+        if n % i == 0:
+            if n / i != i:
+                divisors.append(n // i)
+
+            divisors.append(i)
+
+        i = i + 1
+
+    return divisors
+
+
+def get_prime_factors(n):
+    factors = []
+
+    c = 2
+
+    while n > 1:
+
+        if n % c == 0:
+            factors.append(c)
+            n = n / c
+        else:
+            c = c + 1
+
+    return factors
+
+
+def is_prime(n):
+    for i in range(2, int(sqrt(n)) + 1):
+        if (n % i) == 0:
+            return False
+    return True

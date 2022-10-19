@@ -45,7 +45,7 @@ class NumberGenerators:
 
         return step
 
-    def generate_multiple_random_strings(self, generator=None):
+    def generate_multiple_random_numbers(self, generator=None):
         if generator is None:
             generator = self._generate_numbers_single_line(False)
 
@@ -103,8 +103,8 @@ class StringGenerators:
 
 
 N = NumberGenerators(
-    number_of_symbols_in_single_line=2 * 10 ** 5,
-    number_of_test_cases=2,
+    number_of_symbols_in_single_line=1,
+    number_of_test_cases=2000000,
     min_number_value=1,
     max_number_value=1000000000,
 )
@@ -122,4 +122,5 @@ S = StringGenerators(
 # S.generate_multiple_random_strings(number_of_test_cases, generator)
 
 # N.generate_sequence_until_n()
-N.generate_numbers_single_line()
+# N.generate_numbers_single_line()
+N.generate_multiple_random_numbers()

@@ -11,7 +11,7 @@ logger = logging.getLogger()
 logger.setLevel(1)
 
 CURRENT_PATH = Path(getcwd())
-WEB_URL = "https://codeforces.com/problemset/problem/1746/B"
+WEB_URL = "https://codeforces.com/problemset/problem/1742/C"
 
 
 class RoundData:
@@ -19,8 +19,8 @@ class RoundData:
         self.web_url = web_url
         self._web_content = self._scrape_url(web_url) if web_url != "" else ""
         self.contest_number = self._get_contest_number() if contest_number == "" else contest_number
-        self.round_number = self._get_round_number() if contest_number == 0 else round_number
-        self.division = self._get_division_number() if contest_number == "" else division
+        self.round_number = self._get_round_number() if round_number == 0 else round_number
+        self.division = self._get_division_number() if division == "" else division
         self.is_started = is_started
         self._problems = None
 

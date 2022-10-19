@@ -5,7 +5,7 @@
 <!-- ![visitor badge](https://visitor-badge-reloaded.herokuapp.com/badge?page_id=valentk777.Contests&color=be54c6&style=flat&logo=Github) -->
 ![Last Commit](https://img.shields.io/github/last-commit/valentk777/Contests.svg)
 [![Codeforces Badge](https://cp-logo.vercel.app/codeforces/valentk777?logo=true)](https://codeforces.com/profile/valentk777)
-[![Kattis Badge](https://img.shields.io/badge/Kattis-182-COLOR.svg)](https://open.kattis.com/users/valentk777)
+[![Kattis Badge](https://img.shields.io/badge/Kattis-184-COLOR.svg)](https://open.kattis.com/users/valentk777)
 [![My Codewarrior Profile Badge](https://www.codewars.com/users/valentk777/badges/micro)](https://www.codewars.com/users/valentk777)
 
 
