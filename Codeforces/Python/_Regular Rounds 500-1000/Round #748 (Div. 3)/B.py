@@ -25,6 +25,7 @@ INF = maxsize
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
+# wrong answer
 def solve():
     number = inp()
     number = number[::-1]
@@ -90,7 +91,7 @@ def solve_2():
         b.pop(-1)
         ans_2 += 1
 
-    while len(b) > 1 and b[-2] != "0" and b[-2] != "5":
+    while len(b) > 1 and b[-2] != "2" and b[-2] != "7":
         b.pop(-2)
         ans_2 += 1
 
@@ -101,8 +102,8 @@ def run():
     t = iinp()
 
     for _ in range(t):
-        print(solve())
-        # print(solve_2())
+        # print(solve())
+        print(solve_2())
 
 
 if __name__ == "__main__":

@@ -1,13 +1,13 @@
 # -----------------------------------------------------------
-# URL    : https://codeforces.com/contest/CONTEST_NUMBER/problem/PROBLEM_LETTER
-# Title  : PROBLEM_TITLE
-# Notes  : tag-codeforces, tag-problem-PROBLEM_LETTER, tag-div-DIVISION
+# URL    : https://codeforces.com/contest/1743/problem/A
+# Title  : Password
+# Notes  : tag-codeforces, tag-problem-A, tag-div-2
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
 import os
 import time
-from collections import defaultdict
+from collections import defaultdict, Counter
 from sys import stdin, maxsize, stdout
 
 inp = lambda: stdin.readline().strip()
@@ -36,6 +36,25 @@ M = 9999999999879998
 
 def solve():
     n = iinp()
+    a = intl()
+
+    possible_numbers = list(range(0, 10))
+
+    for i in range(n):
+        possible_numbers.remove(a[i])
+
+    ans = 0
+
+    for i in possible_numbers:
+        for j in possible_numbers:
+            for k in possible_numbers:
+                for l in possible_numbers:
+                    c = Counter([i, j, k, l])
+
+                    if len(c.values()) == 2 and list(c.values())[0] == 2 and list(c.values())[1] == 2:
+                        ans += 1
+
+    return ans
 
 
 def run():

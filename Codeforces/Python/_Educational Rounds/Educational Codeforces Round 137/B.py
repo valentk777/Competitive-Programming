@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
-# URL    : https://codeforces.com/contest/CONTEST_NUMBER/problem/PROBLEM_LETTER
-# Title  : PROBLEM_TITLE
-# Notes  : tag-codeforces, tag-problem-PROBLEM_LETTER, tag-div-DIVISION
+# URL    : https://codeforces.com/contest/1743/problem/B
+# Title  : Permutation Value
+# Notes  : tag-codeforces, tag-problem-B, tag-div-2
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
@@ -36,6 +36,20 @@ M = 9999999999879998
 
 def solve():
     n = iinp()
+
+    i = 1
+    ans = []
+
+    while i <= n // 2:
+        ans.append(i)
+        ans.append(n - i + 1)
+        i += 1
+
+    if n % 2 == 0:
+        return list_to_string_list(ans)
+    else:
+        ans.append(n // 2 + 1)
+        return list_to_string_list(ans)
 
 
 def run():

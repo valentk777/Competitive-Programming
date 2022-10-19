@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
-# URL    : https://codeforces.com/contest/CONTEST_NUMBER/problem/PROBLEM_LETTER
-# Title  : PROBLEM_TITLE
-# Notes  : tag-codeforces, tag-problem-PROBLEM_LETTER, tag-div-DIVISION
+# URL    : https://codeforces.com/contest/1742/problem/C
+# Title  : C. Stripes
+# Notes  : tag-codeforces, tag-problem-C, tag-div-4
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
@@ -35,7 +35,25 @@ M = 9999999999879998
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    n = iinp()
+    inp()
+    matrix = [list(inp()) for _ in range(8)]
+
+    for row in range(8):
+        s = list(set(matrix[row]))
+
+        if len(s) == 1 and (s[0] == "R"):
+            return s[0]
+
+    for column in range(8):
+        s = set()
+
+        for row in range(8):
+            s.add(matrix[row][column])
+
+        s = list(s)
+
+        if len(s) == 1 and s[0] == "B":
+            return s[0]
 
 
 def run():

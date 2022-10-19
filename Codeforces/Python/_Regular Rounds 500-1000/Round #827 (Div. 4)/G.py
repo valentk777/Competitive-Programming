@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
-# URL    : https://codeforces.com/contest/CONTEST_NUMBER/problem/PROBLEM_LETTER
-# Title  : PROBLEM_TITLE
-# Notes  : tag-codeforces, tag-problem-PROBLEM_LETTER, tag-div-DIVISION
+# URL    : https://codeforces.com/contest/1742/problem/G
+# Title  : G. Orray
+# Notes  : tag-codeforces, tag-problem-G, tag-div-4
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
@@ -36,6 +36,33 @@ M = 9999999999879998
 
 def solve():
     n = iinp()
+    a = intl()
+    a = sorted(a, reverse=True)
+    b = [a[0]]
+    ans = [a[0]]
+
+    a.remove(a[0])
+
+    for _ in range(n - 1):
+        e = b[-1]
+
+        _max = -INF
+        _remove = 0
+
+        for j in range(len(a)):
+            if a[j] | e > _max:
+                _max = a[j] | e
+                _remove = a[j]
+
+        b.append(_max)
+        ans.append(_remove)
+        a.remove(_remove)
+
+        if _max == e:
+            ans.extend(a)
+            break
+
+    return list_to_string_list(ans)
 
 
 def run():

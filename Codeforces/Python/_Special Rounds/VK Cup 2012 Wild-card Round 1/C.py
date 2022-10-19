@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
-# URL    : https://codeforces.com/contest/CONTEST_NUMBER/problem/PROBLEM_LETTER
-# Title  : PROBLEM_TITLE
-# Notes  : tag-codeforces, tag-problem-PROBLEM_LETTER, tag-div-DIVISION
+# URL    : https://codeforces.com/contest/162/problem/C
+# Title  : Prime factorization
+# Notes  : tag-codeforces, tag-problem-C
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
@@ -34,15 +34,30 @@ M = 9999999999879998
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
+def get_prime_factors(n):
+    factors = []
+
+    c = 2
+
+    while n > 1:
+
+        if n % c == 0:
+            factors.append(c)
+            n = n / c
+        else:
+            c = c + 1
+
+    return factors
+
+
 def solve():
     n = iinp()
+    prime_factors = get_prime_factors(n)
+    return "*".join(map(str, prime_factors))
 
 
 def run():
-    t = iinp()
-
-    for _ in range(t):
-        print(solve())
+    print(solve())
 
 
 if __name__ == "__main__":
