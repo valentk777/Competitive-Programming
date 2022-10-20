@@ -19,13 +19,13 @@ scc -i cpp,cs,py,sc,sql AdventOfCode Algodaily Codeforces Codewars GoogleKickSta
 ───────────────────────────────────────────────────────────────────────────────
 Language                 Files     Lines   Blanks  Comments     Code Complexity
 ───────────────────────────────────────────────────────────────────────────────
-Python                     293     16821     2147      1752    12922       1254
+Python                     306     17773     2173      1830    13770       1255
 C#                          50      1720      242       217     1261        161
 C++                         27      2420      413       309     1698        411
 SQL                         16       162       17        64       81          1
 Scala                       12       271       27        48      196         17
 ───────────────────────────────────────────────────────────────────────────────
-Total                      398     21394     2846      2390    16158       1844
+Total                      411     22346     2872      2468    17006       1845
 ───────────────────────────────────────────────────────────────────────────────
 ```
 
@@ -48,6 +48,7 @@ Total                      398     21394     2846      2390    16158       1844
 * [C#](https://github.com/valentk777/Contests/search?l=C%23)
 * [C++](https://github.com/valentk777/Contests/search?l=cpp)
 * [Scala](https://github.com/valentk777/Contests/search?l=scala)
+* [Sql](https://github.com/valentk777/Contests/search?l=sql)
 
 ## --> codeforces template generator
 * [PythonFile](https://github.com/valentk777/Contests/blob/main/Codeforces/Python/generate_teplate.py)

@@ -11,7 +11,7 @@ logger = logging.getLogger()
 logger.setLevel(1)
 
 CURRENT_PATH = Path(getcwd())
-WEB_URL = "https://codeforces.com/problemset/problem/1742/C"
+WEB_URL = "https://codeforces.com/problemset/problem/1419/D1"
 
 
 class RoundData:
@@ -117,7 +117,7 @@ class RoundData:
         return BeautifulSoup(r.content, 'html.parser')
 
     def get_sample_data(self) -> str:
-        if self.is_started or "problem" not in self.web_url:
+        if not self.is_started or "problem" not in self.web_url:
             return ""
 
         sample_data = self._web_content.select_one('.sample-test')
@@ -203,7 +203,7 @@ def generate_folder_with_problems() -> None:
     create_input_file(round_data)
     copy_file_and_update_information(template, folder_path, round_data)
     modify_file(folder_path, round_data)
-    logger.info(round_data)
+    logger.error(round_data)
 
     logger.info("Script ended")
 
