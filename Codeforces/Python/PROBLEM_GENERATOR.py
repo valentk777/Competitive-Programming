@@ -11,7 +11,7 @@ logger = logging.getLogger()
 logger.setLevel(1)
 
 CURRENT_PATH = Path(getcwd())
-WEB_URL = "https://codeforces.com/problemset/problem/1419/D1"
+WEB_URL = "https://codeforces.com/problemset/problem/302/B"
 
 
 class RoundData:
