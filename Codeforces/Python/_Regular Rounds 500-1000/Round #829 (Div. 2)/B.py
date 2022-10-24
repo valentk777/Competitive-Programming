@@ -1,6 +1,6 @@
 # -----------------------------------------------------------
-# URL    : https://codeforces.com/contest/1419/problem/B
-# Title  : B. Stairs
+# URL    : https://codeforces.com/contest/1754/problem/B
+# Title  : B. Kevin and Permutation
 # Notes  : tag-codeforces, tag-problem-B, tag-div-2
 # -----------------------------------------------------------
 
@@ -8,6 +8,7 @@
 import os
 import time
 from collections import defaultdict
+from math import ceil
 from sys import stdin, maxsize, stdout
 
 inp = lambda: stdin.readline().strip()
@@ -34,32 +35,38 @@ M = 9999999999879998
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
-def arithmetic_progression_sum(a1, an, n):
-    return (a1 + an) * n // 2
+def generate_list_with_step_n(n, step):
+    a = list(range(1, n + 1))
+    ans = [-1 for _ in range(n)]
+
+    ans[0] = a[step]
+    a[step] = -1
+
+    ans_i = 1
+    i = 0
+    left = n - 1
+
+    while left > 0:
+        if a[i] != -1:
+            ans[ans_i] = a[i]
+            a[i] = -1
+            ans_i += 1
+            left -= 1
+        else:
+            i += 1
+            continue
+
+        i = (i + step) % n
+
+    return ans
 
 
 def solve():
-    x = iinp()
+    n = iinp()
 
-    _nice_stairs = []
-    _correct = 1
-
-    while _correct < x + 1:
-        _nice_stairs.append(_correct)
-        _correct = (_correct * 2) + 1
-
-    _sum = 0
-    ans = 0
-
-    for stair in _nice_stairs:
-        _sum += arithmetic_progression_sum(1, stair, stair)
-        ans += 1
-
-        if _sum > x:
-            ans -= 1
-            break
-
-    return ans
+    mid = int(ceil((n + 1) / 2) - 1)
+    a = generate_list_with_step_n(n, mid)
+    return list_to_string_list(a)
 
 
 def run():

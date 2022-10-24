@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
-# URL    : https://codeforces.com/contest/1419/problem/B
-# Title  : B. Stairs
-# Notes  : tag-codeforces, tag-problem-B, tag-div-2
+# URL    : https://codeforces.com/contest/1754/problem/A
+# Title  : A. Technical Support
+# Notes  : tag-codeforces, tag-problem-A, tag-div-2
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
@@ -34,32 +34,21 @@ M = 9999999999879998
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
-def arithmetic_progression_sum(a1, an, n):
-    return (a1 + an) * n // 2
-
-
 def solve():
-    x = iinp()
+    n = iinp()
+    s = inp()
+    q = 0
 
-    _nice_stairs = []
-    _correct = 1
+    for c in s:
+        if c == "Q":
+            q += 1
+        else:
+            q = max(0, q - 1)
 
-    while _correct < x + 1:
-        _nice_stairs.append(_correct)
-        _correct = (_correct * 2) + 1
-
-    _sum = 0
-    ans = 0
-
-    for stair in _nice_stairs:
-        _sum += arithmetic_progression_sum(1, stair, stair)
-        ans += 1
-
-        if _sum > x:
-            ans -= 1
-            break
-
-    return ans
+    if q > 0:
+        return "NO"
+    else:
+        return "YES"
 
 
 def run():

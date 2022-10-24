@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
-# URL    : https://codeforces.com/contest/1419/problem/B
-# Title  : B. Stairs
-# Notes  : tag-codeforces, tag-problem-B, tag-div-2
+# URL    : https://codeforces.com/contest/1754/problem/C1
+# Title  : C1. Make Nonzero Sum (easy version)
+# Notes  : tag-codeforces, tag-problem-C, tag-div-2
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
@@ -34,39 +34,71 @@ M = 9999999999879998
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
-def arithmetic_progression_sum(a1, an, n):
-    return (a1 + an) * n // 2
+# not working
+def solve_c2():
+    n = iinp()
+    a = intl()
+
+    ans = []
+    i = 0
+
+    while i < n:
+        # equal (0, 0) or (1, 1) or (-1, -1) -> 0
+        if a[i - 1] == a[i]:
+            ans.append((i, i + 1))
+
+        # (-1, 1) or (1, -1) -> 0
+        elif a[i - 1] + a[i] == 0:
+            ans.append((i, i))
+            ans.append((i + 1, i + 1))
+
+        # (1, 0), (0, 1) (-1, 0), (0, -1)
+        else:
+            print("xxxx")
+            print(i, i + 1)
+
+        i += 2
+
+    print(len(ans))
+
+    # if n & 1 == 1:
+    #     print(-1)
+    #     return
+
+    for pair in ans:
+        print(*pair)
 
 
-def solve():
-    x = iinp()
+def solve_c1():
+    n = iinp()
+    a = intl()
 
-    _nice_stairs = []
-    _correct = 1
+    ans = []
 
-    while _correct < x + 1:
-        _nice_stairs.append(_correct)
-        _correct = (_correct * 2) + 1
+    if n & 1 == 1:
+        print(-1)
+        return
+    for i in range(1, n, 2):
+        # equal (1, 1) or (-1, -1) -> 0
+        if a[i - 1] == a[i]:
+            ans.append((i, i + 1))
 
-    _sum = 0
-    ans = 0
+        # (-1, 1) or (1, -1) -> 0
+        else:
+            ans.append((i, i))
+            ans.append((i + 1, i + 1))
 
-    for stair in _nice_stairs:
-        _sum += arithmetic_progression_sum(1, stair, stair)
-        ans += 1
+    print(len(ans))
 
-        if _sum > x:
-            ans -= 1
-            break
-
-    return ans
+    for pair in ans:
+        print(*pair)
 
 
 def run():
     t = iinp()
 
     for _ in range(t):
-        print(solve())
+        solve_c2()
 
 
 if __name__ == "__main__":

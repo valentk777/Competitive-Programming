@@ -176,15 +176,6 @@ print(count_number_of_n_divisors(10, 2) == 1)
 print(count_number_of_n_divisors(8, 2) == 3)
 
 
-def factorial(n):
-    if n > 10:
-        return 1000000
-    if n == 1 or n == 2:
-        return n
-    else:
-        return n * factorial(n - 1)
-
-
 def get_divisors(n):
     i = 1
     divisors = []
@@ -222,3 +213,12 @@ def is_prime(n):
         if (n % i) == 0:
             return False
     return True
+
+
+def factorial(n, end):
+    ans = 1
+
+    for i in range(end, n + 1):
+        ans *= i
+
+    return ans

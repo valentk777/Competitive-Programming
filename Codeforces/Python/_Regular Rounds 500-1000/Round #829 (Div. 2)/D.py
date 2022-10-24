@@ -1,13 +1,13 @@
 # -----------------------------------------------------------
-# URL    : https://codeforces.com/contest/1419/problem/B
-# Title  : B. Stairs
-# Notes  : tag-codeforces, tag-problem-B, tag-div-2
+# URL    : https://codeforces.com/contest/1754/problem/D
+# Title  : D. Factorial Divisibility
+# Notes  : tag-codeforces, tag-problem-D, tag-div-2, #tag-not-pass
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
 import os
 import time
-from collections import defaultdict
+from collections import defaultdict, Counter
 from sys import stdin, maxsize, stdout
 
 inp = lambda: stdin.readline().strip()
@@ -34,39 +34,46 @@ M = 9999999999879998
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
-def arithmetic_progression_sum(a1, an, n):
-    return (a1 + an) * n // 2
+def factorial(n, end):
+    ans = 1
 
-
-def solve():
-    x = iinp()
-
-    _nice_stairs = []
-    _correct = 1
-
-    while _correct < x + 1:
-        _nice_stairs.append(_correct)
-        _correct = (_correct * 2) + 1
-
-    _sum = 0
-    ans = 0
-
-    for stair in _nice_stairs:
-        _sum += arithmetic_progression_sum(1, stair, stair)
-        ans += 1
-
-        if _sum > x:
-            ans -= 1
-            break
+    for i in range(end, n + 1):
+        ans *= i
 
     return ans
 
 
-def run():
-    t = iinp()
 
-    for _ in range(t):
-        print(solve())
+
+# time limit
+def solve():
+    n, x = intl()
+    a = intl()
+    end_factorial = min(a)
+
+    if x <= end_factorial:
+        return "Yes"
+
+    x_value = factorial(end_factorial + 1, x)
+    a_counter = Counter(a)
+    a_value = 0
+
+    for k, v in a_counter.items():
+        a_value += v * factorial(k, end_factorial + 1)
+
+    if a_value % x_value == 0:
+        return "Yes"
+    else:
+        return "No"
+
+
+def solve():
+    n, x = intl()
+    a = intl()
+    #TODO: finish
+
+def run():
+    print(solve())
 
 
 if __name__ == "__main__":
