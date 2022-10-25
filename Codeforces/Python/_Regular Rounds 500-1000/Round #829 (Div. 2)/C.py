@@ -1,6 +1,8 @@
 # -----------------------------------------------------------
 # URL    : https://codeforces.com/contest/1754/problem/C1
+# URL    : https://codeforces.com/contest/1754/problem/C2
 # Title  : C1. Make Nonzero Sum (easy version)
+# Title  : C2. Make Nonzero Sum (hard version)
 # Notes  : tag-codeforces, tag-problem-C, tag-div-2
 # -----------------------------------------------------------
 
@@ -34,36 +36,61 @@ M = 9999999999879998
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
-# not working
 def solve_c2():
     n = iinp()
     a = intl()
 
+    if (n - a.count(0)) % 2 != 0:
+        print(-1)
+        return
+
     ans = []
     i = 0
 
+    temp_number = 0
+    temp_idx = -1
+
     while i < n:
-        # equal (0, 0) or (1, 1) or (-1, -1) -> 0
-        if a[i - 1] == a[i]:
-            ans.append((i, i + 1))
+        # if 0, we can add all zeros except between two ones
+        if a[i] == 0:
+            if temp_number == 0:
+                ans.append((i + 1, i + 1))
+
+            i += 1
+
+        # if we here, it means a[i] != 0.
+        # If we have a single one somewhere, we need to add another one and close section
+        elif temp_number != 0:
+            if temp_number == a[i]:
+                ans.append((temp_idx + 1, i - 1))
+                ans.append((i, i + 1))
+            else:
+                ans.append((temp_idx + 1, i))
+                ans.append((i + 1, i + 1))
+
+            temp_number = 0
+            temp_idx = -1
+            i += 1
+            continue
+
+        # equal (1, 1) or (-1, -1) -> 0
+        elif a[i] == a[i + 1]:
+            ans.append((i + 1, i + 2))
+            i += 2
 
         # (-1, 1) or (1, -1) -> 0
-        elif a[i - 1] + a[i] == 0:
-            ans.append((i, i))
+        elif a[i] + a[i + 1] == 0:
             ans.append((i + 1, i + 1))
+            ans.append((i + 2, i + 2))
+            i += 2
 
-        # (1, 0), (0, 1) (-1, 0), (0, -1)
+        # (1, 0), (-1, 0)
         else:
-            print("xxxx")
-            print(i, i + 1)
-
-        i += 2
+            temp_number = a[i]
+            temp_idx = i
+            i += 2
 
     print(len(ans))
-
-    # if n & 1 == 1:
-    #     print(-1)
-    #     return
 
     for pair in ans:
         print(*pair)
@@ -78,6 +105,7 @@ def solve_c1():
     if n & 1 == 1:
         print(-1)
         return
+
     for i in range(1, n, 2):
         # equal (1, 1) or (-1, -1) -> 0
         if a[i - 1] == a[i]:

@@ -1,5 +1,6 @@
 import re
 from collections import Counter
+from fractions import Fraction
 from math import sqrt
 
 
@@ -222,3 +223,7 @@ def factorial(n, end):
         ans *= i
 
     return ans
+
+
+# for division, use Franction (insted of /), because it works with bigger numbers
+Fraction(5, 6)  # -> 5 / 6
