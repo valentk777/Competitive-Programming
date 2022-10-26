@@ -227,3 +227,10 @@ def factorial(n, end):
 
 # for division, use Franction (insted of /), because it works with bigger numbers
 Fraction(5, 6)  # -> 5 / 6
+
+# for binary search
+from bisect import bisect_left, bisect_right
+
+a = [1, 5, 5, 9]
+print(bisect_left(a, 4))
+print(bisect_right(a, 4))
