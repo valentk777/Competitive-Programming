@@ -1,4 +1,5 @@
 import re
+import string
 from collections import Counter
 from fractions import Fraction
 from math import sqrt
@@ -234,3 +235,7 @@ from bisect import bisect_left, bisect_right
 a = [1, 5, 5, 9]
 print(bisect_left(a, 4))
 print(bisect_right(a, 4))
+
+
+# list of letters
+print(string.ascii_lowercase)

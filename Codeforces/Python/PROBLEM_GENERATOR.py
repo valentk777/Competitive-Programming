@@ -11,7 +11,6 @@ logger = logging.getLogger()
 logger.setLevel(1)
 
 CURRENT_PATH = Path(getcwd())
-WEB_URL = "https://codeforces.com/problemset/problem/302/B"
 
 
 class RoundData:
@@ -188,6 +187,8 @@ def create_folder(folder_path: Path) -> None:
 
 def generate_folder_with_problems() -> None:
     logger.info("Script started")
+
+    WEB_URL = "https://codeforces.com/contest/1740/problem/B"
 
     round_data = RoundData(WEB_URL)
     # round_data = RoundData(
