@@ -5,7 +5,7 @@ from os import getcwd, mkdir, path
 from pathlib import Path
 
 import requests
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, Tag
 
 logger = logging.getLogger()
 logger.setLevel(1)
@@ -120,9 +120,19 @@ class RoundData:
             return ""
 
         sample_data = self._web_content.select_one('.sample-test')
-        sample_data = sample_data.select_one('.input > pre').text
+        sample_data = sample_data.select_one('.input > pre').contents
 
-        return sample_data
+        lines = []
+
+        for line in sample_data:
+            if type(line) is Tag:
+                if line.text != "":
+                    lines.append(line.text)
+            else:
+                if line != "\n":
+                    lines.append(line)
+
+        return "\n".join(lines)
 
 
 def modify_file(copy_to: Path, round_data: RoundData) -> None:
@@ -188,7 +198,7 @@ def create_folder(folder_path: Path) -> None:
 def generate_folder_with_problems() -> None:
     logger.info("Script started")
 
-    WEB_URL = "https://codeforces.com/contest/1740/problem/B"
+    WEB_URL = "https://codeforces.com/problemset/problem/50/A"
 
     round_data = RoundData(WEB_URL)
     # round_data = RoundData(
