@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
 # URL    : https://codeforces.com/contest/1566/problem/B
 # Title  : MIN-MEX Cut
-# Notes  : tag-codeforces, tag-problem-B, tag-div-2
+# Notes  : tag-codeforces, tag-problem-B
 # -----------------------------------------------------------
 
 

@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
 # URL    : https://codeforces.com/contest/702/problem/B
 # Title  : Powers of Two
-# Notes  : tag-codeforces, tag-problem-B, tag-div-2
+# Notes  : tag-codeforces, tag-problem-B
 # -----------------------------------------------------------
 
 

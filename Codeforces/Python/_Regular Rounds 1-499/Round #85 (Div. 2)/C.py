@@ -1,18 +1,30 @@
 # -----------------------------------------------------------
-# URL    : https://codeforces.com/contest/1466/problem/B
-# Title  : Last minute enhancements
-# Notes  : tag-codeforces, tag-problem-B
+# URL    : https://codeforces.com/contest/112/problem/C
+# Title  : C. Petya and Inequiations
+# Notes  : tag-codeforces, tag-problem-C, tag-div-2
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
 import os
 import time
-from sys import stdin, maxsize
+from collections import defaultdict
+from sys import stdin, maxsize, stdout
 
 inp = lambda: stdin.readline().strip()
 iinp = lambda: int(inp())
 intl = lambda: list(map(int, inp().split()))
 strl = lambda: list(inp().split())
+list_to_string = lambda _a: "".join(map(str, _a))
+list_to_string_list = lambda _a: " ".join(map(str, _a))
+_dp = lambda default_value: defaultdict(lambda: default_value)
+flush = lambda: stdout.flush()
+print_flush = lambda _text: (print(_text), flush())
+
+
+def print_dp(_dict):
+    for item in _dict.items():
+        print(f"{item[0]} = {item[1]}")
+
 
 MOD = 10 ** 9 + 7
 INF = maxsize
@@ -21,35 +33,26 @@ INF = maxsize
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    n = iinp()
-    x = intl()
+    n, x, y = intl()
 
-    # maybe it's already sorted?
-    x = sorted(x)
+    if n > y:
+        print(-1)
+        return
 
-    # number of diff elements
-    dp = [0 for _ in range(n + 1)]
-    dp[0] = 0
-    dp[1] = 1
+    ans = [(y - n + 1)] + [1] * (n - 1)
+    _sums = sum(ans)
+    _sums_power = ans[0] ** 2 + sum(ans[1:])
 
-    for i in range(1, n):
-        if x[i - 1] < x[i]:
-            dp[i + 1] = dp[i] + 1
-        elif x[i - 1] == x[i]:
-            x[i] += 1
-            dp[i + 1] = dp[i] + 1
-        else:
-            x[i] += 1
-            dp[i + 1] = dp[i]
+    if _sums_power < x:
+        print(-1)
+        return
 
-    return dp[n]
+    for i in range(n):
+        print(ans[i])
 
 
 def run():
-    t = iinp()
-
-    for _ in range(t):
-        print(solve())
+    solve()
 
 
 if __name__ == "__main__":
