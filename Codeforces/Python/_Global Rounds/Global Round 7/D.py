@@ -1,14 +1,16 @@
 # -----------------------------------------------------------
-# URL    : https://codeforces.com/contest/1740/problem/B
-# Title  : B. Jumbo Extra Cheese 2
-# Notes  : tag-codeforces, tag-problem-B, tag-div-1
+# URL    : https://codeforces.com/contest/1326/problem/D1
+# URL    : https://codeforces.com/contest/1326/problem/D2
+# Title  : Prefix-Suffix Palindrome (Easy version)
+# Title  : Prefix-Suffix Palindrome (Hard version)
+# Notes  : tag-codeforces, tag-problem-D, tag-not-pass
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
 import os
 import time
 from collections import defaultdict
-from sys import stdin, maxsize, stdout
+from sys import stdin, maxsize
 
 inp = lambda: stdin.readline().strip()
 iinp = lambda: int(inp())
@@ -17,51 +19,20 @@ strl = lambda: list(inp().split())
 list_to_string = lambda _a: "".join(map(str, _a))
 list_to_string_list = lambda _a: " ".join(map(str, _a))
 _dp = lambda default_value: defaultdict(lambda: default_value)
-flush = lambda: stdout.flush()
-print_flush = lambda _text: (print(_text), flush())
-
-
-def print_dp(_dict):
-    for item in _dict.items():
-        print(f"{item[0]} = {item[1]}")
-
+print_dp = lambda _dict: list(map(lambda item: print(f"{item[0]} = {item[1]}"), _dict.items()))
 
 MOD = 10 ** 9 + 7
 INF = maxsize
-A = 911382323
-M = 9999999999879998
 
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    n = iinp()
+    s = list(inp())
+    n = len(s)
 
-    x = []
-    y = []
-
-    for i in range(n):
-        _x, _y = intl()
-
-        if _x < _y:
-            x.append(_x)
-            y.append(_y)
-        else:
-            x.append(_y)
-            y.append(_x)
-
-    ans = 2 * sum(x)
-
-    y = sorted(y)
-
-    ans += y[0]
-
-    for i in range(1, n):
-        ans += (y[i] - y[i - 1])
-
-    ans += y[-1]
-
-    return ans
+    if n == 1:
+        return s
 
 
 def run():

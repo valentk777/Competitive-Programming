@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
 # URL    : https://codeforces.com/contest/2/problem/A
 # Title  : Winner
-# Notes  : tag-codeforces, tag-problem-A, tag-div-2
+# Notes  : tag-codeforces, tag-problem-A
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

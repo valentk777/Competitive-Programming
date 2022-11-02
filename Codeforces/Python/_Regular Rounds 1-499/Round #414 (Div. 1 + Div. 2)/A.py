@@ -1,14 +1,13 @@
 # -----------------------------------------------------------
-# URL    : https://codeforces.com/contest/1/problem/A
-# Title  : A. Theatre Square
-# Notes  : tag-codeforces, tag-problem-A, tag-div-2
+# URL    : https://codeforces.com/contest/794/problem/A
+# Title  : A. Bank Robbery
+# Notes  : tag-codeforces, tag-problem-A, tag-div-1, tag-div-2
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
 import os
 import time
-from collections import defaultdict
-from math import ceil
+from collections import defaultdict, Counter
 from sys import stdin, maxsize, stdout
 
 inp = lambda: stdin.readline().strip()
@@ -36,12 +35,16 @@ M = 9999999999879998
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    n, m, a = intl()
+    a, b, c = intl()
+    n = iinp()
+    x = intl()
 
-    n_number = ceil(n / a)
-    m_number = ceil(m / a)
+    _count = Counter(x)
+    ans = 0
 
-    ans = n_number * m_number
+    for key, value in _count.items():
+        if b < key < c:
+            ans += value
 
     return ans
 

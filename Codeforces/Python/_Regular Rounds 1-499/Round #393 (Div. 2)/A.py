@@ -1,6 +1,6 @@
 # -----------------------------------------------------------
-# URL    : https://codeforces.com/contest/50/problem/A
-# Title  : A. Domino piling
+# URL    : https://codeforces.com/contest/760/problem/A
+# Title  : A. Petr and a calendar
 # Notes  : tag-codeforces, tag-problem-A, tag-div-2
 # -----------------------------------------------------------
 
@@ -31,12 +31,27 @@ INF = maxsize
 A = 911382323
 M = 9999999999879998
 
-
 # -------------------------------------------------------Solution-------------------------------------------------------
 
+months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
+
 def solve():
-    n, m = intl()
-    return n * m // 2
+    m, d = intl()
+    ans = 0
+
+    # first week
+    next_day = 7 - d + 1
+    left = months[m - 1] - next_day
+    next_day += 1
+
+    ans += 1
+    ans += left // 7
+
+    if left % 7 == 0:
+        return ans
+    else:
+        return ans + 1
 
 
 def run():

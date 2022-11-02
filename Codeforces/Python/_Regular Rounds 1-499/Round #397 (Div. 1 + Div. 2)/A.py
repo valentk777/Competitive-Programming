@@ -1,14 +1,13 @@
 # -----------------------------------------------------------
-# URL    : https://codeforces.com/contest/1740/problem/A
-# Title  : A. Factorise N+M
-# Notes  : tag-codeforces, tag-problem-A, tag-div-1
+# URL    : https://codeforces.com/contest/765/problem/A
+# Title  : A. Neverending competitions
+# Notes  : tag-codeforces, tag-problem-A, tag-div-1, tag-div-2
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
 import os
 import time
 from collections import defaultdict
-from math import sqrt
 from sys import stdin, maxsize, stdout
 
 inp = lambda: stdin.readline().strip()
@@ -35,28 +34,43 @@ M = 9999999999879998
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
-def is_prime(n):
-    for i in range(2, int(sqrt(n)) + 1):
-        if (n % i) == 0:
-            return False
-    return True
-
-
-primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
-
-
 def solve():
     n = iinp()
+    _ = inp()
 
-    for m in primes:
-        if not is_prime(n + m):
-            return m
+    for i in range(n):
+        _ = inp()
+
+    if n & 1 == 0:
+        return "home"
+    else:
+        return "contest"
+
+
+def solve_2():
+    n = iinp()
+    home = inp()
+
+    _from_count = 0
+    _to_count = 0
+
+    for i in range(n):
+        _from, _to = inp().split("->")
+
+        if _from == home:
+            _from_count += 1
+
+        if _to == home:
+            _to_count += 1
+
+    if _from_count == _to_count:
+        return "home"
+    else:
+        return "contest"
+
 
 def run():
-    t = iinp()
-
-    for _ in range(t):
-        print(solve())
+    print(solve())
 
 
 if __name__ == "__main__":

@@ -1,13 +1,13 @@
 # -----------------------------------------------------------
-# URL    : https://codeforces.com/contest/794/problem/A
-# Title  : A. Bank Robbery
-# Notes  : tag-codeforces, tag-problem-A, tag-div-1
+# URL    : https://codeforces.com/contest/50/problem/A
+# Title  : A. Domino piling
+# Notes  : tag-codeforces, tag-problem-A
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
 import os
 import time
-from collections import defaultdict, Counter
+from collections import defaultdict
 from sys import stdin, maxsize, stdout
 
 inp = lambda: stdin.readline().strip()
@@ -35,18 +35,8 @@ M = 9999999999879998
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    a, b, c = intl()
-    n = iinp()
-    x = intl()
-
-    _count = Counter(x)
-    ans = 0
-
-    for key, value in _count.items():
-        if b < key < c:
-            ans += value
-
-    return ans
+    n, m = intl()
+    return n * m // 2
 
 
 def run():

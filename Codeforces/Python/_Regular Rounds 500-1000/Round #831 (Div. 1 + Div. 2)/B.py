@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
-# URL    : https://codeforces.com/contest/765/problem/A
-# Title  : A. Neverending competitions
-# Notes  : tag-codeforces, tag-problem-A, tag-div-2
+# URL    : https://codeforces.com/contest/1740/problem/B
+# Title  : B. Jumbo Extra Cheese 2
+# Notes  : tag-codeforces, tag-problem-B, tag-div-1, tag-div-2
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
@@ -36,41 +36,39 @@ M = 9999999999879998
 
 def solve():
     n = iinp()
-    _ = inp()
+
+    x = []
+    y = []
 
     for i in range(n):
-        _ = inp()
+        _x, _y = intl()
 
-    if n & 1 == 0:
-        return "home"
-    else:
-        return "contest"
+        if _x < _y:
+            x.append(_x)
+            y.append(_y)
+        else:
+            x.append(_y)
+            y.append(_x)
 
+    ans = 2 * sum(x)
 
-def solve_2():
-    n = iinp()
-    home = inp()
+    y = sorted(y)
 
-    _from_count = 0
-    _to_count = 0
+    ans += y[0]
 
-    for i in range(n):
-        _from, _to = inp().split("->")
+    for i in range(1, n):
+        ans += (y[i] - y[i - 1])
 
-        if _from == home:
-            _from_count += 1
+    ans += y[-1]
 
-        if _to == home:
-            _to_count += 1
-
-    if _from_count == _to_count:
-        return "home"
-    else:
-        return "contest"
+    return ans
 
 
 def run():
-    print(solve())
+    t = iinp()
+
+    for _ in range(t):
+        print(solve())
 
 
 if __name__ == "__main__":
