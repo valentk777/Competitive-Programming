@@ -130,7 +130,7 @@ class RoundData:
                     lines.append(line.text)
             else:
                 if line != "\n":
-                    lines.append(line)
+                    lines.append(line.text.strip("\n"))
 
         return "\n".join(lines)
 
@@ -198,7 +198,7 @@ def create_folder(folder_path: Path) -> None:
 def generate_folder_with_problems() -> None:
     logger.info("Script started")
 
-    WEB_URL = "https://codeforces.com/problemset/problem/50/A"
+    WEB_URL = "https://codeforces.com/problemset/problem/1682/C"
 
     round_data = RoundData(WEB_URL)
     # round_data = RoundData(

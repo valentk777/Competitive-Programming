@@ -1,6 +1,6 @@
 import re
 import string
-from collections import Counter
+from collections import Counter, defaultdict
 from fractions import Fraction
 from math import sqrt
 
@@ -236,6 +236,65 @@ a = [1, 5, 5, 9]
 print(bisect_left(a, 4))
 print(bisect_right(a, 4))
 
-
 # list of letters
 print(string.ascii_lowercase)
+
+
+# LIS (the longest increasing subsequence)
+def find_lis(a, n):
+    # max value where elements are smaller than current value
+    dp = defaultdict(int)
+
+    for i in range(n):
+        dp[i] = 1
+
+        for j in range(i):
+            if a[j] < a[i] and dp[i] < dp[j] + 1:
+                dp[i] = dp[j] + 1
+
+
+# LIS (the longest increasing subsequence) + sequence itself
+def find_lis_with_sequence(a, n):
+    # if we want sequence itself, we can store array as well
+    dp = defaultdict(list)
+
+    for i in range(n):
+        for j in range(i):
+            if a[j] < a[i] and (len(dp[i]) < len(dp[j]) + 1):
+                dp[i] = dp[j].copy()
+
+        dp[i].append(i)
+
+    _max = []
+
+    for lis in dp.values():
+        if len(lis) > len(_max):
+            _max = lis
+
+    return len(_max), _max
+
+
+def find_lis_with_sequence_fast(a, n):
+    _idx = []  # index of last element for each length of LIS
+    _values = []  # value of last element for each length of LIS
+    _predecessor = [-1] * n  # index of predecessor for LIS ending here
+
+    for i, e in enumerate(a):
+        j = bisect_left(_values, e)
+
+        if j == len(_values):
+            _values.append(e)
+            _idx.append(i)
+        else:
+            _values[j] = e
+            _idx[j] = i
+        if j > 0:
+            _predecessor[i] = _idx[j - 1]
+
+    i = _idx[-1]
+
+    for j in range(len(_values) - 1, -1, -1):
+        _values[j] = i
+        i = _predecessor[i]
+
+    return _values
