@@ -5,7 +5,7 @@
 <!-- ![visitor badge](https://visitor-badge-reloaded.herokuapp.com/badge?page_id=valentk777.Contests&color=be54c6&style=flat&logo=Github) -->
 ![Last Commit](https://img.shields.io/github/last-commit/valentk777/Contests.svg)
 [![Codeforces Badge](https://cp-logo.vercel.app/codeforces/valentk777?logo=true)](https://codeforces.com/profile/valentk777)
-[![Kattis Badge](https://img.shields.io/badge/Kattis-184-COLOR.svg)](https://open.kattis.com/users/valentk777)
+[![Kattis Badge](https://img.shields.io/badge/Kattis-192-COLOR.svg)](https://open.kattis.com/users/valentk777)
 [![My Codewarrior Profile Badge](https://www.codewars.com/users/valentk777/badges/micro)](https://www.codewars.com/users/valentk777)
 
 
@@ -19,13 +19,13 @@ scc -i cpp,cs,py,sc,sql AdventOfCode Algodaily Codeforces Codewars GoogleKickSta
 ───────────────────────────────────────────────────────────────────────────────
 Language                 Files     Lines   Blanks  Comments     Code Complexity
 ───────────────────────────────────────────────────────────────────────────────
-Python                     371     22555     2312      2225    18018       1254
+Python                     373     22847     2333      2241    18273       1275
 C#                          50      1720      242       217     1261        161
 C++                         41      3163      504       397     2262        586
 SQL                         16       162       17        64       81          1
 Scala                       12       271       27        48      196         17
 ───────────────────────────────────────────────────────────────────────────────
-Total                      490     27871     3102      2951    21818       2019
+Total                      492     28163     3123      2967    22073       2040
 ───────────────────────────────────────────────────────────────────────────────
 ```
 
