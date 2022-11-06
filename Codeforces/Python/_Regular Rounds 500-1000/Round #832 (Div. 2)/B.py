@@ -1,0 +1,63 @@
+# -----------------------------------------------------------
+# URL    : https://codeforces.com/contest/1747/problem/B
+# Title  : B. BAN BAN
+# Notes  : tag-codeforces, tag-problem-B, tag-div-2
+# -----------------------------------------------------------
+
+# ---------------------------------------------------Shared part--------------------------------------------------------
+import os
+import time
+from collections import defaultdict
+from math import ceil
+from sys import stdin, maxsize, stdout
+
+inp = lambda: stdin.readline().strip()
+iinp = lambda: int(inp())
+intl = lambda: list(map(int, inp().split()))
+strl = lambda: list(inp().split())
+list_to_string = lambda _a: "".join(map(str, _a))
+list_to_string_list = lambda _a: " ".join(map(str, _a))
+_dp = lambda default_value: defaultdict(lambda: default_value)
+flush = lambda: stdout.flush()
+print_flush = lambda _text: (print(_text), flush())
+
+
+def print_dp(_dict):
+    for item in _dict.items():
+        print(f"{item[0]} = {item[1]}")
+
+
+MOD = 10 ** 9 + 7
+INF = maxsize
+A = 911382323
+M = 9999999999879998
+
+
+# -------------------------------------------------------Solution-------------------------------------------------------
+
+def solve():
+    n = iinp()
+
+    ans = ceil(n / 2)
+
+    print(ans)
+
+    for i in range(0, ans):
+        print(3 * i + 1, 3 * n - 3 * i)
+
+
+def run():
+    t = iinp()
+
+    for _ in range(t):
+        solve()
+
+
+if __name__ == "__main__":
+    if os.environ.get("DEBUG_CODEFORCES"):
+        stdin = open("../../input.txt", "r")
+        start_time = time.time()
+        run()
+        print("\n--- %s seconds ---\n" % (time.time() - start_time))
+    else:
+        run()

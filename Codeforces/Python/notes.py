@@ -239,6 +239,16 @@ print(bisect_right(a, 4))
 # list of letters
 print(string.ascii_lowercase)
 
+# this can be re-written this way
+# from
+_map = list(string.ascii_lowercase) + (list(map(str, range(10))))
+s = list(s.lower())
+s = list(filter(lambda x: x in _map, s))
+_count = Counter(s)
+
+# to
+_count = Counter(filter(str.isalnum, s.lower()))
+
 
 # LIS (the longest increasing subsequence)
 def find_lis(a, n):
@@ -298,3 +308,39 @@ def find_lis_with_sequence_fast(a, n):
         i = _predecessor[i]
 
     return _values
+
+
+# Complexity O(n)
+# Manacher algorithm
+def longest_palindrome_n(s):
+    # Transform S into T.
+    # For example, S = "abba", T = "^#a#b#b#a#$".
+    # ^ and $ signs are sentinels appended to each end to avoid bounds checking
+    T = '#'.join('^{}$'.format(s))
+    n = len(T)
+
+    # create temporary array for holding largest palindrome at every point. There are 2*n + 3 such points.
+    largest_palindromes = [0] * n
+    left = 0
+    right = 0
+
+    for i in range(1, n - 1):
+        # equals to i' = left - (i-left)
+        largest_palindromes[i] = (right > i) and min(right - i, largest_palindromes[2 * left - i])
+
+        # Attempt to expand palindrome centered at i
+        while T[i + 1 + largest_palindromes[i]] == T[i - 1 - largest_palindromes[i]]:
+            largest_palindromes[i] += 1
+
+        # If palindrome centered at i expand past right, adjust center based on expanded palindrome.
+        if i + largest_palindromes[i] > right:
+            left, right = i, i + largest_palindromes[i]
+
+    # Find the maximum element in P.
+    max_len, center_index = max((n, i) for i, n in enumerate(largest_palindromes))
+
+    # return max len
+    return max_len
+
+    # return string value
+    return T[center_index - max_len:center_index + max_len + 1].replace("#", "")
