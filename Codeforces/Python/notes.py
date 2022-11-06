@@ -181,8 +181,9 @@ print(count_number_of_n_divisors(8, 2) == 3)
 def get_divisors(n):
     i = 1
     divisors = []
+    _sqrt = sqrt(n)
 
-    while i <= sqrt(n):
+    while i <= _sqrt:
         if n % i == 0:
             if n / i != i:
                 divisors.append(n // i)
@@ -192,6 +193,39 @@ def get_divisors(n):
         i = i + 1
 
     return divisors
+
+
+def is_square_of_prime(k):
+    if k == 1:
+        return False
+
+    n = int(sqrt(k))
+
+    if n * n != k:
+        return False
+
+    i = 2
+
+    while i * i <= n:
+        if n / i == n // i:
+            return False
+        i += 1
+
+    return True
+
+
+def get_all_prime_squares(max_value):
+    a = [1] * max_value
+    s = set()
+
+    for i in range(2, max_value):
+        if a[i]:
+            s.add(i * i)
+
+            for j in range(i * i, max_value, i):
+                a[j] = 0
+
+    return s
 
 
 def get_prime_factors(n):
