@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
-# URL    : https://codeforces.com/contest/CONTEST_NUMBER/problem/PROBLEM_LETTER
-# Title  : PROBLEM_TITLE
-# Notes  : tag-codeforces, tag-problem-PROBLEM_LETTER, tag-div-DIVISION
+# URL    : https://codeforces.com/contest/1629/problem/B
+# Title  : B. GCD Arrays
+# Notes  : tag-codeforces, tag-problem-B, tag-div-2
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
@@ -38,7 +38,22 @@ M = 9999999999879998
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    n = iinp()
+    l, r, k = intl()
+
+    n = r - l + 1
+
+    if n == 1:
+        if l > 1:
+            return "YES"
+        return "NO"
+
+    # >> 1 same as // 2
+    odd_count = n + (l & 1) >> 1
+
+    if odd_count > k:
+        return "NO"
+
+    return "YES"
 
 
 def run():

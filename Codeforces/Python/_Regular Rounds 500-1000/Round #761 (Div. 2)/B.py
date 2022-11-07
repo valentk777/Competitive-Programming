@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
-# URL    : https://codeforces.com/contest/CONTEST_NUMBER/problem/PROBLEM_LETTER
-# Title  : PROBLEM_TITLE
-# Notes  : tag-codeforces, tag-problem-PROBLEM_LETTER, tag-div-DIVISION
+# URL    : https://codeforces.com/contest/1617/problem/B
+# Title  : B. GCD Problem
+# Notes  : tag-codeforces, tag-problem-B, tag-div-2
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
@@ -39,13 +39,28 @@ M = 9999999999879998
 
 def solve():
     n = iinp()
+    c = 1
+    n -= c
+
+    if n & 1 == 1:
+        a = n // 2
+        b = (n // 2) + 1
+
+        return a, b, c
+
+    mid = n // 2
+
+    if mid & 1 == 0:
+        return mid - 1, mid + 1, 1
+
+    return mid - 2, mid + 2, 1
 
 
 def run():
     t = iinp()
 
     for _ in range(t):
-        print(solve())
+        print(*solve())
 
 
 if __name__ == "__main__":

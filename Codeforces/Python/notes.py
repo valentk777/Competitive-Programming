@@ -245,9 +245,19 @@ def get_prime_factors(n):
 
 
 def is_prime(n):
-    for i in range(2, int(sqrt(n)) + 1):
-        if (n % i) == 0:
+    if n == 2:
+        return True
+
+    if (n % 2 == 0 and n != 2) or n < 2:
+        return False
+
+    i = 3
+    while i * i <= n:
+        if n % i == 0:
             return False
+
+        i += 2
+
     return True
 
 
@@ -378,3 +388,15 @@ def longest_palindrome_n(s):
 
     # return string value
     return T[center_index - max_len:center_index + max_len + 1].replace("#", "")
+
+
+def binary_search(array, target, start, end):
+    while start <= end:
+        mid = (start + end) // 2
+        if array[mid] == target:
+            return mid
+        elif array[mid] > target:
+            end = mid - 1
+        else:
+            start = mid + 1
+    return -1
