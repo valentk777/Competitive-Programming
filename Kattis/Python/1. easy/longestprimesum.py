@@ -1,61 +1,74 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/marko
-# Title  : Marko
+# URL    : https://open.kattis.com/problems/longestprimesum
+# Title  : Longest Prime Sum
 # Notes  : tag-kattis, tag-easy
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
+import math
 import os
-import re
 import time
-from collections import defaultdict
-from sys import stdin, maxsize
+from collections import defaultdict, Counter
+from sys import stdin, maxsize, stdout
 
-inp = lambda: stdin.readline().strip("\n")
+inp = lambda: stdin.readline().strip()
 iinp = lambda: int(inp())
 intl = lambda: list(map(int, inp().split()))
 strl = lambda: list(inp().split())
 list_to_string = lambda _a: "".join(map(str, _a))
 list_to_string_list = lambda _a: " ".join(map(str, _a))
 _dp = lambda default_value: defaultdict(lambda: default_value)
-print_dp = lambda _dict: list(map(lambda item: print(f"{item[0]} = {item[1]}"), _dict.items()))
-list_from_inp = lambda n: [inp() for _ in range(n)]
+flush = lambda: stdout.flush()
+print_flush = lambda _text: (print(_text), flush())
+fact = lambda number: math.factorial(number)
+cnt = lambda _a: Counter(_a)
+
+
+def lcm(a, b):
+    return a * b // math.gcd(a, b)
+
+
+def print_dp(_dict):
+    for item in _dict.items():
+        print(f"{item[0]} = {item[1]}")
+
 
 MOD = 10 ** 9 + 7
 INF = maxsize
+A = 911382323
+M = 9999999999879998
+
 
 # -------------------------------------------------------Solution-------------------------------------------------------
+def is_prime(n):
+    if n == 2:
+        return True
 
+    if (n % 2 == 0 and n != 2) or n < 2:
+        return False
 
-keyboard = {
-    '2': '[abc]{1}',
-    '3': '[def]{1}',
-    '4': '[ghi]{1}',
-    '5': '[jkl]{1}',
-    '6': '[mno]{1}',
-    '7': '[pqrs]{1}',
-    '8': '[tuv]{1}',
-    '9': '[wxyz]{1}'
-}
+    i = 3
+    while i * i <= n:
+        if n % i == 0:
+            return False
+
+        i += 2
+
+    return True
 
 
 def solve():
     n = iinp()
-    words = list_from_inp(n)
-    s = inp()
 
-    expression = '^'
+    if n & 1 == 0:
+        return n // 2
 
-    for letter in s:
-        expression += keyboard[letter]
+    n -= 3
 
-    possible = 0
+    if n == 0:
+        return 1
 
-    for word in words:
-        if re.match(expression, word) is not None:
-            possible += 1
-
-    return possible
+    return (n // 2) + 1
 
 
 def run():

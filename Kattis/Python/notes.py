@@ -2,11 +2,11 @@
 # runs
 
 def run():
-    try:
-        while True:
+    while True:
+        try:
             print(solve())
-    except:
-        pass
+        except:
+            break
 
 
 # -------------------------------------------------------------------

@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/PROBLEM_NAME
-# Title  : PROBLEM_TITLE
-# Notes  : tag-kattis, tag-LEVEL
+# URL    : https://open.kattis.com/problems/basicprogramming2
+# Title  : Basic Programming 2
+# Notes  : tag-kattis, tag-easy
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
@@ -42,22 +42,59 @@ M = 9999999999879998
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    pass
+    n, t = intl()
+    a = intl()
+    a = sorted(a)
 
+    if t == 1:
+        left = 0
+        right = n - 1
 
-def run():
-    solve()
+        while left < right:
+            if a[left] + a[right] == 7777:
+                return "Yes"
+
+            if a[left] + a[right] < 7777:
+                left += 1
+                continue
+
+            if a[left] + a[right] > 7777:
+                right -= 1
+                continue
+
+        return "No"
+
+    if t == 2:
+        if len(a) == len(set(a)):
+            return "Unique"
+
+        return "Contains duplicate"
+
+    if t == 3:
+        _cnt = cnt(a)
+        _times = n // 2
+
+        for key, value in _cnt.items():
+            if value > _times:
+                return key
+
+        return -1
+
+    if t == 4:
+        mid = n // 2
+
+        if n & 1 == 0:
+            return list_to_string_list([a[mid - 1], a[mid]])
+
+        return a[mid]
+
+    if t == 5:
+        a = list(filter(lambda x: 100 <= x <= 999, a))
+        return list_to_string_list(a)
 
 
 def run():
     print(solve())
-
-
-def run():
-    t = iinp()
-
-    for _ in range(t):
-        solve()
 
 
 if __name__ == "__main__":

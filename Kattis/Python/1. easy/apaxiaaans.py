@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
 # URL    : https://open.kattis.com/problems/apaxiaaans
 # Title  : Apaxiaaaaaaaaaaaans!
-# Notes  : tag-kattis, tag-1. easy
+# Notes  : tag-kattis, tag-easy
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

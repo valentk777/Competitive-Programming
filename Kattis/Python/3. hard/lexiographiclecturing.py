@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
 # URL    : https://open.kattis.com/problems/lexiographiclecturing
 # Title  : Lexicographical Lecturing
-# Notes  : tag-kattis, tag-3. hard, tag-not-pass
+# Notes  : tag-kattis, tag-hard, tag-not-pass
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

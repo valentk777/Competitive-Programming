@@ -24,6 +24,10 @@ fact = lambda number: math.factorial(number)
 cnt = lambda _a: Counter(_a)
 
 
+def lcm(a, b):
+    return a * b // math.gcd(a, b)
+
+
 def print_dp(_dict):
     for item in _dict.items():
         print(f"{item[0]} = {item[1]}")

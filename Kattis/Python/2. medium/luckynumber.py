@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
-# URL    : https://open.kattis.com/problems/PROBLEM_NAME
-# Title  : PROBLEM_TITLE
-# Notes  : tag-kattis, tag-LEVEL
+# URL    : https://open.kattis.com/problems/luckynumber
+# Title  : Lucky Numbers
+# Notes  : tag-kattis, tag-medium
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
@@ -42,22 +42,29 @@ M = 9999999999879998
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    pass
+    n = iinp()
 
+    # initially all numbers are divisible by 1
+    ans = list(range(1, 10))
 
-def run():
-    solve()
+    for i in range(2, n + 1):
+        numbers = []
+
+        # iterate all candidates and add new digit at the end
+        for number in ans:
+            for digit in range(10):
+                candidate = number * 10 + digit
+
+                if candidate % i == 0:
+                    numbers.append(candidate)
+
+        ans = numbers
+
+    return len(ans)
 
 
 def run():
     print(solve())
-
-
-def run():
-    t = iinp()
-
-    for _ in range(t):
-        solve()
 
 
 if __name__ == "__main__":
