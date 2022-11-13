@@ -1,6 +1,7 @@
 import logging
 import re
 import shutil
+import webbrowser
 from os import getcwd, mkdir, path
 from pathlib import Path
 
@@ -195,10 +196,16 @@ def create_folder(folder_path: Path) -> None:
         logging.warning("Folder already created")
 
 
+def open_current_file(folder_path: Path, round_data: RoundData) -> None:
+    problem_file_path, name = round_data.get_problems()[0]
+    file_path = folder_path / f"{problem_file_path}.py"
+    webbrowser.open(str(file_path))
+
+
 def generate_folder_with_problems() -> None:
     logger.info("Script started")
 
-    WEB_URL = "https://codeforces.com/problemset/problem/1682/C"
+    WEB_URL = "https://codeforces.com/problemset/problem/327/A"
 
     round_data = RoundData(WEB_URL)
     # round_data = RoundData(
@@ -215,6 +222,7 @@ def generate_folder_with_problems() -> None:
     copy_file_and_update_information(template, folder_path, round_data)
     modify_file(folder_path, round_data)
     logger.error(round_data)
+    open_current_file(folder_path, round_data)
 
     logger.info("Script ended")
 
