@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
-# URL    : https://codeforces.com/contest/327/problem/A
-# Title  : A. Flipping Game
-# Notes  : tag-codeforces, tag-problem-A, tag-div-2
+# URL    : https://codeforces.com/contest/1097/problem/B
+# Title  : B. Petr and a Combination Lock
+# Notes  : tag-codeforces, tag-problem-B
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
@@ -41,49 +41,28 @@ M = 9999999999879998
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
-# Largest Sum Contiguous Subarray (Kadane’s Algorithm)
 def solve():
     n = iinp()
-    a = intl()
-
-    b = []
+    rotations = []
 
     for i in range(n):
-        if a[i] == 1:
-            b.append(-1)
-        else:
-            b.append(1)
+        rotations.append(iinp())
 
-    dp = _dp(0)
+    candidates = {-rotations[0], rotations[0]}
 
-    for i in range(n):
-        if a[i] == 0:
-            dp[i] = dp[i - 1] + 1
-        else:
-            dp[i] = dp[i - 1] - 1
+    for i in range(1, n):
+        _temp = set()
 
-    max_so_far = -INF
-    max_ending_here = 0
-    start = 0
-    end = 0
-    s = 0
+        for candidate in candidates:
+            _temp.add((candidate + rotations[i]) % 360)
+            _temp.add((candidate - rotations[i]) % 360)
 
-    for i in range(n):
-        max_ending_here += b[i]
+        candidates = _temp
 
-        if max_so_far < max_ending_here:
-            max_so_far = max_ending_here
-            start = s
-            end = i
-
-        if max_ending_here < 0:
-            max_ending_here = 0
-            s = i + 1
-
-    if max_so_far > 0:
-        return sum(a[:start]) + a[start:end + 1].count(0) + sum(a[end + 1:])
+    if 0 in candidates:
+        return "YES"
     else:
-        return sum(a) - 1
+        return "NO"
 
 
 def run():
