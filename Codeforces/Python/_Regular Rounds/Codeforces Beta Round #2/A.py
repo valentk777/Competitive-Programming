@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/2/problem/A
 # Title  : Winner
-# Tags   : tag-codeforces, tag-problem-A
+# Tags   : tag-codeforces, tag-problem-A, tag-difficulty-1500
+# Notes  : hashing, implementation
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

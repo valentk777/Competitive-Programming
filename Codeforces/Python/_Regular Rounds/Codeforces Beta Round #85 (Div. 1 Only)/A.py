@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/111/problem/A
-# Title  : A. Petya and Inequiations
-# Tags   : tag-codeforces, tag-problem-A, tag-div-1
+# Title  : Petya and Inequiations
+# Tags   : tag-codeforces, tag-problem-A, tag-div-1, tag-difficulty-1400
+# Notes  : greedy
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/39/problem/J
 # Title  : Spelling Check
-# Tags   : tag-codeforces, tag-problem-J
+# Tags   : tag-codeforces, tag-problem-J, tag-difficulty-1500
+# Notes  : hashing, implementation, strings
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

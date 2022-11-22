@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1045/problem/I
 # Title  : Palindrome Pairs
-# Tags   : tag-codeforces, tag-problem-I, tag-div-1
+# Tags   : tag-codeforces, tag-problem-I, tag-div-1, tag-difficulty-1600
+# Notes  : hashing, strings
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

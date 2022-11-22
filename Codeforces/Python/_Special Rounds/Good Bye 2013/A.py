@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/379/problem/A
-# Title  : A. New Year Candles
-# Tags   : tag-codeforces, tag-problem-A
+# Title  : New Year Candles
+# Tags   : tag-codeforces, tag-problem-A, tag-difficulty-1000
+# Notes  : implementation
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

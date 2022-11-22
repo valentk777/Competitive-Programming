@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1691/problem/B
-# Title  : B. Shoe Shuffling
-# Tags   : tag-codeforces, tag-problem-B, tag-div-2
+# Title  : Shoe Shuffling
+# Tags   : tag-codeforces, tag-problem-B, tag-div-2, tag-difficulty-1000
+# Notes  : constructive algorithms, greedy, implementation, two pointers
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

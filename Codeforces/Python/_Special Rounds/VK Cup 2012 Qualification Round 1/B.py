@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/158/problem/B
-# Title  : B. Taxi
-# Tags   : tag-codeforces, tag-problem-B
+# Title  : Taxi
+# Tags   : tag-codeforces, tag-problem-B, tag-difficulty-1100
+# Notes  : *special, greedy, implementation
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/762/problem/A
-# Title  : A. k-th divisor
-# Tags   : tag-codeforces, tag-problem-A
+# Title  : k-th divisor
+# Tags   : tag-codeforces, tag-problem-A, tag-difficulty-1400
+# Notes  : math, number theory
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

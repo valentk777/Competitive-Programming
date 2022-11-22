@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/110/problem/A
-# Title  : A. Nearly Lucky Number
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2
+# Title  : Nearly Lucky Number
+# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-800
+# Notes  : implementation
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

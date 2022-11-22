@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1721/problem/D
-# Title  : D. Maximum AND
-# Tags   : tag-codeforces, tag-problem-D, tag-div-2
+# Title  : Maximum AND
+# Tags   : tag-codeforces, tag-problem-D, tag-div-2, tag-difficulty-1800
+# Notes  : bitmasks, dfs and similar, divide and conquer, greedy, sortings
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1/problem/A
-# Title  : A. Theatre Square
-# Tags   : tag-codeforces, tag-problem-A
+# Title  : Theatre Square
+# Tags   : tag-codeforces, tag-problem-A, tag-difficulty-1000
+# Notes  : math
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

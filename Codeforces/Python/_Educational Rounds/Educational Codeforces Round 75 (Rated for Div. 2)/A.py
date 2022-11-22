@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1251/problem/A
-# Title  : A. Broken Keyboard
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2
+# Title  : Broken Keyboard
+# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-1000
+# Notes  : brute force, strings, two pointers
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

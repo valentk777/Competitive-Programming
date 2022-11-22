@@ -33,7 +33,7 @@ class Contest:
 
     def _fill_divisions(self):
         if "Div." not in self.name:
-            return "2"
+            return []
 
         division_numbers = []
 

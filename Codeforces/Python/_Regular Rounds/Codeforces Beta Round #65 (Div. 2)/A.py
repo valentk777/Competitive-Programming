@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/71/problem/A
-# Title  : A. Way Too Long Words
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2
+# Title  : Way Too Long Words
+# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-800
+# Notes  : strings
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

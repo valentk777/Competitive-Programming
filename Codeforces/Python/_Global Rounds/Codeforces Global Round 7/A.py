@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1326/problem/A
-# Title  : A. Bad Ugly Numbers
-# Tags   : tag-codeforces, tag-problem-A
+# Title  : Bad Ugly Numbers
+# Tags   : tag-codeforces, tag-problem-A, tag-difficulty-1000
+# Notes  : constructive algorithms, number theory
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

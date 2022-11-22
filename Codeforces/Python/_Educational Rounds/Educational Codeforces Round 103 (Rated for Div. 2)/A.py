@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1476/problem/A
-# Title  : A. K-divisible Sum
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2
+# Title  : K-divisible Sum
+# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-1000
+# Notes  : binary search, constructive algorithms, greedy, math
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

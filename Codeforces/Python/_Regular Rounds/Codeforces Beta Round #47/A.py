@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/50/problem/A
-# Title  : A. Domino piling
-# Tags   : tag-codeforces, tag-problem-A
+# Title  : Domino piling
+# Tags   : tag-codeforces, tag-problem-A, tag-difficulty-800
+# Notes  : greedy, math
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

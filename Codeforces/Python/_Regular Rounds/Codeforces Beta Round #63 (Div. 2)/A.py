@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/69/problem/A
-# Title  : A. Young Physicist
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2
+# Title  : Young Physicist
+# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-1000
+# Notes  : implementation, math
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

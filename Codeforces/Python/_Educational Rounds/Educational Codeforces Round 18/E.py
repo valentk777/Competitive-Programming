@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/792/problem/E
-# Title  : E. Colored Balls
-# Tags   : tag-codeforces, tag-problem-E, tag-not-pass
+# Title  : Colored Balls
+# Tags   : tag-codeforces, tag-problem-E, tag-difficulty-2500, tag-not-pass
+# Notes  : greedy, math, number theory
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

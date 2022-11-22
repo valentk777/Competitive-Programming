@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/162/problem/C
 # Title  : Prime factorization
-# Tags   : tag-codeforces, tag-problem-C
+# Tags   : tag-codeforces, tag-problem-C, tag-difficulty-1800
+# Notes  : *special
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1359/problem/B
-# Title  : B. New Theatre Square
-# Tags   : tag-codeforces, tag-problem-B, tag-div-2
+# Title  : New Theatre Square
+# Tags   : tag-codeforces, tag-problem-B, tag-div-2, tag-difficulty-1000
+# Notes  : brute force, dp, greedy, implementation, two pointers
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

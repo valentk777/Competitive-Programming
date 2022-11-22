@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1746/problem/A
-# Title  : A. Maxmina
-# Tags   : tag-codeforces, tag-problem-A
+# Title  : Maxmina
+# Tags   : tag-codeforces, tag-problem-A, tag-difficulty-800
+# Notes  : constructive algorithms, greedy
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

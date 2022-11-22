@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/58/problem/A
-# Title  : A. Chat room
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2
+# Title  : Chat room
+# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-1000
+# Notes  : greedy, strings
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

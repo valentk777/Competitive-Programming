@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1097/problem/B
-# Title  : B. Petr and a Combination Lock
-# Tags   : tag-codeforces, tag-problem-B
+# Title  : Petr and a Combination Lock
+# Tags   : tag-codeforces, tag-problem-B, tag-difficulty-1200
+# Notes  : bitmasks, brute force, dp
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

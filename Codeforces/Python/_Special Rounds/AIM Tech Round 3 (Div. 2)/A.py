@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/709/problem/A
-# Title  : A. Juicer
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2
+# Title  : Juicer
+# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-900
+# Notes  : implementation
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

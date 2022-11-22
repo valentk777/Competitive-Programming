@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/158/problem/A
 # Title  : Next Round
-# Tags   : tag-codeforces, tag-problem-A
+# Tags   : tag-codeforces, tag-problem-A, tag-difficulty-800
+# Notes  : *special, implementation
 # ---------------------------------------------------------------------------------------
 
 

@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1466/problem/B
 # Title  : Last minute enhancements
-# Tags   : tag-codeforces, tag-problem-B
+# Tags   : tag-codeforces, tag-problem-B, tag-difficulty-800
+# Notes  : dp, greedy
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
