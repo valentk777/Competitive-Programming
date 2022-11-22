@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
-# URL    : https://codeforces.com/contest/1760/problem/F
-# Title  : F. Quests
-# Notes  : tag-codeforces, tag-problem-F, tag-div-4
+# URL    : https://codeforces.com/contest/1370/problem/A
+# Title  : A. Maximum GCD
+# Notes  : tag-codeforces, tag-problem-A, tag-div-2
 # -----------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
@@ -24,10 +24,6 @@ fact = lambda number: math.factorial(number)
 cnt = lambda _a: Counter(_a)
 
 
-def lcm(a, b):
-    return a * b // math.gcd(a, b)
-
-
 def print_dp(_dict):
     for item in _dict.items():
         print(f"{item[0]} = {item[1]}")
@@ -41,78 +37,19 @@ M = 9999999999879998
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
-def calculate(d, a, c, take):
-    _sum = 0
-    _max_days = 0
-
-    for i in range(math.ceil(d // take)):
-        for j in range(take):
-            _sum += a[j]
-
-            if _sum >= c:
-                return (d // (i + 1)) - take + 1
-
-    return 0
-
-
 def solve():
-    n, c, d = intl()
-    a = intl()
-    a = sorted(a, reverse=True)
+    n = iinp()
 
-    if sum(a[:d]) >= c:
-        return "Infinity"
+    _max = 0
 
-    if d * a[0] < c:
-        return "Impossible"
+    if n < 4:
+        return 1
 
-    _sums = [0]
+    # first biggest gcd is (k, k * 2) -> k
+    # So, we can make max pair with (n // 2, (n // 2) * 2). Divide n by 2 and we will get k
+    k = n // 2
 
-    for i in range(n):
-        _sums.append(_sums[-1] + a[i])
-
-    ans = 0
-
-    for k in range(1, d + 1):
-        single_part_size = d // k
-
-        # fill full sums
-        _sum = _sums[min(k, n)] * single_part_size
-
-        # add partial sum (last needed)
-        _sum += _sums[min(d % k, n)]
-
-        if _sum >= c:
-            # we save new max k
-            ans = k - 1
-
-    return ans
-
-
-def solve_wrong():
-    n, c, d = intl()
-    a = intl()
-    a = sorted(a, reverse=True)
-
-    if sum(a[:d]) >= c:
-        return "Infinity"
-
-    _max = d * a[0]
-
-    if _max < c:
-        return "Impossible"
-
-    ans = [calculate(d, a, c, 1)]
-
-    for i in range(2, min(d, n) + 1):
-        ans.append(calculate(d, a, c, i))
-
-        if ans[-1] < ans[-2]:
-            break
-
-    print(ans)
-
-    return max(ans)
+    return k
 
 
 def run():
