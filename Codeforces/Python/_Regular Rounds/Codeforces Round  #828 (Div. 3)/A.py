@@ -45,14 +45,11 @@ def solve():
     for i in range(len(s)):
         _z[a[i]].add(ord(s[i]))
 
-
-
     for value in _z.values():
         if len(value) > 1:
             return "NO"
 
     return "YES"
-
 
 
 def run():

@@ -53,6 +53,7 @@ def solve():
         if not is_prime(n + m):
             return m
 
+
 def run():
     t = iinp()
 

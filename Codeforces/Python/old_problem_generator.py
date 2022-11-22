@@ -117,7 +117,6 @@ class RoundData:
 
         return BeautifulSoup(r.content, 'html.parser')
 
-
     def get_sample_data(self) -> str:
         if not self.is_started or "problem" not in self.web_url:
             return ""
