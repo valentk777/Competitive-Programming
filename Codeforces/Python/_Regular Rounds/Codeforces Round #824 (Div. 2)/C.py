@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1735/problem/C
 # Title  : Phase Shift
-# Tags   : tag-codeforces, tag-problem-C, tag-div-2, tag-not-pass
+# Tags   : tag-codeforces, tag-problem-C, tag-div-2, tag-difficulty-1400, tag-not-pass
+# Notes  : dfs and similar, dsu, graphs, greedy, implementation, strings
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

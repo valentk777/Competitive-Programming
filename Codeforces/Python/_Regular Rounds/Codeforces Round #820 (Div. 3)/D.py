@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1729/problem/D
 # Title  : Friends and the Restaurant
-# Tags   : tag-codeforces, tag-problem-D, tag-div-3
+# Tags   : tag-codeforces, tag-problem-D, tag-div-3, tag-difficulty-1200
+# Notes  : greedy, sortings, two pointers
 # ---------------------------------------------------------------------------------------
 
 

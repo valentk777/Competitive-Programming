@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1326/problem/D1
 # Title  : Prefix-Suffix Palindrome (Easy version)
-# Tags   : tag-codeforces, tag-problem-D, tag-not-pass
+# Tags   : tag-codeforces, tag-problem-D, tag-difficulty-1500, tag-not-pass
+# Notes  : hashing, string suffix structures, strings
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

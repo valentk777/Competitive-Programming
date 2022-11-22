@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/116/problem/A
-# Title  : A. Tram
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2
+# Title  : Tram
+# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-800
+# Notes  : implementation
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

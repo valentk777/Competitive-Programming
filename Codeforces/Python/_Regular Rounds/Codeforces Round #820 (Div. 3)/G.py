@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1729/problem/G
 # Title  : Cut Substrings
-# Tags   : tag-codeforces, tag-problem-G, tag-div-3
+# Tags   : tag-codeforces, tag-problem-G, tag-div-3, tag-difficulty-2100
+# Notes  : combinatorics, dp, hashing, strings, two pointers
 # ---------------------------------------------------------------------------------------
 
 MODULO = 10 ** 9 + 7

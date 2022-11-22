@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1692/problem/D
-# Title  : D. The Clock
-# Tags   : tag-codeforces, tag-problem-D, tag-div-4
+# Title  : The Clock
+# Tags   : tag-codeforces, tag-problem-D, tag-div-4, tag-difficulty-1100
+# Notes  : brute force, implementation
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

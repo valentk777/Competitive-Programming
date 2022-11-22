@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/673/problem/A
-# Title  : A. Bear and Game
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2
+# Title  : Bear and Game
+# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-800
+# Notes  : implementation
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

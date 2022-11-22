@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1438/problem/D
 # Title  : Powerful Ksenia
-# Tags   : tag-codeforces, tag-problem-D, tag-div-2
+# Tags   : tag-codeforces, tag-problem-D, tag-div-2, tag-difficulty-2200
+# Notes  : bitmasks, constructive algorithms, math
 # ---------------------------------------------------------------------------------------
 
 

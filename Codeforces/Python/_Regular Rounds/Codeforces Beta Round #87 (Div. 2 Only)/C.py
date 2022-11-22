@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/116/problem/C
-# Title  : C. Party
-# Tags   : tag-codeforces, tag-problem-C, tag-div-1
+# Title  : Party
+# Tags   : tag-codeforces, tag-problem-C, tag-div-1, tag-difficulty-900
+# Notes  : dfs and similar, graphs, trees
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

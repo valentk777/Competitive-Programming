@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/279/problem/B
-# Title  : B. Books
-# Tags   : tag-codeforces, tag-problem-B, tag-div-2
+# Title  : Books
+# Tags   : tag-codeforces, tag-problem-B, tag-div-2, tag-difficulty-1400
+# Notes  : binary search, brute force, implementation, two pointers
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

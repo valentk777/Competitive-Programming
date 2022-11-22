@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1475/problem/B
 # Title  : New Year's Number
-# Tags   : tag-codeforces, tag-problem-B, tag-div-3
+# Tags   : tag-codeforces, tag-problem-B, tag-div-3, tag-difficulty-900
+# Notes  : brute force, dp, math
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

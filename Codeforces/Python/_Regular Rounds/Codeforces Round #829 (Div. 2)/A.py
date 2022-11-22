@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1754/problem/A
-# Title  : A. Technical Support
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2
+# Title  : Technical Support
+# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-800
+# Notes  : greedy
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

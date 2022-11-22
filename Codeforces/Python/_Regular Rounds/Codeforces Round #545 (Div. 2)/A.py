@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1138/problem/A
 # Title  : Sushi for Two
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2
+# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-900
+# Notes  : binary search, greedy, implementation
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

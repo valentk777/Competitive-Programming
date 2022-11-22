@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1760/problem/E
-# Title  : E. Binary Inversions
-# Tags   : tag-codeforces, tag-problem-E, tag-div-4
+# Title  : Binary Inversions
+# Tags   : tag-codeforces, tag-problem-E, tag-div-4, tag-difficulty-0
+# Notes  : data structures, greedy, math
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

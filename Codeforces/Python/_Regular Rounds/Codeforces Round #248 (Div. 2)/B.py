@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/433/problem/B
-# Title  : B. Kuriyama Mirai's Stones
-# Tags   : tag-codeforces, tag-problem-B, tag-div-2
+# Title  : Kuriyama Mirai's Stones
+# Tags   : tag-codeforces, tag-problem-B, tag-div-2, tag-difficulty-1200
+# Notes  : dp, implementation, sortings
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

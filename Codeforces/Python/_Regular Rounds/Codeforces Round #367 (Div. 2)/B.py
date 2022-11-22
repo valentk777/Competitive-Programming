@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/706/problem/B
 # Title  : Interesting drink
-# Tags   : tag-codeforces, tag-problem-B, tag-div-2
+# Tags   : tag-codeforces, tag-problem-B, tag-div-2, tag-difficulty-1100
+# Notes  : binary search, dp, implementation
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

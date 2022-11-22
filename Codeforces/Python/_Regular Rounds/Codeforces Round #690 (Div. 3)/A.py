@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1462/problem/A
-# Title  : A. Favorite Sequence
-# Tags   : tag-codeforces, tag-problem-A, tag-div-3
+# Title  : Favorite Sequence
+# Tags   : tag-codeforces, tag-problem-A, tag-div-3, tag-difficulty-800
+# Notes  : implementation, two pointers
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/405/problem/A
-# Title  : A. Gravity Flip
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2
+# Title  : Gravity Flip
+# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-900
+# Notes  : greedy, implementation, sortings
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

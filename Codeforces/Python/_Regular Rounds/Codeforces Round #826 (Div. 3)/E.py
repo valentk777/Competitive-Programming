@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1741/problem/E
 # Title  : Sending a Sequence Over the Network
-# Tags   : tag-codeforces, tag-problem-E, tag-div-3, tag-not-pass
+# Tags   : tag-codeforces, tag-problem-E, tag-div-3, tag-difficulty-1600, tag-not-pass
+# Notes  : dp
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1137/problem/B
 # Title  : Camp Schedule
-# Tags   : tag-codeforces, tag-problem-B, tag-div-1
+# Tags   : tag-codeforces, tag-problem-B, tag-div-1, tag-difficulty-1600
+# Notes  : greedy, hashing, strings
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

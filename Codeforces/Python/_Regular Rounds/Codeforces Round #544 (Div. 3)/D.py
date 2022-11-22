@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1133/problem/D
-# Title  : D. Zero Quantity Maximization
-# Tags   : tag-codeforces, tag-problem-D, tag-div-3
+# Title  : Zero Quantity Maximization
+# Tags   : tag-codeforces, tag-problem-D, tag-div-3, tag-difficulty-1500
+# Notes  : hashing, math, number theory
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

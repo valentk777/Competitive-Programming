@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1760/problem/B
-# Title  : B. Atilla's Favorite Problem
-# Tags   : tag-codeforces, tag-problem-B, tag-div-4
+# Title  : Atilla's Favorite Problem
+# Tags   : tag-codeforces, tag-problem-B, tag-div-4, tag-difficulty-0
+# Notes  : greedy, implementation, strings
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

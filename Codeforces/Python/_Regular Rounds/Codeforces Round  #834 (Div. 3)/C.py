@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1759/problem/C
-# Title  : C. Thermostat
-# Tags   : tag-codeforces, tag-problem-C, tag-div-3
+# Title  : Thermostat
+# Tags   : tag-codeforces, tag-problem-C, tag-div-3, tag-difficulty-1100
+# Notes  : greedy, math, shortest paths
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

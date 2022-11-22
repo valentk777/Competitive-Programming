@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/664/problem/A
-# Title  : A. Complicated GCD
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2
+# Title  : Complicated GCD
+# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-800
+# Notes  : math, number theory
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

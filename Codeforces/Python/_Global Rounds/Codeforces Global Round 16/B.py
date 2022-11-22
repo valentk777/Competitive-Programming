@@ -1,7 +1,7 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1566/problem/B
-# Title  : MAX-MEX Cut
-# Tags   : tag-codeforces, tag-problem-C, tag-difficulty-1000
+# Title  : MIN-MEX Cut
+# Tags   : tag-codeforces, tag-problem-B, tag-difficulty-800
 # Notes  : bitmasks, constructive algorithms, dp, greedy
 # ---------------------------------------------------------------------------------------
 

@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/182/problem/D
 # Title  : Common Divisors
-# Tags   : tag-codeforces, tag-problem-D, tag-div-2
+# Tags   : tag-codeforces, tag-problem-D, tag-div-2, tag-difficulty-1400
+# Notes  : brute force, hashing, implementation, math, strings
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

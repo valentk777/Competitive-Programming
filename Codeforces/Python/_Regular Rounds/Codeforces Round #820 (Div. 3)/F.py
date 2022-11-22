@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1729/problem/F
 # Title  : Kirei and the Linear Function
-# Tags   : tag-codeforces, tag-problem-F, tag-div-3
+# Tags   : tag-codeforces, tag-problem-F, tag-div-3, tag-difficulty-1900
+# Notes  : hashing, math
 # ---------------------------------------------------------------------------------------
 
 INF = 10 ** 5

@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1692/problem/B
-# Title  : B. All Distinct
-# Tags   : tag-codeforces, tag-problem-B, tag-div-4
+# Title  : All Distinct
+# Tags   : tag-codeforces, tag-problem-B, tag-div-4, tag-difficulty-800
+# Notes  : greedy, sortings
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

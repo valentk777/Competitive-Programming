@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/579/problem/A
 # Title  : Raising Bacteria
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2
+# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-1000
+# Notes  : bitmasks
 # ---------------------------------------------------------------------------------------
 
 

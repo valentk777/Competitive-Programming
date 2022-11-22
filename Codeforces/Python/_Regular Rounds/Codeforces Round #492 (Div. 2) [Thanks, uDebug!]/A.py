@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/996/problem/A
 # Title  : Hit the Lottery
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2
+# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-800
+# Notes  : dp, greedy
 # ---------------------------------------------------------------------------------------
 
 

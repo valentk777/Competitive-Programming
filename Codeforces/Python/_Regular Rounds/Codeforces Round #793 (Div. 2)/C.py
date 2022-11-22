@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1682/problem/C
-# Title  : C. LIS or Reverse LIS?
-# Tags   : tag-codeforces, tag-problem-C, tag-div-2
+# Title  : LIS or Reverse LIS?
+# Tags   : tag-codeforces, tag-problem-C, tag-div-2, tag-difficulty-1400
+# Notes  : constructive algorithms, greedy, implementation, math
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

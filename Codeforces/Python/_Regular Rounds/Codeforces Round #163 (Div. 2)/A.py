@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/266/problem/A
-# Title  : A. Stones on the Table
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2
+# Title  : Stones on the Table
+# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-800
+# Notes  : implementation
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

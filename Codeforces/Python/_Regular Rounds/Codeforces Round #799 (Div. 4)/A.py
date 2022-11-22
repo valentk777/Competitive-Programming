@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1692/problem/A
-# Title  : A. Marathon
-# Tags   : tag-codeforces, tag-problem-A, tag-div-4
+# Title  : Marathon
+# Tags   : tag-codeforces, tag-problem-A, tag-div-4, tag-difficulty-800
+# Notes  : implementation
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

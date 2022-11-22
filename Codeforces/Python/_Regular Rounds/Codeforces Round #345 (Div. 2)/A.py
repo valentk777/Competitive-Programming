@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/651/problem/A
-# Title  : A. Joysticks
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2
+# Title  : Joysticks
+# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-1100
+# Notes  : dp, greedy, implementation, math
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

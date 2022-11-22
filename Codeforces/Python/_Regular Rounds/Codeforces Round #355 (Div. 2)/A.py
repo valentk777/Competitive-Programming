@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/677/problem/A
-# Title  : A. Vanya and Fence
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2
+# Title  : Vanya and Fence
+# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-800
+# Notes  : implementation
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

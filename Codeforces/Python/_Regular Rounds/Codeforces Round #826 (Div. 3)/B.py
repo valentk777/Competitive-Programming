@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1741/problem/B
 # Title  : Funny Permutation
-# Tags   : tag-codeforces, tag-problem-B, tag-div-3
+# Tags   : tag-codeforces, tag-problem-B, tag-div-3, tag-difficulty-800
+# Notes  : constructive algorithms, math
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

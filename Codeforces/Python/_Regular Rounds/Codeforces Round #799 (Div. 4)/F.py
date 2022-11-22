@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1692/problem/F
 # Title  : 3SUM
-# Tags   : tag-codeforces, tag-problem-F, tag-div-4
+# Tags   : tag-codeforces, tag-problem-F, tag-div-4, tag-difficulty-1300
+# Notes  : brute force, math
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

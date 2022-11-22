@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/514/problem/C
 # Title  : Watto and Mechanism
-# Tags   : tag-codeforces, tag-problem-C, tag-div-2
+# Tags   : tag-codeforces, tag-problem-C, tag-div-2, tag-difficulty-2000
+# Notes  : binary search, data structures, hashing, string suffix structures, strings
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

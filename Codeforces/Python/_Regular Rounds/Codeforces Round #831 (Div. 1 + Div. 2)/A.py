@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1740/problem/A
-# Title  : A. Factorise N+M
-# Tags   : tag-codeforces, tag-problem-A, tag-div-1, tag-div-2
+# Title  : Factorise N+M
+# Tags   : tag-codeforces, tag-problem-A, tag-div-1, tag-div-2, tag-difficulty-800
+# Notes  : constructive algorithms, number theory
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

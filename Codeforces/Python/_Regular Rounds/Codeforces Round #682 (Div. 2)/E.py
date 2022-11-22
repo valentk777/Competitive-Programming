@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1438/problem/E
 # Title  : Yurii Can Do Everything
-# Tags   : tag-codeforces, tag-problem-E, tag-div-2, tag-not-pass
+# Tags   : tag-codeforces, tag-problem-E, tag-div-2, tag-difficulty-2500, tag-not-pass
+# Notes  : binary search, bitmasks, brute force, constructive algorithms, divide and conquer, two pointers
 # ---------------------------------------------------------------------------------------
 
 

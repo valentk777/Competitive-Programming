@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1744/problem/B
-# Title  : B. Even-Odd Increments
-# Tags   : tag-codeforces, tag-problem-B, tag-div-3
+# Title  : Even-Odd Increments 
+# Tags   : tag-codeforces, tag-problem-B, tag-div-3, tag-difficulty-800
+# Notes  : implementation, math
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1419/problem/D1
-# Title  : D1. Sage's Birthday (easy version)
-# Tags   : tag-codeforces, tag-problem-D, tag-div-2
+# Title  : Sage's Birthday (easy version)
+# Tags   : tag-codeforces, tag-problem-D, tag-div-2, tag-difficulty-1000
+# Notes  : binary search, constructive algorithms, greedy, sortings
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

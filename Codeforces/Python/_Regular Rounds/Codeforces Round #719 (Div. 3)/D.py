@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1520/problem/D
 # Title  : Same Differences
-# Tags   : tag-codeforces, tag-problem-D, tag-div-3
+# Tags   : tag-codeforces, tag-problem-D, tag-div-3, tag-difficulty-1200
+# Notes  : data structures, hashing, math
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1692/problem/E
-# Title  : E. Binary Deque
-# Tags   : tag-codeforces, tag-problem-E, tag-div-4
+# Title  : Binary Deque
+# Tags   : tag-codeforces, tag-problem-E, tag-div-4, tag-difficulty-1200
+# Notes  : binary search, implementation, two pointers
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

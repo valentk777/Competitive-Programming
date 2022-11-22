@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/489/problem/C
 # Title  : Given Length and Sum of Digits...
-# Tags   : tag-codeforces, tag-problem-C, tag-div-2
+# Tags   : tag-codeforces, tag-problem-C, tag-div-2, tag-difficulty-1400
+# Notes  : dp, greedy, implementation
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

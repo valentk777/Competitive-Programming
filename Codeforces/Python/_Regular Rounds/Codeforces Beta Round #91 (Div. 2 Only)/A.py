@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/122/problem/A
-# Title  : A. Lucky Division
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2
+# Title  : Lucky Division
+# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-1000
+# Notes  : brute force, number theory
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/580/problem/A
 # Title  : Kefa and First Steps
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2
+# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-900
+# Notes  : brute force, dp, implementation
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

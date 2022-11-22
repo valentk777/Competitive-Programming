@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1629/problem/B
-# Title  : B. GCD Arrays
-# Tags   : tag-codeforces, tag-problem-B, tag-div-2
+# Title  : GCD Arrays
+# Tags   : tag-codeforces, tag-problem-B, tag-div-2, tag-difficulty-800
+# Notes  : greedy, math, number theory
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

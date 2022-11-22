@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/116/problem/B
-# Title  : B. Little Pigs and Wolves
-# Tags   : tag-codeforces, tag-problem-B, tag-div-2
+# Title  : Little Pigs and Wolves
+# Tags   : tag-codeforces, tag-problem-B, tag-div-2, tag-difficulty-1100
+# Notes  : greedy, implementation
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

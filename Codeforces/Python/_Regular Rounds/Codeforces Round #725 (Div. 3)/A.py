@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1538/problem/A
 # Title  : Stone Game
-# Tags   : tag-codeforces, tag-problem-A, tag-div-3
+# Tags   : tag-codeforces, tag-problem-A, tag-div-3, tag-difficulty-800
+# Notes  : brute force, dp, greedy
 # ---------------------------------------------------------------------------------------
 
 

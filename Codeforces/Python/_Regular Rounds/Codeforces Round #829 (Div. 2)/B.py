@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1754/problem/B
-# Title  : B. Kevin and Permutation
-# Tags   : tag-codeforces, tag-problem-B, tag-div-2
+# Title  : Kevin and Permutation
+# Tags   : tag-codeforces, tag-problem-B, tag-div-2, tag-difficulty-800
+# Notes  : constructive algorithms, greedy, math
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

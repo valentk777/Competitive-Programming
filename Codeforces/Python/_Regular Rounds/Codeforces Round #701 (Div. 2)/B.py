@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1485/problem/B
-# Title  : B. Replace and Keep Sorted
-# Tags   : tag-codeforces, tag-problem-B, tag-div-2
+# Title  : Replace and Keep Sorted
+# Tags   : tag-codeforces, tag-problem-B, tag-div-2, tag-difficulty-1200
+# Notes  : dp, implementation, math
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

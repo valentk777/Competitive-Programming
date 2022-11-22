@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/363/problem/B
 # Title  : Fence
-# Tags   : tag-codeforces, tag-problem-B, tag-div-2
+# Tags   : tag-codeforces, tag-problem-B, tag-div-2, tag-difficulty-1100
+# Notes  : brute force, dp
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

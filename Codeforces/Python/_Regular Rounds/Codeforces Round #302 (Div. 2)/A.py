@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/544/problem/A
 # Title  : Set of Strings
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2
+# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-1100
+# Notes  : implementation, strings
 # ---------------------------------------------------------------------------------------
 
 

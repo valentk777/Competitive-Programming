@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1759/problem/E
-# Title  : E. The Humanoid
-# Tags   : tag-codeforces, tag-problem-E, tag-div-3
+# Title  : The Humanoid
+# Tags   : tag-codeforces, tag-problem-E, tag-div-3, tag-difficulty-1500
+# Notes  : brute force, dp, sortings
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

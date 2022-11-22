@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1689/problem/A
-# Title  : A. Lex String
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2
+# Title  : Lex String
+# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-800
+# Notes  : brute force, greedy, implementation, sortings, two pointers
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

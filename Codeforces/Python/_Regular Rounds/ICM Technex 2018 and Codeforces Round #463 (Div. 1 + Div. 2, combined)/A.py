@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/932/problem/A
-# Title  : A. Palindromic Supersequence
-# Tags   : tag-codeforces, tag-problem-A, tag-div-1, tag-div-2
+# Title  : Palindromic Supersequence
+# Tags   : tag-codeforces, tag-problem-A, tag-div-1, tag-div-2, tag-difficulty-800
+# Notes  : constructive algorithms
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

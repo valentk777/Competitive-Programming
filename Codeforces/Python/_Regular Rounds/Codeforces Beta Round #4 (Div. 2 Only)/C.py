@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/4/problem/C
-# Title  : Registration system
-# Tags   : tag-codeforces, tag-problem-C, tag-div-2
+# Title  : Registration System
+# Tags   : tag-codeforces, tag-problem-C, tag-div-2, tag-difficulty-1300
+# Notes  : data structures, hashing, implementation
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

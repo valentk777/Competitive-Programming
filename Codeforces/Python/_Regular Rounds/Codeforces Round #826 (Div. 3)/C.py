@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1741/problem/C
 # Title  : Minimize the Thickness
-# Tags   : tag-codeforces, tag-problem-C, tag-div-3
+# Tags   : tag-codeforces, tag-problem-C, tag-div-3, tag-difficulty-1100
+# Notes  : brute force, greedy, math, two pointers
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

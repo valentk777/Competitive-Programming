@@ -120,7 +120,18 @@ def update_files_summary(paths):
         problems = _get_all_problems(int(contest_number))
 
         for file in files:
-            problem = list(filter(lambda x: str(x.number) in file, problems))[0]
+            with open(group[0] / file, 'r') as f:
+                file_data = f.read()
+
+            summary_section = _get_summary_section(file_data)
+
+            problem = list(filter(lambda x: str(x.number) in file, problems))
+
+            if len(problem) == 0:
+                print("ERROR!!!!", file)
+                continue
+
+            problem = problem[0]
 
             tags = []
 
@@ -136,7 +147,7 @@ def update_files_summary(paths):
 
             temp[2] = f"# Title  : {problem.name}"
 
-            new_3 = f"# Tags   : tag-codeforces, tag-problem-{str(problem.number)}, {str.join(', ', tags)}"
+            new_3 = f"# Tags   : tag-codeforces, tag-problem-{str(problem.number[0])}, {str.join(', ', tags)}"
 
             if "tag-not-pass" in temp[3]:
                 new_3 = new_3 + ", tag-not-pass"
@@ -147,12 +158,13 @@ def update_files_summary(paths):
 
             file_data = file_data.replace(summary_section, new_summary_section)
 
-            with open(group[0] / files[0], 'w') as f:
+            with open(group[0] / file, 'w') as f:
                 f.write(file_data)
 
 
 if __name__ == "__main__":
-    for repo in ["_Special Rounds"]:
+    for repo in ["_Regular Rounds"]:
+    # for repo in ["_Special Rounds"]:
         # for repo in ["_Global Rounds", "_Educational Rounds", "_Regular Rounds", "_Special Rounds"]:
         file_paths = get_all_files_in_folder(CURRENT_PATH / repo)
 

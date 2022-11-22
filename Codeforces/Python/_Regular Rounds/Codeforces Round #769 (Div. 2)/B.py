@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1632/problem/B
 # Title  : Roof Construction
-# Tags   : tag-codeforces, tag-problem-B, tag-div-2
+# Tags   : tag-codeforces, tag-problem-B, tag-div-2, tag-difficulty-1000
+# Notes  : bitmasks, constructive algorithms
 # ---------------------------------------------------------------------------------------
 
 

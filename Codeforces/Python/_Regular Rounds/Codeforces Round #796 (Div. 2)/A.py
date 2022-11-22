@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1688/problem/A
 # Title  : Cirno's Perfect Bitmasks Classroom
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2
+# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-800
+# Notes  : bitmasks, brute force
 # ---------------------------------------------------------------------------------------
 
 

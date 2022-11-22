@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1538/problem/C
-# Title  : C. Number of Pairs
-# Tags   : tag-codeforces, tag-problem-C, tag-div-3
+# Title  : Number of Pairs
+# Tags   : tag-codeforces, tag-problem-C, tag-div-3, tag-difficulty-1300
+# Notes  : binary search, data structures, math, two pointers
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

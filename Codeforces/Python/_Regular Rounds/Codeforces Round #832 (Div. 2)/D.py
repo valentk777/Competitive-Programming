@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1747/problem/D
-# Title  : D. Yet Another Problem
-# Tags   : tag-codeforces, tag-problem-D, tag-div-2, tag-not-pass
+# Title  : Yet Another Problem
+# Tags   : tag-codeforces, tag-problem-D, tag-div-2, tag-difficulty-1900, tag-not-pass
+# Notes  : binary search, bitmasks, constructive algorithms, data structures
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

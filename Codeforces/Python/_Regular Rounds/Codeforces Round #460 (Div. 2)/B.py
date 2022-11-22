@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/919/problem/B
-# Title  : B. Perfect Number
-# Tags   : tag-codeforces, tag-problem-B, tag-div-2
+# Title  : Perfect Number
+# Tags   : tag-codeforces, tag-problem-B, tag-div-2, tag-difficulty-1100
+# Notes  : binary search, brute force, dp, implementation, number theory
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

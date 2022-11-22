@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1742/problem/A
 # Title  : Sum
-# Tags   : tag-codeforces, tag-problem-A, tag-div-4
+# Tags   : tag-codeforces, tag-problem-A, tag-div-4, tag-difficulty-800
+# Notes  : implementation
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

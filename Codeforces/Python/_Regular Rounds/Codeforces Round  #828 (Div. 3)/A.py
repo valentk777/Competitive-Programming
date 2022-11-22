@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1744/problem/A
-# Title  : A. Number Replacement
-# Tags   : tag-codeforces, tag-problem-A, tag-div-3
+# Title  : Number Replacement
+# Tags   : tag-codeforces, tag-problem-A, tag-div-3, tag-difficulty-800
+# Notes  : greedy, implementation
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/765/problem/A
-# Title  : A. Neverending competitions
-# Tags   : tag-codeforces, tag-problem-A, tag-div-1, tag-div-2
+# Title  : Neverending competitions
+# Tags   : tag-codeforces, tag-problem-A, tag-div-1, tag-div-2, tag-difficulty-900
+# Notes  : implementation, math
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

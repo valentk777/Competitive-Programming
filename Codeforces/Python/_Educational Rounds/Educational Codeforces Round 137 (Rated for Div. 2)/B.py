@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1743/problem/B
 # Title  : Permutation Value
-# Tags   : tag-codeforces, tag-problem-B, tag-div-2
+# Tags   : tag-codeforces, tag-problem-B, tag-div-2, tag-difficulty-800
+# Notes  : constructive algorithms, greedy
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

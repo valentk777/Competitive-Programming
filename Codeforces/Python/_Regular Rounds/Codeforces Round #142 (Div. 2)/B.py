@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/230/problem/B
-# Title  : B. T-primes
-# Tags   : tag-codeforces, tag-problem-B, tag-div-2
+# Title  : T-primes
+# Tags   : tag-codeforces, tag-problem-B, tag-div-2, tag-difficulty-1300
+# Notes  : binary search, implementation, math, number theory
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

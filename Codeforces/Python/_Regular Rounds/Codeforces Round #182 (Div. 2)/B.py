@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/302/problem/B
-# Title  : B. Eugeny and Play List
-# Tags   : tag-codeforces, tag-problem-B, tag-div-2
+# Title  : Eugeny and Play List
+# Tags   : tag-codeforces, tag-problem-B, tag-div-2, tag-difficulty-1200
+# Notes  : binary search, implementation, two pointers
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

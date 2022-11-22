@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1419/problem/D2
-# Title  : D2. Sage's Birthday (hard version)
-# Tags   : tag-codeforces, tag-problem-D, tag-div-2, tag-not-pass
+# Title  : Sage's Birthday (hard version)
+# Tags   : tag-codeforces, tag-problem-D, tag-div-2, tag-difficulty-1500, tag-not-pass
+# Notes  : binary search, brute force, constructive algorithms, greedy, sortings, two pointers
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

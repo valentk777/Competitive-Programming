@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/263/problem/A
-# Title  : A. Beautiful Matrix
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2
+# Title  : Beautiful Matrix
+# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-800
+# Notes  : implementation
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

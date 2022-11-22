@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1736/problem/B
 # Title  : Playing with GCD
-# Tags   : tag-codeforces, tag-problem-B, tag-div-2
+# Tags   : tag-codeforces, tag-problem-B, tag-div-2, tag-difficulty-1200
+# Notes  : math, number theory
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

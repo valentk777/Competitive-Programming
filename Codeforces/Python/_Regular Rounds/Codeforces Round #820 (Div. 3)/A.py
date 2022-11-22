@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1729/problem/A
 # Title  : Two Elevators
-# Tags   : tag-codeforces, tag-problem-A, tag-div-3
+# Tags   : tag-codeforces, tag-problem-A, tag-div-3, tag-difficulty-800
+# Notes  : math
 # ---------------------------------------------------------------------------------------
 
 

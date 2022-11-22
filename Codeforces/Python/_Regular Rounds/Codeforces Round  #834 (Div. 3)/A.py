@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1759/problem/A
-# Title  : A. Yes-Yes?
-# Tags   : tag-codeforces, tag-problem-A, tag-div-3
+# Title  : Yes-Yes?
+# Tags   : tag-codeforces, tag-problem-A, tag-div-3, tag-difficulty-800
+# Notes  : implementation, strings
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

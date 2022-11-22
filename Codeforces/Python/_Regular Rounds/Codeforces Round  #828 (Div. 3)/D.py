@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1744/problem/D
-# Title  : D. Divisibility by 2^n
-# Tags   : tag-codeforces, tag-problem-D, tag-div-3
+# Title  : Divisibility by 2^n
+# Tags   : tag-codeforces, tag-problem-D, tag-div-3, tag-difficulty-1200
+# Notes  : greedy, math, sortings
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

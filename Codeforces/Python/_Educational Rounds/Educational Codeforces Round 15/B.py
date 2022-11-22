@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/702/problem/B
 # Title  : Powers of Two
-# Tags   : tag-codeforces, tag-problem-B
+# Tags   : tag-codeforces, tag-problem-B, tag-difficulty-1500
+# Notes  : brute force, data structures, implementation, math
 # ---------------------------------------------------------------------------------------
 
 

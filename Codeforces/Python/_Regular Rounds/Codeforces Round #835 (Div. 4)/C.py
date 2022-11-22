@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1760/problem/C
-# Title  : C. Advantage
-# Tags   : tag-codeforces, tag-problem-C, tag-div-4
+# Title  : Advantage
+# Tags   : tag-codeforces, tag-problem-C, tag-div-4, tag-difficulty-0
+# Notes  : data structures, implementation, sortings
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

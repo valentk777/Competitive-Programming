@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1747/problem/A
-# Title  : A. Two Groups
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2
+# Title  : Two Groups
+# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-800
+# Notes  : constructive algorithms, greedy
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

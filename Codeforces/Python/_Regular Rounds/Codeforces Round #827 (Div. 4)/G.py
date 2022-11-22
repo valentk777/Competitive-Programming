@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1742/problem/G
-# Title  : G. Orray
-# Tags   : tag-codeforces, tag-problem-G, tag-div-4
+# Title  : Orray
+# Tags   : tag-codeforces, tag-problem-G, tag-div-4, tag-difficulty-1500
+# Notes  : bitmasks, brute force, greedy, math, sortings
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

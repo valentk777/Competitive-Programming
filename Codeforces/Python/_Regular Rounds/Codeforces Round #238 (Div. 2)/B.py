@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/405/problem/B
-# Title  : B. Domino Effect
-# Tags   : tag-codeforces, tag-problem-B, tag-div-2
+# Title  : Domino Effect
+# Tags   : tag-codeforces, tag-problem-B, tag-div-2, tag-difficulty-1100
+# Notes  : 
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

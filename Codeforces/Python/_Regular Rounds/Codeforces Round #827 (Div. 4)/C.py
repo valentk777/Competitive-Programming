@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1742/problem/C
-# Title  : C. Stripes
-# Tags   : tag-codeforces, tag-problem-C, tag-div-4
+# Title  : Stripes
+# Tags   : tag-codeforces, tag-problem-C, tag-div-4, tag-difficulty-900
+# Notes  : implementation
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

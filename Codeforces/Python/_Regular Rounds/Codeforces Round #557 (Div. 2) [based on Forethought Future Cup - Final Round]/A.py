@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1162/problem/A
-# Title  : A. Zoning Restrictions Again
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2
+# Title  : Zoning Restrictions Again
+# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-800
+# Notes  : implementation
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

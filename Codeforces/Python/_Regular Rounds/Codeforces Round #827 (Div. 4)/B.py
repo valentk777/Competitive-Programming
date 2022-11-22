@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1742/problem/B
 # Title  : Increasing
-# Tags   : tag-codeforces, tag-problem-B, tag-div-4
+# Tags   : tag-codeforces, tag-problem-B, tag-div-4, tag-difficulty-800
+# Notes  : greedy, implementation, sortings
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

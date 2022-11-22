@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/313/problem/B
-# Title  : B. Ilya and Queries
-# Tags   : tag-codeforces, tag-problem-B, tag-div-2
+# Title  : Ilya and Queries
+# Tags   : tag-codeforces, tag-problem-B, tag-div-2, tag-difficulty-1100
+# Notes  : dp, implementation
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

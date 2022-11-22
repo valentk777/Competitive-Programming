@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1747/problem/C
-# Title  : C. Swap Game
-# Tags   : tag-codeforces, tag-problem-C, tag-div-2, tag-not-pass
+# Title  : Swap Game
+# Tags   : tag-codeforces, tag-problem-C, tag-div-2, tag-difficulty-1200, tag-not-pass
+# Notes  : games
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

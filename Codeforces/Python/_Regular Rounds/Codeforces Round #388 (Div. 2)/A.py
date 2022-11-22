@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/749/problem/A
-# Title  : A. Bachgold Problem
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2
+# Title  : Bachgold Problem
+# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-800
+# Notes  : greedy, implementation, math, number theory
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

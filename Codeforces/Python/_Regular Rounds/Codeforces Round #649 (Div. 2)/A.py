@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1364/problem/A
-# Title  : A. XXXXX
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2
+# Title  : XXXXX
+# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-1200
+# Notes  : brute force, data structures, number theory, two pointers
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

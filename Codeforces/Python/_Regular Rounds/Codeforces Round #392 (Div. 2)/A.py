@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/758/problem/A
-# Title  : A. Holiday Of Equality
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2
+# Title  : Holiday Of Equality
+# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-800
+# Notes  : implementation, math
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

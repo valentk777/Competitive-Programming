@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/489/problem/A
-# Title  : A. SwapSort
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2
+# Title  : SwapSort
+# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-1200
+# Notes  : greedy, implementation, sortings
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

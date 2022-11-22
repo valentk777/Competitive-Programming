@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/131/problem/A
-# Title  : A. cAPS lOCK
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2
+# Title  : cAPS lOCK
+# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-1000
+# Notes  : implementation, strings
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

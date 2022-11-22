@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/339/problem/A
-# Title  : A. Helpful Maths
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2
+# Title  : Helpful Maths
+# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-800
+# Notes  : greedy, implementation, sortings, strings
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

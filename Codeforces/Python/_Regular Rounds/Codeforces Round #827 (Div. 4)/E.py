@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1742/problem/E
 # Title  : Scuza
-# Tags   : tag-codeforces, tag-problem-E, tag-div-4
+# Tags   : tag-codeforces, tag-problem-E, tag-div-4, tag-difficulty-1200
+# Notes  : binary search, greedy, math
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

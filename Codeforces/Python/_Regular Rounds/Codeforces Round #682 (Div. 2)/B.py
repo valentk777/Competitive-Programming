@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1438/problem/B
 # Title  : Valerii Against Everyone
-# Tags   : tag-codeforces, tag-problem-B, tag-div-2
+# Tags   : tag-codeforces, tag-problem-B, tag-div-2, tag-difficulty-1000
+# Notes  : constructive algorithms, data structures, greedy, sortings
 # ---------------------------------------------------------------------------------------
 
 

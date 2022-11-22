@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/742/problem/A
-# Title  : A. Arpa's hard exam and Mehrdad's naive cheat
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2
+# Title  : Arpa’s hard exam and Mehrdad’s naive cheat
+# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-1000
+# Notes  : implementation, math, number theory
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

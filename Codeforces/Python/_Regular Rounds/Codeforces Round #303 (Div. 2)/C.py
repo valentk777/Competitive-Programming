@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/545/problem/C
 # Title  : Woodcutters
-# Tags   : tag-codeforces, tag-problem-C, tag-div-2
+# Tags   : tag-codeforces, tag-problem-C, tag-div-2, tag-difficulty-1500
+# Notes  : dp, greedy
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

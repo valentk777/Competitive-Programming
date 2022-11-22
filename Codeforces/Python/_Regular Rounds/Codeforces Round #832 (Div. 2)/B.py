@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1747/problem/B
-# Title  : B. BAN BAN
-# Tags   : tag-codeforces, tag-problem-B, tag-div-2
+# Title  : BAN BAN
+# Tags   : tag-codeforces, tag-problem-B, tag-div-2, tag-difficulty-900
+# Notes  : constructive algorithms
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

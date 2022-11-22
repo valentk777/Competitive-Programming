@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1474/problem/B
-# Title  : B. Different Divisors
-# Tags   : tag-codeforces, tag-problem-B, tag-div-2
+# Title  : Different Divisors
+# Tags   : tag-codeforces, tag-problem-B, tag-div-2, tag-difficulty-1000
+# Notes  : binary search, constructive algorithms, greedy, math, number theory
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1617/problem/B
-# Title  : B. GCD Problem
-# Tags   : tag-codeforces, tag-problem-B, tag-div-2
+# Title  : GCD Problem
+# Tags   : tag-codeforces, tag-problem-B, tag-div-2, tag-difficulty-900
+# Notes  : brute force, constructive algorithms, math, number theory
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

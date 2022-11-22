@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/466/problem/A
-# Title  : A. Cheap Travel
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2
+# Title  : Cheap Travel
+# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-1200
+# Notes  : implementation
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

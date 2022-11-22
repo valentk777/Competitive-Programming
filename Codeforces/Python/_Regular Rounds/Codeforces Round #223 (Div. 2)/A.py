@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/381/problem/A
-# Title  : A. Sereja and Dima
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2
+# Title  : Sereja and Dima
+# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-800
+# Notes  : greedy, implementation, two pointers
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

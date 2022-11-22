@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/794/problem/A
-# Title  : A. Bank Robbery
-# Tags   : tag-codeforces, tag-problem-A, tag-div-1, tag-div-2
+# Title  : Bank Robbery
+# Tags   : tag-codeforces, tag-problem-A, tag-div-1, tag-div-2, tag-difficulty-800
+# Notes  : brute force, implementation
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

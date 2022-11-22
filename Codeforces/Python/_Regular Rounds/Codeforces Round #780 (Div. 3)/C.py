@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1660/problem/C
 # Title  : Get an Even String
-# Tags   : tag-codeforces, tag-problem-C, tag-div-3
+# Tags   : tag-codeforces, tag-problem-C, tag-div-3, tag-difficulty-1300
+# Notes  : dp, greedy, strings
 # ---------------------------------------------------------------------------------------
 
 INF = 10 ** 6

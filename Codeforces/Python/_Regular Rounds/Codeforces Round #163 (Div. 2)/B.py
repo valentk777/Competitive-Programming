@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/266/problem/B
-# Title  : B. Queue at the School
-# Tags   : tag-codeforces, tag-problem-B, tag-div-2
+# Title  : Queue at the School
+# Tags   : tag-codeforces, tag-problem-B, tag-div-2, tag-difficulty-800
+# Notes  : constructive algorithms, graph matchings, implementation, shortest paths
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1744/problem/C
-# Title  : C. Traffic Light
-# Tags   : tag-codeforces, tag-problem-C, tag-div-3
+# Title  : Traffic Light
+# Tags   : tag-codeforces, tag-problem-C, tag-div-3, tag-difficulty-1000
+# Notes  : binary search, implementation, two pointers
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

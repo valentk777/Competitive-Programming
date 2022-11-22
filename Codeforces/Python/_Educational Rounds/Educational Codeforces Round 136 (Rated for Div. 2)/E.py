@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1739/problem/E
 # Title  : Cleaning Robot
-# Tags   : tag-codeforces, tag-problem-E, tag-div-2
+# Tags   : tag-codeforces, tag-problem-E, tag-div-2, tag-difficulty-2400
+# Notes  : bitmasks, dp
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

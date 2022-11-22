@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1734/problem/F
 # Title  : Zeros and Ones
-# Tags   : tag-codeforces, tag-problem-F, tag-div-2, tag-not-pass
+# Tags   : tag-codeforces, tag-problem-F, tag-div-2, tag-difficulty-2500, tag-not-pass
+# Notes  : bitmasks, divide and conquer, dp, math
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1360/problem/F
-# Title  : F. Spy-string
-# Tags   : tag-codeforces, tag-problem-F, tag-div-3
+# Title  : Spy-string
+# Tags   : tag-codeforces, tag-problem-F, tag-div-3, tag-difficulty-1700
+# Notes  : bitmasks, brute force, constructive algorithms, dp, hashing, strings
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

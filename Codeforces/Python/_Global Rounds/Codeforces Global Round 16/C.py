@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1566/problem/C
-# Title  : C. MAX-MEX Cut
-# Tags   : tag-codeforces, tag-problem-C
+# Title  : MAX-MEX Cut
+# Tags   : tag-codeforces, tag-problem-C, tag-difficulty-1000
+# Notes  : bitmasks, constructive algorithms, dp, greedy
 # ---------------------------------------------------------------------------------------
 import math
 import os

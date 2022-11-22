@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1345/problem/B
-# Title  : B. Card Constructions
-# Tags   : tag-codeforces, tag-problem-B, tag-div-2
+# Title  : Card Constructions
+# Tags   : tag-codeforces, tag-problem-B, tag-div-2, tag-difficulty-1100
+# Notes  : binary search, brute force, dp, math
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

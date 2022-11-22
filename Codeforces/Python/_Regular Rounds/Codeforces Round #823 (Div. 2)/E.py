@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1730/problem/E
 # Title  : Maximums and Minimums
-# Tags   : tag-codeforces, tag-problem-E, tag-div-2, tag-not-pass
+# Tags   : tag-codeforces, tag-problem-E, tag-div-2, tag-difficulty-2700, tag-not-pass
+# Notes  : combinatorics, data structures, divide and conquer, number theory
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

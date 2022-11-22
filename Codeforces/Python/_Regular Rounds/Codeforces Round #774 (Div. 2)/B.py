@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1646/problem/B
-# Title  : B. Quality vs Quantity
-# Tags   : tag-codeforces, tag-problem-B, tag-div-2
+# Title  : Quality vs Quantity
+# Tags   : tag-codeforces, tag-problem-B, tag-div-2, tag-difficulty-800
+# Notes  : brute force, constructive algorithms, greedy, sortings, two pointers
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

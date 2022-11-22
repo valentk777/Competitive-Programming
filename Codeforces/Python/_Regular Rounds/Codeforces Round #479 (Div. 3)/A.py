@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/977/problem/A
-# Title  : A. Wrong Subtraction
-# Tags   : tag-codeforces, tag-problem-A, tag-div-3
+# Title  : Wrong Subtraction
+# Tags   : tag-codeforces, tag-problem-A, tag-div-3, tag-difficulty-800
+# Notes  : implementation
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

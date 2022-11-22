@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/115/problem/A
-# Title  : A. Party
-# Tags   : tag-codeforces, tag-problem-A, tag-div-1
+# Title  : Party
+# Tags   : tag-codeforces, tag-problem-A, tag-div-1, tag-difficulty-900
+# Notes  : dfs and similar, graphs, trees
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

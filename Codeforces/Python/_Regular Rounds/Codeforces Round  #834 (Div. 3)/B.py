@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1759/problem/B
-# Title  : B. Lost Permutation
-# Tags   : tag-codeforces, tag-problem-B, tag-div-3
+# Title  : Lost Permutation
+# Tags   : tag-codeforces, tag-problem-B, tag-div-3, tag-difficulty-800
+# Notes  : math
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

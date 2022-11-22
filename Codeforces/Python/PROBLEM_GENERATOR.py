@@ -170,7 +170,7 @@ def modify_file(copy_to: Path, round_data: RoundData) -> None:
             file_data = f.read()
 
         file_data = file_data.replace("CONTEST_NUMBER", str(round_data.contest.id))
-        file_data = file_data.replace("PROBLEM_LETTER", str(problem.number))
+        file_data = file_data.replace("PROBLEM_LETTER", str(problem.number[0]))
         file_data = file_data.replace("PROBLEM_TITLE", problem.name)
         file_data = file_data.replace("CODEFORCES_TAGS", str.join(", ", problem.tags))
 

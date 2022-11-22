@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/762/problem/D
-# Title  : D. Maximum path
-# Tags   : tag-codeforces, tag-problem-D, tag-not-pass
+# Title  : Maximum path
+# Tags   : tag-codeforces, tag-problem-D, tag-difficulty-2300, tag-not-pass
+# Notes  : dp, greedy, implementation
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

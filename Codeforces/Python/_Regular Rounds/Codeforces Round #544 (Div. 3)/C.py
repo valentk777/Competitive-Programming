@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1133/problem/C
-# Title  : C. Balanced Team
-# Tags   : tag-codeforces, tag-problem-C, tag-div-3
+# Title  : Balanced Team
+# Tags   : tag-codeforces, tag-problem-C, tag-div-3, tag-difficulty-1200
+# Notes  : sortings, two pointers
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

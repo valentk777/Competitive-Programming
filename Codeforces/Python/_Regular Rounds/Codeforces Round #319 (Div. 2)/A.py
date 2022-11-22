@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/577/problem/A
-# Title  : A. Multiplication Table
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2
+# Title  : Multiplication Table
+# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-1000
+# Notes  : implementation, number theory
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

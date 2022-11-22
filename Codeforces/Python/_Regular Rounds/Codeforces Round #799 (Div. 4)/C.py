@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1692/problem/C
-# Title  : C. Where's the Bishop?
-# Tags   : tag-codeforces, tag-problem-C, tag-div-4
+# Title  : Where's the Bishop?
+# Tags   : tag-codeforces, tag-problem-C, tag-div-4, tag-difficulty-800
+# Notes  : implementation
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

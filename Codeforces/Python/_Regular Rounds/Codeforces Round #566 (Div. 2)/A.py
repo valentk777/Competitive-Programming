@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1182/problem/A
-# Title  : A. Filling Shapes
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2
+# Title  : Filling Shapes
+# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-1000
+# Notes  : dp, math
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

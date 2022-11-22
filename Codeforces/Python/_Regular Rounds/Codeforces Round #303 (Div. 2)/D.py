@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/545/problem/D
 # Title  : Queue
-# Tags   : tag-codeforces, tag-problem-D, tag-div-2
+# Tags   : tag-codeforces, tag-problem-D, tag-div-2, tag-difficulty-1300
+# Notes  : greedy, implementation, sortings
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

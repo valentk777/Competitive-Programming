@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1736/problem/E
 # Title  : Swap and Take
-# Tags   : tag-codeforces, tag-problem-E, tag-div-2, tag-not-pass
+# Tags   : tag-codeforces, tag-problem-E, tag-div-2, tag-difficulty-2600, tag-not-pass
+# Notes  : dp, greedy
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/405/problem/C
-# Title  : C. Unusual Product
-# Tags   : tag-codeforces, tag-problem-C, tag-div-2
+# Title  : Unusual Product
+# Tags   : tag-codeforces, tag-problem-C, tag-div-2, tag-difficulty-1600
+# Notes  : implementation, math
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

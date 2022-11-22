@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1746/problem/B
-# Title  : B. Rebellion
-# Tags   : tag-codeforces, tag-problem-B
+# Title  : Rebellion
+# Tags   : tag-codeforces, tag-problem-B, tag-difficulty-800
+# Notes  : constructive algorithms, greedy, two pointers
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

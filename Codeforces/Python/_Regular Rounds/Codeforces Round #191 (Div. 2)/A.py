@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/327/problem/A
-# Title  : A. Flipping Game
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2
+# Title  : Flipping Game
+# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-1200
+# Notes  : brute force, dp, implementation
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

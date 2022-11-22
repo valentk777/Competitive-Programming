@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1734/problem/C
 # Title  : Removing Smallest Multiples
-# Tags   : tag-codeforces, tag-problem-C, tag-div-2
+# Tags   : tag-codeforces, tag-problem-C, tag-div-2, tag-difficulty-1200
+# Notes  : greedy, math
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

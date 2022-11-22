@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1763/problem/G
-# Title  : G. 2^Sort
-# Tags   : tag-codeforces, tag-problem-G, tag-div-4
+# Title  : 2^Sort
+# Tags   : tag-codeforces, tag-problem-G, tag-div-4, tag-difficulty-1400
+# Notes  : data structures, dp, sortings, two pointers
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

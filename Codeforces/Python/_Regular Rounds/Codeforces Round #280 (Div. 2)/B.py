@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/492/problem/B
-# Title  : B. Vanya and Lanterns
-# Tags   : tag-codeforces, tag-problem-B, tag-div-2
+# Title  : Vanya and Lanterns
+# Tags   : tag-codeforces, tag-problem-B, tag-div-2, tag-difficulty-1200
+# Notes  : binary search, implementation, math, sortings
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

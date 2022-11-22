@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1419/problem/B
-# Title  : B. Stairs
-# Tags   : tag-codeforces, tag-problem-B, tag-div-2
+# Title  : Stairs
+# Tags   : tag-codeforces, tag-problem-B, tag-div-2, tag-difficulty-1200
+# Notes  : brute force, constructive algorithms, greedy, implementation, math
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

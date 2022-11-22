@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1743/problem/C
-# Title  : C. Save the Magazines
-# Tags   : tag-codeforces, tag-problem-C, tag-div-2
+# Title  : Save the Magazines
+# Tags   : tag-codeforces, tag-problem-C, tag-div-2, tag-difficulty-1100
+# Notes  : constructive algorithms, dp, greedy
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

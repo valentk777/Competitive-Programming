@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1759/problem/D
-# Title  : D. Make It Round
-# Tags   : tag-codeforces, tag-problem-D, tag-div-3
+# Title  : Make It Round
+# Tags   : tag-codeforces, tag-problem-D, tag-div-3, tag-difficulty-1400
+# Notes  : brute force, number theory
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

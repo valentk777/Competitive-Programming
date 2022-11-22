@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1742/problem/D
 # Title  : Coprime
-# Tags   : tag-codeforces, tag-problem-D, tag-div-4
+# Tags   : tag-codeforces, tag-problem-D, tag-div-4, tag-difficulty-1100
+# Notes  : brute force, greedy, number theory
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

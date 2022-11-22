@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/760/problem/A
-# Title  : A. Petr and a calendar
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2
+# Title  : Petr and a calendar
+# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-div-2, tag-difficulty-800
+# Notes  : implementation, math
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

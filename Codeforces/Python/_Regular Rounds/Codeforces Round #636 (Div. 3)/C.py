@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1343/problem/C
 # Title  : Alternating Subsequence
-# Tags   : tag-codeforces, tag-problem-C, tag-div-3
+# Tags   : tag-codeforces, tag-problem-C, tag-div-3, tag-difficulty-1200
+# Notes  : dp, greedy, two pointers
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/236/problem/A
-# Title  : A. Boy or Girl
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2
+# Title  : Boy or Girl
+# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-800
+# Notes  : brute force, implementation, strings
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

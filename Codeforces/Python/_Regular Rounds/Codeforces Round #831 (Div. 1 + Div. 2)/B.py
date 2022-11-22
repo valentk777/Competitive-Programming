@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1740/problem/B
-# Title  : B. Jumbo Extra Cheese 2
-# Tags   : tag-codeforces, tag-problem-B, tag-div-1, tag-div-2
+# Title  : Jumbo Extra Cheese 2
+# Tags   : tag-codeforces, tag-problem-B, tag-div-1, tag-div-2, tag-difficulty-800
+# Notes  : geometry, greedy, sortings
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

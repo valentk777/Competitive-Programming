@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1195/problem/C
-# Title  : Basketball Exercise
-# Tags   : tag-codeforces, tag-problem-C, tag-div-2
+# Title  : Sport Mafia
+# Tags   : tag-codeforces, tag-problem-B, tag-div-2, tag-difficulty-1000
+# Notes  : binary search, brute force, math
 # ---------------------------------------------------------------------------------------
 
 

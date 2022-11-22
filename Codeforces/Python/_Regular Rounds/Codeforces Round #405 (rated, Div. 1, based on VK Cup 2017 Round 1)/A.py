@@ -1,7 +1,7 @@
 # ---------------------------------------------------------------------------------------
-# URL    : https://codeforces.com/contest/791/problem/C
+# URL    : https://codeforces.com/contest/790/problem/A
 # Title  : Bear and Different Names
-# Tags   : tag-codeforces, tag-problem-C, tag-div-2, tag-difficulty-1500
+# Tags   : tag-codeforces, tag-problem-A, tag-div-1, tag-difficulty-1500
 # Notes  : constructive algorithms, greedy
 # ---------------------------------------------------------------------------------------
 
