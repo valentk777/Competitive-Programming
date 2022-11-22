@@ -46,6 +46,7 @@ def solve():
 
     return ans
 
+
 def run():
     print(solve())
 

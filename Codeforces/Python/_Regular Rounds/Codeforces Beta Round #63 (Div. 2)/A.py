@@ -53,6 +53,7 @@ def solve():
     else:
         return "NO"
 
+
 def run():
     print(solve())
 

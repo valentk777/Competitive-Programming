@@ -44,8 +44,6 @@ def factorial(n, end):
     return ans
 
 
-
-
 # time limit
 def solve():
     n, x = intl()
@@ -71,7 +69,8 @@ def solve():
 def solve():
     n, x = intl()
     a = intl()
-    #TODO: finish
+    # TODO: finish
+
 
 def run():
     print(solve())

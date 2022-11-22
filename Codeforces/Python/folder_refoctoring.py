@@ -164,7 +164,7 @@ def update_files_summary(paths):
 
 if __name__ == "__main__":
     for repo in ["_Regular Rounds"]:
-    # for repo in ["_Special Rounds"]:
+        # for repo in ["_Special Rounds"]:
         # for repo in ["_Global Rounds", "_Educational Rounds", "_Regular Rounds", "_Special Rounds"]:
         file_paths = get_all_files_in_folder(CURRENT_PATH / repo)
 
