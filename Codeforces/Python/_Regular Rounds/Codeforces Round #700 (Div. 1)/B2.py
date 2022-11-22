@@ -1,5 +1,5 @@
 # ---------------------------------------------------------------------------------------
-# URL    : https://codeforces.com/contest/1480/problem/D2
+# URL    : https://codeforces.com/contest/1479/problem/B2
 # Title  : Painting the Array II
 # Tags   : tag-codeforces, tag-problem-D, tag-div-2, tag-difficulty-2100, tag-not-pass
 # Notes  : constructive algorithms, data structures, dp, greedy, implementation

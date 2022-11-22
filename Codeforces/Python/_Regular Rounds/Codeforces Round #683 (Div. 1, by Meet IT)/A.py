@@ -1,14 +1,15 @@
 # ---------------------------------------------------------------------------------------
-# URL    : https://codeforces.com/contest/1480/problem/D1
-# Title  : Painting the Array I
-# Tags   : tag-codeforces, tag-problem-D, tag-div-2, tag-difficulty-1900, tag-not-pass
-# Notes  : constructive algorithms, data structures, dp, greedy, implementation
+# URL    : https://codeforces.com/contest/1446/problem/A
+# Title  : Knapsack
+# Tags   : tag-codeforces, tag-problem-A, tag-div-1, tag-difficulty-1300
+# Notes  : constructive algorithms, greedy, sortings
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
 import os
 import time
 from collections import defaultdict
+from math import ceil
 from sys import stdin, maxsize
 
 inp = lambda: stdin.readline().strip()
@@ -18,7 +19,6 @@ strl = lambda: list(inp().split())
 list_to_string = lambda _a: "".join(map(str, _a))
 list_to_string_list = lambda _a: " ".join(map(str, _a))
 _dp = lambda default_value: defaultdict(lambda: default_value)
-print_dp = lambda _dict: list(map(lambda item: print(f"{item[0]} = {item[1]}"), _dict.items()))
 
 MOD = 10 ** 9 + 7
 INF = maxsize
@@ -27,28 +27,47 @@ INF = maxsize
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    n = iinp()
+    n, w = intl()
     a = intl()
+    half_w = ceil(w / 2)
 
-    # dp = _dp(0)
+    aa = [(e, i + 1) for i, e in enumerate(a)]
+    aa = filter(lambda x: x[0] <= w, aa)
+    aa = sorted(aa, key=lambda x: x[0], reverse=True)
 
-    _count = 1
-    last_1 = a[0]
-    last_2 = INF
+    if len(aa) == 0:
+        print(-1)
+        return
 
-    for i in range(1, n + 1):
-        if a[i] != last_1:
-            last_1 = a[i]
-            _count += 1
-        elif a[i] != last_2:
-            last_2 = a[i]
-            _count += 1
+    if aa[-1][0] > w:
+        print(-1)
+        return
 
-    return _count
+    if aa[0][0] >= half_w:
+        print(1)
+        print(aa[0][1])
+        return
+
+    items_to_pack = []
+    total_sum = 0
+
+    for i in range(len(aa)):
+        items_to_pack.append(aa[i][1])
+        total_sum += aa[i][0]
+
+        if total_sum >= half_w:
+            print(len(items_to_pack))
+            print(list_to_string_list(items_to_pack))
+            return
+
+    print(-1)
 
 
 def run():
-    print(solve())
+    t = iinp()
+
+    for _ in range(t):
+        solve()
 
 
 if __name__ == "__main__":

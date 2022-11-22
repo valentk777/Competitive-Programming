@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1754/problem/D
-# Title  : D. Factorial Divisibility
-# Tags   : tag-codeforces, tag-problem-D, tag-div-2, #tag-not-pass
+# Title  : Factorial Divisibility
+# Tags   : tag-codeforces, tag-problem-D, tag-div-2, tag-difficulty-1600, tag-not-pass
+# Notes  : math, number theory
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

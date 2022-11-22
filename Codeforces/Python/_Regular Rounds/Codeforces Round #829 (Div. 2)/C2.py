@@ -1,9 +1,8 @@
 # ---------------------------------------------------------------------------------------
-# URL    : https://codeforces.com/contest/1754/problem/C1
 # URL    : https://codeforces.com/contest/1754/problem/C2
-# Title  : C1. Make Nonzero Sum (easy version)
 # Title  : C2. Make Nonzero Sum (hard version)
-# Tags   : tag-codeforces, tag-problem-C, tag-div-2
+# Tags   : tag-codeforces, tag-problem-C, tag-div-2, tag-difficulty-1500
+# Notes  : constructive algorithms, dp, greedy
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------

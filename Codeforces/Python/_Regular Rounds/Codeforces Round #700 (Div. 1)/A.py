@@ -1,7 +1,7 @@
 # ---------------------------------------------------------------------------------------
-# URL    : https://codeforces.com/contest/1480/problem/C
+# URL    : https://codeforces.com/contest/1479/problem/A
 # Title  : Searching Local Minimum
-# Tags   : tag-codeforces, tag-problem-C, tag-div-2, tag-difficulty-1700
+# Tags   : tag-codeforces, tag-problem-A, tag-div-1, tag-difficulty-1700
 # Notes  : binary search, interactive, ternary search
 # ---------------------------------------------------------------------------------------
 
