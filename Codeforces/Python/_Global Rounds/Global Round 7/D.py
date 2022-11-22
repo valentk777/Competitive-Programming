@@ -1,10 +1,10 @@
-# -----------------------------------------------------------
+# ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1326/problem/D1
 # URL    : https://codeforces.com/contest/1326/problem/D2
 # Title  : Prefix-Suffix Palindrome (Easy version)
 # Title  : Prefix-Suffix Palindrome (Hard version)
-# Notes  : tag-codeforces, tag-problem-D, tag-not-pass
-# -----------------------------------------------------------
+# Tags   : tag-codeforces, tag-problem-D, tag-not-pass
+# ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
 import os

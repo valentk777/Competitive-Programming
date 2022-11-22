@@ -1,8 +1,8 @@
-# -----------------------------------------------------------
+# ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1438/problem/E
 # Title  : Yurii Can Do Everything
-# Notes  : tag-codeforces, tag-problem-E, tag-div-2, tag-not-pass
-# -----------------------------------------------------------
+# Tags   : tag-codeforces, tag-problem-E, tag-div-2, tag-not-pass
+# ---------------------------------------------------------------------------------------
 
 
 # slow

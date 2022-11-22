@@ -1,8 +1,9 @@
-# -----------------------------------------------------------
+# ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/CONTEST_NUMBER/problem/PROBLEM_LETTER
 # Title  : PROBLEM_TITLE
-# Notes  : tag-codeforces, tag-problem-PROBLEM_LETTER, tag-div-DIVISION
-# -----------------------------------------------------------
+# Tags   : tag-codeforces, tag-problem-PROBLEM_LETTER, #tags#
+# Notes  : CODEFORCES_TAGS
+# ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
 import math
