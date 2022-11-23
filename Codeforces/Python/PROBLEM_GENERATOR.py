@@ -54,10 +54,6 @@ class RoundData:
 
         self.contest = self._get_full_contest()
 
-        # self._web_content = self._scrape_url(web_url) if web_url != "" else ""
-        # self.round_number = self._get_round_number() if round_number == 0 else round_number
-        # self.division = self._get_division_number() if division == "" else division
-
     def _get_all_problems(self, contest_id: int) -> List[Problem]:
         all_problems = requests.get('https://codeforces.com/api/problemset.problems')
         all_problems = all_problems.json()["result"]["problems"]
@@ -242,7 +238,7 @@ def open_current_file(folder_path: Path, round_data: RoundData) -> None:
 def generate_folder_with_problems() -> None:
     logger.info("Script started")
 
-    WEB_URL = "https://codeforces.com/problemset/problem/1761/G"
+    WEB_URL = "https://codeforces.com/problemset/problem/25/A"
 
     round_data = RoundData(WEB_URL)
     # round_data = RoundData(
