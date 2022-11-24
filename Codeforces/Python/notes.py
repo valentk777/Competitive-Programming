@@ -400,3 +400,13 @@ def binary_search(array, target, start, end):
         else:
             start = mid + 1
     return -1
+
+def dfs(v, graph, used, k):
+    ans = k
+    used.add(v)
+
+    for u in graph[v]:
+        if u not in used:
+            ans = max(ans, dfs(u, graph, used | {u}, k + 1))
+
+    return ans
