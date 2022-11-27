@@ -1,6 +1,7 @@
 -- #-----------------------------------------------------------
--- # URL    : https://www.codewars.com/kata/594a9592704e4d21bc000131
+-- # URL    : https://www.codewars.com/kata/50654ddff44f800200000004
 -- # Notes  : tag-codewars, tag-kyu-8
 -- #-----------------------------------------------------------
 
-SELECT number1 % number2 AS mod FROM decimals;
+SELECT price * amount AS total 
+FROM items;

@@ -3,4 +3,4 @@
 -- # Notes  : tag-codewars, tag-kyu-8
 -- #-----------------------------------------------------------
 
-SELECT SUM(age) AS age_sum  FROM people;
+SELECT SUM(age) AS age_sum FROM people;
