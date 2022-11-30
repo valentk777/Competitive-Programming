@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------------------
-# URL    : https://codeforces.com/contest/1/problem/A
-# Title  : Theatre Square
-# Tags   : tag-codeforces, tag-problem-A, tag-difficulty-1000
-# Notes  : math
+# URL    : https://codeforces.com/contest/485/problem/A
+# Title  : Factory
+# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-1400
+# Notes  : implementation, math, matrices
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------
@@ -93,17 +93,23 @@ sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
 
 # endregion
 # endregion
+
 # -------------------------------------------------------Solution-------------------------------------------------------
-
 def solve():
-    n, m, a = intl()
+    a, m = intl()
+    reminders = [False for _ in range(m)]
 
-    n_number = math.ceil(n / a)
-    m_number = math.ceil(m / a)
+    while True:
+        reminder = a % m
 
-    ans = n_number * m_number
+        if reminder == 0:
+            return "Yes"
 
-    return ans
+        if reminders[reminder]:
+            return "No"
+
+        a += reminder
+        reminders[reminder] = True
 
 
 def run():
@@ -112,7 +118,7 @@ def run():
 
 if __name__ == "__main__":
     if os.environ.get("DEBUG_CODEFORCES"):
-        stdin = open("../../input.txt", "r")
+        sys.stdin = open("../../input.txt", "r")
         start_time = time.time()
         run()
         print("\n--- %s seconds ---\n" % (time.time() - start_time))

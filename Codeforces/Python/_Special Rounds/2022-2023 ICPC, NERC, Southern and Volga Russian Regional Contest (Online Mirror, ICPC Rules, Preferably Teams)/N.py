@@ -1,11 +1,11 @@
 # ---------------------------------------------------------------------------------------
-# URL    : https://codeforces.com/contest/1/problem/A
-# Title  : Theatre Square
-# Tags   : tag-codeforces, tag-problem-A, tag-difficulty-1000
-# Notes  : math
+# URL    : https://codeforces.com/contest/1765/problem/N
+# Title  : Number Reduction
+# Tags   : tag-codeforces, tag-problem-N, tag-difficulty-1500, tag-not-pass
+# Notes  : greedy
 # ---------------------------------------------------------------------------------------
 
-# region --------------------------------------------Shared part--------------------------------------------------------
+# ---------------------------------------------------Shared part--------------------------------------------------------
 import math
 import os
 import sys
@@ -40,7 +40,7 @@ INF = sys.maxsize
 A = 911382323
 M = 9999999999879998
 
-# region -------------------------------------------Fast IO Region------------------------------------------------------
+# --------------------------------------------------Fast IO Region------------------------------------------------------
 BUFSIZE = 8192
 
 
@@ -91,28 +91,42 @@ class IOWrapper(IOBase):
 sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
 
 
-# endregion
-# endregion
 # -------------------------------------------------------Solution-------------------------------------------------------
 
-def solve():
-    n, m, a = intl()
+# time limit
+def solve_slow():
+    x = inp()
+    n = len(x)
+    k = iinp()
 
-    n_number = math.ceil(n / a)
-    m_number = math.ceil(m / a)
+    candidates = [x]
 
-    ans = n_number * m_number
+    while k > 0:
+        temp = []
 
-    return ans
+        for candidate in candidates:
+            for i in range(n):
+                temp.append(candidate[:i] + candidate[i + 1:])
+
+        candidates = sorted(list(set(temp)))
+        n = len(candidates[0])
+        k -= 1
+
+    candidates = list(filter(lambda t: t[0] != "0", candidates))
+
+    return candidates[0]
 
 
 def run():
-    print(solve())
+    t = iinp()
+
+    for _ in range(t):
+        print(solve())
 
 
 if __name__ == "__main__":
     if os.environ.get("DEBUG_CODEFORCES"):
-        stdin = open("../../input.txt", "r")
+        sys.stdin = open("../../input.txt", "r")
         start_time = time.time()
         run()
         print("\n--- %s seconds ---\n" % (time.time() - start_time))

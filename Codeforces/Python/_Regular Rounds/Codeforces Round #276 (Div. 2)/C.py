@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------------------
-# URL    : https://codeforces.com/contest/1/problem/A
-# Title  : Theatre Square
-# Tags   : tag-codeforces, tag-problem-A, tag-difficulty-1000
-# Notes  : math
+# URL    : https://codeforces.com/contest/485/problem/C
+# Title  : Bits
+# Tags   : tag-codeforces, tag-problem-C, tag-div-2, tag-difficulty-1700
+# Notes  : bitmasks, constructive algorithms
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------
@@ -93,26 +93,56 @@ sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
 
 # endregion
 # endregion
+
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    n, m, a = intl()
+    a, b = intl()
 
-    n_number = math.ceil(n / a)
-    m_number = math.ceil(m / a)
+    if a == b:
+        return a
 
-    ans = n_number * m_number
+    b = bin(b).replace("0b", "")
+    n = len(b)
+    a = bin(a).replace("0b", "").zfill(n)
 
-    return ans
+    if b.count("1") == n:
+        return int(b, 2)
+
+    ans = ["1" for _ in range(n)]
+
+    if a[0] == "0" and b[0] == "1":
+        ans[0] = str(int(n == 1))
+
+        return int(list_to_string(ans), 2)
+
+    for i in range(1, n):
+        if a[i] == "0" and b[i] == "1":
+            if i + 1 == n:
+                break
+
+            if b[i + 1:].count("0") == 0:
+                break
+
+            ans[i] = "0"
+            break
+
+        if a[i] == b[i]:
+            ans[i] = a[i]
+
+    return int(list_to_string(ans), 2)
 
 
 def run():
-    print(solve())
+    t = iinp()
+
+    for _ in range(t):
+        print(solve())
 
 
 if __name__ == "__main__":
     if os.environ.get("DEBUG_CODEFORCES"):
-        stdin = open("../../input.txt", "r")
+        sys.stdin = open("../../input.txt", "r")
         start_time = time.time()
         run()
         print("\n--- %s seconds ---\n" % (time.time() - start_time))

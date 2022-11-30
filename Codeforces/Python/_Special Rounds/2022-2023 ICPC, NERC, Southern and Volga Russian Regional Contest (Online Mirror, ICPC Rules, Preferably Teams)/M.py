@@ -1,11 +1,11 @@
 # ---------------------------------------------------------------------------------------
-# URL    : https://codeforces.com/contest/1/problem/A
-# Title  : Theatre Square
-# Tags   : tag-codeforces, tag-problem-A, tag-difficulty-1000
-# Notes  : math
+# URL    : https://codeforces.com/contest/1765/problem/M
+# Title  : Minimum LCM
+# Tags   : tag-codeforces, tag-problem-M, tag-difficulty-1000
+# Notes  : math, number theory
 # ---------------------------------------------------------------------------------------
 
-# region --------------------------------------------Shared part--------------------------------------------------------
+# ---------------------------------------------------Shared part--------------------------------------------------------
 import math
 import os
 import sys
@@ -40,7 +40,7 @@ INF = sys.maxsize
 A = 911382323
 M = 9999999999879998
 
-# region -------------------------------------------Fast IO Region------------------------------------------------------
+# --------------------------------------------------Fast IO Region------------------------------------------------------
 BUFSIZE = 8192
 
 
@@ -91,28 +91,68 @@ class IOWrapper(IOBase):
 sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
 
 
-# endregion
-# endregion
 # -------------------------------------------------------Solution-------------------------------------------------------
 
-def solve():
-    n, m, a = intl()
+def solve_maximum():
+    n = iinp()
 
-    n_number = math.ceil(n / a)
-    m_number = math.ceil(m / a)
+    left = min(1, n // 2)
+    right = max(n, left + 1)
+    a = -1
+    b = -1
+    _max_lcm = -1
 
-    ans = n_number * m_number
+    while _max_lcm == -1:
+        for i in range(right - left + 1):
+            for j in range(right - left + 1):
+                _a = left + i
+                _b = left + j
 
-    return ans
+                if _a + _b == n:
+                    if _max_lcm < lcm(_a, _b):
+                        a = _a
+                        b = _b
+                        _max_lcm = lcm(_a, _b)
+
+        left -= 1
+        right += 1
+
+    return f"{a} {b}"
+
+
+def solve_minimum():
+    n = iinp()
+
+    if n & 1 == 0:
+        ans = n // 2
+        return f"{ans} {ans}"
+
+    i = 2
+    _min = n
+
+    while i * i <= n:
+        if n % i == 0:
+            _min = i
+            break
+
+        i += 1
+
+    a = n // _min
+    b = n - a
+
+    return f"{a} {b}"
 
 
 def run():
-    print(solve())
+    t = iinp()
+
+    for _ in range(t):
+        print(solve_minimum())
 
 
 if __name__ == "__main__":
     if os.environ.get("DEBUG_CODEFORCES"):
-        stdin = open("../../input.txt", "r")
+        sys.stdin = open("../../input.txt", "r")
         start_time = time.time()
         run()
         print("\n--- %s seconds ---\n" % (time.time() - start_time))
