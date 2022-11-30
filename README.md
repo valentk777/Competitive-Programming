@@ -4,7 +4,7 @@
 
 <!-- ![visitor badge](https://visitor-badge-reloaded.herokuapp.com/badge?page_id=valentk777.Contests&color=be54c6&style=flat&logo=Github) -->
 ![Last Commit](https://img.shields.io/github/last-commit/valentk777/Contests.svg)
-[![Codeforces Badge](https://cp-logo.vercel.app/codeforces/valentk777?logo=true)](https://codeforces.com/profile/valentk777)
+[![Codeforces Badge](https://badges.joonhyung.xyz/codeforces/valentk777.svg)](https://codeforces.com/profile/valentk777)
 [![Kattis Badge](https://img.shields.io/badge/Kattis-192-COLOR.svg)](https://open.kattis.com/users/valentk777)
 [![My Codewarrior Profile Badge](https://www.codewars.com/users/valentk777/badges/micro)](https://www.codewars.com/users/valentk777)
 
@@ -19,13 +19,13 @@ scc -i cpp,cs,py,sc,sql AdventOfCode Algodaily Codeforces Codewars GoogleKickSta
 ───────────────────────────────────────────────────────────────────────────────
 Language                 Files     Lines   Blanks  Comments     Code Complexity
 ───────────────────────────────────────────────────────────────────────────────
-Python                     468     31726     2700      3092    25934       1417
+Python                     476     32970     2716      3148    27106       1417
 C#                          50      1720      242       217     1261        161
 C++                         41      3163      504       397     2262        586
 SQL                         23       232       26        95      111          1
 Scala                       12       271       27        48      196         17
 ───────────────────────────────────────────────────────────────────────────────
-Total                      594     37112     3499      3849    29764       2182
+Total                      602     38356     3515      3905    30936       2182
 ───────────────────────────────────────────────────────────────────────────────
 ```
 
@@ -50,8 +50,9 @@ Total                      594     37112     3499      3849    29764       2182
 * [Scala](https://github.com/valentk777/Contests/search?l=scala)
 * [Sql](https://github.com/valentk777/Contests/search?l=sql)
 
-## --> codeforces template generator
-* [PythonFile](https://github.com/valentk777/Contests/blob/main/Codeforces/Python/generate_teplate.py)
+## --> codeforces generators
+* [Progbems generator](https://github.com/valentk777/Contests/blob/main/Codeforces/Python/PROBLEM_GENERATOR.py)
+* [Tests generator](https://github.com/valentk777/Contests/blob/main/Codeforces/Python/TESTS_GENERATOR.py)
 
 #
 # Multiple challenges from multiple platforms
