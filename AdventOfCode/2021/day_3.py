@@ -1,7 +1,7 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://adventofcode.com/2021/day/3
 # Title  : Binary Diagnostic
-# Tags   : tag-adventofcode, tag-not-pass
+# Tags   : tag-adventofcode
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------
@@ -39,12 +39,52 @@ M = 9999999999879998
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
+def get_max_bit(data, position):
+    _count = cnt(list(map(lambda x: x[position], data)))
+
+    if _count["0"] > _count["1"]:
+        return "0"
+
+    return "1"
+
+
+def get_min_bit(data, position):
+    _count = cnt(list(map(lambda x: x[position], data)))
+
+    if _count["0"] <= _count["1"]:
+        return "0"
+
+    return "1"
+
+
 def solve_1(data: List[str]) -> None:
-    pass
+    n = len(data[0])
+    gamma = ""
+    epsilon = ""
+
+    for i in range(n):
+        gamma += get_max_bit(data, i)
+        epsilon += get_min_bit(data, i)
+
+    print(int(gamma, 2) * int(epsilon, 2))
 
 
 def solve_2(data: List[str]) -> None:
-    pass
+    n = len(data[0])
+    oxygen = data.copy()
+    co2 = data.copy()
+
+    for i in range(n):
+        _max = get_max_bit(oxygen, i)
+        _min = get_min_bit(co2, i)
+
+        if len(oxygen) != 1:
+            oxygen = list(filter(lambda x: x[i] == _max, oxygen))
+
+        if len(co2) != 1:
+            co2 = list(filter(lambda x: x[i] == _min, co2))
+
+    print(int(oxygen[0], 2) * int(co2[0], 2))
 
 
 if __name__ == "__main__":

@@ -1,7 +1,7 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://adventofcode.com/2021/day/2
 # Title  : Dive!
-# Tags   : tag-adventofcode, tag-not-pass
+# Tags   : tag-adventofcode
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------
@@ -40,15 +40,45 @@ M = 9999999999879998
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve_1(data: List[str]) -> None:
-    pass
+    position = 0
+    depth = 0
+
+    for line in data:
+        command, number = line.split()
+        number = int(number)
+
+        if command == "forward":
+            position += number
+        elif command == "down":
+            depth += number
+        else:
+            depth -= number
+
+    print(position * depth)
 
 
 def solve_2(data: List[str]) -> None:
-    pass
+    position = 0
+    depth = 0
+    aim = 0
+
+    for line in data:
+        command, number = line.split()
+        number = int(number)
+
+        if command == "forward":
+            position += number
+            depth += aim * number
+        elif command == "down":
+            aim += number
+        elif command == "up":
+            aim -= number
+
+    print(position * depth)
 
 
 if __name__ == "__main__":
     input_data = read_lines()
-
+    print(input_data)
     solve_1(input_data.copy())
     solve_2(input_data.copy())

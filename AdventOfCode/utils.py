@@ -7,7 +7,7 @@ def to_int(data: List[str]) -> List[int]:
 
 
 def read_lines(filename: str = r"input.txt") -> List[str]:
-    return read(filename).split('\n')
+    return list(filter(lambda x: x != "", read(filename).split('\n')))
 
 
 def read(filename: str = r"input.txt") -> str:
