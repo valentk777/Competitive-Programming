@@ -12,15 +12,9 @@ from collections import defaultdict, Counter
 
 from utils import read_lines, to_int
 
-inp = lambda: sys.stdin.readline().strip().rstrip("\r\n")
-iinp = lambda: int(inp())
-intl = lambda: list(map(int, inp().split()))
-strl = lambda: list(inp().split())
 list_to_string = lambda _a: "".join(map(str, _a))
 list_to_string_list = lambda _a: " ".join(map(str, _a))
 _dp = lambda default_value: defaultdict(lambda: default_value)
-flush = lambda: sys.stdout.flush()
-print_flush = lambda _text: (print(_text), flush())
 fact = lambda number: math.factorial(number)
 cnt = lambda _a: Counter(_a)
 

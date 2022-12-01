@@ -23,5 +23,5 @@ def read_with_empty_lines() -> List[List[str]]:
 
 def read_with_empty_lines_int() -> List[List[int]]:
     input_data = read().split(2 * '\n')
-    input_data = [list(map(int, x.split())) for x in input_data]
+    input_data = [to_int(x.split()) for x in input_data]
     return input_data
