@@ -38,7 +38,7 @@ Total                      602     38356     3515      3905    30936       2182
 * [Codeforces](https://github.com/valentk777/Contests/search?q=tag-codeforces)
 * [Kattis](https://github.com/valentk777/Contests/search?q=tag-kattis)
 * [Codewars](https://github.com/valentk777/Contests/search?q=tag-codewars)
-* [AdventOfCode](https://github.com/valentk777/Contests/search?q=tag-adventOfCode)
+* [AdventOfCode](https://github.com/valentk777/Contests/search?q=tag-adventofcode)
 * [AlgoDaily](https://github.com/valentk777/Contests/search?q=tag-algodaily)
 * [GoogleKickStart](https://github.com/valentk777/Contests/search?q=tag-google-kickstart)
 
