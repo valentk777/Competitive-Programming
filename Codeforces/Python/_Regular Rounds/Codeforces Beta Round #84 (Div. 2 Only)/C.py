@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------------------
-# URL    : https://codeforces.com/contest/742/problem/A
-# Title  : Arpa’s hard exam and Mehrdad’s naive cheat
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-1000
-# Notes  : implementation, math, number theory
+# URL    : https://codeforces.com/contest/112/problem/C
+# Title  : Petya and Inequiations
+# Tags   : tag-codeforces, tag-problem-C, tag-div-2, tag-difficulty-1400
+# Notes  : greedy
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
@@ -29,24 +29,31 @@ def print_dp(_dict):
 
 MOD = 10 ** 9 + 7
 INF = maxsize
-A = 911382323
-M = 9999999999879998
 
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    n = iinp()
+    n, x, y = intl()
 
-    if n == 0:
-        return 1
+    if n > y:
+        print(-1)
+        return
 
-    divisors = [8, 4, 2, 6]
-    return divisors[(n - 1) % 4]
+    ans = [(y - n + 1)] + [1] * (n - 1)
+    _sums = sum(ans)
+    _sums_power = ans[0] ** 2 + sum(ans[1:])
+
+    if _sums_power < x:
+        print(-1)
+        return
+
+    for i in range(n):
+        print(ans[i])
 
 
 def run():
-    print(solve())
+    solve()
 
 
 if __name__ == "__main__":
