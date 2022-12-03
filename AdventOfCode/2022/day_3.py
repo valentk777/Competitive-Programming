@@ -1,7 +1,7 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://adventofcode.com/2022/day/3
-# Title  : PROBLEM_TITLE
-# Tags   : tag-adventofcode, tag-not-pass
+# Title  : Rucksack Reorganization
+# Tags   : tag-adventofcode
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------
@@ -39,12 +39,38 @@ M = 9999999999879998
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
+def to_number(letter):
+    if "a" <= letter <= "z":
+        return ord(letter) - ord("a") + 1
+
+    return ord(letter) - ord("A") + 27
+
+
 def solve_1(data: List[str]) -> None:
-    pass
+    _sum = 0
+
+    for line in data:
+        n = len(line)
+
+        first = line[:n // 2]
+        second = line[n // 2:]
+        intersection = list(set(first) & set(second))
+
+        _sum += to_number(intersection[0])
+
+    print(_sum)
 
 
 def solve_2(data: List[str]) -> None:
-    pass
+    _sum = 0
+    n = len(data)
+
+    for i in range(0, n, 3):
+        intersection = list(set(data[i]) & set(data[i+1])& set(data[i+2]))
+
+        _sum += to_number(intersection[0])
+
+    print(_sum)
 
 
 if __name__ == "__main__":
