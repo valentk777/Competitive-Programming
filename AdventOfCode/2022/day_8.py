@@ -49,6 +49,7 @@ def solve_2(data: List[str]) -> None:
 
 if __name__ == "__main__":
     input_data = read_lines()
+    print(input_data)
 
     solve_1(input_data.copy())
     solve_2(input_data.copy())

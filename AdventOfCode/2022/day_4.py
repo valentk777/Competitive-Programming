@@ -1,7 +1,7 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://adventofcode.com/2022/day/4
-# Title  : PROBLEM_TITLE
-# Tags   : tag-adventofcode, tag-not-pass
+# Title  : Camp Cleanup
+# Tags   : tag-adventofcode
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------
@@ -41,15 +41,42 @@ M = 9999999999879998
 
 
 def solve_1(data: List[str]) -> None:
-    pass
+    ans = 0
+
+    for line in data:
+        range_1, range_2 = line.split(",")
+
+        a, b = list(map(int, range_1.split("-")))
+        c, d = list(map(int, range_2.split("-")))
+
+        if a <= c and b >= d:
+            ans += 1
+        elif c <= a and d >= b:
+            ans += 1
+
+    print(ans)
 
 
 def solve_2(data: List[str]) -> None:
-    pass
+    ans = 0
+
+    for line in data:
+        range_1, range_2 = line.split(",")
+
+        a, b = list(map(int, range_1.split("-")))
+        c, d = list(map(int, range_2.split("-")))
+
+        if a <= c <= b or a <= d <= b:
+            ans += 1
+        elif c <= a <= d or c <= b <= d:
+            ans += 1
+
+    print(ans)
 
 
 if __name__ == "__main__":
     input_data = read_lines()
 
+    print(input_data)
     solve_1(input_data.copy())
     solve_2(input_data.copy())
