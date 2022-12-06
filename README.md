@@ -2,10 +2,10 @@
 #
 # Status
 
-<!-- ![visitor badge](https://visitor-badge-reloaded.herokuapp.com/badge?page_id=valentk777.Contests&color=be54c6&style=flat&logo=Github) -->
-![Last Commit](https://img.shields.io/github/last-commit/valentk777/Contests.svg)
+<!-- ![visitor badge](https://visitor-badge.glitch.me/badge?page_id=valentk777.Competitive-Programming) -->
+![Last Commit](https://img.shields.io/github/last-commit/valentk777/Competitive-Programming.svg)
 [![Codeforces Badge](https://badges.joonhyung.xyz/codeforces/valentk777.svg)](https://codeforces.com/profile/valentk777)
-[![Kattis Badge](https://img.shields.io/badge/Kattis-192-COLOR.svg)](https://open.kattis.com/users/valentk777)
+[![Kattis Badge](https://img.shields.io/badge/Kattis-214-COLOR.svg)](https://open.kattis.com/users/valentk777)
 [![My Codewarrior Profile Badge](https://www.codewars.com/users/valentk777/badges/micro)](https://www.codewars.com/users/valentk777)
 
 
@@ -19,13 +19,13 @@ scc -i cpp,cs,py,sc,sql AdventOfCode Algodaily Codeforces Codewars GoogleKickSta
 ───────────────────────────────────────────────────────────────────────────────
 Language                 Files     Lines   Blanks  Comments     Code Complexity
 ───────────────────────────────────────────────────────────────────────────────
-Python                     509     36175     2565      3421    30189       1231
+Python                     513     37047     2573      3449    31025       1231
 C#                          50      1720      242       217     1261        161
 C++                         41      3163      504       397     2262        586
 SQL                         23       232       26        95      111          1
 Scala                       12       271       27        48      196         17
 ───────────────────────────────────────────────────────────────────────────────
-Total                      635     41561     3364      4178    34019       1996
+Total                      639     42433     3372      4206    34855       1996
 ───────────────────────────────────────────────────────────────────────────────
 ```
 
@@ -35,24 +35,24 @@ Total                      635     41561     3364      4178    34019       1996
 
 ## --> by platform
 
-* [Codeforces](https://github.com/valentk777/Contests/search?q=tag-codeforces)
-* [Kattis](https://github.com/valentk777/Contests/search?q=tag-kattis)
-* [Codewars](https://github.com/valentk777/Contests/search?q=tag-codewars)
-* [AdventOfCode](https://github.com/valentk777/Contests/search?q=tag-adventofcode)
-* [AlgoDaily](https://github.com/valentk777/Contests/search?q=tag-algodaily)
-* [GoogleKickStart](https://github.com/valentk777/Contests/search?q=tag-google-kickstart)
+* [Codeforces](https://github.com/valentk777/Competitive-Programming/search?q=tag-codeforces)
+* [Kattis](https://github.com/valentk777/Competitive-Programming/search?q=tag-kattis)
+* [Codewars](https://github.com/valentk777/Competitive-Programming/search?q=tag-codewars)
+* [AdventOfCode](https://github.com/valentk777/Competitive-Programming/search?q=tag-adventofcode)
+* [AlgoDaily](https://github.com/valentk777/Competitive-Programming/search?q=tag-algodaily)
+* [GoogleKickStart](https://github.com/valentk777/Competitive-Programming/search?q=tag-google-kickstart)
 
 ## --> by programming language
 
-* [Python](https://github.com/valentk777/Contests/search?l=python)
-* [C#](https://github.com/valentk777/Contests/search?l=C%23)
-* [C++](https://github.com/valentk777/Contests/search?l=cpp)
-* [Scala](https://github.com/valentk777/Contests/search?l=scala)
-* [Sql](https://github.com/valentk777/Contests/search?l=sql)
+* [Python](https://github.com/valentk777/Competitive-Programming/search?l=python)
+* [C#](https://github.com/valentk777/Competitive-Programming/search?l=C%23)
+* [C++](https://github.com/valentk777/Competitive-Programming/search?l=cpp)
+* [Scala](https://github.com/valentk777/Competitive-Programming/search?l=scala)
+* [Sql](https://github.com/valentk777/Competitive-Programming/search?l=sql)
 
 ## --> codeforces generators
-* [Progbems generator](https://github.com/valentk777/Contests/blob/main/Codeforces/Python/PROBLEM_GENERATOR.py)
-* [Tests generator](https://github.com/valentk777/Contests/blob/main/Codeforces/Python/TESTS_GENERATOR.py)
+* [Progbems generator](https://github.com/valentk777/Competitive-Programming/blob/main/Codeforces/Python/PROBLEM_GENERATOR.py)
+* [Tests generator](https://github.com/valentk777/Competitive-Programming/blob/main/Codeforces/Python/TESTS_GENERATOR.py)
 
 #
 # Multiple challenges from multiple platforms
