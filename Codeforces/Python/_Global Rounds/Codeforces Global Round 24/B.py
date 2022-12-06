@@ -1,7 +1,7 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1764/problem/B
 # Title  : Doremy's Perfect Math Class
-# Tags   : tag-codeforces, tag-problem-B, tag-difficulty-0
+# Tags   : tag-codeforces, tag-problem-B, tag-difficulty-900
 # Notes  : number theory
 # ---------------------------------------------------------------------------------------
 

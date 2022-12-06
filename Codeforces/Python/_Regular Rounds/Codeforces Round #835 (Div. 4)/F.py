@@ -1,7 +1,7 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1760/problem/F
 # Title  : Quests
-# Tags   : tag-codeforces, tag-problem-F, tag-div-4, tag-difficulty-0
+# Tags   : tag-codeforces, tag-problem-F, tag-div-4, tag-difficulty-1500
 # Notes  : binary search, greedy, sortings
 # ---------------------------------------------------------------------------------------
 

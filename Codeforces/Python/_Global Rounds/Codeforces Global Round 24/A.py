@@ -1,7 +1,7 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1764/problem/A
 # Title  : Doremy's Paint
-# Tags   : tag-codeforces, tag-problem-A, tag-difficulty-0
+# Tags   : tag-codeforces, tag-problem-A, tag-difficulty-800
 # Notes  : greedy
 # ---------------------------------------------------------------------------------------
 

@@ -1,7 +1,7 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1760/problem/A
 # Title  : Medium Number
-# Tags   : tag-codeforces, tag-problem-A, tag-div-4, tag-difficulty-0
+# Tags   : tag-codeforces, tag-problem-A, tag-div-4, tag-difficulty-800
 # Notes  : implementation, sortings
 # ---------------------------------------------------------------------------------------
 

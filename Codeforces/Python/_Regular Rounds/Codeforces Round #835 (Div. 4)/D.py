@@ -1,7 +1,7 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1760/problem/D
 # Title  : Challenging Valleys
-# Tags   : tag-codeforces, tag-problem-D, tag-div-4, tag-difficulty-0
+# Tags   : tag-codeforces, tag-problem-D, tag-div-4, tag-difficulty-1000
 # Notes  : implementation
 # ---------------------------------------------------------------------------------------
 
