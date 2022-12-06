@@ -1,7 +1,7 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://adventofcode.com/2022/day/6
-# Title  : PROBLEM_TITLE
-# Tags   : tag-adventofcode, tag-not-pass
+# Title  : Tuning Trouble
+# Tags   : tag-adventofcode
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------
@@ -39,17 +39,31 @@ M = 9999999999879998
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
-def solve_1(data: List[str]) -> None:
-    pass
+def solve_1(data) -> None:
+    n = len(data)
+
+    for i in range(n - 3):
+        _letters = data[i:i + 4]
+
+        if len(set(_letters)) == 4:
+            print(i + 4)
+            break
 
 
-def solve_2(data: List[str]) -> None:
-    pass
+def solve_2(data) -> None:
+    n = len(data)
+
+    for i in range(n - 13):
+        _letters = data[i:i + 14]
+
+        if len(set(_letters)) == 14:
+            print(i + 14)
+            break
 
 
 if __name__ == "__main__":
-    input_data = read_lines()
+    input_data = read_lines()[0]
     print(input_data)
 
-    solve_1(input_data.copy())
-    solve_2(input_data.copy())
+    solve_1(input_data)
+    solve_2(input_data)
