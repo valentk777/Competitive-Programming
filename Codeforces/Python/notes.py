@@ -1,3 +1,4 @@
+import math
 import re
 import string
 from collections import Counter, defaultdict
@@ -231,17 +232,56 @@ def get_all_prime_squares(max_value):
 def get_prime_factors(n):
     factors = []
 
-    c = 2
+    while n % 2 == 0:
+        factors.append(2)
+        n = n / 2
 
-    while n > 1:
+    # n became odd
+    _sqrt = int(math.sqrt(n))
+    for i in range(3, _sqrt + 1, 2):
 
-        if n % c == 0:
-            factors.append(c)
-            n = n / c
-        else:
-            c = c + 1
+        while n % i == 0:
+            factors.append(i)
+            n = n / i
+
+    if n > 2:
+        factors.append(n)
 
     return factors
+
+
+def get_prime_range(n):
+    history = [True] * n
+    p = []
+
+    for i in range(2, n):
+        if history[i]:
+            p.append(i)
+
+            for j in range(i * i, n, i):
+                history[j] = False
+    return p
+
+
+def number_of_prime_factors(n):
+    number = 0
+
+    while n % 2 == 0:
+        number += 1
+        n = n / 2
+
+    # n became odd
+    _sqrt = int(math.sqrt(n))
+    for i in range(3, _sqrt + 1, 2):
+
+        while n % i == 0:
+            number += 1
+            n = n / i
+
+    if n > 2:
+        number += 1
+
+    return number
 
 
 def is_prime(n):
@@ -400,6 +440,7 @@ def binary_search(array, target, start, end):
         else:
             start = mid + 1
     return -1
+
 
 def dfs(v, graph, used, k):
     ans = k
