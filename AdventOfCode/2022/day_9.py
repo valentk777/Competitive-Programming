@@ -34,28 +34,28 @@ INF = sys.maxsize
 A = 911382323
 M = 9999999999879998
 
-
 # endregion
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
+start_coordinates = 10
+
+
 class Point:
     def __init__(self):
-        self.x = 1000
-        self.y = 1000
+        self.x = start_coordinates
+        self.y = start_coordinates
 
 
 def get_grid(n):
-    starting_grid = [[0] * n for _ in range(n)]
-    starting_grid[1000][1000] = 1
-
+    starting_grid = [[[] for _ in range(n)] for _ in range(n)]
     return starting_grid
 
 
-def update_tail_coordinated(grid, head, tail):
+def get_new_tail_after_head(grid, head, tail, target_number):
     around_tail = get_objects_around(grid, tail)
 
-    if 1 in around_tail:
+    if target_number in around_tail:
         return tail
 
     if head.x == tail.x:
@@ -82,7 +82,6 @@ def update_tail_coordinated(grid, head, tail):
             tail.y -= 1
             tail.x = head.x
 
-    # print(around_tail)
     return tail
 
 
@@ -95,22 +94,39 @@ def get_objects_around(grid, point):
             if point.x + i < 0 or point.y + j < 0 or point.x + i > n - 1 or point.y + j > n - 1:
                 continue
 
-            around_point.append(grid[point.x + i][point.y + j])
+            around_point.extend(grid[point.x + i][point.y + j])
 
     return around_point
 
 
-def is_head_covers_tail(grid, head):
-    around_tail = get_objects_around(grid, head)
-    return 2 not in around_tail
+def update_head(direction, head, grid):
+    old_head_x, old_head_y = head.x, head.y
+
+    if direction == "R":
+        head.x += 1
+    elif direction == "L":
+        head.x -= 1
+    elif direction == "U":
+        head.y += 1
+    elif direction == "D":
+        head.y -= 1
+
+    grid[old_head_x][old_head_y].remove(0)
+    grid[head.x][head.y].append(0)
+
+    return grid
 
 
 def solve_1(data: List[str]) -> None:
-    # none = 0, head = 1, tail = 2
-    # not visited = 0, visited = 1,
-    n = 2000
+    # none = [], head = 0, tail = 1
+    n = start_coordinates * 2
     main_grid = get_grid(n)
-    visited_grid = get_grid(n)
+    main_grid[start_coordinates][start_coordinates] = list(range(2))
+
+    # not visited = 0, visited = 1,
+    visited_grid = [[0] * n for _ in range(n)]
+    visited_grid[start_coordinates][start_coordinates] = 1
+
     # x, y
     head = Point()
     tail = Point()
@@ -120,32 +136,16 @@ def solve_1(data: List[str]) -> None:
         steps = int(steps)
 
         for i in range(steps):
-            is_cover = is_head_covers_tail(main_grid, head)
-            old_head_x, old_head_y = head.x, head.y
+            main_grid = update_head(direction, head, main_grid)
+
             old_tail_x, old_tail_y = tail.x, tail.y
 
-            if direction == "R":
-                head.x += 1
-            elif direction == "L":
-                head.x -= 1
-            elif direction == "U":
-                head.y += 1
-            elif direction == "D":
-                head.y -= 1
-
-            if is_cover:
-                main_grid[old_head_x][old_head_y] = 2
-            else:
-                main_grid[old_head_x][old_head_y] = 0
-
-            main_grid[head.x][head.y] = 1
-
-            tail = update_tail_coordinated(main_grid, head, tail)
+            tail = get_new_tail_after_head(main_grid, head, tail, 0)
 
             visited_grid[tail.x][tail.y] = 1
 
-            main_grid[old_tail_x][old_tail_y] = 0
-            main_grid[tail.x][tail.y] = 2
+            main_grid[old_tail_x][old_tail_y].remove(1)
+            main_grid[tail.x][tail.y].append(1)
 
             # print(main_grid)
             # print(visited_grid)
@@ -154,11 +154,46 @@ def solve_1(data: List[str]) -> None:
 
 
 def solve_2(data: List[str]) -> None:
-    # none = 0, head = 1, tail = 2
-    # not visited = 0, visited = 1,
-    n = 2000
+    # none = [], head = 0, tail = 1
+    n = start_coordinates * 2
     main_grid = get_grid(n)
-    visited_grid = get_grid(n)
+    main_grid[start_coordinates][start_coordinates] = list(range(10))
+
+    # not visited = 0, visited = 1,
+    visited_grid = [[0] * n for _ in range(n)]
+    visited_grid[start_coordinates][start_coordinates] = 1
+
+    # x, y
+    head = Point()
+    tails = [Point() for _ in range(1, 10)]
+
+    for line in data:
+        direction, steps = line.split()
+        steps = int(steps)
+
+        for i in range(steps):
+            main_grid = update_head(direction, head, main_grid)
+
+            for tail_number in range(1, 10):
+                tail = tails[tail_number - 1]
+                old_tail_x, old_tail_y = tail.x, tail.y
+
+                if tail_number == 1:
+                    tail = get_new_tail_after_head(main_grid, head, tail, tail_number - 1)
+                else:
+                    # TODO: write leading tail logic
+                    pass
+
+                # print(tail.x, tail.y)
+                visited_grid[tail.x][tail.y] = 1
+
+                main_grid[old_tail_x][old_tail_y].remove(tail_number)
+                main_grid[tail.x][tail.y].append(tail_number)
+
+            # print(main_grid)
+    print(visited_grid)
+
+    print(sum(list(map(lambda x: sum(x), visited_grid))))
 
 
 if __name__ == "__main__":
