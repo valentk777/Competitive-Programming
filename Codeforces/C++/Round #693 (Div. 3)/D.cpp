@@ -1,5 +1,5 @@
 /*-----------------------------------------------------------*/
-/* URL    : https://codeforces.com/contest/1472/problem/A
+/* URL    : https://codeforces.com/contest/1472/problem/D
 /* Title  : Even-Odd Game
 /* Notes  : tag-codeforces, tag-problem-D, tag-div-3
 /*-----------------------------------------------------------*/

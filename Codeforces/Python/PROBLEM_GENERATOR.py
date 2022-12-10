@@ -26,7 +26,7 @@ class Problem:
 class Contest:
     def __init__(self, id, name, type, phase, frozen, durationSeconds, startTimeSeconds, relativeTimeSeconds):
         self.id = id
-        self.name = name.replace("/", "_")
+        self.name = name.replace("/", "_").replace(":", " ")
         self.type = type
         self.phase = phase
         self.divisions = self._fill_divisions()
@@ -179,7 +179,7 @@ def modify_file(copy_to: Path, round_data: RoundData) -> None:
 
         file_data = file_data.replace("#tags#", str.join(", ", tags))
 
-        with open(file_path, 'w') as f:
+        with open(file_path, 'w', encoding="utf-8") as f:
             f.write(file_data)
 
 
@@ -238,7 +238,7 @@ def open_current_file(folder_path: Path, round_data: RoundData) -> None:
 def generate_folder_with_problems() -> None:
     logger.info("Script started")
 
-    WEB_URL = "https://codeforces.com/problemset/problem/25/A"
+    WEB_URL = "https://codeforces.com/contest/514/problem/C"
 
     round_data = RoundData(WEB_URL)
     # round_data = RoundData(
