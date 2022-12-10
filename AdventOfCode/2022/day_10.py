@@ -1,7 +1,7 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://adventofcode.com/2022/day/10
-# Title  : PROBLEM_TITLE
-# Tags   : tag-adventofcode, tag-not-pass
+# Title  : Cathode-Ray Tube
+# Tags   : tag-adventofcode
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------
@@ -40,16 +40,50 @@ M = 9999999999879998
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve_1(data: List[str]) -> None:
-    pass
+    cycle = 1
+    x = 1
+    ans = 0
+
+    for line in data:
+        cycle += 1
+
+        if cycle in list(range(20, 220 + 1, 40)):
+            ans += x * cycle
+
+        if line != "noop":
+            cycle += 1
+            x += int(line.replace("addx ", ""))
+
+            if cycle in list(range(20, 220 + 1, 40)):
+                ans += x * cycle
+
+    print(ans)
 
 
 def solve_2(data: List[str]) -> None:
-    pass
+    pixel_position = 0
+    sprite_position = 1
+    ans = [list("." * 40) for _ in range(6)]
+
+    for line in data:
+        if sprite_position - 1 <= pixel_position % 40 <= sprite_position + 1:
+            ans[pixel_position // 40][pixel_position % 40] = "#"
+
+        pixel_position += 1
+
+        if line != "noop":
+            if sprite_position - 1 <= pixel_position % 40 <= sprite_position + 1:
+                ans[pixel_position // 40][pixel_position % 40] = "#"
+
+            sprite_position += int(line.replace("addx ", ""))
+            pixel_position += 1
+
+    for line in ans:
+        print(list_to_string(line))
 
 
 if __name__ == "__main__":
     input_data = read_lines()
-    print(input_data)
 
     solve_1(input_data.copy())
     solve_2(input_data.copy())
