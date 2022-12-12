@@ -229,6 +229,60 @@ def get_all_prime_squares(max_value):
     return s
 
 
+# @memodict
+def get_prime_factors(n):
+    """returns a Counter of the prime factorization of n"""
+
+    def pollard_rho(_n):
+        """pollard_rho - return a random factor of n; O(sqrt of lpf[n])"""
+        if _n & 1 == 0:
+            return 2
+
+        if _n % 3 == 0:
+            return 3
+
+        s = ((_n - 1) & (1 - _n)).bit_length() - 1
+        d = _n >> s
+
+        for a in [2, 325, 9375, 28178, 450775, 9780504, 1795265022]:
+            p = pow(a, d, _n)
+            if p == 1 or p == _n - 1 or a % _n == 0:
+                continue
+
+            for _ in range(s):
+                prev = p
+                p = (p * p) % _n
+
+                if p == 1:
+                    return math.gcd(prev - 1, _n)
+                if p == _n - 1:
+                    break
+            else:
+                for i in range(2, _n):
+                    x, y = i, (i * i + 1) % _n
+                    f = math.gcd(abs(x - y), _n)
+
+                    while f == 1:
+                        x, y = (x * x + 1) % _n, (y * y + 1) % _n
+                        y = (y * y + 1) % _n
+                        f = math.gcd(abs(x - y), _n)
+
+                    if f != _n:
+                        return f
+
+        return _n
+
+    if n <= 1:
+        return Counter()
+
+    function = pollard_rho(n)
+
+    if function == n:
+        return Counter([n])
+
+    return prime_factors(function) + prime_factors(n // function)
+
+
 def get_prime_factors(n):
     factors = []
 

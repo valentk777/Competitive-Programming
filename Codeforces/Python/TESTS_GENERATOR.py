@@ -103,17 +103,17 @@ class StringGenerators:
 
 
 N = NumberGenerators(
-    number_of_symbols_in_single_line=1,
+    number_of_symbols_in_single_line=100000,
     number_of_test_cases=2000000,
     min_number_value=1,
     max_number_value=1000000000,
 )
 
 S = StringGenerators(
-    number_of_symbols_in_single_line=40,
+    number_of_symbols_in_single_line=100000,
     number_of_test_cases=30000,
-    min_char=2,
-    max_char=2,
+    min_char=1,
+    max_char=1000000000,
 )
 
 # N.generate_numbers_single_line(number_of_symbols_in_single_line, min_number_value, max_number_value)
@@ -123,4 +123,4 @@ S = StringGenerators(
 
 # N.generate_sequence_until_n()
 # N.generate_numbers_single_line()
-N.generate_multiple_random_numbers()
+N.generate_numbers_single_line()

@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------------------
-# URL    : https://codeforces.com/contest/CONTEST_NUMBER/problem/PROBLEM_LETTER
-# Title  : PROBLEM_TITLE
-# Tags   : tag-codeforces, tag-problem-PROBLEM_LETTER, #tags#
-# Notes  : CODEFORCES_TAGS
+# URL    : https://codeforces.com/contest/1771/problem/A
+# Title  : Hossam and Combinatorics
+# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-0
+# Notes  : combinatorics, math, sortings
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------
@@ -33,17 +33,6 @@ def lcm(a, b):
 def print_dp(_dict):
     for item in _dict.items():
         print(f"{item[0]} = {item[1]}")
-
-
-def memodict(f):
-    """memoization decorator for a function taking a single argument"""
-
-    class memodict(dict):
-        def __missing__(self, key):
-            ret = self[key] = f(key)
-            return ret
-
-    return memodict().__getitem__
 
 
 MOD = 10 ** 9 + 7
@@ -109,6 +98,14 @@ sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
 
 def solve():
     n = iinp()
+    a = intl()
+    a = sorted(a)
+    count = cnt(a)
+
+    if a[0] != a[-1]:
+        return (count[a[0]] * count[a[-1]]) * 2
+
+    return count[a[0]] * (count[a[0]] - 1)
 
 
 def run():
