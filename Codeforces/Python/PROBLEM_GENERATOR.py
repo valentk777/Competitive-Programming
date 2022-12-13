@@ -105,7 +105,7 @@ class RoundData:
         if "problem" in contest_number:
             contest_number = contest_number.split("problem")[0]
 
-        contest_number = int(contest_number.strip("/"))
+        contest_number = int(contest_number.strip("s/").strip("/"))
 
         return contest_number
 
@@ -230,17 +230,18 @@ def create_folder(folder_path: Path) -> None:
 
 
 def open_current_file(folder_path: Path, round_data: RoundData) -> None:
-    problem = round_data.problems[0]
-    file_path = folder_path / f"{problem.number}.py"
-    webbrowser.open(str(file_path))
+    if len(round_data.problems) != 0:
+        problem = round_data.problems[0]
+        file_path = folder_path / f"{problem.number}.py"
+        webbrowser.open(str(file_path))
 
 
 def generate_folder_with_problems() -> None:
     logger.info("Script started")
 
-    WEB_URL = "https://codeforces.com/contest/514/problem/C"
+    WEB_URL = "https://codeforces.com/contests/1766"
 
-    round_data = RoundData(WEB_URL)
+    round_data = RoundData(WEB_URL, is_started=False)
     # round_data = RoundData(
     #     web_url="",
     #     contest_number="1747",
