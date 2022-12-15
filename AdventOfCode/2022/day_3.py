@@ -66,7 +66,7 @@ def solve_2(data: List[str]) -> None:
     n = len(data)
 
     for i in range(0, n, 3):
-        intersection = list(set(data[i]) & set(data[i+1])& set(data[i+2]))
+        intersection = list(set(data[i]) & set(data[i + 1]) & set(data[i + 2]))
 
         _sum += to_number(intersection[0])
 

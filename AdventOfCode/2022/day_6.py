@@ -9,7 +9,6 @@
 import math
 import sys
 from collections import defaultdict, Counter
-from typing import List
 
 from utils import read_lines
 
