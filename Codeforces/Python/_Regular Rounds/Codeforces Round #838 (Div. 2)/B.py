@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------------------
-# URL    : https://codeforces.com/contest/1771/problem/C
-# Title  : Hossam and Trainees
-# Tags   : tag-codeforces, tag-problem-C, tag-div-2, tag-difficulty-1600
-# Notes  : math, number theory
+# URL    : https://codeforces.com/contest/1762/problem/B
+# Title  : Make Array Good
+# Tags   : tag-codeforces, tag-problem-B, tag-div-2, tag-difficulty-1100, tag-not-pass
+# Notes  : constructive algorithms, implementation, number theory, sortings
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------
@@ -107,7 +107,6 @@ sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
-
 @memodict
 def prime_factors(n):
     """returns a Counter of the prime factorization of n"""
@@ -165,30 +164,32 @@ def prime_factors(n):
 def solve():
     n = iinp()
     a = intl()
+    _max = max(a)
 
-    if n == 2:
-        if math.gcd(a[0], a[1]) != 1:
-            return "YES"
+    primes = sorted(prime_factors(_max).keys())
+    pairs = []
+    ans = 0
 
-        return "NO"
+    for i in range(n):
+        for p in primes:
+            while a[i] < p:
+                diff = p - a[i]
+                _add = min(diff, a[i])
+                a[i] += _add
+                ans += 1
+                pairs.append((i + 1, _add))
 
-    seen = set()
-
-    for element in a:
-        for prime in prime_factors(element).keys():
-            if prime in seen:
-                return "YES"
-
-            seen.add(prime)
-
-    return "NO"
+    if ans <= n:
+        print(ans)
+        for p in pairs:
+            print(*p)
 
 
 def run():
     t = iinp()
 
     for _ in range(t):
-        print(solve())
+        solve()
 
 
 if __name__ == "__main__":

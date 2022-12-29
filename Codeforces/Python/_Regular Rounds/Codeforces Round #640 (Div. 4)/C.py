@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------------------
-# URL    : https://codeforces.com/contest/1771/problem/C
-# Title  : Hossam and Trainees
-# Tags   : tag-codeforces, tag-problem-C, tag-div-2, tag-difficulty-1600
-# Notes  : math, number theory
+# URL    : https://codeforces.com/contest/1352/problem/C
+# Title  : K-th Not Divisible by n
+# Tags   : tag-codeforces, tag-problem-C, tag-div-4, tag-difficulty-1200
+# Notes  : binary search, math
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------
@@ -33,17 +33,6 @@ def lcm(a, b):
 def print_dp(_dict):
     for item in _dict.items():
         print(f"{item[0]} = {item[1]}")
-
-
-def memodict(f):
-    """memoization decorator for a function taking a single argument"""
-
-    class memodict(dict):
-        def __missing__(self, key):
-            ret = self[key] = f(key)
-            return ret
-
-    return memodict().__getitem__
 
 
 MOD = 10 ** 9 + 7
@@ -107,81 +96,30 @@ sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
-
-@memodict
-def prime_factors(n):
-    """returns a Counter of the prime factorization of n"""
-
-    def pollard_rho(_n):
-        """pollard_rho - return a random factor of n; O(sqrt of lpf[n])"""
-        if _n & 1 == 0:
-            return 2
-
-        if _n % 3 == 0:
-            return 3
-
-        s = ((_n - 1) & (1 - _n)).bit_length() - 1
-        d = _n >> s
-
-        for a in [2, 325, 9375, 28178, 450775, 9780504, 1795265022]:
-            p = pow(a, d, _n)
-            if p == 1 or p == _n - 1 or a % _n == 0:
-                continue
-
-            for _ in range(s):
-                prev = p
-                p = (p * p) % _n
-
-                if p == 1:
-                    return math.gcd(prev - 1, _n)
-                if p == _n - 1:
-                    break
-            else:
-                for i in range(2, _n):
-                    x, y = i, (i * i + 1) % _n
-                    f = math.gcd(abs(x - y), _n)
-
-                    while f == 1:
-                        x, y = (x * x + 1) % _n, (y * y + 1) % _n
-                        y = (y * y + 1) % _n
-                        f = math.gcd(abs(x - y), _n)
-
-                    if f != _n:
-                        return f
-
-        return _n
-
-    if n <= 1:
-        return Counter()
-
-    function = pollard_rho(n)
-
-    if function == n:
-        return Counter([n])
-
-    return prime_factors(function) + prime_factors(n // function)
-
-
 def solve():
-    n = iinp()
-    a = intl()
+    n, k = intl()
 
-    if n == 2:
-        if math.gcd(a[0], a[1]) != 1:
-            return "YES"
+    left = 1
+    right = 2 * k + 1
 
-        return "NO"
+    while left <= right:
+        mid = (left + right) // 2
+        check = (mid - (mid // n))
 
-    seen = set()
+        if check < k:
+            left = mid
 
-    for element in a:
-        for prime in prime_factors(element).keys():
-            if prime in seen:
-                return "YES"
+        elif check > k:
+            right = mid
 
-            seen.add(prime)
+        elif mid % n != 0:
+            return int(mid)
 
-    return "NO"
+        else:
+            if (mid + 1 - ((mid + 1) / n)) == k:
+                return int(mid + 1)
+            else:
+                return int(mid - 1)
 
 
 def run():

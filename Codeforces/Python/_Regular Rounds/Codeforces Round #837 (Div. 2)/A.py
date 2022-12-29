@@ -1,7 +1,7 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1771/problem/A
 # Title  : Hossam and Combinatorics
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-0
+# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-900
 # Notes  : combinatorics, math, sortings
 # ---------------------------------------------------------------------------------------
 
