@@ -1,14 +1,14 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1747/problem/C
 # Title  : Swap Game
-# Tags   : tag-codeforces, tag-problem-C, tag-div-2, tag-difficulty-1200, tag-not-pass
+# Tags   : tag-codeforces, tag-problem-C, tag-div-2, tag-difficulty-1200
 # Notes  : games
 # ---------------------------------------------------------------------------------------
 
 # ---------------------------------------------------Shared part--------------------------------------------------------
 import os
 import time
-from collections import defaultdict, Counter
+from collections import defaultdict
 from sys import stdin, maxsize, stdout
 
 inp = lambda: stdin.readline().strip()
@@ -39,25 +39,10 @@ def solve():
     n = iinp()
     a = intl()
 
-    _count = Counter(a)
-
-    if a[0] == 1:
-        return "Bob"
-
-    if _count[1] > 0:
+    if min(a[1:]) < a[0]:
         return "Alice"
-
-    _count[a[0]] -= 1
-    _count[a[0] - 1] += 1
-
-    print(_count)
-
-    # for key, value in _count.items():
-
-    if sum(a) & 1 == 0:
-        return "Bob"
     else:
-        return "Alice"
+        return "Bob"
 
 
 def run():

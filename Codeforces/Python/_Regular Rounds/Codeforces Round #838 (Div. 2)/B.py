@@ -1,7 +1,7 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1762/problem/B
 # Title  : Make Array Good
-# Tags   : tag-codeforces, tag-problem-B, tag-div-2, tag-difficulty-1100, tag-not-pass
+# Tags   : tag-codeforces, tag-problem-B, tag-div-2, tag-difficulty-1100
 # Notes  : constructive algorithms, implementation, number theory, sortings
 # ---------------------------------------------------------------------------------------
 
@@ -107,82 +107,33 @@ sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
-@memodict
-def prime_factors(n):
-    """returns a Counter of the prime factorization of n"""
-
-    def pollard_rho(_n):
-        """pollard_rho - return a random factor of n; O(sqrt of lpf[n])"""
-        if _n & 1 == 0:
-            return 2
-
-        if _n % 3 == 0:
-            return 3
-
-        s = ((_n - 1) & (1 - _n)).bit_length() - 1
-        d = _n >> s
-
-        for a in [2, 325, 9375, 28178, 450775, 9780504, 1795265022]:
-            p = pow(a, d, _n)
-            if p == 1 or p == _n - 1 or a % _n == 0:
-                continue
-
-            for _ in range(s):
-                prev = p
-                p = (p * p) % _n
-
-                if p == 1:
-                    return math.gcd(prev - 1, _n)
-                if p == _n - 1:
-                    break
-            else:
-                for i in range(2, _n):
-                    x, y = i, (i * i + 1) % _n
-                    f = math.gcd(abs(x - y), _n)
-
-                    while f == 1:
-                        x, y = (x * x + 1) % _n, (y * y + 1) % _n
-                        y = (y * y + 1) % _n
-                        f = math.gcd(abs(x - y), _n)
-
-                    if f != _n:
-                        return f
-
-        return _n
-
-    if n <= 1:
-        return Counter()
-
-    function = pollard_rho(n)
-
-    if function == n:
-        return Counter([n])
-
-    return prime_factors(function) + prime_factors(n // function)
-
-
 def solve():
     n = iinp()
     a = intl()
-    _max = max(a)
 
-    primes = sorted(prime_factors(_max).keys())
-    pairs = []
+    a = [(a[i], i + 1) for i in range(n)]
+    a = sorted(a, key=lambda x: x[0])
+
     ans = 0
+    pairs = []
+    target = 2
 
     for i in range(n):
-        for p in primes:
-            while a[i] < p:
-                diff = p - a[i]
-                _add = min(diff, a[i])
-                a[i] += _add
-                ans += 1
-                pairs.append((i + 1, _add))
+        if a[i][0] == target:
+            continue
 
-    if ans <= n:
-        print(ans)
-        for p in pairs:
-            print(*p)
+        _multiple = math.ceil(a[i][0] / target)
+        target *= _multiple
+
+        if a[i][0] == target:
+            continue
+        else:
+            ans += 1
+            pairs.append([a[i][1], target - a[i][0]])
+
+    print(ans)
+    for p in pairs:
+        print(*p)
 
 
 def run():

@@ -1,7 +1,7 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1593/problem/B
 # Title  : Make it Divisible by 25
-# Tags   : tag-codeforces, tag-problem-B, tag-div-3, tag-difficulty-900, tag-not-pass
+# Tags   : tag-codeforces, tag-problem-B, tag-div-3, tag-difficulty-900
 # Notes  : dfs and similar, dp, greedy, math, math
 # ---------------------------------------------------------------------------------------
 
