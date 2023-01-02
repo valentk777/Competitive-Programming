@@ -230,7 +230,7 @@ def get_all_prime_squares(max_value):
 
 
 # @memodict
-def get_prime_factors(n):
+def prime_factors(n):
     """returns a Counter of the prime factorization of n"""
 
     def pollard_rho(_n):
