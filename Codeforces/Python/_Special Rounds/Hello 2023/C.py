@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------------------
-# URL    : https://codeforces.com/contest/CONTEST_NUMBER/problem/PROBLEM_LETTER
-# Title  : PROBLEM_TITLE
-# Tags   : tag-codeforces, tag-problem-PROBLEM_LETTER, #tags#
-# Notes  : CODEFORCES_TAGS
+# URL    : https://codeforces.com/contest/1779/problem/C
+# Title  : C. Least Prefix Sum
+# Tags   : tag-codeforces, tag-problem-C, tag-difficulty-0, tag-not-pass
+# Notes  : data structures, greedy
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------
@@ -50,8 +50,7 @@ MOD = 10 ** 9 + 7
 INF = sys.maxsize
 A = 911382323
 M = 9999999999879998
-yes = "YES"
-no = "NO"
+
 
 # region -------------------------------------------Fast IO Region------------------------------------------------------
 BUFSIZE = 8192
@@ -110,7 +109,93 @@ sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    n = iinp()
+    n, m = intl()
+    a = intl()
+
+    sums = [a[0]]
+
+    for i in range(1, n):
+        sums.append(sums[-1] + a[i])
+
+    target_min = sums[m - 1]
+
+    is_changes_needed = False
+
+    for i in range(n):
+        if sums[i] < target_min:
+            is_changes_needed = True
+            break
+
+    if not is_changes_needed:
+        return 0
+
+    ans = 0
+
+    # if our min not the smallest value until m, then we need to minimise it
+    if target_min > min(sums[:m]):
+        while True:
+            is_found_smaller = False
+            found_idx = -1
+
+            for i in range(m):
+                if sums[i] < target_min:
+                    found_idx = i
+                    is_found_smaller = True
+                    break
+
+            if is_found_smaller:
+                _max = max(a[found_idx:m])
+                _max_idx = a[found_idx:m].index(_max)
+
+                old_value = a[found_idx + _max_idx]
+                new_value = -1 * old_value
+
+                a[found_idx + _max_idx] = new_value
+
+                for i in range(found_idx + _max_idx, n):
+                    sums[i] -= old_value
+                    sums[i] += new_value
+
+                target_min = sums[m - 1]
+                ans += 1
+            else:
+                break
+
+    # if we found some values after m, then we need to maximize minimum after that
+    if len(sums[m:]) > 0 and target_min > min(sums[m:]):
+        while True:
+            is_found_smaller = False
+            found_idx = -1
+
+            for i in range(m, n):
+                if sums[i] < target_min:
+                    is_found_smaller = True
+                    found_idx = i
+                    break
+
+            if is_found_smaller:
+                _min = min(a[m:found_idx + 1])
+                _min_idx = a[m:].index(_min)
+
+                old_value = a[m + _min_idx]
+                new_value = -1 * old_value
+
+                a[m + _min_idx] = new_value
+
+                for i in range(m + _min_idx, n):
+                    sums[i] -= old_value
+                    sums[i] += new_value
+
+                ans += 1
+            else:
+                break
+
+    # print(sums)
+    # print(sums_until_m)
+    # print(sums_after_m)
+    # print(ans)
+
+    return ans
 
 
 def run():

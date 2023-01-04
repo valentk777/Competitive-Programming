@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------------------
-# URL    : https://codeforces.com/contest/CONTEST_NUMBER/problem/PROBLEM_LETTER
-# Title  : PROBLEM_TITLE
-# Tags   : tag-codeforces, tag-problem-PROBLEM_LETTER, #tags#
-# Notes  : CODEFORCES_TAGS
+# URL    : https://codeforces.com/contest/1779/problem/A
+# Title  : A. Hall of Fame
+# Tags   : tag-codeforces, tag-problem-A, tag-difficulty-0
+# Notes  : constructive algorithms, greedy, strings
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------
@@ -50,8 +50,6 @@ MOD = 10 ** 9 + 7
 INF = sys.maxsize
 A = 911382323
 M = 9999999999879998
-yes = "YES"
-no = "NO"
 
 # region -------------------------------------------Fast IO Region------------------------------------------------------
 BUFSIZE = 8192
@@ -109,8 +107,45 @@ sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
+def solve_2():
+    n = iinp()
+    s = inp()
+
+    if s.find("L") == -1 or s.find("R") == -1:
+        return -1
+
+    # if we found at least one pair, we do not need to do anything
+    if s.find("RL") >= 0:
+        return 0
+
+    # we need just find where unchanged pair exist and change them
+    i = s.index("LR")
+    return i + 1
+
+
 def solve():
     n = iinp()
+    s = inp()
+
+    if ("R" not in s) or ("L" not in s):
+        return -1
+
+    light = "0" * n
+
+    for i in range(n):
+        if s[i] == "R":
+            light = light[:i] + "1" * (n - i)
+            break
+
+    for i in range(n - 1, -1, -1):
+        if s[i] == "L":
+            light = "1" * i + light[i:]
+            break
+
+    if "0" not in light:
+        return 0
+
+    return light.find("0") + 1
 
 
 def run():

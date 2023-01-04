@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------------------
-# URL    : https://codeforces.com/contest/CONTEST_NUMBER/problem/PROBLEM_LETTER
-# Title  : PROBLEM_TITLE
-# Tags   : tag-codeforces, tag-problem-PROBLEM_LETTER, #tags#
-# Notes  : CODEFORCES_TAGS
+# URL    : https://codeforces.com/contest/630/problem/K
+# Title  : Indivisibility
+# Tags   : tag-codeforces, tag-problem-K, tag-difficulty-1500
+# Notes  : math, number theory
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------
@@ -50,8 +50,6 @@ MOD = 10 ** 9 + 7
 INF = sys.maxsize
 A = 911382323
 M = 9999999999879998
-yes = "YES"
-no = "NO"
 
 # region -------------------------------------------Fast IO Region------------------------------------------------------
 BUFSIZE = 8192
@@ -112,12 +110,28 @@ sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
 def solve():
     n = iinp()
 
+    ans = n
+    numbers = [2, 3, 5, 7]
+
+    for i in numbers:
+        ans -= (n // i)
+
+    for a1 in range(0, 4):
+        # add
+        for a2 in range(a1 + 1, 4):
+            # remove
+            for a3 in range(a2 + 1, 4):
+                # add
+                for a4 in range(a3 + 1, 4):
+                    ans += n // (numbers[a1] * numbers[a2] * numbers[a3] * numbers[a4])
+                ans -= n // (numbers[a1] * numbers[a2] * numbers[a3])
+            ans += n // (numbers[a1] * numbers[a2])
+
+    return ans
+
 
 def run():
-    t = iinp()
-
-    for _ in range(t):
-        print(solve())
+    print(solve())
 
 
 if __name__ == "__main__":

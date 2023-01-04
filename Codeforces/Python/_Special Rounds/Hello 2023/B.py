@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------------------
-# URL    : https://codeforces.com/contest/CONTEST_NUMBER/problem/PROBLEM_LETTER
-# Title  : PROBLEM_TITLE
-# Tags   : tag-codeforces, tag-problem-PROBLEM_LETTER, #tags#
-# Notes  : CODEFORCES_TAGS
+# URL    : https://codeforces.com/contest/1779/problem/B
+# Title  : B. MKnez's ConstructiveForces Task
+# Tags   : tag-codeforces, tag-problem-B, tag-difficulty-0
+# Notes  : constructive algorithms, math
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------
@@ -50,8 +50,6 @@ MOD = 10 ** 9 + 7
 INF = sys.maxsize
 A = 911382323
 M = 9999999999879998
-yes = "YES"
-no = "NO"
 
 # region -------------------------------------------Fast IO Region------------------------------------------------------
 BUFSIZE = 8192
@@ -112,12 +110,29 @@ sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
 def solve():
     n = iinp()
 
+    if n & 1 == 0:
+        print("YES")
+        print(*[(-1) ** i for i in range(n)])
+        return
+
+    if n == 3:
+        print("NO")
+        return
+
+    _sum = 1
+    j = (3 - n) // 2
+    a1 = _sum * j
+    a2 = _sum - a1
+
+    print("YES")
+    print(*[a1, a2] * (n // 2) + [a1])
+
 
 def run():
     t = iinp()
 
     for _ in range(t):
-        print(solve())
+        solve()
 
 
 if __name__ == "__main__":

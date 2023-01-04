@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------------------
-# URL    : https://codeforces.com/contest/CONTEST_NUMBER/problem/PROBLEM_LETTER
-# Title  : PROBLEM_TITLE
-# Tags   : tag-codeforces, tag-problem-PROBLEM_LETTER, #tags#
-# Notes  : CODEFORCES_TAGS
+# URL    : https://codeforces.com/contest/1541/problem/B
+# Title  : Pleasant Pairs
+# Tags   : tag-codeforces, tag-problem-B, tag-div-2, tag-difficulty-1200
+# Notes  : brute force, implementation, math, number theory
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------
@@ -35,23 +35,10 @@ def print_dp(_dict):
         print(f"{item[0]} = {item[1]}")
 
 
-def memodict(f):
-    """memoization decorator for a function taking a single argument"""
-
-    class memodict(dict):
-        def __missing__(self, key):
-            ret = self[key] = f(key)
-            return ret
-
-    return memodict().__getitem__
-
-
 MOD = 10 ** 9 + 7
 INF = sys.maxsize
 A = 911382323
 M = 9999999999879998
-yes = "YES"
-no = "NO"
 
 # region -------------------------------------------Fast IO Region------------------------------------------------------
 BUFSIZE = 8192
@@ -111,6 +98,25 @@ sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
 
 def solve():
     n = iinp()
+    a = intl()
+
+    ans = 0
+
+    for i in range(n - 1):
+        # ai*aj = i + j, so i + j % ai = 0, so we need to iterate all ai, ai*2, ai*3
+
+        next_sum = i + (i + 1) + 2
+        next_index = i + 1
+
+        # we try next index, if this is incorrect, we need to update index by adding missing modular
+        if next_sum % a[i] != 0:
+            next_index += (a[i] - (next_sum % a[i]))
+
+        for j in range(next_index, n, a[i]):
+            if a[i] * a[j] == i + j + 2:
+                ans += 1
+
+    return ans
 
 
 def run():
