@@ -133,6 +133,7 @@ def get_prime_factors(n):
     return get_prime_factors(function) + get_prime_factors(n // function)
 
 
+@memodict
 def get_prime_factors(n):
     factors = []
 
