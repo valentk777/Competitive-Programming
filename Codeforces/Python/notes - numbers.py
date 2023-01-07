@@ -147,7 +147,7 @@ def get_prime_factors(n):
 
         while n % i == 0:
             factors.append(i)
-            n = n / i
+            n = n // i
 
     if n > 2:
         factors.append(n)
