@@ -219,7 +219,30 @@ def factorial(n, end):
     return ans
 
 
-# for division, use Franction (insted of /), because it works with bigger numbers
+# for division, use Franction (instead of /), because it works with bigger numbers
 Fraction(5, 6)  # -> 5 / 6
+
+
+# (x ^ y) % p in O(log y)
+def power_mod_m(x, y, m):
+    res = 1
+
+    # Update x if it is more than or equal to p
+    x = x % m
+
+    if x == 0:
+        return 0
+
+    while y > 0:
+
+        # If y is odd, multiply x with result
+        if (y & 1) == 1:
+            res = (res * x) % m
+
+        # y must be even now
+        y = y >> 1  # y = y/2
+        x = (x * x) % m
+
+    return res
 
 # endregion
