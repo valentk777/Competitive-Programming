@@ -2,13 +2,12 @@ import math
 from collections import Counter
 from fractions import Fraction
 
-# return you number of 2 divisors in provided x (slow)
 from template import memodict
 
 
 # region - NUMBERS DIVISORS
 
-
+# return you number of 2 divisors in provided x (slow)
 def count_number_of_n_divisors(x, n):
     return 0 if x % n else count_number_of_n_divisors(x // n, n) + 1
 
@@ -139,7 +138,7 @@ def get_prime_factors(n):
 
     while n % 2 == 0:
         factors.append(2)
-        n = n / 2
+        n = n // 2
 
     # n became odd
     _sqrt = int(math.sqrt(n))
