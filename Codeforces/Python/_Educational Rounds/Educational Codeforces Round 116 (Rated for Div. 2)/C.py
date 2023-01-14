@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------------------
-# URL    : https://codeforces.com/contest/1753/problem/B
-# Title  : Factorial Divisibility
-# Tags   : tag-codeforces, tag-problem-B, tag-div-1, tag-difficulty-1600
-# Notes  : math, number theory
+# URL    : https://codeforces.com/contest/1606/problem/C
+# Title  : Banknotes
+# Tags   : tag-codeforces, tag-problem-C, tag-div-2, tag-difficulty-1400
+# Notes  : greedy, number theory
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------
@@ -110,40 +110,30 @@ sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    n, x = intl()
+    n, k = intl()
     a = intl()
+    target = k + 1
+    ans = 0
 
-    _cnt = cnt(a)
-    stop = False
+    for i in range(1, n):
+        if target == 0:
+            break
 
-    # k * k! = ((k + 1) − 1) * k! = (k + 1) * k! − k! = (k + 1)! − k!
-    # (2! − 1!) + (3! − 2!) + ... + (x! − (x − 1)!) = x! - 1
+        _min = min(9 * int((a[i] - a[i - 1]) * "1"), target)
+        ans += _min * 10 ** a[i - 1]
+        target -= _min
 
-    while not stop:
-        stop = True
-        new_cnt = _cnt.copy()
+    if target != 0:
+        ans += 10 ** a[-1] * target
 
-        for key, value in _cnt.items():
-            if value > key:
-                new_cnt[key] -= (key + 1)
-                new_cnt[key + 1] += 1
-
-                if new_cnt[key] == 0:
-                    del new_cnt[key]
-
-                stop = False
-
-        _cnt = new_cnt
-
-    for key, value in _cnt.items():
-        if key < x:
-            return "No"
-
-    return "Yes"
+    return ans
 
 
 def run():
-    print(solve())
+    t = iinp()
+
+    for _ in range(t):
+        print(solve())
 
 
 if __name__ == "__main__":

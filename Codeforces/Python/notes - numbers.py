@@ -205,6 +205,43 @@ def is_prime(n):
     return True
 
 
+# sieve Eratosthnes method
+# time complexity O(nlog(n)log(n))
+# return list with the smallest prime divisor
+# or return list of all primes (commented part)
+def fastest_prime_factorization(n):
+    spf = [i for i in range(n + 1)]
+
+    for i in range(2, n + 1):
+        if spf[i] == i:
+            for j in range(i * i, n + 1, i):
+                if spf[j] == j:
+                    spf[j] = i
+    # ans = []
+    # while n != 1:
+    #     ans.append(spf[n])
+    #     n = n//spf[n]
+
+    # ans = [[] for _ in range(n + 1)]
+    #
+    # for i in range(2, n + 1):
+    #     temp = []
+    #     number = i
+    #
+    #     while number != 1:
+    #         temp.append(spf[number])
+    #         number //= spf[number]
+    #
+    #     ans[i] = temp
+    #
+    # return ans
+
+    return spf
+
+
+ans = fastest_prime_factorization(10 ** 7)
+
+
 # endregion
 
 # region - NUMBERS MISK
@@ -244,4 +281,5 @@ def power_mod_m(x, y, m):
 
     return res
 
+# gcd(x + k, y + k) = gcd(x + k, y − x).
 # endregion

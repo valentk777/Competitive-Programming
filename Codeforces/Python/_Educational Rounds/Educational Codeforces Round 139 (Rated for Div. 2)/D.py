@@ -1,7 +1,7 @@
 # ---------------------------------------------------------------------------------------
-# URL    : https://codeforces.com/contest/1753/problem/B
-# Title  : Factorial Divisibility
-# Tags   : tag-codeforces, tag-problem-B, tag-div-1, tag-difficulty-1600
+# URL    : https://codeforces.com/contest/1766/problem/D
+# Title  : Lucky Chains
+# Tags   : tag-codeforces, tag-problem-D, tag-div-2, tag-difficulty-1600
 # Notes  : math, number theory
 # ---------------------------------------------------------------------------------------
 
@@ -109,41 +109,65 @@ sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
+# sieve Eratosthnes method
+# time complexity O(nlog(n)log(n))
+# return list with the smallest prime divisor
+def fastest_prime_factorization(n):
+    spf = [i for i in range(n + 1)]
+
+    for i in range(2, n + 1):
+        if spf[i] == i:
+            for j in range(i * i, n + 1, i):
+                if spf[j] == j:
+                    spf[j] = i
+    # ans = []
+    # while n != 1:
+    #     ans.append(spf[n])
+    #     n = n//spf[n]
+
+    return spf
+
+
+DATA = fastest_prime_factorization(10 ** 7)
+
+
 def solve():
-    n, x = intl()
-    a = intl()
+    x, y = intl()
+    d = y - x
 
-    _cnt = cnt(a)
-    stop = False
+    if d == 1:
+        return -1
 
-    # k * k! = ((k + 1) − 1) * k! = (k + 1) * k! − k! = (k + 1)! − k!
-    # (2! − 1!) + (3! − 2!) + ... + (x! − (x − 1)!) = x! - 1
+    if math.gcd(x, y) != 1:
+        return 0
 
-    while not stop:
-        stop = True
-        new_cnt = _cnt.copy()
+    # gcd(x + k, y + k) = gcd(x + k, y − x).
+    # if gcd (a, b) == h -> exist h, such as x * h = a and y * h = b.
+    # y - x is fix number. If we want to find k, we can check all y - x prime divisors.
+    # it is enough to find primes, because if we have combined divisor, it will still be equal 0 mod prime.
+    # x + k = 0 mod prime -> x = q mod prime. k = p - q
 
-        for key, value in _cnt.items():
-            if value > key:
-                new_cnt[key] -= (key + 1)
-                new_cnt[key + 1] += 1
+    ans = INF
+    primes = []
+    p = d
 
-                if new_cnt[key] == 0:
-                    del new_cnt[key]
+    while p != 1:
+        primes.append(DATA[p])
+        p = p // DATA[p]
 
-                stop = False
+    for prime in primes:
+        k = prime - (x % prime)
+        ans = min(ans, k)
 
-        _cnt = new_cnt
-
-    for key, value in _cnt.items():
-        if key < x:
-            return "No"
-
-    return "Yes"
+    return ans
 
 
 def run():
-    print(solve())
+    t = iinp()
+
+    for _ in range(t):
+        print(solve())
+        # solve()
 
 
 if __name__ == "__main__":
