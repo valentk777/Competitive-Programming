@@ -239,7 +239,7 @@ def fastest_prime_factorization(n):
     return spf
 
 
-ans = fastest_prime_factorization(10 ** 7)
+DATA = fastest_prime_factorization(10 ** 7)
 
 
 # endregion
