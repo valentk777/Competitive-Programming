@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------------------
-# URL    : https://codeforces.com/contest/466/problem/C
-# Title  : Number of Ways
-# Tags   : tag-codeforces, tag-problem-C, tag-div-2, tag-difficulty-1700
-# Notes  : binary search, brute force, data structures, dp, two pointers
+# URL    : https://codeforces.com/contest/1406/problem/B
+# Title  : Maximum Product
+# Tags   : tag-codeforces, tag-problem-B, tag-div-2, tag-difficulty-1200
+# Notes  : brute force, dp, greedy, implementation, sortings
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------
@@ -50,6 +50,8 @@ MOD = 10 ** 9 + 7
 INF = sys.maxsize
 A = 911382323
 M = 9999999999879998
+yes = "YES"
+no = "NO"
 
 # region -------------------------------------------Fast IO Region------------------------------------------------------
 BUFSIZE = 8192
@@ -107,48 +109,26 @@ sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
-# time-limit
+
 def solve():
     n = iinp()
     a = intl()
+    a = sorted(a)
 
-    if n < 3:
-        return 0
+    # we need to try fee cases: (2 or 4) negative numbers multiplication * (3 or 1) multiplication
+    # we can take all 5 max values
+    candidate1 = a[0] * a[1] * a[-3] * a[-2] * a[-1]
+    candidate2 = a[0] * a[1] * a[2] * a[3] * a[-1]
+    candidate3 = a[-5] * a[-4] * a[-3] * a[-2] * a[-1]
 
-    _sums = [0, a[0]]
-
-    for i in range(1, n):
-        _sums.append(_sums[-1] + a[i])
-
-    if _sums[-1] % 3 != 0:
-        return 0
-
-    # we interested only to sums[i] == target_sum
-    # then we are interested in _sums[j] - _sums[i] == target_sum
-    # because whole sum % 3 == 0, we know that the rest will be == target_sum
-    # this one depends on i, so we can check all sums from end. the same idea apply for the middle part.
-
-    target_sum = _sums[n] // 3
-
-    number_of_sums_i = [0] * (n + 1)
-
-    for i in range(1, n + 1):
-        number_of_sums_i[i] = number_of_sums_i[i - 1]
-
-        if _sums[i] == target_sum:
-            number_of_sums_i[i] += 1
-
-    ans = 0
-
-    for i in range(n - 1, 1, -1):
-        if _sums[i] == target_sum * 2:
-            ans += number_of_sums_i[i - 1]
-
-    return ans
+    return max(candidate1, candidate2, candidate3)
 
 
 def run():
-    print(solve())
+    t = iinp()
+
+    for _ in range(t):
+        print(solve())
 
 
 if __name__ == "__main__":

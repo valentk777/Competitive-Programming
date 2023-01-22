@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------------------
-# URL    : https://codeforces.com/contest/466/problem/C
-# Title  : Number of Ways
-# Tags   : tag-codeforces, tag-problem-C, tag-div-2, tag-difficulty-1700
-# Notes  : binary search, brute force, data structures, dp, two pointers
+# URL    : https://codeforces.com/contest/698/problem/A
+# Title  : Vacations
+# Tags   : tag-codeforces, tag-problem-A, tag-div-1, tag-difficulty-1400
+# Notes  : dp
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------
@@ -50,6 +50,8 @@ MOD = 10 ** 9 + 7
 INF = sys.maxsize
 A = 911382323
 M = 9999999999879998
+yes = "YES"
+no = "NO"
 
 # region -------------------------------------------Fast IO Region------------------------------------------------------
 BUFSIZE = 8192
@@ -107,44 +109,31 @@ sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
-# time-limit
 def solve():
     n = iinp()
     a = intl()
 
-    if n < 3:
-        return 0
+    # min number of days; params: idx day, activity number 0 - none, 1 - gym, 2 - contest
+    dp = _dp(0)
 
-    _sums = [0, a[0]]
+    for i in range(n):
+        dp[i, 0] = min(dp[i - 1, 0], dp[i - 1, 1], dp[i - 1, 2]) + 1
+        dp[i, 1] = min(dp[i - 1, 0], dp[i - 1, 2])
+        dp[i, 2] = min(dp[i - 1, 0], dp[i - 1, 1])
 
-    for i in range(1, n):
-        _sums.append(_sums[-1] + a[i])
+        # forces to take free day for gym and contest
+        if a[i] == 0:
+            dp[i, 1] += 1
+            dp[i, 2] += 1
+        # forces to take free day for gym
+        elif a[i] == 1:
+            dp[i, 1] += 1
 
-    if _sums[-1] % 3 != 0:
-        return 0
+        # forces to take free day for contest
+        elif a[i] == 2:
+            dp[i, 2] += 1
 
-    # we interested only to sums[i] == target_sum
-    # then we are interested in _sums[j] - _sums[i] == target_sum
-    # because whole sum % 3 == 0, we know that the rest will be == target_sum
-    # this one depends on i, so we can check all sums from end. the same idea apply for the middle part.
-
-    target_sum = _sums[n] // 3
-
-    number_of_sums_i = [0] * (n + 1)
-
-    for i in range(1, n + 1):
-        number_of_sums_i[i] = number_of_sums_i[i - 1]
-
-        if _sums[i] == target_sum:
-            number_of_sums_i[i] += 1
-
-    ans = 0
-
-    for i in range(n - 1, 1, -1):
-        if _sums[i] == target_sum * 2:
-            ans += number_of_sums_i[i - 1]
-
-    return ans
+    return min(dp[n - 1, 0], dp[n - 1, 1], dp[n - 1, 2])
 
 
 def run():

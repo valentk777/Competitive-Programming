@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------------------
-# URL    : https://codeforces.com/contest/466/problem/C
-# Title  : Number of Ways
-# Tags   : tag-codeforces, tag-problem-C, tag-div-2, tag-difficulty-1700
-# Notes  : binary search, brute force, data structures, dp, two pointers
+# URL    : https://codeforces.com/contest/1042/problem/B
+# Title  : Vitamins
+# Tags   : tag-codeforces, tag-problem-B, tag-div-2, tag-difficulty-1200
+# Notes  : bitmasks, brute force, dp, implementation
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------
@@ -50,6 +50,8 @@ MOD = 10 ** 9 + 7
 INF = sys.maxsize
 A = 911382323
 M = 9999999999879998
+yes = "YES"
+no = "NO"
 
 # region -------------------------------------------Fast IO Region------------------------------------------------------
 BUFSIZE = 8192
@@ -107,48 +109,71 @@ sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
-# time-limit
-def solve():
+def solve_dp():
     n = iinp()
-    a = intl()
 
-    if n < 3:
-        return 0
+    dp = _dp(INF)
+    dp[0, 0] = 0
 
-    _sums = [0, a[0]]
+    for i in range(n):
+        c, s = inp().split()
+        string_mask = 0
 
-    for i in range(1, n):
-        _sums.append(_sums[-1] + a[i])
+        for pos in range(3):
+            temp = ord('C') - pos
+            have = False
 
-    if _sums[-1] % 3 != 0:
-        return 0
+            for d in s:
+                if temp == ord(d):
+                    have = True
+            if have:
+                string_mask += (1 << pos)
 
-    # we interested only to sums[i] == target_sum
-    # then we are interested in _sums[j] - _sums[i] == target_sum
-    # because whole sum % 3 == 0, we know that the rest will be == target_sum
-    # this one depends on i, so we can check all sums from end. the same idea apply for the middle part.
+        # we use 8 because this is max number in bitmask 111 = ABC
+        for mask in range(8):
+            # store min value from this iteration and previous
+            dp[i + 1, mask] = min(dp[i + 1, mask], dp[i, mask])
 
-    target_sum = _sums[n] // 3
+            # update masks in this iteration with new value we get
+            dp[i + 1, mask | string_mask] = min(dp[i + 1, mask | string_mask], dp[i, mask] + int(c))
 
-    number_of_sums_i = [0] * (n + 1)
+    ans = dp[n, 7]
 
-    for i in range(1, n + 1):
-        number_of_sums_i[i] = number_of_sums_i[i - 1]
-
-        if _sums[i] == target_sum:
-            number_of_sums_i[i] += 1
-
-    ans = 0
-
-    for i in range(n - 1, 1, -1):
-        if _sums[i] == target_sum * 2:
-            ans += number_of_sums_i[i - 1]
+    if ans == INF:
+        ans = -1
 
     return ans
 
 
+def solve():
+    n = iinp()
+
+    # we can store vitamins by group type. Store only min value.
+    vitamins = _dp(INF)
+
+    for i in range(n):
+        c, s = inp().split()
+        vitamins[list_to_string(sorted(s))] = min(int(c), vitamins[list_to_string(sorted(s))])
+
+    _min = min(
+        vitamins["A"] + vitamins["B"] + vitamins["C"],
+        vitamins["A"] + vitamins["BC"],
+        vitamins["B"] + vitamins["AC"],
+        vitamins["C"] + vitamins["AB"],
+        vitamins["AB"] + vitamins["BC"],
+        vitamins["AC"] + vitamins["BC"],
+        vitamins["AC"] + vitamins["AB"],
+        vitamins["ABC"],
+    )
+
+    if _min > 10 ** 7:
+        return -1
+
+    return _min
+
+
 def run():
-    print(solve())
+    print(solve_dp())
 
 
 if __name__ == "__main__":
