@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1782/problem/B
 # Title  : B. Going to the Cinema
-# Tags   : tag-codeforces, tag-problem-B, tag-div-1, tag-div-2, tag-difficulty-0
-# Notes  : greedy, sortings
+# Tags   : tag-codeforces, tag-problem-B, tag-div-1, tag-div-2, tag-difficulty-1000
+# Notes  : brute force, greedy, sortings
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------

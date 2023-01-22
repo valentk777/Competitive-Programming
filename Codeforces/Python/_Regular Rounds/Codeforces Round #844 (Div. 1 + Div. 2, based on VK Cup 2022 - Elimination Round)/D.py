@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1782/problem/D
-# Title  : 
-# Tags   : tag-codeforces, tag-problem-D, tag-div-1, tag-div-2, tag-difficulty-0, tag-not-pass
-# Notes  : 
+# Title  : D. Many Perfect Squares
+# Tags   : tag-codeforces, tag-problem-D, tag-div-1, tag-div-2, tag-difficulty-1800, tag-not-pass
+# Notes  : brute force, dp, math, number theory
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------

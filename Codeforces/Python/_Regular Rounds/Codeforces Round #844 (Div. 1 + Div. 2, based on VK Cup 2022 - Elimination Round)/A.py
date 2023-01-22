@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1782/problem/A
 # Title  : A. Parallel Projection
-# Tags   : tag-codeforces, tag-problem-A, tag-div-1, tag-div-2, tag-difficulty-0
-# Notes  : geometry, math
+# Tags   : tag-codeforces, tag-problem-A, tag-div-1, tag-div-2, tag-difficulty-800
+# Notes  : geometry, math, greedy
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------
