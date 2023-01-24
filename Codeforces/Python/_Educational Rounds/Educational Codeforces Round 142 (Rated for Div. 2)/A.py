@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------------------
-# URL    : https://codeforces.com/contest/CONTEST_NUMBER/problem/PROBLEM_LETTER
-# Title  : PROBLEM_TITLE
-# Tags   : tag-codeforces, tag-problem-PROBLEM_LETTER, #tags#
-# Notes  : CODEFORCES_TAGS
+# URL    : https://codeforces.com/contest/1792/problem/A
+# Title  : A. GamingForces
+# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-0
+# Notes  : 
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------
@@ -111,6 +111,15 @@ sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
 
 def solve():
     n = iinp()
+    h = intl()
+
+    count_of_ones = h.count(1)
+
+    ans = count_of_ones // 2
+    n -= ((count_of_ones // 2) * 2)
+    ans += n
+
+    return ans
 
 
 def run():

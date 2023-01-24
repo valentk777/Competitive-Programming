@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------------------
-# URL    : https://codeforces.com/contest/CONTEST_NUMBER/problem/PROBLEM_LETTER
-# Title  : PROBLEM_TITLE
-# Tags   : tag-codeforces, tag-problem-PROBLEM_LETTER, #tags#
-# Notes  : CODEFORCES_TAGS
+# URL    : https://codeforces.com/contest/1792/problem/D
+# Title  : D. Fixed Prefix Permutations
+# Tags   : tag-codeforces, tag-problem-D, tag-div-2, tag-difficulty-0, tag-not-pass
+# Notes  : 
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------
@@ -109,8 +109,46 @@ sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
+def max_after_multiply(n, p1, p2):
+    for i, e in enumerate(p1):
+        if p2[e - 1] != i + 1:
+            return i
+
+    return n
+
+
+# time limit
 def solve():
-    n = iinp()
+    n, m = intl()
+    permutations = []
+
+    for i in range(n):
+        permutations.append(intl())
+
+    ans = [0] * n
+
+    for i in range(n):
+        p1 = permutations[i]
+
+        if ans[i] == m:
+            continue
+
+        for j in range(n):
+            p2 = permutations[j]
+
+            # check if possible to be bigger
+            if p2[p1[ans[i]] - 1] != ans[i] + 1:
+                continue
+
+            candidate = max_after_multiply(m, p1, p2)
+
+            if candidate > ans[i]:
+                ans[i] = candidate
+
+                if ans[i] == m:
+                    break
+
+    return list_to_string_list(ans)
 
 
 def run():

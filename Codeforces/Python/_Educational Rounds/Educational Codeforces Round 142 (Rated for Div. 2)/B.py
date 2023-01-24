@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------------------
-# URL    : https://codeforces.com/contest/CONTEST_NUMBER/problem/PROBLEM_LETTER
-# Title  : PROBLEM_TITLE
-# Tags   : tag-codeforces, tag-problem-PROBLEM_LETTER, #tags#
-# Notes  : CODEFORCES_TAGS
+# URL    : https://codeforces.com/contest/1792/problem/B
+# Title  : B. Stand-up Comedian
+# Tags   : tag-codeforces, tag-problem-B, tag-div-2, tag-difficulty-0
+# Notes  : 
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------
@@ -110,7 +110,92 @@ sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    n = iinp()
+    jokes = intl()
+
+    if jokes[0] == 0:
+        return 1
+
+    # say all jokes for all
+    ans = jokes[0]
+    _a = jokes[0]
+    _b = jokes[0]
+    jokes[0] = 0
+
+    while True:
+        _max = max(jokes[1], jokes[2])
+
+        if _max == 0:
+            break
+
+        if _max == jokes[1] and _b > 0:
+            joke = jokes[1]
+
+            if _b - joke >= 0:
+                _a += joke
+                _b -= joke
+                ans += joke
+                jokes[1] = 0
+            else:
+                _a += _b
+                ans += _b
+                jokes[1] -= _b
+                _b = 0
+
+        elif _max == jokes[2] and _a > 0:
+            joke = jokes[2]
+
+            if _a - joke >= 0:
+                _b += joke
+                _a -= joke
+                ans += joke
+                jokes[2] = 0
+            else:
+                _b += _a
+                ans += _a
+                jokes[2] -= _a
+                _a = 0
+
+        elif jokes[1] > 0 and _b > 0:
+            joke = jokes[1]
+
+            if _b - joke >= 0:
+                _a += joke
+                _b -= joke
+                ans += joke
+                jokes[1] = 0
+            else:
+                _a += _b
+                ans += _b
+                jokes[1] -= _b
+                _b = 0
+
+        elif jokes[2] > 0 and _a > 0:
+            joke = jokes[2]
+
+            if _a - joke >= 0:
+                _b += joke
+                _a -= joke
+                ans += joke
+                jokes[2] = 0
+            else:
+                _b += _a
+                ans += _a
+                jokes[2] -= _a
+                _a = 0
+
+
+        else:
+            break
+
+    if _a > 0 and _b > 0:
+        _min = min(_a, _b, jokes[3])
+        ans += _min
+        jokes[3] -= _min
+
+    if jokes[1] > 0 or jokes[2] > 0 or jokes[3] > 0:
+        ans += 1
+
+    return ans
 
 
 def run():

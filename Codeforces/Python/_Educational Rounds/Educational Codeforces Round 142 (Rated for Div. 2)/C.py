@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------------------
-# URL    : https://codeforces.com/contest/CONTEST_NUMBER/problem/PROBLEM_LETTER
-# Title  : PROBLEM_TITLE
-# Tags   : tag-codeforces, tag-problem-PROBLEM_LETTER, #tags#
-# Notes  : CODEFORCES_TAGS
+# URL    : https://codeforces.com/contest/1792/problem/C
+# Title  : C. Min Max Sort
+# Tags   : tag-codeforces, tag-problem-C, tag-div-2, tag-difficulty-0, tag-not-pass
+# Notes  : 
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------
@@ -111,6 +111,42 @@ sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
 
 def solve():
     n = iinp()
+    p = intl()
+    sorted_p = sorted(p)
+
+    if p == sorted_p or n == 1:
+        return 0
+
+    ans = 0
+
+    index_map = defaultdict(int)
+
+    for i in range(n):
+        index_map[p[i]] = i
+
+    if n & 1 == 0:
+        a, b = n // 2, n // 2 + 1
+    else:
+        a, b = n // 2, n // 2 + 2
+
+    while p != sorted_p:
+        if index_map[a] > index_map[b] or index_map[a] > a - 1 or index_map[b] < b - 1:
+            p.remove(a)
+            p = [a] + p
+            p.remove(b)
+            p.append(b)
+            ans += 1
+
+        a -= 1
+        b += 1
+
+
+
+    # k =
+    # print(k)
+    return ans
+
+
 
 
 def run():

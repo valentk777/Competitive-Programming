@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------------------
-# URL    : https://codeforces.com/contest/CONTEST_NUMBER/problem/PROBLEM_LETTER
-# Title  : PROBLEM_TITLE
-# Tags   : tag-codeforces, tag-problem-PROBLEM_LETTER, #tags#
-# Notes  : CODEFORCES_TAGS
+# URL    : https://codeforces.com/contest/1245/problem/C
+# Title  : Constanze's Machine
+# Tags   : tag-codeforces, tag-problem-C, tag-div-2, tag-difficulty-1400
+# Notes  : dp
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------
@@ -110,14 +110,55 @@ sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    n = iinp()
+    s = inp()
+    n = len(s)
+
+    if ("m" in s) or ("w" in s):
+        return 0
+
+    dp = _dp(1)
+
+    i = 0
+    while i < n:
+        if (s[i] == "m") or (s[i] == "w"):
+            return 0
+
+        # if we have nnnnnnn situation, then the answer will be f(n) = f(n - 1) + f(n - 2).
+        # 1, 2, 3, 5, 8, ...
+        if s[i] == "n":
+            current = 1
+            prev = 0
+            total_count = dp[i - 1]
+
+            while i < n and s[i] == "n":
+                dp[i] = (total_count * (current + prev)) % MOD
+                i += 1
+                prev, current = current, current + prev
+                prev %= MOD
+                current %= MOD
+
+        elif s[i] == "u":
+            current = 1
+            prev = 0
+            total_count = dp[i - 1]
+
+            while i < n and s[i] == "u":
+                dp[i] = (total_count * (current + prev)) % MOD
+                i += 1
+                prev, current = current, current + prev
+                prev %= MOD
+                current %= MOD
+
+        else:
+            dp[i] = dp[i - 1] % MOD
+            i += 1
+
+    # print(dp)
+    return dp[n - 1] % MOD
 
 
 def run():
-    t = iinp()
-
-    for _ in range(t):
-        print(solve())
+    print(solve())
 
 
 if __name__ == "__main__":

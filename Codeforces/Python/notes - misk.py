@@ -1,5 +1,15 @@
 from bisect import bisect_left, bisect_right
 from collections import defaultdict
+from functools import lru_cache
+
+
+# stores the successive calls of a function with their arguments
+@lru_cache(maxsize=None)
+def fibo_naive(n):
+    if n <= 1:
+        return n
+
+    return fibo_naive(n - 1) + fibo_naive(n - 2)
 
 
 # region - LIS (the longest increasing subsequence)
