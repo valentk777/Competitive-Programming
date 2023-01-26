@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------------------
-# URL    : https://codeforces.com/contest/1792/problem/D
-# Title  : D. Fixed Prefix Permutations
-# Tags   : tag-codeforces, tag-problem-D, tag-div-2, tag-difficulty-0, tag-not-pass
-# Notes  : binary search, data structures, math, sortings, strings
+# URL    : https://codeforces.com/contest/1661/problem/B
+# Title  : Getting Zero
+# Tags   : tag-codeforces, tag-problem-B, tag-div-2, tag-difficulty-1300
+# Notes  : bitmasks, brute force, dfs and similar, dp, graphs, greedy, shortest paths
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------
@@ -109,184 +109,98 @@ sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
-# tree using matrix (faster, less memory)
-class TrieArray:
-    def __init__(self, m):
-        self.root = [None] * m
-        self.size = m
 
-    def insert(self, _list):
-        current_root = self.root
-
-        for element in _list:
-            if current_root[element] is None:
-                current_root[element] = [None] * self.size
-
-            current_root = current_root[element]
-
-    def query(self, word):
-        current_root = self.root
-        prefix = []
-
-        for element in word:
-            if current_root[element] is None:
-                return prefix
-
-            current_root = current_root[element]
-            prefix.append(element)
-
-        return prefix
-
-
-# tree using dictionary
-class TrieDict:
-    def __init__(self):
-        self.root = {}
-
-    def insert(self, _list):
-        current_root = self.root
-
-        for element in _list:
-            if element not in current_root:
-                current_root[element] = {}
-
-            current_root = current_root[element]
-
-    def query(self, word):
-        current_root = self.root
-        prefix = []
-
-        for element in word:
-            if element not in current_root:
-                return prefix
-
-            current_root = current_root[element]
-            prefix.append(element)
-
-        return prefix
-
-
-def solve_array():
-    n, m = intl()
-
-    permutations = [intl() for _ in range(n)]
-    trie = TrieArray(m + 1)
-
-    for i in range(n):
-        trie.insert(get_perfect_permutation(permutations[i]))
-
+def solve():
+    n = iinp()
+    a = intl()
     ans = []
+    # bin -> 1000000000000000
+    mod = 32768
 
-    for perm in permutations:
-        ans.append(len(trie.query(perm)))
+    # if we multiply by 2, it will shift current bitwise representation to left.
+    # if we reach mod area, that 1 will be removed. so in worse case scenario,
+    # when we get 1, we can multiply this number by 2 until it react 16'th position and after mod become 0
+    # so the answer never exceed 16.
+    # but just multiply it is not enough. sometimes add 1 will be fewer steps than remove all ones by shifting.
+    # 11111111111 will be only one step +1, but a lot of steps removing by multiplication.
+    # also there is mixed cases, such as 101111111111.
+    # Fastest way to add 1 and then multiply until all ones will be removed.
 
-    return list_to_string_list(ans)
-
-
-def solve_dict():
-    n, m = intl()
-
-    permutations = [intl() for _ in range(n)]
-    trie = TrieDict()
+    # if we multiply firs, then it is never worth adding ones. and we can try adding ones only until 16,
+    # because this is the worse case scenario by multiplication.
 
     for i in range(n):
-        trie.insert(get_perfect_permutation(permutations[i]))
+        if a[i] % mod == 0:
+            ans.append(0)
+            continue
 
-    ans = []
+        # so we can try all additions and then multiplications.
+        # key number, value min steps needed
+        candidates = _dp(INF)
 
-    for perm in permutations:
-        ans.append(len(trie.query(perm)))
+        for j in range(17):
+            c = a[i] + j
+            candidates[c % mod] = j
 
-    return list_to_string_list(ans)
-
-
-def get_perfect_permutation(p):
-    ideal = list(enumerate(p, 1))
-    ideal.sort(key=lambda x: x[1])
-    ideal = [i[0] for i in ideal]
-    return ideal
-
-
-def solve_works():
-    n, m = intl()
-
-    permutations = []
-    for i in range(n):
-        permutations.append(intl())
-
-    ideals = []
-    for i in range(n):
-        ideals.append(get_perfect_permutation(permutations[i]))
-
-    trie = {}
-    for ideal in ideals:
-        root = trie
-        for i in ideal:
-            root = root.setdefault(i, {})
-
-    ans = []
-
-    for perm in permutations:
-        root = trie
-        mx = 0
-        for i in perm:
-            if i not in root:
+            if c == mod:
+                # all next addition will be worse than we have now
                 break
-            mx += 1
-            root = root[i]
 
-        ans.append(mx)
+        result = candidates.copy()
 
-    return list_to_string_list(ans)
+        for key, value in candidates.items():
+            for j in range(1, 17):
+                c = key * (1 << j) % mod
+                result[c] = min(result[c], value + j)
 
+        ans.append(result[0])
 
-def max_after_multiply(n, p1, p2):
-    for i, e in enumerate(p1):
-        if p2[e - 1] != i + 1:
-            return i
-
-    return n
+    return ans
 
 
 # time limit
 def solve_slow():
-    n, m = intl()
-    permutations = []
+    n = iinp()
+    a = intl()
+    ans = []
+    mod = 32768
 
     for i in range(n):
-        permutations.append(intl())
+        _min = mod - a[i]
 
-    ans = [0] * n
-
-    for i in range(n):
-        p1 = permutations[i]
-
-        if ans[i] == m:
+        if a[i] % mod == 0:
+            ans.append(0)
             continue
 
-        for j in range(n):
-            p2 = permutations[j]
+        data = [INF for i in range(mod + 1)]
+        data[a[i]] = 0
 
-            # check if possible to be bigger
-            if p2[p1[ans[i]] - 1] != ans[i] + 1:
-                continue
+        history = {a[i]}
+        temp = set()
 
-            candidate = max_after_multiply(m, p1, p2)
+        while data[0] == INF:
+            for e in history:
+                c1 = (e + 1) % mod
+                c2 = (e * 2) % mod
+                # print(bin(c1))
+                # print(bin(c2))
 
-            if candidate > ans[i]:
-                ans[i] = candidate
+                data[c1] = min(data[c1], data[e] + 1)
+                data[c2] = min(data[c2], data[e] + 1)
 
-                if ans[i] == m:
-                    break
+                temp.add(c1)
+                temp.add(c2)
 
-    return list_to_string_list(ans)
+            history = temp
+            temp = set()
+
+        ans.append(data[0])
+
+    return ans
 
 
 def run():
-    t = iinp()
-
-    for _ in range(t):
-        print(solve_array())
+    print(*solve())
 
 
 if __name__ == "__main__":

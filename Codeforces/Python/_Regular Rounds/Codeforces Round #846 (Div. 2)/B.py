@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------------------
-# URL    : https://codeforces.com/contest/1792/problem/A
-# Title  : A. GamingForces
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-0
-# Notes  : greedy, sortings
+# URL    : https://codeforces.com/contest/1780/problem/B
+# Title  : B. GCD Partition
+# Tags   : tag-codeforces, tag-problem-B, tag-div-2, tag-difficulty-0
+# Notes  : brute force, greedy, math, number theory
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------
@@ -111,15 +111,22 @@ sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
 
 def solve():
     n = iinp()
-    h = intl()
+    a = intl()
+    _max = -INF
 
-    count_of_ones = h.count(1)
+    _sums = [a[0]]
 
-    ans = count_of_ones // 2
-    n -= ((count_of_ones // 2) * 2)
-    ans += n
+    for i in range(1, n):
+        _sums.append(_sums[-1] + a[i])
 
-    return ans
+    # it is okay to have only split into two parts
+    for i in range(n - 1):
+        candidate = math.gcd(_sums[i], _sums[-1] - _sums[i])
+
+        if candidate > _max:
+            _max = candidate
+
+    return _max
 
 
 def run():

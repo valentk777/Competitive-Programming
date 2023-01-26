@@ -2,7 +2,7 @@
 # URL    : https://codeforces.com/contest/1792/problem/C
 # Title  : C. Min Max Sort
 # Tags   : tag-codeforces, tag-problem-C, tag-div-2, tag-difficulty-0, tag-not-pass
-# Notes  : 
+# Notes  : binary search, brute force, greedy, math
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------

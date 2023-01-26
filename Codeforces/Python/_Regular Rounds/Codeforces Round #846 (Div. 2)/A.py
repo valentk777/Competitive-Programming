@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------------------
-# URL    : https://codeforces.com/contest/1792/problem/A
-# Title  : A. GamingForces
+# URL    : https://codeforces.com/contest/1780/problem/A
+# Title  : A. Hayato and School
 # Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-0
-# Notes  : greedy, sortings
+# Notes  : constructive algorithms, greedy
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------
@@ -111,22 +111,44 @@ sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
 
 def solve():
     n = iinp()
-    h = intl()
+    a = intl()
 
-    count_of_ones = h.count(1)
+    lln = []
+    nnn = []
 
-    ans = count_of_ones // 2
-    n -= ((count_of_ones // 2) * 2)
-    ans += n
+    n_added = False
+    ll_added = 0
 
-    return ans
+    for i in range(n):
+        if a[i] & 1 == 1:
+            nnn.append(i + 1)
+
+            if not n_added:
+                lln.append(i + 1)
+                n_added = True
+        else:
+            if ll_added < 2:
+                lln.append(i + 1)
+                ll_added += 1
+
+        if len(lln) == 3:
+            print(yes)
+            print(*lln)
+            return
+
+        if len(nnn) == 3:
+            print(yes)
+            print(*nnn)
+            return
+
+    print(no)
 
 
 def run():
     t = iinp()
 
     for _ in range(t):
-        print(solve())
+        solve()
 
 
 if __name__ == "__main__":

@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------------------
-# URL    : https://codeforces.com/contest/1792/problem/A
-# Title  : A. GamingForces
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-0
-# Notes  : greedy, sortings
+# URL    : https://codeforces.com/contest/1780/problem/D
+# Title  : D. Bit Guessing Game
+# Tags   : tag-codeforces, tag-problem-D, tag-div-2, tag-difficulty-0
+# Notes  : binary search, bitmasks, interactive
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------
@@ -101,32 +101,117 @@ class IOWrapper(IOBase):
         self.readline = lambda: self.buffer.readline().decode("ascii")
 
 
-sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
-
+# sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
+#
 
 # endregion
 # endregion
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
-def solve():
+
+def solve_v1():
     n = iinp()
-    h = intl()
+    res = 0
+    prev = n
+    more = 0
 
-    count_of_ones = h.count(1)
+    while True:
+        # guess will always be power of two
+        guess = 1 + more
+        print_flush(f"- {guess}")
+        now = iinp()
+        res += 1
 
-    ans = count_of_ones // 2
-    n -= ((count_of_ones // 2) * 2)
-    ans += n
+        if now == 0:
+            print_flush(f"! {res}")
+            return
 
-    return ans
+        if now == prev - 1:
+            prev = now
+        else:
+            diff = now - prev
+
+            # get number from possible and current. Like if we had 11110 - 1 => 11101. so it is same amount of 1'ns.
+            # so we know that it will be as at least diff power of two.
+            # if we had 10 = 3 and 10 - 1 = 1, so we have at least 3 - 1 = 2 more.
+            # We can add this to result and to future guesses.
+            more = (1 << diff + 1) - 1
+            prev = prev - 1
+            res += more
+
+            if not prev:
+                print_flush(f"! {res}")
+                return
+
+
+def solve_v2():
+    n = iinp()
+    prev = n
+    idx = 0
+    guess = 1
+    res = 0
+
+    while n != 0:
+        print_flush(f"- {guess}")
+        res += guess
+        n = iinp()
+        idx += 1
+
+        if n < prev:
+            # if we get smaller amount of 1's, we can remove only power of two (only 1 one). all ones one by one
+            guess = (1 << idx)
+        elif n > prev:
+            # if we get more 1's than before, so we need to remove new power of two same as in n < prev case,
+            # but in addition remove old ones as well (the ones was added).
+            guess |= (1 << idx)
+        else:
+            # if n == prev, we know that, we just guess same old value
+            pass
+
+        prev = n
+
+    print_flush(f"! {res}")
+
+
+# time limit
+def solve_slow():
+    history = []
+    res = 0
+
+    while True:
+        number_of_one = iinp()
+        history.append(number_of_one)
+
+        if number_of_one == 0:
+            break
+
+        guess = int("1" * number_of_one, 2)
+
+        if len(history) == 1:
+            res += guess
+            print_flush(f"- {guess}")
+            continue
+
+        historical = int("1" * history[-2], 2)
+
+        for i in range(guess, INF):
+            if bin(i).count("1") == number_of_one and bin(i + historical).count("1") == history[-2]:
+                guess = i
+                break
+
+        res += guess
+
+        print_flush(f"- {guess}")
+
+    print_flush(f"! {res}")
 
 
 def run():
     t = iinp()
 
     for _ in range(t):
-        print(solve())
+        solve_v2()
 
 
 if __name__ == "__main__":

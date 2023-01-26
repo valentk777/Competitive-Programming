@@ -2,7 +2,7 @@
 # URL    : https://codeforces.com/contest/1792/problem/B
 # Title  : B. Stand-up Comedian
 # Tags   : tag-codeforces, tag-problem-B, tag-div-2, tag-difficulty-0
-# Notes  : 
+# Notes  : greedy, math
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------
@@ -115,13 +115,88 @@ def solve():
     if jokes[0] == 0:
         return 1
 
+    # say all positive jokes
+    ans = jokes[0]
+
+    # say double minimum amount of jokes that only one likes. After this, jokes_1 or jokes_2 should be 0
+    ans += 2 * min(jokes[1], jokes[2])
+
+    # after this, our listeners have same or more mood than initially. So min mood is jokes[0].
+    min_mood = jokes[0]
+    jokes_left_after_2and_3 = max(jokes[1], jokes[2]) - min(jokes[1], jokes[2])
+    bad_jokes_left = jokes_left_after_2and_3 + jokes[3]
+
+    # we have more bad jokes than mood, so we consume whole mood to become 0 and then + 1
+    if bad_jokes_left > min_mood:
+        ans += min_mood + 1
+    else:
+        ans += bad_jokes_left
+
+    return ans
+
+
+# ugly
+def solve_ugly():
+    jokes = intl()
+
+    if jokes[0] == 0:
+        return 1
+
     # say all jokes for all
     ans = jokes[0]
     _a = jokes[0]
     _b = jokes[0]
     jokes[0] = 0
 
+    _max = max(jokes[1], jokes[2])
+
+    # say as many jokes as you can to make someone boosted and another one == 0
+    if jokes[1] > jokes[2]:
+        if _b - jokes[1] >= 0:
+            _a += jokes[1]
+            _b -= jokes[1]
+            ans += jokes[1]
+            jokes[1] = 0
+        else:
+            _a += _b
+            ans += _b
+            jokes[1] -= _b
+            _b = 0
+    else:
+        if _a - jokes[2] >= 0:
+            _b += jokes[2]
+            _a -= jokes[2]
+            ans += jokes[2]
+            jokes[2] = 0
+        else:
+            _b += _a
+            ans += _a
+            jokes[2] -= _a
+            _a = 0
+
+    # both not 0
+    if min(jokes[1], jokes[2]) != 0:
+        if _a == 0:
+            x = max((jokes[1] // _b) - 1, 0)
+            y = max((jokes[2] // _b) - 1, 0)
+            z = min(x, y)
+
+            ans += z * _b * 2
+            jokes[1] -= z * _b
+            jokes[2] -= z * _b
+        else:
+            x = max((jokes[1] // _a) - 1, 0)
+            y = max((jokes[2] // _a) - 1, 0)
+            z = min(x, y)
+
+            ans += z * _a * 2
+            jokes[1] -= z * _a
+            jokes[2] -= z * _a
+
     while True:
+        if _a == 0 or _b == 0:
+            pass
+
         _max = max(jokes[1], jokes[2])
 
         if _max == 0:
