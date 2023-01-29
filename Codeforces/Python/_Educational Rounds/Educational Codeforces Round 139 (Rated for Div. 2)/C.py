@@ -1,7 +1,7 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1766/problem/C
 # Title  : C. Hamiltonian Wall
-# Tags   : tag-codeforces, tag-problem-C, tag-div-2, tag-difficulty-0
+# Tags   : tag-codeforces, tag-problem-C, tag-div-2, tag-difficulty-1300
 # Notes  : dfs and similar, dp, implementation
 # ---------------------------------------------------------------------------------------
 

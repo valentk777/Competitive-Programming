@@ -1,7 +1,7 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1766/problem/B
 # Title  : B. Notepad#
-# Tags   : tag-codeforces, tag-problem-B, tag-div-2, tag-difficulty-0
+# Tags   : tag-codeforces, tag-problem-B, tag-div-2, tag-difficulty-1000
 # Notes  : brute force, greedy, implementation
 # ---------------------------------------------------------------------------------------
 

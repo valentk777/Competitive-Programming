@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------------------
-# URL    : https://codeforces.com/contest/1766/problem/A
-# Title  : A. Extremely Round
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-800
-# Notes  : implementation, math
+# URL    : https://codeforces.com/contest/1771/problem/B
+# Title  : Hossam and Friends
+# Tags   : tag-codeforces, tag-problem-B, tag-div-2, tag-difficulty-1400
+# Notes  : binary search, constructive algorithms, dp, two pointers
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------
@@ -33,17 +33,6 @@ def lcm(a, b):
 def print_dp(_dict):
     for item in _dict.items():
         print(f"{item[0]} = {item[1]}")
-
-
-def memodict(f):
-    """memoization decorator for a function taking a single argument"""
-
-    class memodict(dict):
-        def __missing__(self, key):
-            ret = self[key] = f(key)
-            return ret
-
-    return memodict().__getitem__
 
 
 MOD = 10 ** 9 + 7
@@ -101,47 +90,65 @@ class IOWrapper(IOBase):
 
 sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
 
+
 # endregion
 # endregion
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
-memory = [0 for i in range(999999 + 2)]
+def solve():
+    n, m = intl()
 
+    # we need to store only min b value for a single pair
+    pairs = _dp(n)
 
-def fill_memory():
+    for i in range(m):
+        a, b = intl()
+        _min = min(a, b)
+        _max = max(a, b)
+        pairs[_min] = min(pairs[_min], _max - 1)
+
+    # if we have a case where 1 -> 3 do not have any marker in this dictionary, but 2 -> 3 is not a fread, so 1 -> 3
+    # have to be updated to min allowed value.
+    for i in range(n, 0, -1):
+        pairs[i] = min(pairs[i], pairs[i + 1])
+
     ans = 0
 
-    for i in range(1, 999999 + 2):
-        if i < 11:
-            ans += 1
+    # we can just iterate all starts and check number of pairs we can make from this point.
+    for i in range(1, n + 1):
+        ans += pairs[i] - i + 1
 
-        elif i < 101 and i % 10 == 0:
-            ans += 1
-
-        elif i < 1001 and i % 100 == 0:
-            ans += 1
-
-        elif i < 10001 and i % 1000 == 0:
-            ans += 1
-
-        elif i < 100001 and i % 10000 == 0:
-            ans += 1
-
-        elif i < 1000001 and i % 100000 == 0:
-            ans += 1
-
-        memory[i] = ans
+    return ans
 
 
-def solve():
-    n = iinp()
-    return memory[n]
+# memory limit
+def solve_memory_limit():
+    n, m = intl()
+
+    # we will use only half of matrix
+    matrix = [[1 for _ in range(n)] for _ in range(n)]
+
+    for i in range(m):
+        a, b = intl()
+
+        # if we found that from this point we are not able to make a pair,
+        # then fill all values to 0 until end of the matrix
+
+        for j in range(b - 1, n):
+            matrix[a - 1][j] = 0
+
+    ans = 0
+
+    for i in range(n):
+        for j in range(i, n):
+            ans += matrix[i][j]
+
+    return ans
 
 
 def run():
     t = iinp()
-    fill_memory()
 
     for _ in range(t):
         print(solve())

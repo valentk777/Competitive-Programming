@@ -5,7 +5,7 @@
 # Notes  : greedy
 # ---------------------------------------------------------------------------------------
 
-# ---------------------------------------------------Shared part--------------------------------------------------------
+# region --------------------------------------------Shared part--------------------------------------------------------
 import math
 import os
 import sys
@@ -23,7 +23,7 @@ _dp = lambda default_value: defaultdict(lambda: default_value)
 flush = lambda: sys.stdout.flush()
 print_flush = lambda _text: (print(_text), flush())
 fact = lambda number: math.factorial(number)
-cnt = lambda _a: Counter(_a)
+_cnt = lambda _a: Counter(_a)
 
 
 def lcm(a, b):
@@ -35,12 +35,25 @@ def print_dp(_dict):
         print(f"{item[0]} = {item[1]}")
 
 
+def memodict(f):
+    """memoization decorator for a function taking a single argument"""
+
+    class memodict(dict):
+        def __missing__(self, key):
+            ret = self[key] = f(key)
+            return ret
+
+    return memodict().__getitem__
+
+
 MOD = 10 ** 9 + 7
 INF = sys.maxsize
 A = 911382323
 M = 9999999999879998
+yes = "YES"
+no = "NO"
 
-# --------------------------------------------------Fast IO Region------------------------------------------------------
+# region -------------------------------------------Fast IO Region------------------------------------------------------
 BUFSIZE = 8192
 
 
@@ -91,7 +104,27 @@ class IOWrapper(IOBase):
 sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
 
 
+# endregion
+# endregion
+
 # -------------------------------------------------------Solution-------------------------------------------------------
+
+def solve():
+    x = inp()
+    n = len(x)
+    k = iinp()
+    #
+    # is_zero_in_x = "0" in x
+    #
+    # if is_zero_in_x:
+    #     pass
+    #
+    # # if we do not have 0, then we can remove max digit k times.
+    # else:
+    #     for i in range(k):
+    #
+
+
 
 # time limit
 def solve_slow():

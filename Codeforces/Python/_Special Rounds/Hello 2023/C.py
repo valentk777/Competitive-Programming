@@ -1,7 +1,7 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1779/problem/C
 # Title  : C. Least Prefix Sum
-# Tags   : tag-codeforces, tag-problem-C, tag-difficulty-0, tag-not-pass
+# Tags   : tag-codeforces, tag-problem-C, tag-difficulty-1600, tag-not-pass
 # Notes  : data structures, greedy
 # ---------------------------------------------------------------------------------------
 
@@ -188,11 +188,6 @@ def solve():
                 ans += 1
             else:
                 break
-
-    # print(sums)
-    # print(sums_until_m)
-    # print(sums_after_m)
-    # print(ans)
 
     return ans
 

@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------------------
-# URL    : https://codeforces.com/contest/1766/problem/A
-# Title  : A. Extremely Round
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-800
-# Notes  : implementation, math
+# URL    : https://codeforces.com/contest/1729/problem/C
+# Title  : Jumping on Tiles
+# Tags   : tag-codeforces, tag-problem-C, tag-div-3, tag-difficulty-1100
+# Notes  : constructive algorithms, strings
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------
@@ -33,17 +33,6 @@ def lcm(a, b):
 def print_dp(_dict):
     for item in _dict.items():
         print(f"{item[0]} = {item[1]}")
-
-
-def memodict(f):
-    """memoization decorator for a function taking a single argument"""
-
-    class memodict(dict):
-        def __missing__(self, key):
-            ret = self[key] = f(key)
-            return ret
-
-    return memodict().__getitem__
 
 
 MOD = 10 ** 9 + 7
@@ -101,50 +90,57 @@ class IOWrapper(IOBase):
 
 sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
 
+
 # endregion
 # endregion
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
-memory = [0 for i in range(999999 + 2)]
-
-
-def fill_memory():
-    ans = 0
-
-    for i in range(1, 999999 + 2):
-        if i < 11:
-            ans += 1
-
-        elif i < 101 and i % 10 == 0:
-            ans += 1
-
-        elif i < 1001 and i % 100 == 0:
-            ans += 1
-
-        elif i < 10001 and i % 1000 == 0:
-            ans += 1
-
-        elif i < 100001 and i % 10000 == 0:
-            ans += 1
-
-        elif i < 1000001 and i % 100000 == 0:
-            ans += 1
-
-        memory[i] = ans
+def get_length(a, b):
+    return abs(a[0] - b[0])
 
 
 def solve():
-    n = iinp()
-    return memory[n]
+    s = inp()
+    s = list(map(lambda x: (ord(x[1]) - ord("a"), x[0]), enumerate(s)))
+    n = len(s)
+
+    start = s[0]
+    end = s[-1]
+
+    # we can sort values by value and by index. if start index < end index. this sorting works to find max value.
+    # if start ord < end ord
+    if start[0] <= end[0]:
+        s = sorted(s, key=lambda x: (x[0], x[1]))
+    else:
+        s = sorted(s, key=lambda x: (x[0], -x[1]), reverse=True)
+
+    start_idx = -1
+    end_idx = -1
+
+    for i in range(n):
+        if s[i] == start:
+            start_idx = i
+            break
+
+    ans = []
+
+    for i in range(start_idx, n):
+        ans.append(s[i][1] + 1)
+
+        if s[i] == end:
+            end_idx = i
+            break
+
+    print(get_length(s[start_idx], s[end_idx]), len(ans))
+    print(*ans)
 
 
 def run():
     t = iinp()
-    fill_memory()
 
     for _ in range(t):
-        print(solve())
+        solve()
 
 
 if __name__ == "__main__":
