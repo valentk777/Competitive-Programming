@@ -110,7 +110,7 @@ sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
 def solve():
     _ = iinp()
     t = set(inp().lower())
-    
+
     if len(t) == 26:
         return "YES"
 

@@ -151,10 +151,8 @@ def solve():
 
     return odd_count
 
-
     if n == 1:
         return 1
-
 
     # the diff between perfect square numbers is all odd numbers. [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25...] if they are close numbers
     # or 4 multipliers [4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 68, 72, 76, 80] if not close.

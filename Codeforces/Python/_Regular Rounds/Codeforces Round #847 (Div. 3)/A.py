@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------------------
-# URL    : https://codeforces.com/contest/160/problem/A
-# Title  : Twins
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-900
-# Notes  : greedy, sortings
+# URL    : https://codeforces.com/contest/1790/problem/A
+# Title  : Polycarp and the Day of Pi
+# Tags   : tag-codeforces, tag-problem-A, tag-div-3, tag-difficulty-0
+# Notes  : implementation, math, strings
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------
@@ -23,7 +23,7 @@ _dp = lambda default_value: defaultdict(lambda: default_value)
 flush = lambda: sys.stdout.flush()
 print_flush = lambda _text: (print(_text), flush())
 fact = lambda number: math.factorial(number)
-cnt = lambda _a: Counter(_a)
+_cnt = lambda _a: Counter(_a)
 
 
 def lcm(a, b):
@@ -50,6 +50,8 @@ MOD = 10 ** 9 + 7
 INF = sys.maxsize
 A = 911382323
 M = 9999999999879998
+yes = "YES"
+no = "NO"
 
 # region -------------------------------------------Fast IO Region------------------------------------------------------
 BUFSIZE = 8192
@@ -107,24 +109,23 @@ sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
+expected = "314159265358979323846264338327"
+
+
 def solve():
-    n = iinp()
-    a = intl()
-    a = sorted(a, reverse=True)
-    _sum = sum(a)
-    s = 0
-    i = 0
+    s = inp()
 
-    while s <= _sum:
-        s += a[i]
-        _sum -= a[i]
-        i += 1
+    for i in range(len(s)):
+        if s[i] != expected[i]:
+            return i
 
-    return i
-
+    return len(s)
 
 def run():
-    print(solve())
+    t = iinp()
+
+    for _ in range(t):
+        print(solve())
 
 
 if __name__ == "__main__":

@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------------------
-# URL    : https://codeforces.com/contest/160/problem/A
-# Title  : Twins
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-900
-# Notes  : greedy, sortings
+# URL    : https://codeforces.com/contest/1790/problem/D
+# Title  : Matryoshkas
+# Tags   : tag-codeforces, tag-problem-D, tag-div-3, tag-difficulty-0
+# Notes  : data structures, greedy, sortings
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------
@@ -23,7 +23,7 @@ _dp = lambda default_value: defaultdict(lambda: default_value)
 flush = lambda: sys.stdout.flush()
 print_flush = lambda _text: (print(_text), flush())
 fact = lambda number: math.factorial(number)
-cnt = lambda _a: Counter(_a)
+_cnt = lambda _a: Counter(_a)
 
 
 def lcm(a, b):
@@ -50,6 +50,8 @@ MOD = 10 ** 9 + 7
 INF = sys.maxsize
 A = 911382323
 M = 9999999999879998
+yes = "YES"
+no = "NO"
 
 # region -------------------------------------------Fast IO Region------------------------------------------------------
 BUFSIZE = 8192
@@ -110,21 +112,64 @@ sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
 def solve():
     n = iinp()
     a = intl()
-    a = sorted(a, reverse=True)
-    _sum = sum(a)
-    s = 0
-    i = 0
+    a = sorted(a)
 
-    while s <= _sum:
-        s += a[i]
-        _sum -= a[i]
-        i += 1
+    # we know, that next values will be either equal or higher.
+    # we do not need to store all queues. we just need to save how many quest (possibly okay) left.
+    cnt = _cnt(a)
+    ans = 0
 
-    return i
+    for i in range(1, n):
+        # if we have jumped.
+        if a[i - 1] + 1 < a[i]:
+            ans += cnt[a[i - 1]]
+
+        # if we have jumped by one.
+        elif a[i - 1] + 1 == a[i]:
+            if cnt[a[i - 1]] > cnt[a[i]]:
+                ans += cnt[a[i - 1]] - cnt[a[i]]
+
+        # just skip equal values
+        elif a[i - 1] == a[i]:
+            continue
+
+    ans += cnt[a[-1]]
+
+    return ans
+
+
+# time limit
+def solve_slow():
+    n = iinp()
+    a = intl()
+    a = sorted(a)
+
+    # we can store all queues and check only ends of them (if we able to append, or we have to create new one)
+    queues = []
+    ans = 0
+
+    for i in range(n):
+        found = False
+
+        for q in queues:
+            if q[-1] + 1 == a[i]:
+                q.append(a[i])
+                found = True
+                break
+            elif q[-1] + 1 < a[i]:
+                ans += 1
+
+        if not found:
+            queues.append([a[i]])
+
+    return len(queues)
 
 
 def run():
-    print(solve())
+    t = iinp()
+
+    for _ in range(t):
+        print(solve())
 
 
 if __name__ == "__main__":

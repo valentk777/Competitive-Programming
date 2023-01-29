@@ -124,6 +124,7 @@ def solve():
 
     return "YES"
 
+
 def run():
     t = iinp()
 

@@ -140,13 +140,9 @@ def solve():
         a -= 1
         b += 1
 
-
-
     # k =
     # print(k)
     return ans
-
-
 
 
 def run():

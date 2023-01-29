@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------------------
-# URL    : https://codeforces.com/contest/160/problem/A
-# Title  : Twins
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-900
-# Notes  : greedy, sortings
+# URL    : https://codeforces.com/contest/1790/problem/B
+# Title  : Taisia and Dice
+# Tags   : tag-codeforces, tag-problem-B, tag-div-3, tag-difficulty-0
+# Notes  : greedy, math
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------
@@ -23,7 +23,7 @@ _dp = lambda default_value: defaultdict(lambda: default_value)
 flush = lambda: sys.stdout.flush()
 print_flush = lambda _text: (print(_text), flush())
 fact = lambda number: math.factorial(number)
-cnt = lambda _a: Counter(_a)
+_cnt = lambda _a: Counter(_a)
 
 
 def lcm(a, b):
@@ -50,6 +50,8 @@ MOD = 10 ** 9 + 7
 INF = sys.maxsize
 A = 911382323
 M = 9999999999879998
+yes = "YES"
+no = "NO"
 
 # region -------------------------------------------Fast IO Region------------------------------------------------------
 BUFSIZE = 8192
@@ -108,23 +110,36 @@ sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    n = iinp()
-    a = intl()
-    a = sorted(a, reverse=True)
-    _sum = sum(a)
-    s = 0
-    i = 0
+    n, s, r = intl()
 
-    while s <= _sum:
-        s += a[i]
-        _sum -= a[i]
-        i += 1
+    max_value = s - r
 
-    return i
+    # take minimum amount of values to be n - 1 values
+    ans = [1 for _ in range(n - 1)]
+
+    _sum = sum(ans)
+
+    r -= _sum
+
+    for i in range(n - 1):
+        if r == 0:
+            break
+
+        new_value = min(r + 1, max_value)
+        ans[i] = new_value
+        r -= (new_value - 1)
+
+    ans.append(max_value)
+
+    return list_to_string_list(ans)
+
 
 
 def run():
-    print(solve())
+    t = iinp()
+
+    for _ in range(t):
+        print(solve())
 
 
 if __name__ == "__main__":

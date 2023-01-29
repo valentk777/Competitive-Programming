@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------------------
-# URL    : https://codeforces.com/contest/160/problem/A
-# Title  : Twins
-# Tags   : tag-codeforces, tag-problem-A, tag-div-2, tag-difficulty-900
-# Notes  : greedy, sortings
+# URL    : https://codeforces.com/contest/1790/problem/C
+# Title  : Premutation
+# Tags   : tag-codeforces, tag-problem-C, tag-div-3, tag-difficulty-0
+# Notes  : brute force, implementation, math
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------
@@ -23,7 +23,7 @@ _dp = lambda default_value: defaultdict(lambda: default_value)
 flush = lambda: sys.stdout.flush()
 print_flush = lambda _text: (print(_text), flush())
 fact = lambda number: math.factorial(number)
-cnt = lambda _a: Counter(_a)
+_cnt = lambda _a: Counter(_a)
 
 
 def lcm(a, b):
@@ -50,6 +50,8 @@ MOD = 10 ** 9 + 7
 INF = sys.maxsize
 A = 911382323
 M = 9999999999879998
+yes = "YES"
+no = "NO"
 
 # region -------------------------------------------Fast IO Region------------------------------------------------------
 BUFSIZE = 8192
@@ -109,22 +111,42 @@ sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
 
 def solve():
     n = iinp()
-    a = intl()
-    a = sorted(a, reverse=True)
-    _sum = sum(a)
-    s = 0
-    i = 0
+    permutation = []
 
-    while s <= _sum:
-        s += a[i]
-        _sum -= a[i]
-        i += 1
+    for i in range(n):
+        permutation.append(intl())
 
-    return i
+    # most repeated number at the start and end will be first and last element.
+    start = 0
+    values = defaultdict(int)
+
+    for j in range(n):
+        values[permutation[j][0]] += 1
+
+        if values[permutation[j][0]] == 2:
+            start = permutation[j][0]
+            break
+
+    end = 0
+    values = defaultdict(int)
+
+    for j in range(n):
+        values[permutation[j][-1]] += 1
+
+        if values[permutation[j][-1]] == 2:
+            end = permutation[j][-1]
+            break
+
+    for j in range(n):
+        if permutation[j][0] == start and permutation[j][-1] != end:
+            return list_to_string_list(permutation[j] + [end])
 
 
 def run():
-    print(solve())
+    t = iinp()
+
+    for _ in range(t):
+        print(solve())
 
 
 if __name__ == "__main__":
