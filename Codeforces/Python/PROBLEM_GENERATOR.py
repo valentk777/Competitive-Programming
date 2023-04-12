@@ -204,15 +204,20 @@ def copy_file_and_update_information(from_path: Path, copy_to: Path, round_data:
 
 def get_folder_path(round_data: RoundData) -> Path:
     if "Global" in round_data.contest.name:
-        folder_path = CURRENT_PATH / "_Global Rounds"
-    elif "Educational" in round_data.contest.name:
-        folder_path = CURRENT_PATH / "_Educational Rounds"
-    elif "Codeforces Round" in round_data.contest.name or "Codeforces Beta Round" in round_data.contest.name:
-        folder_path = CURRENT_PATH / "_Regular Rounds"
-    else:
-        folder_path = CURRENT_PATH / "_Special Rounds"
+        return CURRENT_PATH / "_Global Rounds" / round_data.contest.name
 
-    return folder_path / round_data.contest.name
+    elif "Educational" in round_data.contest.name:
+        return CURRENT_PATH / "_Educational Rounds" / round_data.contest.name
+
+    elif "Codeforces Round" in round_data.contest.name or "Codeforces Beta Round" in round_data.contest.name:
+        folder_name = round_data.contest.name
+
+        if "#" not in folder_name:
+            folder_name = folder_name.replace("Round ", "Round #")
+
+        return CURRENT_PATH / "_Regular Rounds" / folder_name
+
+    return CURRENT_PATH / "_Special Rounds" / round_data.contest.name
 
 
 def get_template_file_path() -> Path:
@@ -239,7 +244,7 @@ def open_current_file(folder_path: Path, round_data: RoundData) -> None:
 def generate_folder_with_problems() -> None:
     logger.info("Script started")
 
-    WEB_URL = "https://codeforces.com/problemset/problem/550/A"
+    WEB_URL = "https://codeforces.com/problemset/problem/252/A"
 
     round_data = RoundData(WEB_URL, is_started=True)
     # round_data = RoundData(
