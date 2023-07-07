@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1846/problem/A
-# Title  : 
+# Title  : Rudolph and Cut the Rope
 # Tags   : tag-codeforces, tag-problem-A, tag-div-3, tag-difficulty-0
-# Notes  : 
+# Notes  :  implementation, math
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------

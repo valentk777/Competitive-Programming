@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1846/problem/B
-# Title  : 
+# Title  : Rudolph and Tic-Tac-Toe
 # Tags   : tag-codeforces, tag-problem-B, tag-div-3, tag-difficulty-0
-# Notes  : 
+# Notes  :  brute force, implementation, strings
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------

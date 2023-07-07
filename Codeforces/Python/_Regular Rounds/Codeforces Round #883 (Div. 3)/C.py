@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1846/problem/C
-# Title  : 
+# Title  : Rudolf and the Another Competition
 # Tags   : tag-codeforces, tag-problem-C, tag-div-3, tag-difficulty-0
-# Notes  : 
+# Notes  :  constructive algorithms, greedy, implementation, sortings
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------
