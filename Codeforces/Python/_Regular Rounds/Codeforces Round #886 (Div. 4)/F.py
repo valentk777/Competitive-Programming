@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------------------
-# URL    : https://codeforces.com/contest/1846/problem/C
-# Title  : Rudolf and the Another Competition
-# Tags   : tag-codeforces, tag-problem-C, tag-div-3, tag-difficulty-1200
-# Notes  : constructive algorithms, data structures, dp, greedy, sortings
+# URL    : https://codeforces.com/contest/1850/problem/F
+# Title  : We Were Both Children
+# Tags   : tag-codeforces, tag-problem-F, tag-div-4, tag-difficulty-0
+# Notes  : brute force, implementation, math, number theory
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------
@@ -110,35 +110,20 @@ sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    n, m, h = intl()
-    best = []
+    n = iinp()
+    a = intl()
+    count = _cnt(filter(lambda x: x <= n, a))
 
-    for i in range(n):
-        minutes = 0
-        penalty = 0
-        points = 0
-        problems = sorted(intl())
+    if len(count) == 0:
+        return 0
 
-        for j in range(m):
-            if minutes + problems[j] > h:
-                break
-            else:
-                minutes += problems[j]
-                penalty += minutes
-                points += 1
+    dp = _dp(0)
 
-        best.append([points, penalty])
+    for frog in count.keys():
+        for i in range(frog, n + 1, frog):
+            dp[i] += count[frog]
 
-    rudolf = best[0]
-    ans = 1
-
-    for candidate in best:
-        if candidate[0] > rudolf[0]:
-            ans += 1
-        elif candidate[0] == rudolf[0] and candidate[1] < rudolf[1]:
-            ans += 1
-
-    return ans
+    return max(dp.items(), key=lambda x: x[1])[1]
 
 
 def run():

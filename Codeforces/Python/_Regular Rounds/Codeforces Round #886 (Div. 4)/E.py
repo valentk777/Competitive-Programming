@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------------------
-# URL    : https://codeforces.com/contest/1846/problem/C
-# Title  : Rudolf and the Another Competition
-# Tags   : tag-codeforces, tag-problem-C, tag-div-3, tag-difficulty-1200
-# Notes  : constructive algorithms, data structures, dp, greedy, sortings
+# URL    : https://codeforces.com/contest/1850/problem/E
+# Title  : Cardboard for Pictures
+# Tags   : tag-codeforces, tag-problem-E, tag-div-4, tag-difficulty-0
+# Notes  : binary search, implementation, math
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------
@@ -110,35 +110,28 @@ sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    n, m, h = intl()
-    best = []
+    n, c = intl()
+    s = intl()
+
+    total_square_part = 0
+    total_sum_part = 0
 
     for i in range(n):
-        minutes = 0
-        penalty = 0
-        points = 0
-        problems = sorted(intl())
+        total_square_part += (s[i] * s[i])
+        total_sum_part += s[i]
 
-        for j in range(m):
-            if minutes + problems[j] > h:
-                break
-            else:
-                minutes += problems[j]
-                penalty += minutes
-                points += 1
+    total_sum_part = total_sum_part * 4
 
-        best.append([points, penalty])
+    # 4 * n * w^2 + total_sum_part * w + total_square_part - c = 0
+    d = total_sum_part * total_sum_part - 4 * 4 * n * (total_square_part - c)
 
-    rudolf = best[0]
-    ans = 1
+    x1 = (-total_sum_part + math.sqrt(d)) / (2 * 4 * n)
+    x2 = (-total_sum_part - math.sqrt(d)) / (2 * 4 * n)
 
-    for candidate in best:
-        if candidate[0] > rudolf[0]:
-            ans += 1
-        elif candidate[0] == rudolf[0] and candidate[1] < rudolf[1]:
-            ans += 1
-
-    return ans
+    if x1 > 0:
+        return int(x1)
+    if x2 > 0:
+        return int(x2)
 
 
 def run():

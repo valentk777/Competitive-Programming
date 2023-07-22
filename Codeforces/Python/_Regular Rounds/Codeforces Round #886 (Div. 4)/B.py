@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------------------
-# URL    : https://codeforces.com/contest/1846/problem/C
-# Title  : Rudolf and the Another Competition
-# Tags   : tag-codeforces, tag-problem-C, tag-div-3, tag-difficulty-1200
-# Notes  : constructive algorithms, data structures, dp, greedy, sortings
+# URL    : https://codeforces.com/contest/1850/problem/B
+# Title  : Ten Words of Wisdom
+# Tags   : tag-codeforces, tag-problem-B, tag-div-4, tag-difficulty-0
+# Notes  : implementation, sortings
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------
@@ -110,35 +110,19 @@ sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    n, m, h = intl()
-    best = []
+    n = iinp()
+
+    candidates = {}
 
     for i in range(n):
-        minutes = 0
-        penalty = 0
-        points = 0
-        problems = sorted(intl())
+        a, b = intl()
 
-        for j in range(m):
-            if minutes + problems[j] > h:
-                break
-            else:
-                minutes += problems[j]
-                penalty += minutes
-                points += 1
+        if a <= 10:
+            candidates[i + 1] = b
 
-        best.append([points, penalty])
+    candidates = sorted(candidates.items(), key=lambda x: x[1], reverse=True)
 
-    rudolf = best[0]
-    ans = 1
-
-    for candidate in best:
-        if candidate[0] > rudolf[0]:
-            ans += 1
-        elif candidate[0] == rudolf[0] and candidate[1] < rudolf[1]:
-            ans += 1
-
-    return ans
+    return candidates[0][0]
 
 
 def run():

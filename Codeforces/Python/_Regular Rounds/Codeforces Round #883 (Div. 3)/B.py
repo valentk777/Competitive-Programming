@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1846/problem/B
 # Title  : Rudolph and Tic-Tac-Toe
-# Tags   : tag-codeforces, tag-problem-B, tag-div-3, tag-difficulty-0
-# Notes  :  brute force, implementation, strings
+# Tags   : tag-codeforces, tag-problem-B, tag-div-3, tag-difficulty-800
+# Notes  : brute force, implementation, strings
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------
@@ -111,7 +111,7 @@ sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
 
 def get_winner_by_rows(_matrix):
     for row in _matrix:
-        if len(set(row)) == 1:
+        if row[0] == row[1] == row[2] != ".":
             return row[0]
 
 
@@ -122,15 +122,15 @@ def get_winner_by_column(_matrix):
         for row in _matrix:
             temp.append(row[i])
 
-        if len(set(temp)) == 1:
+        if temp[0] == temp[1] == temp[2] != ".":
             return temp[0]
 
 
 def get_winner_by_diagonal(_matrix):
-    if _matrix[0][0] == _matrix[1][1] == _matrix[2][2]:
+    if _matrix[0][0] == _matrix[1][1] == _matrix[2][2] != ".":
         return _matrix[0][0]
 
-    if _matrix[2][0] == _matrix[1][1] == _matrix[0][2]:
+    if _matrix[2][0] == _matrix[1][1] == _matrix[0][2] != ".":
         return _matrix[2][0]
 
 
@@ -140,20 +140,9 @@ def solve():
     for i in range(3):
         matrix.append([j for j in inp()])
 
-    ans = get_winner_by_rows(matrix)
-
-    if ans is not None and ans != ".":
-        return ans
-
-    ans = get_winner_by_column(matrix)
-
-    if ans is not None and ans != ".":
-        return ans
-
-    ans = get_winner_by_diagonal(matrix)
-
-    if ans is not None and ans != ".":
-        return ans
+    for candidate in [get_winner_by_rows(matrix), get_winner_by_column(matrix), get_winner_by_diagonal(matrix)]:
+        if candidate is not None:
+            return candidate
 
     return "DRAW"
 

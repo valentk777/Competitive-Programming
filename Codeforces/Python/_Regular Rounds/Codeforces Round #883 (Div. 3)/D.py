@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------------------
 # URL    : https://codeforces.com/contest/1846/problem/D
 # Title  : Rudolph and Christmas Tree
-# Tags   : tag-codeforces, tag-problem-D, tag-div-3, tag-difficulty-0
-# Notes  :  constructive algorithms, geometry, math
+# Tags   : tag-codeforces, tag-problem-D, tag-div-3, tag-difficulty-1200
+# Notes  : constructive algorithms, geometry, math
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------

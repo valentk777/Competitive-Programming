@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------------------
-# URL    : https://codeforces.com/contest/1846/problem/C
-# Title  : Rudolf and the Another Competition
-# Tags   : tag-codeforces, tag-problem-C, tag-div-3, tag-difficulty-1200
-# Notes  : constructive algorithms, data structures, dp, greedy, sortings
+# URL    : https://codeforces.com/contest/1850/problem/G
+# Title  : The Morning Star
+# Tags   : tag-codeforces, tag-problem-G, tag-div-4, tag-difficulty-0
+# Notes  : data structures, geometry, implementation, math, sortings
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------
@@ -109,34 +109,34 @@ sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
 
 # -------------------------------------------------------Solution-------------------------------------------------------
 
+# hacked
 def solve():
-    n, m, h = intl()
-    best = []
+    n = iinp()
+    points = []
 
     for i in range(n):
-        minutes = 0
-        penalty = 0
-        points = 0
-        problems = sorted(intl())
+        points.append(intl())
 
-        for j in range(m):
-            if minutes + problems[j] > h:
-                break
-            else:
-                minutes += problems[j]
-                penalty += minutes
-                points += 1
+    hash_x = defaultdict(lambda: 0)
+    hash_y = defaultdict(lambda: 0)
+    hash_diff_1 = defaultdict(lambda: 0)
+    hash_diff_2 = defaultdict(lambda: 0)
+    ans = 0
 
-        best.append([points, penalty])
+    for x, y in points:
+        if x in hash_x:
+            ans += 2 * hash_x[x]
+        if y in hash_y:
+            ans += 2 * hash_y[y]
+        if y - x in hash_diff_1:
+            ans += 2 * hash_diff_1[y - x]
+        if y + x in hash_diff_2:
+            ans += 2 * hash_diff_2[y + x]
 
-    rudolf = best[0]
-    ans = 1
-
-    for candidate in best:
-        if candidate[0] > rudolf[0]:
-            ans += 1
-        elif candidate[0] == rudolf[0] and candidate[1] < rudolf[1]:
-            ans += 1
+        hash_x[x] += 1
+        hash_y[y] += 1
+        hash_diff_1[y - x] += 1
+        hash_diff_2[y + x] += 1
 
     return ans
 

@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------------------
-# URL    : https://codeforces.com/contest/1846/problem/C
-# Title  : Rudolf and the Another Competition
-# Tags   : tag-codeforces, tag-problem-C, tag-div-3, tag-difficulty-1200
-# Notes  : constructive algorithms, data structures, dp, greedy, sortings
+# URL    : https://codeforces.com/contest/1850/problem/D
+# Title  : Balanced Round
+# Tags   : tag-codeforces, tag-problem-D, tag-div-4, tag-difficulty-0
+# Notes  : brute force, greedy, implementation, sortings
 # ---------------------------------------------------------------------------------------
 
 # region --------------------------------------------Shared part--------------------------------------------------------
@@ -110,35 +110,27 @@ sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
 # -------------------------------------------------------Solution-------------------------------------------------------
 
 def solve():
-    n, m, h = intl()
-    best = []
+    n, k = intl()
+    a = intl()
+    a = sorted(a)
 
-    for i in range(n):
-        minutes = 0
-        penalty = 0
-        points = 0
-        problems = sorted(intl())
+    # we need to find max line with numbers in order
+    _max = -1
+    candidate = 1
 
-        for j in range(m):
-            if minutes + problems[j] > h:
-                break
-            else:
-                minutes += problems[j]
-                penalty += minutes
-                points += 1
+    for i in range(1, n):
+        if abs(a[i] - a[i - 1]) <= k:
+            candidate += 1
+        else:
+            if candidate > _max:
+                _max = candidate
 
-        best.append([points, penalty])
+            candidate = 1
 
-    rudolf = best[0]
-    ans = 1
+    if candidate > _max:
+        _max = candidate
 
-    for candidate in best:
-        if candidate[0] > rudolf[0]:
-            ans += 1
-        elif candidate[0] == rudolf[0] and candidate[1] < rudolf[1]:
-            ans += 1
-
-    return ans
+    return n - _max
 
 
 def run():
