@@ -11,7 +11,7 @@ def read_lines(filename: str = r"input.txt") -> List[str]:
 
 
 def read(filename: str = r"input.txt") -> str:
-    with codecs.open(filename, 'U') as f:
+    with codecs.open(filename) as f:
         return f.read()
 
 
