@@ -75,15 +75,17 @@ def replace_spelled_with_digits(_text: str):
 def solve_1(data):
     all_digits = map(get_only_digits, data)
     only_first_and_last = list(map(lambda x: int(x[0] + x[-1]), all_digits))
+    result = sum(only_first_and_last)
 
-    print(sum(only_first_and_last))
+    print(result)
 
 
 def solve_2(data):
     all_digits = map(replace_spelled_with_digits, data)
     only_first_and_last = list(map(lambda x: int(x[0] + x[-1]), all_digits))
+    result = sum(only_first_and_last)
 
-    print(sum(only_first_and_last))
+    print(result)
 
 
 if __name__ == "__main__":
