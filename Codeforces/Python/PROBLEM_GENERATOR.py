@@ -244,7 +244,7 @@ def open_current_file(folder_path: Path, round_data: RoundData) -> None:
 def generate_folder_with_problems() -> None:
     logger.info("Script started")
 
-    WEB_URL = "https://codeforces.com/problemset/problem/252/A"
+    WEB_URL = "https://codeforces.com/contest/1914"
 
     round_data = RoundData(WEB_URL, is_started=True)
     # round_data = RoundData(
